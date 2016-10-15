@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[Hello World]]></title>
-      <url>http://jiangnan.pw/2016/10/15/hello-world/</url>
+      <url>http://blog.jiangnan.pw/2016/10/15/hello-world/</url>
       <content type="html"><![CDATA[<p>dddddd <a id="more"></a><br>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
@@ -20,7 +20,7 @@
     
     <entry>
       <title><![CDATA[wordpress]]></title>
-      <url>http://jiangnan.pw/2016/10/13/wordpress/</url>
+      <url>http://blog.jiangnan.pw/2016/10/13/wordpress/</url>
       <content type="html"><![CDATA[<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><table>
 <thead>
 <tr>
@@ -52,7 +52,7 @@
     
     <entry>
       <title><![CDATA[热烈庆祝江南品味正式上线！]]></title>
-      <url>http://jiangnan.pw/2016/10/13/hello/</url>
+      <url>http://blog.jiangnan.pw/2016/10/13/hello/</url>
       <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>
 <p>最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。经过了两天的努力奋战挽救回来了所有的代码。但是保加利亚的黑客不断的扫描我的IP，致使我的电脑CPU一度达到80℃~90℃，无奈之下展示关闭服务器。</p>
 </blockquote>
@@ -67,7 +67,7 @@
     
     <entry>
       <title><![CDATA[关于]]></title>
-      <url>http://jiangnan.pw/about/index.html</url>
+      <url>http://blog.jiangnan.pw/about/index.html</url>
       <content type="html"><![CDATA[<blockquote>
 <p>本博客基于Hexo创建，主要记录在工作学习的过程中遇到的一些问题以及解决方法。</p>
 </blockquote>
@@ -76,19 +76,19 @@
     
     <entry>
       <title><![CDATA[categories]]></title>
-      <url>http://jiangnan.pw/categories/index.html</url>
+      <url>http://blog.jiangnan.pw/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
       <title><![CDATA[读书]]></title>
-      <url>http://jiangnan.pw/reading/index.html</url>
+      <url>http://blog.jiangnan.pw/reading/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
       <title><![CDATA[tags]]></title>
-      <url>http://jiangnan.pw/tags/index.html</url>
+      <url>http://blog.jiangnan.pw/tags/index.html</url>
       <content type="html"></content>
     </entry>
     

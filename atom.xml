@@ -4,9 +4,9 @@
   <subtitle>记录编程道路上的点点滴滴!!!</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://jiangnan.pw/"/>
+  <link href="http://blog.jiangnan.pw/"/>
   <updated>2016-10-15T12:16:47.495Z</updated>
-  <id>http://jiangnan.pw/</id>
+  <id>http://blog.jiangnan.pw/</id>
   
   <author>
     <name>江南品味</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://jiangnan.pw/2016/10/15/hello-world/"/>
-    <id>http://jiangnan.pw/2016/10/15/hello-world/</id>
+    <link href="http://blog.jiangnan.pw/2016/10/15/hello-world/"/>
+    <id>http://blog.jiangnan.pw/2016/10/15/hello-world/</id>
     <published>2016-10-15T12:16:47.495Z</published>
     <updated>2016-10-15T12:16:47.495Z</updated>
     
@@ -44,8 +44,8 @@
   
   <entry>
     <title>wordpress</title>
-    <link href="http://jiangnan.pw/2016/10/13/wordpress/"/>
-    <id>http://jiangnan.pw/2016/10/13/wordpress/</id>
+    <link href="http://blog.jiangnan.pw/2016/10/13/wordpress/"/>
+    <id>http://blog.jiangnan.pw/2016/10/13/wordpress/</id>
     <published>2016-10-13T08:17:14.000Z</published>
     <updated>2016-10-13T08:20:38.291Z</updated>
     
@@ -87,17 +87,17 @@
     
     </summary>
     
-      <category term="WordPress" scheme="http://jiangnan.pw/categories/WordPress/"/>
+      <category term="WordPress" scheme="http://blog.jiangnan.pw/categories/WordPress/"/>
     
     
-      <category term="WordPress" scheme="http://jiangnan.pw/tags/WordPress/"/>
+      <category term="WordPress" scheme="http://blog.jiangnan.pw/tags/WordPress/"/>
     
   </entry>
   
   <entry>
     <title>热烈庆祝江南品味正式上线！</title>
-    <link href="http://jiangnan.pw/2016/10/13/hello/"/>
-    <id>http://jiangnan.pw/2016/10/13/hello/</id>
+    <link href="http://blog.jiangnan.pw/2016/10/13/hello/"/>
+    <id>http://blog.jiangnan.pw/2016/10/13/hello/</id>
     <published>2016-10-13T07:39:35.000Z</published>
     <updated>2016-10-13T07:54:46.480Z</updated>
     
@@ -117,7 +117,7 @@
     </summary>
     
     
-      <category term="生活记事" scheme="http://jiangnan.pw/tags/%E7%94%9F%E6%B4%BB%E8%AE%B0%E4%BA%8B/"/>
+      <category term="生活记事" scheme="http://blog.jiangnan.pw/tags/%E7%94%9F%E6%B4%BB%E8%AE%B0%E4%BA%8B/"/>
     
   </entry>
   

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>江南品味</title>
+  <subtitle>记录编程道路上的点点滴滴!!!</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://jiangnan.pw/"/>
+  <updated>2016-10-15T12:16:47.495Z</updated>
+  <id>http://jiangnan.pw/</id>
+  
+  <author>
+    <name>江南品味</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://jiangnan.pw/2016/10/15/hello-world/"/>
+    <id>http://jiangnan.pw/2016/10/15/hello-world/</id>
+    <published>2016-10-15T12:16:47.495Z</published>
+    <updated>2016-10-15T12:16:47.495Z</updated>
+    
+    <content type="html"><![CDATA[<p>dddddd <a id="more"></a><br>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;dddddd
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>wordpress</title>
+    <link href="http://jiangnan.pw/2016/10/13/wordpress/"/>
+    <id>http://jiangnan.pw/2016/10/13/wordpress/</id>
+    <published>2016-10-13T08:17:14.000Z</published>
+    <updated>2016-10-13T08:20:38.291Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">Item</th>
+<th style="text-align:right">Value</th>
+<th style="text-align:center">Qty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Computer</td>
+<td style="text-align:right">1600 USD</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:left">Phone</td>
+<td style="text-align:right">12 USD</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td style="text-align:left">Pipe</td>
+<td style="text-align:right">1 USD</td>
+<td style="text-align:center">234</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;表格&quot;&gt;&lt;a href=&quot;#表格&quot; class=&quot;headerlink&quot; title=&quot;表格&quot;&gt;&lt;/a&gt;表格&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Item&lt;/th&gt;
+&lt;th style=&quot;tex
+    
+    </summary>
+    
+      <category term="WordPress" scheme="http://jiangnan.pw/categories/WordPress/"/>
+    
+    
+      <category term="WordPress" scheme="http://jiangnan.pw/tags/WordPress/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>热烈庆祝江南品味正式上线！</title>
+    <link href="http://jiangnan.pw/2016/10/13/hello/"/>
+    <id>http://jiangnan.pw/2016/10/13/hello/</id>
+    <published>2016-10-13T07:39:35.000Z</published>
+    <updated>2016-10-13T07:54:46.480Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>
+<p>最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。经过了两天的努力奋战挽救回来了所有的代码。但是保加利亚的黑客不断的扫描我的IP，致使我的电脑CPU一度达到80℃~90℃，无奈之下展示关闭服务器。</p>
+</blockquote>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote>
+<p>目前转投HEXO，Github门下开始技术博客的更新，今天发布的只是一个测试文章，因为MarkDown的语法还不熟悉只能边学边写希望大家谅解。最后热烈庆祝<strong>江南品味</strong>正式上线！</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。经过了两天的努力奋战挽救回来了所有
+    
+    </summary>
+    
+    
+      <category term="生活记事" scheme="http://jiangnan.pw/tags/%E7%94%9F%E6%B4%BB%E8%AE%B0%E4%BA%8B/"/>
+    
+  </entry>
+  
+</feed>

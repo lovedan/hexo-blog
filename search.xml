@@ -66,14 +66,17 @@
   
     
     <entry>
-      <title><![CDATA[categories]]></title>
-      <url>http://jiangnan.pw/categories/index.html</url>
-      <content type="html"></content>
+      <title><![CDATA[关于]]></title>
+      <url>http://jiangnan.pw/about/index.html</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>本博客基于Hexo创建，主要记录在工作学习的过程中遇到的一些问题以及解决方法。</p>
+</blockquote>
+]]></content>
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://jiangnan.pw/tags/index.html</url>
+      <title><![CDATA[categories]]></title>
+      <url>http://jiangnan.pw/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
@@ -84,12 +87,9 @@
     </entry>
     
     <entry>
-      <title><![CDATA[关于]]></title>
-      <url>http://jiangnan.pw/about/index.html</url>
-      <content type="html"><![CDATA[<blockquote>
-<p>本博客基于Hexo创建，主要记录在工作学习的过程中遇到的一些问题以及解决方法。</p>
-</blockquote>
-]]></content>
+      <title><![CDATA[tags]]></title>
+      <url>http://jiangnan.pw/tags/index.html</url>
+      <content type="html"></content>
     </entry>
     
   

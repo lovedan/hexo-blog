@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiangnan.pw/"/>
-  <updated>2016-10-15T12:16:47.495Z</updated>
+  <updated>2016-10-16T01:20:54.608Z</updated>
   <id>http://blog.jiangnan.pw/</id>
   
   <author>
@@ -17,13 +17,13 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://blog.jiangnan.pw/2016/10/15/hello-world/"/>
-    <id>http://blog.jiangnan.pw/2016/10/15/hello-world/</id>
-    <published>2016-10-15T12:16:47.495Z</published>
-    <updated>2016-10-15T12:16:47.495Z</updated>
+    <link href="http://blog.jiangnan.pw/2016/10/16/hello-world/"/>
+    <id>http://blog.jiangnan.pw/2016/10/16/hello-world/</id>
+    <published>2016-10-16T01:20:54.608Z</published>
+    <updated>2016-10-16T01:20:54.608Z</updated>
     
-    <content type="html"><![CDATA[<p>dddddd <a id="more"></a><br>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post "></a>Create a new post <a id="more"></a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
@@ -35,10 +35,86 @@
     
     <summary type="html">
     
-      &lt;p&gt;dddddd
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post &quot;&gt;&lt;/a&gt;Create a new post
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>Alfred实现七牛上传文件</title>
+    <link href="http://blog.jiangnan.pw/2016/10/16/Alfred%E5%AE%9E%E7%8E%B0%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/"/>
+    <id>http://blog.jiangnan.pw/2016/10/16/Alfred实现七牛上传文件/</id>
+    <published>2016-10-16T00:48:27.000Z</published>
+    <updated>2016-10-16T01:21:23.095Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="alfred-workflow-qshell"><a href="#alfred-workflow-qshell" class="headerlink" title="alfred-workflow-qshell"></a>alfred-workflow-qshell</h2><blockquote>
+<p>qshell 是基于七牛API参考手册实现的一个方便开发者测试和使用七牛API服务的命令行工具。<a id="more"></a></p>
+</blockquote>
+<p>alfred-workflow-qshell 是一个配合七牛开发者工具 <a href="http://developer.qiniu.com/code/v6/tool/qshell.html" target="_blank" rel="external">qshell</a> 使用的 Alfred workflow。</p>
+<p>alfred-workflow-qshell 使用可视化流程后台执行 <code>qshell</code> 命令行，易用高效。</p>
+<h2 id="功能-amp-特点"><a href="#功能-amp-特点" class="headerlink" title="功能 &amp; 特点"></a>功能 &amp; 特点</h2><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
+<li>支持多文件上传</li>
+<li>支持上传文件添加前缀</li>
+<li>获取空间文件外链</li>
+<li>查看空间文件基本信息</li>
+<li>移动、复制、删除、重命名</li>
+<li>预览、下载空间文件</li>
+<li>完善的文件操作反馈（通知、错误等）</li>
+</ul>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>curl 下载文件</li>
+<li>不支持文件夹上传<br>要求空间的文件名为不能为空或全为空格</li>
+</ul>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h3><ul>
+<li>默认关键字 <code>fput</code> 搜索本地单个文件，上传文件</li>
+<li>搜索文件时使用 <strong>Buffer</strong> 功能进行文件多选，上传多文件（<a href="https://github.com/onestark/better-series/blob/master/better-workflow.md" target="_blank" rel="external">Buffer 的使用</a>）</li>
+<li>选中一或多个文件，调出 <strong>Actions</strong> 文件操作菜单，上传文件</li>
+</ul>
+<h3 id="操作文件"><a href="#操作文件" class="headerlink" title="操作文件"></a>操作文件</h3><ul>
+<li>默认关键字 <code>fstat</code> 搜索空间文件</li>
+<li>移动、复制、删除、重命名、外链、信息、预览、下载</li>
+</ul>
+<h2 id="安装-amp-配置"><a href="#安装-amp-配置" class="headerlink" title="安装 &amp; 配置"></a>安装 &amp; 配置</h2><p>要求：<strong>qshell</strong>、<strong>Alfred with Powerpack</strong></p>
+<h3 id="1-qshell"><a href="#1-qshell" class="headerlink" title="1. qshell"></a>1. <a href="http://developer.qiniu.com/code/v6/tool/qshell.html" target="_blank" rel="external">qshell</a></h3><p>或前往 <a href="https://github.com/qiniu/qshell" target="_blank" rel="external">GitHub</a></p>
+<p>安装：只需要下载 zip 包之后解压即可使用。Mac 64 位系统只需要解压后的文件 <code>qshell_darwin_amd64</code>。把此文件放到 <code>/usr/local/bin</code> 目录。</p>
+<p>配置：从七牛的后台的账号设置中获取 <strong>AccessKey</strong> 和 <strong>SecretKey</strong>。配置本地 qshell：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 设置密钥</div><div class="line">qshell account [AccessKey] [SecretKey]</div><div class="line"># 查看设置</div><div class="line">qshell account</div></pre></td></tr></table></figure>
+<p>注意：上面的设置命令不需要输入方括号 <code>[]</code>。</p>
+<p>配置 qshell 完毕后会生成 <code>~/.qshell</code> 文件夹，其中 <code>account.json</code> 文件保存了 AccessKey 和 SecretKey 信息。</p>
+<h3 id="2-Alfred"><a href="#2-Alfred" class="headerlink" title="2. Alfred"></a>2. <a href="https://www.alfredapp.com/" target="_blank" rel="external">Alfred</a></h3><p>下载后缀名为 <code>.alfredworkflow</code> 的安装包安装即可。</p>
+<p>注意：Alfred 需要购买 <a href="https://www.alfredapp.com/powerpack/buy/" target="_blank" rel="external">Powerpack</a> 才能解锁 workflows 功能。</p>
+<h2 id="Todo"><a href="#Todo" class="headerlink" title="Todo"></a>Todo</h2><ul>
+<li>[x] account，显示当前用户的 AccessKey 和 SecretKey</li>
+<li>[x] fput，以文件表单的方式上传一个文件</li>
+<li>[x] stat，查询七牛空间中一个文件的基本信息</li>
+<li>[x] delete，删除七牛空间中的一个文件</li>
+<li>[x] move，移动或重命名七牛空间中的一个文件</li>
+<li>[x] copy，复制七牛空间中的一个文件</li>
+<li>[x] 查新基本信息时可以获取文件外链</li>
+<li>[x] 预览功能</li>
+<li>[x] 下载功能</li>
+</ul>
+<h2 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h2><h3 id="LICENSE"><a href="#LICENSE" class="headerlink" title="LICENSE"></a>LICENSE</h3><p><a href="./LICENSE">MIT License</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;alfred-workflow-qshell&quot;&gt;&lt;a href=&quot;#alfred-workflow-qshell&quot; class=&quot;headerlink&quot; title=&quot;alfred-workflow-qshell&quot;&gt;&lt;/a&gt;alfred-workflow-qshell&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;qshell 是基于七牛API参考手册实现的一个方便开发者测试和使用七牛API服务的命令行工具。
+    
+    </summary>
+    
+      <category term="Mac" scheme="http://blog.jiangnan.pw/categories/Mac/"/>
+    
+      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/Mac/Mac%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="Alfred" scheme="http://blog.jiangnan.pw/tags/Alfred/"/>
+    
+      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   

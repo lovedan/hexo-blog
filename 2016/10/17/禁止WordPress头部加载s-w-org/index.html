@@ -7,7 +7,7 @@
 
     
 
-    <title>Alfred | 记录编程道路上的点点滴滴!!!</title>
+    <title>禁止WordPress头部加载s.w.org | 记录编程道路上的点点滴滴!!!</title>
     <meta name="author" content="江南品味">
     
     <meta name="description" content="记录编程道路上的点点滴滴!!!">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="禁止WordPress头部加载s.w.org"/>
     <meta property="og:site_name" content="江南品味"/>
 
     
@@ -217,30 +217,95 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
-        <span class="breadcrumb">当前位置（标签）</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
         
+            
+    
+    
+    <a class="breadcrumb" href="/categories/WordPress/">WordPress</a>
+
 
         
-            <a class="breadcrumb" href="/tags/Alfred/">Alfred</a>
+
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>禁止WordPress头部加载s.w.org</h1>
+    
 
 
-    <div class="collection mt-0">
+            </div>
+            <time class="pink-link-context" datetime="2016-10-17T05:49:24.000Z"><a href="/2016/10/17/禁止WordPress头部加载s-w-org/">2016-10-17</a></time>
+
+            
+    <div class="tags-row">
         
-            <a href="/2016/10/16/Alfred实现七牛上传文件/" class="collection-item grey-text text-darken-1">
-                <time datetime="2016-10-16T00:48:27.000Z">2016-10-16</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                Alfred实现七牛上传文件
-            </a>
+            <a href="/tags/WordPress/" class="chip pink lighten-1">WordPress</a>
+        
+            <a href="/tags/技术分享/" class="chip pink lighten-1">技术分享</a>
         
     </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#将下面的代码添加到主题functions-php模板中："><span class="section table-of-contents-text">将下面的代码添加到主题functions.php模板中：</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#方法一"><span class="section table-of-contents-text">方法一</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#方法二"><span class="section table-of-contents-text">方法二</span></a></li></ol></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p>升级到WordPress 4.6之后，有童鞋发现头部加载了一个:</p>
+<p><link rel="dns-prefetch" href="//s.w.org"><br>WordPress在头部添加dns-prefetch，应该是为了从s.w.org预获取表情和头像，目的是提高网页加载速度 ，但s.w.org国内根本无法访问，什么预获取、什么提高速度，都是泡影，不仅没用处，反而可能会影响速度，那就禁止它。<br><a id="more"></a></p>
+<h2 id="将下面的代码添加到主题functions-php模板中："><a href="#将下面的代码添加到主题functions-php模板中：" class="headerlink" title="将下面的代码添加到主题functions.php模板中："></a>将下面的代码添加到主题functions.php模板中：</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">remove_action( &apos;wp_head&apos;, &apos;wp_resource_hints&apos;, 2 );</div></pre></td></tr></table></figure>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function remove_dns_prefetch( $hints, $relation_type ) &#123;</div><div class="line">if ( &apos;dns-prefetch&apos; === $relation_type ) &#123;</div><div class="line">return array_diff( wp_dependencies_unique_hosts(), $hints );</div><div class="line">&#125;</div><div class="line">return $hints;</div><div class="line">&#125;</div><div class="line">add_filter( &apos;wp_resource_hints&apos;, &apos;remove_dns_prefetch&apos;, 10, 2 );</div></pre></td></tr></table></figure>
+<p>方法二貌似兼容性更好些。<br>附带一个禁止加载表情代码<br>// Remove emoji script<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">remove_action( &apos;wp_head&apos;, &apos;print_emoji_detection_script&apos;, 7 );</div><div class="line">remove_action( &apos;wp_print_styles&apos;, &apos;print_emoji_styles&apos; );</div><div class="line">add_filter( &apos;emoji_svg_url&apos;, &apos;__return_false&apos; );</div></pre></td></tr></table></figure></p>
+<p>参考：<a href="https://wordpress.org/support/topic/remove-the-new-dns-prefetch-code/" target="_blank" rel="external">https://wordpress.org/support/topic/remove-the-new-dns-prefetch-code/</a></p>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="2016/10/17/禁止WordPress头部加载s-w-org/" data-title="禁止WordPress头部加载s.w.org" data-url="http://blog.jiangnan.pw/2016/10/17/禁止WordPress头部加载s-w-org/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'lovedan'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
+            </div>
+        </div>
+    </section>
+
 
 
 </div>

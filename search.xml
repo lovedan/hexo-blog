@@ -4,6 +4,18 @@
   
     
     <entry>
+      <title><![CDATA[禁止WordPress头部加载s.w.org]]></title>
+      <url>http://blog.jiangnan.pw/2016/10/17/%E7%A6%81%E6%AD%A2WordPress%E5%A4%B4%E9%83%A8%E5%8A%A0%E8%BD%BDs-w-org/</url>
+      <content type="html"><![CDATA[<p>升级到WordPress 4.6之后，有童鞋发现头部加载了一个:</p>
+<p><link rel="dns-prefetch" href="//s.w.org"><br>WordPress在头部添加dns-prefetch，应该是为了从s.w.org预获取表情和头像，目的是提高网页加载速度 ，但s.w.org国内根本无法访问，什么预获取、什么提高速度，都是泡影，不仅没用处，反而可能会影响速度，那就禁止它。<br><a id="more"></a></p>
+<h2 id="将下面的代码添加到主题functions-php模板中："><a href="#将下面的代码添加到主题functions-php模板中：" class="headerlink" title="将下面的代码添加到主题functions.php模板中："></a>将下面的代码添加到主题functions.php模板中：</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">remove_action( &apos;wp_head&apos;, &apos;wp_resource_hints&apos;, 2 );</div></pre></td></tr></table></figure>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function remove_dns_prefetch( $hints, $relation_type ) &#123;</div><div class="line">if ( &apos;dns-prefetch&apos; === $relation_type ) &#123;</div><div class="line">return array_diff( wp_dependencies_unique_hosts(), $hints );</div><div class="line">&#125;</div><div class="line">return $hints;</div><div class="line">&#125;</div><div class="line">add_filter( &apos;wp_resource_hints&apos;, &apos;remove_dns_prefetch&apos;, 10, 2 );</div></pre></td></tr></table></figure>
+<p>方法二貌似兼容性更好些。<br>附带一个禁止加载表情代码<br>// Remove emoji script<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">remove_action( &apos;wp_head&apos;, &apos;print_emoji_detection_script&apos;, 7 );</div><div class="line">remove_action( &apos;wp_print_styles&apos;, &apos;print_emoji_styles&apos; );</div><div class="line">add_filter( &apos;emoji_svg_url&apos;, &apos;__return_false&apos; );</div></pre></td></tr></table></figure></p>
+<p>参考：<a href="https://wordpress.org/support/topic/remove-the-new-dns-prefetch-code/" target="_blank" rel="external">https://wordpress.org/support/topic/remove-the-new-dns-prefetch-code/</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[WordPress 后台文件管理插件：FileBrowser]]></title>
       <url>http://blog.jiangnan.pw/2016/10/17/WordPress-%E5%90%8E%E5%8F%B0%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E6%8F%92%E4%BB%B6%EF%BC%9AFileBrowser/</url>
       <content type="html"><![CDATA[<p><img src="https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0" alt="wordpress"></p>
@@ -137,14 +149,14 @@
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://blog.jiangnan.pw/tags/index.html</url>
+      <title><![CDATA[读书]]></title>
+      <url>http://blog.jiangnan.pw/reading/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[读书]]></title>
-      <url>http://blog.jiangnan.pw/reading/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>http://blog.jiangnan.pw/tags/index.html</url>
       <content type="html"></content>
     </entry>
     

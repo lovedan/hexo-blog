@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiangnan.pw/"/>
-  <updated>2016-10-17T04:27:21.016Z</updated>
+  <updated>2016-10-17T05:10:28.203Z</updated>
   <id>http://blog.jiangnan.pw/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WordPress 后台文件管理插件：FileBrowser</title>
+    <link href="http://blog.jiangnan.pw/2016/10/17/WordPress-%E5%90%8E%E5%8F%B0%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E6%8F%92%E4%BB%B6%EF%BC%9AFileBrowser/"/>
+    <id>http://blog.jiangnan.pw/2016/10/17/WordPress-后台文件管理插件：FileBrowser/</id>
+    <published>2016-10-17T05:05:54.000Z</published>
+    <updated>2016-10-17T05:10:28.203Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0" alt="wordpress"></p>
+<p>WordPress 后台文件管理插件：FileBrowser <a id="more"></a></p>
+<p>wordpress本身没有像dedecms那样的在线文件管理功能，一般的文件管理都得通过FTP来实现，把文件下载下来，然后再编辑上传，很麻烦，而且有的空间根本不支持FTP，所以我们可以使用wordpress后台文件管理插件：FileBrowser。</p>
+<p><a href="https://wordpress.org/plugins/filebrowser/" target="_blank" rel="external">原版下载地址</a><br><a href="http://pan.baidu.com/share/link?shareid=374434&amp;uk=757737247" target="_blank" rel="external">汉化版下载地址</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0&quot; alt=&quot;wordpress&quot;&gt;&lt;/p&gt;
+&lt;p&gt;WordPress 后台文件管理插件：FileBrowser
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>获取WordPress当前分类文章所有标签</title>

@@ -7,7 +7,7 @@
 
     
 
-    <title>读书 | 记录编程道路上的点点滴滴!!!</title>
+    <title>获取WordPress当前分类文章所有标签 | 记录编程道路上的点点滴滴!!!</title>
     <meta name="author" content="江南品味">
     
     <meta name="description" content="记录编程道路上的点点滴滴!!!">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="读书"/>
+    <meta property="og:title" content="获取WordPress当前分类文章所有标签"/>
     <meta property="og:site_name" content="江南品味"/>
 
     
@@ -216,107 +216,74 @@
 
 
     <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">当前位置（分类目录）</span>
         
-
-<div class="container main-container">
+            
     
-        <div class="">
-            <div class="row">
-                <ul class="tabs ">
-                    
-                        <li class="tab col s4 ">
-                            <a class="pink-text " href="#readed">前端(1)</a>
-                        </li>
-                    
-                        <li class="tab col s4 ">
-                            <a class="pink-text " href="#reading">WordPress(1)</a>
-                        </li>
-                    
-                        <li class="tab col s4 ">
-                            <a class="pink-text " href="#wanted">其它(0)</a>
-                        </li>
-                    
-                </ul>
-            </div>
+    
+    <a class="breadcrumb" href="/categories/WordPress/">WordPress</a>
 
-            
-                <div id="readed" class="row" style="margin-top: 20px;">
-                    
-                    
-                        <div class="book-item col s12 m6">
-                            <div class="card small hoverable">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="card-cover-image activator" src="https://img.alicdn.com/imgextra/i1/91875185/TB2rHk9XAWM.eBjSZFhXXbdWpXa_!!91875185.png">
-                                </div>
-                                <div class="card-content pink-link-context">
-                                    <span class="card-title truncate activator grey-text text-darken-4">在线工具
-                                    </span>
-                                    <p>评分: 7
-                                        <a class="external-link right" href="http://tool.jiangnan.pw" target="_blank">
 
-                                            <i class="fa fa-external-link"></i>
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4">简评
-                                        <i class="fa fa-times-circle-o right"></i>
-                                    </span>
-
-                                    <p>江南品味为广大程序员提供的常用在线工具。</p>
-                                </div>
-                            </div>
-                        </div>
-                    
-                </div>
-            
-                <div id="reading" class="row" style="margin-top: 20px;">
-                    
-                    
-                        <div class="book-item col s12 m6">
-                            <div class="card small hoverable">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="card-cover-image activator" src="https://img.alicdn.com/imgextra/i1/91875185/TB2CwA6XE5O.eBjSZFxXXaaJFXa_!!91875185.png">
-                                </div>
-                                <div class="card-content pink-link-context">
-                                    <span class="card-title truncate activator grey-text text-darken-4">蛋蛋魔法网
-                                    </span>
-                                    <p>评分: 55
-                                        <a class="external-link right" href="http://ddmf.net/" target="_blank">
-
-                                            <i class="fa fa-external-link"></i>
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4">简评
-                                        <i class="fa fa-times-circle-o right"></i>
-                                    </span>
-
-                                    <p>蛋蛋魔法网 | iPhone4S_iPad2_iPhone4_越狱_苹果官网_价格,游戏,软件,限时免费</p>
-                                </div>
-                            </div>
-                        </div>
-                    
-                </div>
-            
-                <div id="wanted" class="row" style="margin-top: 20px;">
-                    
-                    
-                </div>
-            
-
-        </div>
         
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>获取WordPress当前分类文章所有标签</h1>
+    
+
+
+            </div>
+            <time class="pink-link-context" datetime="2016-10-17T04:25:16.000Z"><a href="/2016/10/17/获取WordPress当前分类文章所有标签/">2016-10-17</a></time>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/WordPress/" class="chip pink lighten-1">WordPress</a>
+        
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p>如果需要在分类列表页面，显示当前分类文章中添加的所有标签，方便读者阅读自己喜欢的内容，下面的代码可以帮你实现这个功能。<br>获取WordPress当前分类文章所有标签<a id="more"></a></p>
+<p>首先，在主题functions.php模板文件中添加以下函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">function get_category_tags($args) &#123;</div><div class="line">    global $wpdb;</div><div class="line">    $tags = $wpdb-&gt;get_results</div><div class="line">    (&quot;</div><div class="line">        SELECT DISTINCT terms2.term_id as tag_id, terms2.name as tag_name</div><div class="line">        FROM</div><div class="line">            $wpdb-&gt;posts as p1</div><div class="line">            LEFT JOIN $wpdb-&gt;term_relationships as r1 ON p1.ID = r1.object_ID</div><div class="line">            LEFT JOIN $wpdb-&gt;term_taxonomy as t1 ON r1.term_taxonomy_id = t1.term_taxonomy_id</div><div class="line">            LEFT JOIN $wpdb-&gt;terms as terms1 ON t1.term_id = terms1.term_id,</div><div class="line">            $wpdb-&gt;posts as p2</div><div class="line">            LEFT JOIN $wpdb-&gt;term_relationships as r2 ON p2.ID = r2.object_ID</div><div class="line">            LEFT JOIN $wpdb-&gt;term_taxonomy as t2 ON r2.term_taxonomy_id = t2.term_taxonomy_id</div><div class="line">            LEFT JOIN $wpdb-&gt;terms as terms2 ON t2.term_id = terms2.term_id</div><div class="line">        WHERE</div><div class="line">            t1.taxonomy = &apos;category&apos; AND p1.post_status = &apos;publish&apos; AND terms1.term_id IN (&quot;.$args[&apos;categories&apos;].&quot;) AND</div><div class="line">            t2.taxonomy = &apos;post_tag&apos; AND p2.post_status = &apos;publish&apos;</div><div class="line">            AND p1.ID = p2.ID</div><div class="line">        ORDER by tag_name</div><div class="line">    &quot;);</div><div class="line">    $count = 0;</div><div class="line">    if($tags) &#123;</div><div class="line">        foreach ($tags as $tag) &#123;</div><div class="line">            $mytag[$count] = get_term_by(&apos;id&apos;, $tag-&gt;tag_id, &apos;post_tag&apos;);</div><div class="line">            $count++;</div><div class="line">        &#125;</div><div class="line">    &#125; else &#123;</div><div class="line">      $mytag = NULL;</div><div class="line">    &#125;</div><div class="line">    return $mytag;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译：<a href="http://www.ludou.org/wordpress-get-tags-specific-to-category.html" target="_blank" rel="external">http://www.ludou.org/wordpress-get-tags-specific-to-category.html</a><br>源代码出自：<a href="https://wordpress.org/support/topic/get-tags-specific-to-category" target="_blank" rel="external">https://wordpress.org/support/topic/get-tags-specific-to-category</a></p>
+<p>其次，将下面调用输出代码，添加到主题archive.php模板适当位置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">    $cat= single_cat_title(&apos;&apos;, false);</div><div class="line">    $args = array( &apos;categories&apos; =&gt; get_cat_ID($cat));</div><div class="line">    $tags = get_category_tags($args);</div><div class="line">    $content .= &quot;&lt;ul class=&apos;cat-tag&apos;&gt;&quot;;</div><div class="line">    if(!empty($tags)) &#123;</div><div class="line">        foreach ($tags as $tag) &#123;</div><div class="line">            $content .= &quot;&lt;li&gt;&lt;a href=\&quot;&quot;.get_tag_link($tag-&gt;term_id).&quot;\&quot;&gt;&quot;.$tag-&gt;name.&quot;&lt;/a&gt;&lt;/li&gt;&quot;;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    $content .= &quot;&lt;/ul&gt;&quot;;</div><div class="line">    echo $content;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<p>个人感觉放到头部调用函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;?php get_header(); ?&gt;</div></pre></td></tr></table></figure></p>
+<p>下面比较合适。<br>最后，再适当加上样式即可：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.cat-tag</span>&#123;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.cat-tag</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">5px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
 
 
     <section id="comment">
         <div class="card">
             <div class="card-content">
                 <!-- Duoshuo Comment BEGIN -->
-                <div class="ds-thread" data-thread-key="reading/index.html" data-title="读书" data-url="http://blog.jiangnan.pw/reading/index.html"></div>
+                <div class="ds-thread" data-thread-key="2016/10/17/获取WordPress当前分类文章所有标签/" data-title="获取WordPress当前分类文章所有标签" data-url="http://blog.jiangnan.pw/2016/10/17/获取WordPress当前分类文章所有标签/"></div>
 
                 <script type="text/javascript">
                     console.log(document.querySelector('.ds-thread'));
@@ -340,7 +307,7 @@
     </section>
 
 
-    
+
 </div>
 
         <div class="fixed-action-btn float-sitemap">

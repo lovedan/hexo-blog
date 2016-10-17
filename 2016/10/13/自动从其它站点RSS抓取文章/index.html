@@ -7,7 +7,7 @@
 
     
 
-    <title>热烈庆祝江南品味正式上线！ | 记录编程道路上的点点滴滴!!!</title>
+    <title>自动从其它站点RSS抓取文章 | 记录编程道路上的点点滴滴!!!</title>
     <meta name="author" content="江南品味">
     
     <meta name="description" content="记录编程道路上的点点滴滴!!!">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="热烈庆祝江南品味正式上线！"/>
+    <meta property="og:title" content="自动从其它站点RSS抓取文章"/>
     <meta property="og:site_name" content="江南品味"/>
 
     
@@ -38,7 +38,7 @@
 <body>
     <img src="/weixin_favicon.png" style="position: absolute; left: -9999px; opacity: 0; filter: alpha(opacity=0);">
 
-    <nav class="grey">
+    <nav class="indigo">
     <div class="nav-wrapper">
         <a href="#" data-activates="main-menu" class="button-collapse">
             <i class="fa fa-navicon"></i>
@@ -75,7 +75,7 @@
                         <a class="menu-reading " href="/reading" >
                             <i class="fa fa-book "></i>
                             
-                            读书
+                            作品
                         </a>
                     </li>
                 
@@ -143,7 +143,7 @@
                 <a class="waves-effect menu-reading " href="/reading" >
                     <i class="fa fa-book "></i>
                     
-                    读书
+                    作品
                 </a>
             </li>
         
@@ -188,7 +188,7 @@
 
             <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/WordPress/">
-                    WordPress <span class="right">1 篇</span></a>
+                    WordPress <span class="right">2 篇</span></a>
                 </a>
             </li>
 
@@ -222,6 +222,10 @@
         <span class="breadcrumb">当前位置（分类目录）</span>
         
             
+    
+    
+    <a class="breadcrumb" href="/categories/WordPress/">WordPress</a>
+
 
         
 
@@ -237,33 +241,31 @@
             <div class="article-title">
                 
     
-        <h1>热烈庆祝江南品味正式上线！</h1>
+        <h1>自动从其它站点RSS抓取文章</h1>
     
 
 
             </div>
-            <time class="pink-link-context" datetime="2016-10-13T07:39:35.000Z"><a href="/2016/10/13/hello/">2016-10-13</a></time>
+            <time class="pink-link-context" datetime="2016-10-13T08:17:14.000Z"><a href="/2016/10/13/自动从其它站点RSS抓取文章/">2016-10-13</a></time>
 
             
     <div class="tags-row">
         
-            <a href="/tags/生活记事/" class="chip pink lighten-1">生活记事</a>
+            <a href="/tags/WordPress/" class="chip pink lighten-1">WordPress</a>
         
     </div>
 
 
             <div class="toc pink-link-context hide-on-med-and-down">
-    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#背景"><span class="section table-of-contents-text">背景</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#结果"><span class="section table-of-contents-text">结果</span></a></li></ol>
+    
 </div>
 
 
             <div class="entry pink-link-context">
-                <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>
-<p>最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。经过了两天的努力奋战挽救回来了所有的代码。但是保加利亚的黑客不断的扫描我的IP，致使我的电脑CPU一度达到80℃~90℃，无奈之下展示关闭服务器。</p>
-</blockquote>
-<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote>
-<p>目前转投HEXO，Github门下开始技术博客的更新，今天发布的只是一个测试文章，因为MarkDown的语法还不熟悉只能边学边写希望大家谅解。最后热烈庆祝<strong>江南品味</strong>正式上线！</p>
-</blockquote>
+                <p>代码基本原理，新建一个自定义分类法“shot”，自动从另一个站点的RSS抓取文章，放在一个数组中，再用这个数组创建“shot”文章，并为文章添加自定义栏目image和link_url，方便调用缩略图和原文链接。<a id="more"></a></p>
+<p>将下面代码添加到当前主题functions.php中即可。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?</span></div><div class="line"><span class="comment">/* Post Type</span></div><div class="line">   ------------------------------------------------------------------------------------ */</div><div class="line">add_action( <span class="string">'init'</span>, <span class="string">'register_cpt_shot'</span> );</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">register_cpt_shot</span><span class="params">()</span> </span>&#123;</div><div class="line">    $labels = <span class="keyword">array</span>(</div><div class="line">        <span class="string">'name'</span> =&gt; _x( <span class="string">'Dribble Shots'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'singular_name'</span> =&gt; _x( <span class="string">'Dribbble Shot'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'add_new'</span> =&gt; _x( <span class="string">'Add New'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'add_new_item'</span> =&gt; _x( <span class="string">'Add New Dribbble Shot'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'edit_item'</span> =&gt; _x( <span class="string">'Edit Dribbble Shot'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'new_item'</span> =&gt; _x( <span class="string">'New Dribbble Shot'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'view_item'</span> =&gt; _x( <span class="string">'View Dribbble Shot'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'search_items'</span> =&gt; _x( <span class="string">'Search Dribble Shots'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'not_found'</span> =&gt; _x( <span class="string">'No dribble shots found'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'not_found_in_trash'</span> =&gt; _x( <span class="string">'No dribble shots found in Trash'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'parent_item_colon'</span> =&gt; _x( <span class="string">'Parent Dribbble Shot:'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'menu_name'</span> =&gt; _x( <span class="string">'Dribble Shots'</span>, <span class="string">'shot'</span> ),</div><div class="line">    );</div><div class="line">    $args = <span class="keyword">array</span>(</div><div class="line">        <span class="string">'labels'</span> =&gt; $labels,</div><div class="line">        <span class="string">'hierarchical'</span> =&gt; <span class="keyword">false</span>,</div><div class="line">        <span class="string">'supports'</span> =&gt; <span class="keyword">array</span>( <span class="string">'title'</span>, <span class="string">'custom-fields'</span> ),</div><div class="line">        <span class="string">'public'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'show_ui'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'show_in_menu'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'show_in_nav_menus'</span> =&gt; <span class="keyword">false</span>,</div><div class="line">        <span class="string">'publicly_queryable'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'exclude_from_search'</span> =&gt; <span class="keyword">false</span>,</div><div class="line">        <span class="string">'has_archive'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'query_var'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'can_export'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'rewrite'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'capability_type'</span> =&gt; <span class="string">'post'</span></div><div class="line">    );</div><div class="line">    register_post_type( <span class="string">'shot'</span>, $args );</div><div class="line">&#125;</div><div class="line"><span class="comment">/* Import Shots via RSS</span></div><div class="line">   ------------------------------------------------------------------------------------ */</div><div class="line"><span class="comment">// grab the image src from teh description</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_image</span><span class="params">($string)</span> </span>&#123;</div><div class="line">    preg_match_all(<span class="string">'/&lt;img[^&gt;]+&gt;/i'</span>,$string, $result);</div><div class="line">    $img = <span class="keyword">array</span>();</div><div class="line">    <span class="keyword">foreach</span>( $result[<span class="number">0</span>] <span class="keyword">as</span> $img_tag)</div><div class="line">    &#123;</div><div class="line">        preg_match_all(<span class="string">'/(src)=("[^"]*")/i'</span>,$img_tag, $img[$img_tag]);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> trim($img[$img_tag][<span class="number">2</span>][<span class="number">0</span>], <span class="string">'"'</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// create an array of the feed items</span></div><div class="line"><span class="keyword">include_once</span>(ABSPATH . WPINC . <span class="string">'/feed.php'</span>);</div><div class="line">$feed = fetch_feed(<span class="string">'http://dribbble.com/tammyhart/shots.rss'</span>);</div><div class="line">$feed = $feed-&gt;get_items(<span class="number">0</span>);</div><div class="line">$shots = <span class="keyword">array</span>();</div><div class="line"><span class="keyword">foreach</span> ( $feed <span class="keyword">as</span> $item ) :</div><div class="line">$shots[$item-&gt;get_date(<span class="string">'Ymd'</span>)] = <span class="keyword">array</span>(</div><div class="line">    <span class="string">'id'</span>    =&gt; $item-&gt;get_date(<span class="string">'Ymd'</span>),</div><div class="line">    <span class="string">'url'</span>   =&gt; esc_url( $item-&gt;get_permalink() ),</div><div class="line">    <span class="string">'date'</span>  =&gt; $item-&gt;get_date(<span class="string">'Y-m-d H:i:s'</span>),</div><div class="line">    <span class="string">'title'</span> =&gt; esc_html( $item-&gt;get_title() ),</div><div class="line">    <span class="string">'image'</span> =&gt; get_image($item-&gt;get_description())</div><div class="line">    );</div><div class="line"><span class="keyword">endforeach</span>;</div><div class="line"><span class="comment">// create posts from our array</span></div><div class="line"><span class="keyword">foreach</span> ($shots <span class="keyword">as</span> $shot) &#123;</div><div class="line">    $shot_post = <span class="keyword">array</span>(</div><div class="line">        <span class="string">'post_type'</span>     =&gt; <span class="string">'shot'</span>,</div><div class="line">        <span class="string">'post_status'</span>   =&gt; <span class="string">'publish'</span>,</div><div class="line">        <span class="string">'post_author'</span>   =&gt; <span class="number">1</span>,</div><div class="line">        <span class="string">'post_title'</span>    =&gt; $shot[<span class="string">'title'</span>],</div><div class="line">        <span class="string">'post_date'</span>     =&gt; $shot[<span class="string">'date'</span>]</div><div class="line">        );</div><div class="line">    $shot_post_meta = <span class="keyword">array</span>(</div><div class="line">        <span class="string">'link_url'</span>  =&gt; $shot[<span class="string">'url'</span>],</div><div class="line">        <span class="string">'image'</span>     =&gt; $shot[<span class="string">'image'</span>]</div><div class="line">        );</div><div class="line">    $posts = get_posts(</div><div class="line">        <span class="keyword">array</span>(</div><div class="line">            <span class="string">'post_type'</span> =&gt; <span class="string">'shot'</span>,</div><div class="line">            <span class="string">'meta_key'</span>  =&gt; <span class="string">'link_url'</span>,</div><div class="line">            <span class="string">'meta_value'</span>=&gt; $shot_post_meta[<span class="string">'link_url'</span>]</div><div class="line">            )</div><div class="line">        );</div><div class="line">    <span class="keyword">if</span> (count($posts) == <span class="number">0</span>) &#123;</div><div class="line">        $post_id = wp_insert_post($shot_post);</div><div class="line">        add_post_meta($post_id, <span class="string">'link_url'</span>, $shot_post_meta[<span class="string">'link_url'</span>], <span class="keyword">true</span>);</div><div class="line">        add_post_meta($post_id, <span class="string">'image'</span>, $shot_post_meta[<span class="string">'image'</span>], <span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>修改第66行的”<a href="http://dribbble.com/tammyhart/shots.rss“为准备抓取文章站点的RSS地址，还可以修改第80行后的”shot“为你所用主题自定义分类法名称，抓取的文章会自动添加到该分类法中。" target="_blank" rel="external">http://dribbble.com/tammyhart/shots.rss“为准备抓取文章站点的RSS地址，还可以修改第80行后的”shot“为你所用主题自定义分类法名称，抓取的文章会自动添加到该分类法中。</a><br>上述代码中并没有抓取文章内容的功能，仅供参考学习之用。</p>
 
             </div>
         </div>
@@ -277,7 +279,7 @@
         <div class="card">
             <div class="card-content">
                 <!-- Duoshuo Comment BEGIN -->
-                <div class="ds-thread" data-thread-key="2016/10/13/hello/" data-title="热烈庆祝江南品味正式上线！" data-url="http://blog.jiangnan.pw/2016/10/13/hello/"></div>
+                <div class="ds-thread" data-thread-key="2016/10/13/自动从其它站点RSS抓取文章/" data-title="自动从其它站点RSS抓取文章" data-url="http://blog.jiangnan.pw/2016/10/13/自动从其它站点RSS抓取文章/"></div>
 
                 <script type="text/javascript">
                     console.log(document.querySelector('.ds-thread'));

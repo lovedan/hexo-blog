@@ -72,6 +72,14 @@
                     </li>
                 
                     <li>
+                        <a class="menu-tags " href="/tags" >
+                            <i class="fa fa-tags "></i>
+                            
+                            标签
+                        </a>
+                    </li>
+                
+                    <li>
                         <a class="menu-reading " href="/reading" >
                             <i class="fa fa-book "></i>
                             
@@ -136,6 +144,14 @@
                     <i class="fa fa-bookmark "></i>
                     
                     分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-tags " href="/tags" >
+                    <i class="fa fa-tags "></i>
+                    
+                    标签
                 </a>
             </li>
         
@@ -217,6 +233,7 @@
 
     <main>
         <div class="container main-container">
+    
     <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
         <span class="breadcrumb">当前位置（分类目录）</span>
@@ -233,11 +250,13 @@
     </div>
 </nav>
 
+<!-- page.path 表示不含根路径的页面网址。还有数种方式可以匹配页面，在此不赘述。 -->
+
 <article>
     <div class="card">
         <div class="card-content">
+        
             
-
             <div class="article-title">
                 
     
@@ -262,7 +281,8 @@
     
 </div>
 
-
+        <!-- page.path 表示不含根路径的页面网址。还有数种方式可以匹配页面，在此不赘述。 -->
+        
             <div class="entry pink-link-context">
                 <p>如果需要在分类列表页面，显示当前分类文章中添加的所有标签，方便读者阅读自己喜欢的内容，下面的代码可以帮你实现这个功能。<br>获取WordPress当前分类文章所有标签<a id="more"></a></p>
 <p>首先，在主题functions.php模板文件中添加以下函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">function get_category_tags($args) &#123;</div><div class="line">    global $wpdb;</div><div class="line">    $tags = $wpdb-&gt;get_results</div><div class="line">    (&quot;</div><div class="line">        SELECT DISTINCT terms2.term_id as tag_id, terms2.name as tag_name</div><div class="line">        FROM</div><div class="line">            $wpdb-&gt;posts as p1</div><div class="line">            LEFT JOIN $wpdb-&gt;term_relationships as r1 ON p1.ID = r1.object_ID</div><div class="line">            LEFT JOIN $wpdb-&gt;term_taxonomy as t1 ON r1.term_taxonomy_id = t1.term_taxonomy_id</div><div class="line">            LEFT JOIN $wpdb-&gt;terms as terms1 ON t1.term_id = terms1.term_id,</div><div class="line">            $wpdb-&gt;posts as p2</div><div class="line">            LEFT JOIN $wpdb-&gt;term_relationships as r2 ON p2.ID = r2.object_ID</div><div class="line">            LEFT JOIN $wpdb-&gt;term_taxonomy as t2 ON r2.term_taxonomy_id = t2.term_taxonomy_id</div><div class="line">            LEFT JOIN $wpdb-&gt;terms as terms2 ON t2.term_id = terms2.term_id</div><div class="line">        WHERE</div><div class="line">            t1.taxonomy = &apos;category&apos; AND p1.post_status = &apos;publish&apos; AND terms1.term_id IN (&quot;.$args[&apos;categories&apos;].&quot;) AND</div><div class="line">            t2.taxonomy = &apos;post_tag&apos; AND p2.post_status = &apos;publish&apos;</div><div class="line">            AND p1.ID = p2.ID</div><div class="line">        ORDER by tag_name</div><div class="line">    &quot;);</div><div class="line">    $count = 0;</div><div class="line">    if($tags) &#123;</div><div class="line">        foreach ($tags as $tag) &#123;</div><div class="line">            $mytag[$count] = get_term_by(&apos;id&apos;, $tag-&gt;tag_id, &apos;post_tag&apos;);</div><div class="line">            $count++;</div><div class="line">        &#125;</div><div class="line">    &#125; else &#123;</div><div class="line">      $mytag = NULL;</div><div class="line">    &#125;</div><div class="line">    return $mytag;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -277,7 +297,6 @@
         </div>
     </div>
 </article>
-
 
 
 
@@ -445,7 +464,7 @@
 
             
             // 添加new标签
-            $('.menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            $('.menu-tags, .menu-about').append('<span class="new badge pink"></span>');
             
 
             // 搜索功能

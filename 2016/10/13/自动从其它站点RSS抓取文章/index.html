@@ -72,6 +72,14 @@
                     </li>
                 
                     <li>
+                        <a class="menu-tags " href="/tags" >
+                            <i class="fa fa-tags "></i>
+                            
+                            标签
+                        </a>
+                    </li>
+                
+                    <li>
                         <a class="menu-reading " href="/reading" >
                             <i class="fa fa-book "></i>
                             
@@ -136,6 +144,14 @@
                     <i class="fa fa-bookmark "></i>
                     
                     分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-tags " href="/tags" >
+                    <i class="fa fa-tags "></i>
+                    
+                    标签
                 </a>
             </li>
         
@@ -217,6 +233,7 @@
 
     <main>
         <div class="container main-container">
+    
     <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
         <span class="breadcrumb">当前位置（分类目录）</span>
@@ -233,11 +250,13 @@
     </div>
 </nav>
 
+<!-- page.path 表示不含根路径的页面网址。还有数种方式可以匹配页面，在此不赘述。 -->
+
 <article>
     <div class="card">
         <div class="card-content">
+        
             
-
             <div class="article-title">
                 
     
@@ -260,7 +279,8 @@
     
 </div>
 
-
+        <!-- page.path 表示不含根路径的页面网址。还有数种方式可以匹配页面，在此不赘述。 -->
+        
             <div class="entry pink-link-context">
                 <p>代码基本原理，新建一个自定义分类法“shot”，自动从另一个站点的RSS抓取文章，放在一个数组中，再用这个数组创建“shot”文章，并为文章添加自定义栏目image和link_url，方便调用缩略图和原文链接。<a id="more"></a></p>
 <p>将下面代码添加到当前主题functions.php中即可。</p>
@@ -271,7 +291,6 @@
         </div>
     </div>
 </article>
-
 
 
 
@@ -439,7 +458,7 @@
 
             
             // 添加new标签
-            $('.menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            $('.menu-tags, .menu-about').append('<span class="new badge pink"></span>');
             
 
             // 搜索功能

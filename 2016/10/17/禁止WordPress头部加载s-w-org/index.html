@@ -72,6 +72,14 @@
                     </li>
                 
                     <li>
+                        <a class="menu-tags " href="/tags" >
+                            <i class="fa fa-tags "></i>
+                            
+                            标签
+                        </a>
+                    </li>
+                
+                    <li>
                         <a class="menu-reading " href="/reading" >
                             <i class="fa fa-book "></i>
                             
@@ -136,6 +144,14 @@
                     <i class="fa fa-bookmark "></i>
                     
                     分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-tags " href="/tags" >
+                    <i class="fa fa-tags "></i>
+                    
+                    标签
                 </a>
             </li>
         
@@ -217,6 +233,7 @@
 
     <main>
         <div class="container main-container">
+    
     <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
         <span class="breadcrumb">当前位置（分类目录）</span>
@@ -233,11 +250,13 @@
     </div>
 </nav>
 
+<!-- page.path 表示不含根路径的页面网址。还有数种方式可以匹配页面，在此不赘述。 -->
+
 <article>
     <div class="card">
         <div class="card-content">
+        
             
-
             <div class="article-title">
                 
     
@@ -262,7 +281,8 @@
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#将下面的代码添加到主题functions-php模板中："><span class="section table-of-contents-text">将下面的代码添加到主题functions.php模板中：</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#方法一"><span class="section table-of-contents-text">方法一</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#方法二"><span class="section table-of-contents-text">方法二</span></a></li></ol></li></ol>
 </div>
 
-
+        <!-- page.path 表示不含根路径的页面网址。还有数种方式可以匹配页面，在此不赘述。 -->
+        
             <div class="entry pink-link-context">
                 <p><img src="https://dl.dropbox.com/s/5et1y0kkomei4wx/wordpress1.jpg?dl=0" alt="wordpress"><br><a id="more"></a></p>
 <p>升级到WordPress 4.6之后，有童鞋发现头部加载了一个:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&apos;dns-prefetch&apos; href=&apos;//s.w.org&apos;&gt;</div></pre></td></tr></table></figure></p>
@@ -276,7 +296,6 @@
         </div>
     </div>
 </article>
-
 
 
 
@@ -444,7 +463,7 @@
 
             
             // 添加new标签
-            $('.menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            $('.menu-tags, .menu-about').append('<span class="new badge pink"></span>');
             
 
             // 搜索功能

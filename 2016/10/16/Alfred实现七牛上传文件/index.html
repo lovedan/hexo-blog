@@ -72,6 +72,14 @@
                     </li>
                 
                     <li>
+                        <a class="menu-tags " href="/tags" >
+                            <i class="fa fa-tags "></i>
+                            
+                            标签
+                        </a>
+                    </li>
+                
+                    <li>
                         <a class="menu-reading " href="/reading" >
                             <i class="fa fa-book "></i>
                             
@@ -136,6 +144,14 @@
                     <i class="fa fa-bookmark "></i>
                     
                     分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-tags " href="/tags" >
+                    <i class="fa fa-tags "></i>
+                    
+                    标签
                 </a>
             </li>
         
@@ -217,6 +233,7 @@
 
     <main>
         <div class="container main-container">
+    
     <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
         <span class="breadcrumb">当前位置（分类目录）</span>
@@ -233,11 +250,13 @@
     </div>
 </nav>
 
+<!-- page.path 表示不含根路径的页面网址。还有数种方式可以匹配页面，在此不赘述。 -->
+
 <article>
     <div class="card">
         <div class="card-content">
+        
             
-
             <div class="article-title">
                 
     
@@ -262,7 +281,8 @@
     <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#alfred-workflow-qshell"><span class="section table-of-contents-text">alfred-workflow-qshell</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#功能-amp-特点"><span class="section table-of-contents-text">功能 & 特点</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#功能"><span class="section table-of-contents-text">功能</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#特点"><span class="section table-of-contents-text">特点</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#使用"><span class="section table-of-contents-text">使用</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#上传文件"><span class="section table-of-contents-text">上传文件</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#操作文件"><span class="section table-of-contents-text">操作文件</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#安装-amp-配置"><span class="section table-of-contents-text">安装 & 配置</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-qshell"><span class="section table-of-contents-text">1. qshell</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-Alfred"><span class="section table-of-contents-text">2. Alfred</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Todo"><span class="section table-of-contents-text">Todo</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#关于"><span class="section table-of-contents-text">关于</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#LICENSE"><span class="section table-of-contents-text">LICENSE</span></a></li></ol></li></ol>
 </div>
 
-
+        <!-- page.path 表示不含根路径的页面网址。还有数种方式可以匹配页面，在此不赘述。 -->
+        
             <div class="entry pink-link-context">
                 <h2 id="alfred-workflow-qshell"><a href="#alfred-workflow-qshell" class="headerlink" title="alfred-workflow-qshell"></a>alfred-workflow-qshell</h2><blockquote>
 <p>qshell 是基于七牛API参考手册实现的一个方便开发者测试和使用七牛API服务的命令行工具。<a id="more"></a></p>
@@ -317,7 +337,6 @@
         </div>
     </div>
 </article>
-
 
 
 
@@ -485,7 +504,7 @@
 
             
             // 添加new标签
-            $('.menu-reading, .menu-about').append('<span class="new badge pink"></span>');
+            $('.menu-tags, .menu-about').append('<span class="new badge pink"></span>');
             
 
             // 搜索功能

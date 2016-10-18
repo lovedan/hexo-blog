@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiangnan.pw/"/>
-  <updated>2016-10-17T05:52:37.387Z</updated>
+  <updated>2016-10-18T15:27:35.478Z</updated>
   <id>http://blog.jiangnan.pw/</id>
   
   <author>
@@ -20,20 +20,19 @@
     <link href="http://blog.jiangnan.pw/2016/10/17/%E7%A6%81%E6%AD%A2WordPress%E5%A4%B4%E9%83%A8%E5%8A%A0%E8%BD%BDs-w-org/"/>
     <id>http://blog.jiangnan.pw/2016/10/17/禁止WordPress头部加载s-w-org/</id>
     <published>2016-10-17T05:49:24.000Z</published>
-    <updated>2016-10-17T05:52:37.387Z</updated>
+    <updated>2016-10-18T15:27:35.478Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://dl.dropbox.com/s/5et1y0kkomei4wx/wordpress1.jpg?dl=0" alt="wordpress"><br><a id="more"></a></p>
+    <content type="html"><![CDATA[<!-- excerpt --><br><img src="https://dl.dropbox.com/s/5et1y0kkomei4wx/wordpress1.jpg?dl=0" alt="wordpress"></p>
 <p>升级到WordPress 4.6之后，有童鞋发现头部加载了一个:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&apos;dns-prefetch&apos; href=&apos;//s.w.org&apos;&gt;</div></pre></td></tr></table></figure></p>
 <p>WordPress在头部添加dns-prefetch，应该是为了从s.w.org预获取表情和头像，目的是提高网页加载速度 ，但s.w.org国内根本无法访问，什么预获取、什么提高速度，都是泡影，不仅没用处，反而可能会影响速度，那就禁止它。</p>
 <h2 id="将下面的代码添加到主题functions-php模板中："><a href="#将下面的代码添加到主题functions-php模板中：" class="headerlink" title="将下面的代码添加到主题functions.php模板中："></a>将下面的代码添加到主题functions.php模板中：</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">remove_action( &apos;wp_head&apos;, &apos;wp_resource_hints&apos;, 2 );</div></pre></td></tr></table></figure>
 <h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function remove_dns_prefetch( $hints, $relation_type ) &#123;</div><div class="line">if ( &apos;dns-prefetch&apos; === $relation_type ) &#123;</div><div class="line">return array_diff( wp_dependencies_unique_hosts(), $hints );</div><div class="line">&#125;</div><div class="line">return $hints;</div><div class="line">&#125;</div><div class="line">add_filter( &apos;wp_resource_hints&apos;, &apos;remove_dns_prefetch&apos;, 10, 2 );</div></pre></td></tr></table></figure>
 <p>方法二貌似兼容性更好些。<br>附带一个禁止加载表情代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// Remove emoji script</div><div class="line">remove_action( &apos;wp_head&apos;, &apos;print_emoji_detection_script&apos;, 7 );</div><div class="line">remove_action( &apos;wp_print_styles&apos;, &apos;print_emoji_styles&apos; );</div><div class="line">add_filter( &apos;emoji_svg_url&apos;, &apos;__return_false&apos; );</div></pre></td></tr></table></figure></p>
-<p>参考：<a href="https://wordpress.org/support/topic/remove-the-new-dns-prefetch-code/" target="_blank" rel="external">https://wordpress.org/support/topic/remove-the-new-dns-prefetch-code/</a></p>
-]]></content>
+<p>参考：<a href="https://wordpress.org/support/topic/remove-the-new-dns-prefetch-code/" target="_blank" rel="external">https://wordpress.org/support/topic/remove-the-new-dns-prefetch-code/</a></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://dl.dropbox.com/s/5et1y0kkomei4wx/wordpress1.jpg?dl=0&quot; alt=&quot;wordpress&quot;&gt;&lt;br&gt;
+      &lt;p&gt;WordPress在头部添加dns-prefetch，应该是为了从s.w.org预获取表情和头像，目的是提高网页加载速度 ，但s.w.org国内根本无法访问，什么预获取、什么提高速度，都是泡影，不仅没用处，反而可能会影响速度，那就禁止它。&lt;br&gt;
     
     </summary>
     
@@ -51,18 +50,16 @@
     <link href="http://blog.jiangnan.pw/2016/10/17/WordPress-%E5%90%8E%E5%8F%B0%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E6%8F%92%E4%BB%B6%EF%BC%9AFileBrowser/"/>
     <id>http://blog.jiangnan.pw/2016/10/17/WordPress-后台文件管理插件：FileBrowser/</id>
     <published>2016-10-17T05:05:54.000Z</published>
-    <updated>2016-10-17T05:25:40.899Z</updated>
+    <updated>2016-10-18T15:30:39.701Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0" alt="wordpress"></p>
-<p>WordPress 后台文件管理插件：FileBrowser <a id="more"></a></p>
+    <content type="html"><![CDATA[<!-- excerpt --><br><img src="https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0" alt="wordpress"></p>
+<p>WordPress 后台文件管理插件：FileBrowser</p>
 <p>wordpress本身没有像dedecms那样的在线文件管理功能，一般的文件管理都得通过FTP来实现，把文件下载下来，然后再编辑上传，很麻烦，而且有的空间根本不支持FTP，所以我们可以使用wordpress后台文件管理插件：FileBrowser。</p>
-<p><a href="https://wordpress.org/plugins/filebrowser/" target="_blank" rel="external">原版下载地址</a><br><a href="http://pan.baidu.com/share/link?shareid=374434&amp;uk=757737247" target="_blank" rel="external">汉化版下载地址</a></p>
-]]></content>
+<p><a href="https://wordpress.org/plugins/filebrowser/" target="_blank" rel="external">原版下载地址</a><br><a href="http://pan.baidu.com/share/link?shareid=374434&amp;uk=757737247" target="_blank" rel="external">汉化版下载地址</a></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0&quot; alt=&quot;wordpress&quot;&gt;&lt;/p&gt;
-&lt;p&gt;WordPress 后台文件管理插件：FileBrowser
+      &lt;p&gt;WordPress 后台文件管理插件：FileBrowser&lt;br&gt;
     
     </summary>
     
@@ -80,9 +77,9 @@
     <link href="http://blog.jiangnan.pw/2016/10/17/%E8%8E%B7%E5%8F%96WordPress%E5%BD%93%E5%89%8D%E5%88%86%E7%B1%BB%E6%96%87%E7%AB%A0%E6%89%80%E6%9C%89%E6%A0%87%E7%AD%BE/"/>
     <id>http://blog.jiangnan.pw/2016/10/17/获取WordPress当前分类文章所有标签/</id>
     <published>2016-10-17T04:25:16.000Z</published>
-    <updated>2016-10-17T05:24:44.935Z</updated>
+    <updated>2016-10-18T15:39:09.945Z</updated>
     
-    <content type="html"><![CDATA[<p>如果需要在分类列表页面，显示当前分类文章中添加的所有标签，方便读者阅读自己喜欢的内容，下面的代码可以帮你实现这个功能。<br>获取WordPress当前分类文章所有标签<a id="more"></a></p>
+    <content type="html"><![CDATA[<p>如果需要在分类列表页面，显示当前分类文章中添加的所有标签，方便读者阅读自己喜欢的内容，下面的代码可以帮你实现这个功能。<br>获取WordPress当前分类文章所有标签<br><a id="more"></a></p>
 <p>首先，在主题functions.php模板文件中添加以下函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">function get_category_tags($args) &#123;</div><div class="line">    global $wpdb;</div><div class="line">    $tags = $wpdb-&gt;get_results</div><div class="line">    (&quot;</div><div class="line">        SELECT DISTINCT terms2.term_id as tag_id, terms2.name as tag_name</div><div class="line">        FROM</div><div class="line">            $wpdb-&gt;posts as p1</div><div class="line">            LEFT JOIN $wpdb-&gt;term_relationships as r1 ON p1.ID = r1.object_ID</div><div class="line">            LEFT JOIN $wpdb-&gt;term_taxonomy as t1 ON r1.term_taxonomy_id = t1.term_taxonomy_id</div><div class="line">            LEFT JOIN $wpdb-&gt;terms as terms1 ON t1.term_id = terms1.term_id,</div><div class="line">            $wpdb-&gt;posts as p2</div><div class="line">            LEFT JOIN $wpdb-&gt;term_relationships as r2 ON p2.ID = r2.object_ID</div><div class="line">            LEFT JOIN $wpdb-&gt;term_taxonomy as t2 ON r2.term_taxonomy_id = t2.term_taxonomy_id</div><div class="line">            LEFT JOIN $wpdb-&gt;terms as terms2 ON t2.term_id = terms2.term_id</div><div class="line">        WHERE</div><div class="line">            t1.taxonomy = &apos;category&apos; AND p1.post_status = &apos;publish&apos; AND terms1.term_id IN (&quot;.$args[&apos;categories&apos;].&quot;) AND</div><div class="line">            t2.taxonomy = &apos;post_tag&apos; AND p2.post_status = &apos;publish&apos;</div><div class="line">            AND p1.ID = p2.ID</div><div class="line">        ORDER by tag_name</div><div class="line">    &quot;);</div><div class="line">    $count = 0;</div><div class="line">    if($tags) &#123;</div><div class="line">        foreach ($tags as $tag) &#123;</div><div class="line">            $mytag[$count] = get_term_by(&apos;id&apos;, $tag-&gt;tag_id, &apos;post_tag&apos;);</div><div class="line">            $count++;</div><div class="line">        &#125;</div><div class="line">    &#125; else &#123;</div><div class="line">      $mytag = NULL;</div><div class="line">    &#125;</div><div class="line">    return $mytag;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>编译：<a href="http://www.ludou.org/wordpress-get-tags-specific-to-category.html" target="_blank" rel="external">http://www.ludou.org/wordpress-get-tags-specific-to-category.html</a><br>源代码出自：<a href="https://wordpress.org/support/topic/get-tags-specific-to-category" target="_blank" rel="external">https://wordpress.org/support/topic/get-tags-specific-to-category</a></p>
 <p>其次，将下面调用输出代码，添加到主题archive.php模板适当位置：</p>
@@ -94,7 +91,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;如果需要在分类列表页面，显示当前分类文章中添加的所有标签，方便读者阅读自己喜欢的内容，下面的代码可以帮你实现这个功能。&lt;br&gt;获取WordPress当前分类文章所有标签
+      &lt;p&gt;如果需要在分类列表页面，显示当前分类文章中添加的所有标签，方便读者阅读自己喜欢的内容，下面的代码可以帮你实现这个功能。&lt;br&gt;获取WordPress当前分类文章所有标签&lt;br&gt;
     
     </summary>
     
@@ -108,42 +105,15 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://blog.jiangnan.pw/2016/10/16/hello-world/"/>
-    <id>http://blog.jiangnan.pw/2016/10/16/hello-world/</id>
-    <published>2016-10-16T01:20:54.608Z</published>
-    <updated>2016-10-16T01:20:54.608Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post "></a>Create a new post <a id="more"></a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post &quot;&gt;&lt;/a&gt;Create a new post
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Alfred实现七牛上传文件</title>
     <link href="http://blog.jiangnan.pw/2016/10/16/Alfred%E5%AE%9E%E7%8E%B0%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/"/>
     <id>http://blog.jiangnan.pw/2016/10/16/Alfred实现七牛上传文件/</id>
     <published>2016-10-16T00:48:27.000Z</published>
-    <updated>2016-10-16T01:21:23.095Z</updated>
+    <updated>2016-10-18T15:39:08.077Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="alfred-workflow-qshell"><a href="#alfred-workflow-qshell" class="headerlink" title="alfred-workflow-qshell"></a>alfred-workflow-qshell</h2><blockquote>
-<p>qshell 是基于七牛API参考手册实现的一个方便开发者测试和使用七牛API服务的命令行工具。<a id="more"></a></p>
+    <content type="html"><![CDATA[<!--excerpt--></p>
+<h2 id="alfred-workflow-qshell"><a href="#alfred-workflow-qshell" class="headerlink" title="alfred-workflow-qshell"></a>alfred-workflow-qshell</h2><blockquote>
+<p>qshell 是基于七牛API参考手册实现的一个方便开发者测试和使用七牛API服务的命令行工具。</p>
 </blockquote>
 <p>alfred-workflow-qshell 是一个配合七牛开发者工具 <a href="http://developer.qiniu.com/code/v6/tool/qshell.html" target="_blank" rel="external">qshell</a> 使用的 Alfred workflow。</p>
 <p>alfred-workflow-qshell 使用可视化流程后台执行 <code>qshell</code> 命令行，易用高效。</p>
@@ -189,13 +159,11 @@
 <li>[x] 预览功能</li>
 <li>[x] 下载功能</li>
 </ul>
-<h2 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h2><h3 id="LICENSE"><a href="#LICENSE" class="headerlink" title="LICENSE"></a>LICENSE</h3><p><a href="./LICENSE">MIT License</a></p>
-]]></content>
+<h2 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h2><h3 id="LICENSE"><a href="#LICENSE" class="headerlink" title="LICENSE"></a>LICENSE</h3><p><a href="./LICENSE">MIT License</a></p>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;alfred-workflow-qshell&quot;&gt;&lt;a href=&quot;#alfred-workflow-qshell&quot; class=&quot;headerlink&quot; title=&quot;alfred-workflow-qshell&quot;&gt;&lt;/a&gt;alfred-workflow-qshell&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;qshell 是基于七牛API参考手册实现的一个方便开发者测试和使用七牛API服务的命令行工具。
+      &lt;p&gt;alfred-workflow-qshell&lt;br&gt;qshell 是基于七牛API参考手册实现的一个方便开发者测试和使用七牛API服务的命令行工具。&lt;br&gt;
     
     </summary>
     

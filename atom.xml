@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiangnan.pw/"/>
-  <updated>2016-11-10T06:51:40.491Z</updated>
+  <updated>2016-11-14T15:34:57.799Z</updated>
   <id>http://blog.jiangnan.pw/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blog.jiangnan.pw/2016/11/10/%E5%B8%B8%E7%94%A8%E5%9B%BE%E5%BA%8A%E5%8F%8A%E8%87%AA%E5%BB%BA%E5%9B%BE%E5%BA%8A%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/"/>
     <id>http://blog.jiangnan.pw/2016/11/10/常用图床及自建图床方法汇总/</id>
     <published>2016-11-10T06:28:41.000Z</published>
-    <updated>2016-11-10T06:51:40.491Z</updated>
+    <updated>2016-11-14T15:34:57.799Z</updated>
     
     <content type="html"><![CDATA[<!--excerpt--></p>
 <h2 id="公共图床"><a href="#公共图床" class="headerlink" title="公共图床"></a>公共图床</h2><h3 id="微博图床"><a href="#微博图床" class="headerlink" title="微博图床"></a>微博图床</h3><p>国内图床的中流砥柱，速度非常快，服务也较为稳定，目前还支持了 HTTPS ，同时有大量的第三方工具方便使用，缺点是批量上传比较麻烦。</p>

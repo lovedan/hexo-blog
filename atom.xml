@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiangnan.pw/"/>
-  <updated>2016-11-16T06:44:53.535Z</updated>
+  <updated>2016-11-14T15:34:57.799Z</updated>
   <id>http://blog.jiangnan.pw/</id>
   
   <author>
@@ -14,25 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test</title>
-    <link href="http://blog.jiangnan.pw/2016/11/16/test/"/>
-    <id>http://blog.jiangnan.pw/2016/11/16/test/</id>
-    <published>2016-11-16T04:22:04.000Z</published>
-    <updated>2016-11-16T06:44:53.535Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a>http://d.139.sh/520904808</h1><p><img src="!--￼1--" alt=""><br><img src="http://d.139.sh/520904808/wordpress/uploads/2010/06/wemarry.jpg"><br><img src="https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0" alt="wordpress"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;http://d.139.sh/520904808&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;!--￼1--&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://d.139.
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>常用图床及自建图床方法汇总</title>

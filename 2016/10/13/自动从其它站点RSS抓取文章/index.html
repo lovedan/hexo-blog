@@ -1,709 +1,555 @@
-
 <!DOCTYPE html>
-<html lang="zh-cn">
-    
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="江南品味|记录编程道路上的点点滴滴!!!">
-    <title>自动从其它站点RSS抓取文章 - 江南品味|记录编程道路上的点点滴滴!!!</title>
-    <meta name="author" content="江南品味">
+    <meta charset="utf-8">
     
+    <title>自动从其它站点RSS抓取文章 | 江南品味|记录编程道路上的点点滴滴!!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    
-        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+        <meta name="keywords" content="WordPress" />
     
     <meta name="description" content="代码基本原理，新建一个自定义分类法“shot”，自动从另一个站点的RSS抓取文章，放在一个数组中，再用这个数组创建“shot”文章，并为文章添加自定义栏目image和link_url，方便调用缩略图和原文链接。">
-<meta property="og:type" content="blog">
+<meta property="og:type" content="article">
 <meta property="og:title" content="自动从其它站点RSS抓取文章">
 <meta property="og:url" content="http://blog.jiangnan.pw/2016/10/13/自动从其它站点RSS抓取文章/index.html">
 <meta property="og:site_name" content="江南品味|记录编程道路上的点点滴滴!!!">
 <meta property="og:description" content="代码基本原理，新建一个自定义分类法“shot”，自动从另一个站点的RSS抓取文章，放在一个数组中，再用这个数组创建“shot”文章，并为文章添加自定义栏目image和link_url，方便调用缩略图和原文链接。">
-<meta property="og:updated_time" content="2016-10-19T04:07:19.000Z">
+<meta property="og:image" content="https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0">
+<meta property="og:updated_time" content="2017-01-06T12:47:57.054Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自动从其它站点RSS抓取文章">
 <meta name="twitter:description" content="代码基本原理，新建一个自定义分类法“shot”，自动从另一个站点的RSS抓取文章，放在一个数组中，再用这个数组创建“shot”文章，并为文章添加自定义栏目image和link_url，方便调用缩略图和原文链接。">
+<meta name="twitter:image" content="https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0">
 <meta name="twitter:creator" content="@kyounan719">
+<link rel="publisher" href="103371492334107230000">
     
-        <link rel="publisher" href="https://plus.google.com/103371492334107230000"/>
+
     
+        <link rel="alternate" href="/atom.xml" title="江南品味|记录编程道路上的点点滴滴!!!" type="application/atom+xml" />
     
-        
+
     
-    
-        <meta property="og:image" content="http://jiangnan.qiniudn.com/images/IMG_0179.jpg"/>
-    
-    
-        <meta property="og:image" content="https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0"/>
-        <meta class="swiftype" name="image" data-type="enum" content="https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0" />
-    
-    
-    
-    <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-yrst5vo1nxaxbp2g3v9na2wg1lixlpr3ghbjdvskeixmu79deycecx3rh4bt.min.css">
-    <!--STYLES END-->
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
     
     
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+
 </head>
 
-    <body>
-        <div id="blog">
-            <!-- Define author's picture -->
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">记录编程道路上的点点滴滴!!!</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Mac/">Mac</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Mac/Mac技巧/">Mac技巧</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/WordPress/">WordPress</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/开源项目/">开源项目</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/开源项目/Laravel/">Laravel</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/开源项目/图床/">图床</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/生活记事/">生活记事</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
 
-
-    
-        
-            
-        
-    
-
-<header id="header" data-behavior="4">
-    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
-    <div class="header-title">
-        <a class="header-title-link" href="/ ">江南品味|记录编程道路上的点点滴滴!!!</a>
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
     </div>
-    
-        
-            <a  class="header-right-picture "
-                href="#about">
-        
-        
-            <img class="header-picture" src="http://jiangnan.qiniudn.com/images/IMG_0179.jpg" alt="作者的图片"/>
-        
-        </a>
-    
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
-
-            <!-- Define author's picture -->
-
-
-
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/WordPress/">WordPress</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-自动从其它站点RSS抓取文章" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        自动从其它站点RSS抓取文章
+        </h1>
     
 
-<nav id="sidebar" data-behavior="4">
-    <div class="sidebar-container">
+            </header>
         
-            <div class="sidebar-profile">
-                <a href="/#about">
-                    <img class="sidebar-profile-picture" src="http://jiangnan.qiniudn.com/images/IMG_0179.jpg" alt="作者的图片"/>
-                </a>
-                <h4 class="sidebar-profile-name">江南品味</h4>
+        
+            <div class="article-subtitle">
+                <a href="/2016/10/13/自动从其它站点RSS抓取文章/" class="article-date">
+    <time datetime="2016-10-13T08:17:14.000Z" itemprop="datePublished">2016-10-13</time>
+</a>
                 
-                    <h5 class="sidebar-profile-bio"><p>江湖中一个迷途小码农。</p>
-</h5>
-                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WordPress/">WordPress</a></li></ul>
+
             </div>
         
         
-            <ul class="sidebar-buttons">
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="/ "
-                            
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                        <span class="sidebar-button-desc">首页</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="/all-categories"
-                            
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                        <span class="sidebar-button-desc">分类</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="/all-tags"
-                            
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                        <span class="sidebar-button-desc">标签</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="/all-archives"
-                            
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                        <span class="sidebar-button-desc">归档</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link open-algolia-search"
-                             href="#search"
-                            
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                        <span class="sidebar-button-desc">搜索</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="#about"
-                            
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                        <span class="sidebar-button-desc">关于</span>
-                    </a>
-            </li>
-            
-        </ul>
-        
-            <ul class="sidebar-buttons">
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link " href="https://github.com/lovedan" target="_blank">
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
-                        <span class="sidebar-button-desc">GitHub</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link " href="https://twitter.com/kyounan719" target="_blank">
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
-                        <span class="sidebar-button-desc">Twitter</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link " href="https://facebook.com/kyounan719" target="_blank">
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
-                        <span class="sidebar-button-desc">Facebook</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link " href="http://jiangnan.pw" target="_blank">
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-cloud"></i>
-                        <span class="sidebar-button-desc">江南云</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link " href="http://www.weibo.com/ddmfnet" target="_blank">
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-weibo"></i>
-                        <span class="sidebar-button-desc">微博</span>
-                    </a>
-            </li>
-            
-        </ul>
-        
-            <ul class="sidebar-buttons">
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="/atom.xml"
-                            
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
-                        <span class="sidebar-button-desc">RSS</span>
-                    </a>
-            </li>
-            
-        </ul>
-        
-    </div>
-</nav>
-
-            
-            <div id="main" data-behavior="4"
-                 class="
-                        hasCoverMetaIn
-                        ">
-                
-<article class="post" itemscope itemType="http://schema.org/BlogPosting">
-    
-    
-        <div class="post-header main-content-wrap text-left">
-    
-        <h1 class="post-title" itemprop="headline">
-            自动从其它站点RSS抓取文章
-        </h1>
-    
-    <div class="post-meta">
-    <time itemprop="datePublished" datetime="2016-10-13T08:17:14+00:00">
-	
-		    10月 13, 2016
-    	
-    </time>
-    
-        <span>发布在 </span>
-        
-    <a class="category-link" href="/categories/WordPress/">WordPress</a>
-
-
-    
-</div>
-
-</div>
-    
-    <div class="post-content markdown" itemprop="articleBody">
-        <div class="main-content-wrap">
+        <div class="article-entry" itemprop="articleBody">
             <p>代码基本原理，新建一个自定义分类法“shot”，自动从另一个站点的RSS抓取文章，放在一个数组中，再用这个数组创建“shot”文章，并为文章添加自定义栏目image和link_url，方便调用缩略图和原文链接。<br><a id="more"></a></p>
 <p>将下面代码添加到当前主题functions.php中即可。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?</span></div><div class="line"><span class="comment">/* Post Type</span></div><div class="line">   ------------------------------------------------------------------------------------ */</div><div class="line">add_action( <span class="string">'init'</span>, <span class="string">'register_cpt_shot'</span> );</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">register_cpt_shot</span><span class="params">()</span> </span>&#123;</div><div class="line">    $labels = <span class="keyword">array</span>(</div><div class="line">        <span class="string">'name'</span> =&gt; _x( <span class="string">'Dribble Shots'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'singular_name'</span> =&gt; _x( <span class="string">'Dribbble Shot'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'add_new'</span> =&gt; _x( <span class="string">'Add New'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'add_new_item'</span> =&gt; _x( <span class="string">'Add New Dribbble Shot'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'edit_item'</span> =&gt; _x( <span class="string">'Edit Dribbble Shot'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'new_item'</span> =&gt; _x( <span class="string">'New Dribbble Shot'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'view_item'</span> =&gt; _x( <span class="string">'View Dribbble Shot'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'search_items'</span> =&gt; _x( <span class="string">'Search Dribble Shots'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'not_found'</span> =&gt; _x( <span class="string">'No dribble shots found'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'not_found_in_trash'</span> =&gt; _x( <span class="string">'No dribble shots found in Trash'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'parent_item_colon'</span> =&gt; _x( <span class="string">'Parent Dribbble Shot:'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'menu_name'</span> =&gt; _x( <span class="string">'Dribble Shots'</span>, <span class="string">'shot'</span> ),</div><div class="line">    );</div><div class="line">    $args = <span class="keyword">array</span>(</div><div class="line">        <span class="string">'labels'</span> =&gt; $labels,</div><div class="line">        <span class="string">'hierarchical'</span> =&gt; <span class="keyword">false</span>,</div><div class="line">        <span class="string">'supports'</span> =&gt; <span class="keyword">array</span>( <span class="string">'title'</span>, <span class="string">'custom-fields'</span> ),</div><div class="line">        <span class="string">'public'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'show_ui'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'show_in_menu'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'show_in_nav_menus'</span> =&gt; <span class="keyword">false</span>,</div><div class="line">        <span class="string">'publicly_queryable'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'exclude_from_search'</span> =&gt; <span class="keyword">false</span>,</div><div class="line">        <span class="string">'has_archive'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'query_var'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'can_export'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'rewrite'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'capability_type'</span> =&gt; <span class="string">'post'</span></div><div class="line">    );</div><div class="line">    register_post_type( <span class="string">'shot'</span>, $args );</div><div class="line">&#125;</div><div class="line"><span class="comment">/* Import Shots via RSS</span></div><div class="line">   ------------------------------------------------------------------------------------ */</div><div class="line"><span class="comment">// grab the image src from teh description</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_image</span><span class="params">($string)</span> </span>&#123;</div><div class="line">    preg_match_all(<span class="string">'/&lt;img[^&gt;]+&gt;/i'</span>,$string, $result);</div><div class="line">    $img = <span class="keyword">array</span>();</div><div class="line">    <span class="keyword">foreach</span>( $result[<span class="number">0</span>] <span class="keyword">as</span> $img_tag)</div><div class="line">    &#123;</div><div class="line">        preg_match_all(<span class="string">'/(src)=("[^"]*")/i'</span>,$img_tag, $img[$img_tag]);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> trim($img[$img_tag][<span class="number">2</span>][<span class="number">0</span>], <span class="string">'"'</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// create an array of the feed items</span></div><div class="line"><span class="keyword">include_once</span>(ABSPATH . WPINC . <span class="string">'/feed.php'</span>);</div><div class="line">$feed = fetch_feed(<span class="string">'http://dribbble.com/tammyhart/shots.rss'</span>);</div><div class="line">$feed = $feed-&gt;get_items(<span class="number">0</span>);</div><div class="line">$shots = <span class="keyword">array</span>();</div><div class="line"><span class="keyword">foreach</span> ( $feed <span class="keyword">as</span> $item ) :</div><div class="line">$shots[$item-&gt;get_date(<span class="string">'Ymd'</span>)] = <span class="keyword">array</span>(</div><div class="line">    <span class="string">'id'</span>    =&gt; $item-&gt;get_date(<span class="string">'Ymd'</span>),</div><div class="line">    <span class="string">'url'</span>   =&gt; esc_url( $item-&gt;get_permalink() ),</div><div class="line">    <span class="string">'date'</span>  =&gt; $item-&gt;get_date(<span class="string">'Y-m-d H:i:s'</span>),</div><div class="line">    <span class="string">'title'</span> =&gt; esc_html( $item-&gt;get_title() ),</div><div class="line">    <span class="string">'image'</span> =&gt; get_image($item-&gt;get_description())</div><div class="line">    );</div><div class="line"><span class="keyword">endforeach</span>;</div><div class="line"><span class="comment">// create posts from our array</span></div><div class="line"><span class="keyword">foreach</span> ($shots <span class="keyword">as</span> $shot) &#123;</div><div class="line">    $shot_post = <span class="keyword">array</span>(</div><div class="line">        <span class="string">'post_type'</span>     =&gt; <span class="string">'shot'</span>,</div><div class="line">        <span class="string">'post_status'</span>   =&gt; <span class="string">'publish'</span>,</div><div class="line">        <span class="string">'post_author'</span>   =&gt; <span class="number">1</span>,</div><div class="line">        <span class="string">'post_title'</span>    =&gt; $shot[<span class="string">'title'</span>],</div><div class="line">        <span class="string">'post_date'</span>     =&gt; $shot[<span class="string">'date'</span>]</div><div class="line">        );</div><div class="line">    $shot_post_meta = <span class="keyword">array</span>(</div><div class="line">        <span class="string">'link_url'</span>  =&gt; $shot[<span class="string">'url'</span>],</div><div class="line">        <span class="string">'image'</span>     =&gt; $shot[<span class="string">'image'</span>]</div><div class="line">        );</div><div class="line">    $posts = get_posts(</div><div class="line">        <span class="keyword">array</span>(</div><div class="line">            <span class="string">'post_type'</span> =&gt; <span class="string">'shot'</span>,</div><div class="line">            <span class="string">'meta_key'</span>  =&gt; <span class="string">'link_url'</span>,</div><div class="line">            <span class="string">'meta_value'</span>=&gt; $shot_post_meta[<span class="string">'link_url'</span>]</div><div class="line">            )</div><div class="line">        );</div><div class="line">    <span class="keyword">if</span> (count($posts) == <span class="number">0</span>) &#123;</div><div class="line">        $post_id = wp_insert_post($shot_post);</div><div class="line">        add_post_meta($post_id, <span class="string">'link_url'</span>, $shot_post_meta[<span class="string">'link_url'</span>], <span class="keyword">true</span>);</div><div class="line">        add_post_meta($post_id, <span class="string">'image'</span>, $shot_post_meta[<span class="string">'image'</span>], <span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 <p>修改第66行的”<a href="http://dribbble.com/tammyhart/shots.rss“为准备抓取文章站点的RSS地址，还可以修改第80行后的”shot“为你所用主题自定义分类法名称，抓取的文章会自动添加到该分类法中。" target="_blank" rel="external">http://dribbble.com/tammyhart/shots.rss“为准备抓取文章站点的RSS地址，还可以修改第80行后的”shot“为你所用主题自定义分类法名称，抓取的文章会自动添加到该分类法中。</a><br>上述代码中并没有抓取文章内容的功能，仅供参考学习之用。</p>
 
-            
         </div>
-    </div>
-    <div id="post-footer" class="post-footer main-content-wrap">
-        
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">标签</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/tags/WordPress/">WordPress</a>
+        <footer class="article-footer">
+            
 
-            </div>
-        
-        <div class="post-actions-wrap">
-    <nav>
-        <ul class="post-actions post-action-nav">
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/10/16/Alfred实现七牛上传文件/"  data-tooltip="Alfred实现七牛上传文件">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/10/13/热烈庆祝江南品味正式上线！/" data-tooltip="热烈庆祝江南品味正式上线！">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <ul class="post-actions post-action-share">
-        <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://blog.jiangnan.pw/2016/10/13/自动从其它站点RSS抓取文章/">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.jiangnan.pw/2016/10/13/自动从其它站点RSS抓取文章/">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://blog.jiangnan.pw/2016/10/13/自动从其它站点RSS抓取文章/">
-                <i class="fa fa-twitter"></i>
-            </a>
-        </li>
-        
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#ds-thread">
-                    <i class="fa fa-comment-o"></i>
-                </a>
-            </li>
-        
-        <li class="post-action">
-            
-                <a class="post-action-btn btn btn--default" href="#">
-            
-                <i class="fa fa-list"></i>
-            </a>
-        </li>
-    </ul>
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
 </div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
 
 
-        
-            
-                <div id="ds-thread" class="ds-thread" data-thread-key="2016/10/13/自动从其它站点RSS抓取文章/"
-     data-title="自动从其它站点RSS抓取文章" data-url="http://blog.jiangnan.pw/2016/10/13/自动从其它站点RSS抓取文章/">
-</div>
 
-            
-        
+        </footer>
     </div>
 </article>
 
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="2016/10/13/自动从其它站点RSS抓取文章/" data-title="自动从其它站点RSS抓取文章" data-url="http://blog.jiangnan.pw/2016/10/13/自动从其它站点RSS抓取文章/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    
+    </section>
 
 
-                <footer id="footer" class="main-content-wrap">
-    <span class="copyrights">
-        Copyrights &copy; 2016 江南品味. All Rights Reserved.
-    </span>
-</footer>
-
-            </div>
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-                    <div class="post-actions-wrap">
-    <nav>
-        <ul class="post-actions post-action-nav">
-            <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/10/16/Alfred实现七牛上传文件/"  data-tooltip="Alfred实现七牛上传文件">
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/kyounan719" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
                 
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
+            
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/10/13/热烈庆祝江南品味正式上线！/" data-tooltip="热烈庆祝江南品味正式上线！">
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://facebook.com/kyounan719" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lovedan" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://www.weibo.com/ddmfnet" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/atom.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
         </ul>
-    </nav>
-    <ul class="post-actions post-action-share">
-        <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://blog.jiangnan.pw/2016/10/13/自动从其它站点RSS抓取文章/">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.jiangnan.pw/2016/10/13/自动从其它站点RSS抓取文章/">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://blog.jiangnan.pw/2016/10/13/自动从其它站点RSS抓取文章/">
-                <i class="fa fa-twitter"></i>
-            </a>
-        </li>
-        
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#ds-thread">
-                    <i class="fa fa-comment-o"></i>
-                </a>
-            </li>
-        
-        <li class="post-action">
-            
-                <a class="post-action-btn btn btn--default" href="#">
-            
-                <i class="fa fa-list"></i>
-            </a>
-        </li>
-    </ul>
-</div>
-
-
-                </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
-    <ul class="share-options">
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://blog.jiangnan.pw/2016/10/13/自动从其它站点RSS抓取文章/">
-                <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.jiangnan.pw/2016/10/13/自动从其它站点RSS抓取文章/">
-                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://blog.jiangnan.pw/2016/10/13/自动从其它站点RSS抓取文章/">
-                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
-            </a>
-        </li>
-    </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
-
-            
-        </div>
-        
-
-
-    
-        
-    
-
-<div id="about">
-    <div id="about-card">
-        <div id="about-btn-close">
-            <i class="fa fa-remove"></i>
-        </div>
-        
-            <img id="about-card-picture" src="http://jiangnan.qiniudn.com/images/IMG_0179.jpg" alt="作者的图片"/>
-        
-            <h4 id="about-card-name">江南品味</h4>
-        
-            <div id="about-card-bio"><p>江湖中一个迷途小码农。</p>
-</div>
-        
-        
-            <div id="about-card-job">
-                <i class="fa fa-briefcase"></i>
-                <br/>
-                <p>小码农</p>
-
-            </div>
-        
-        
-            <div id="about-card-location">
-                <i class="fa fa-map-marker"></i>
-                <br/>
-                日本-神奈川
-            </div>
-        
     </div>
-</div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/10/16/Alfred实现七牛上传文件/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            Alfred实现七牛上传文件
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/10/13/热烈庆祝江南品味正式上线！/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">热烈庆祝江南品味正式上线！</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
 
-        <div id="algolia-search-modal" class="modal-container">
-    <div class="modal">
-        <div class="modal-header">
-            <span class="close-button"><i class="fa fa-close"></i></span>
-            <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
-                <span class="searchby-algolia-text text-color-light text-small">by</span>
-                <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
-            </a>
-            <i class="search-icon fa fa-search"></i>
-            <form id="algolia-search-form">
-                <input type="text" id="algolia-search-input" name="search"
-                    class="form-control input--large search-input" placeholder="Search "
-                    autofocus="autofocus"/>
-            </form>
-        </div>
-        <div class="modal-body">
-            <div class="no-result text-color-light text-center">没有找到文章</div>
-            <div class="results">
+    
+    <div class="widgets-container">
+        
+            
                 
-                <div class="media">
-                    
-                    <div class="media-left">
-                        <a class="link-unstyled" href="http://blog.jiangnan.pw/2016/10/13/热烈庆祝江南品味正式上线！/">
-                            <img class="media-image" src="https://dl.dropboxusercontent.com/s/17qw97zp0v3loo9/city.jpg?dl=0" width="90" height="90"/>
-                        </a>
-                    </div>
-                    
-                    <div class="media-body">
-                        <a class="link-unstyled" href="http://blog.jiangnan.pw/2016/10/13/热烈庆祝江南品味正式上线！/">
-                            <h3 class="media-heading">热烈庆祝江南品味正式上线！</h3>
-                        </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    2016年10月13日
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"><p>最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。<br></div>
-                    </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
                 
-                <div class="media">
-                    
-                    <div class="media-left">
-                        <a class="link-unstyled" href="http://blog.jiangnan.pw/2016/10/13/自动从其它站点RSS抓取文章/">
-                            <img class="media-image" src="https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0" width="90" height="90"/>
-                        </a>
-                    </div>
-                    
-                    <div class="media-body">
-                        <a class="link-unstyled" href="http://blog.jiangnan.pw/2016/10/13/自动从其它站点RSS抓取文章/">
-                            <h3 class="media-heading">自动从其它站点RSS抓取文章</h3>
-                        </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    2016年10月13日
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"><p>代码基本原理，新建一个自定义分类法“shot”，自动从另一个站点的RSS抓取文章，放在一个数组中，再用这个数组创建“shot”文章，并为文章添加自定义栏目image和link_url，方便调用缩略图和原文链接。<br></div>
-                    </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/01/Laravel5导入自定义函数和类的方法/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://dl.dropboxusercontent.com/s/onmlew6rmnd33ct/SuRyW14362693901Laravel-5%5B1%5D.png?dl=0)" alt="Laravel5导入自定义函数和类的方法" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/开源项目/">开源项目</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/开源项目/Laravel/">Laravel</a></p>
+                            <p class="item-title"><a href="/2016/12/01/Laravel5导入自定义函数和类的方法/" class="title">Laravel5导入自定义函数和类的方法</a></p>
+                            <p class="item-date"><time datetime="2016-12-01T07:19:55.000Z" itemprop="datePublished">2016-12-01</time></p>
+                        </div>
+                    </li>
                 
-                <div class="media">
-                    
-                    <div class="media-left">
-                        <a class="link-unstyled" href="http://blog.jiangnan.pw/2016/10/16/Alfred实现七牛上传文件/">
-                            <img class="media-image" src="https://dl.dropboxusercontent.com/s/s9qruvd9p3zarnv/alfred.jpg?dl=0" width="90" height="90"/>
-                        </a>
-                    </div>
-                    
-                    <div class="media-body">
-                        <a class="link-unstyled" href="http://blog.jiangnan.pw/2016/10/16/Alfred实现七牛上传文件/">
-                            <h3 class="media-heading">Alfred实现七牛上传文件</h3>
-                        </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    2016年10月16日
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"><p>alfred-workflow-qshell<br>qshell 是基于七牛API参考手册实现的一个方便开发者测试和使用七牛API服务的命令行工具。<br></div>
-                    </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/10/常用图床及自建图床方法汇总/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://dl.dropboxusercontent.com/s/n4etwp77lbv3vrw/Octocat.png?dl=0)" alt="常用图床及自建图床方法汇总" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/开源项目/">开源项目</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/开源项目/图床/">图床</a></p>
+                            <p class="item-title"><a href="/2016/11/10/常用图床及自建图床方法汇总/" class="title">常用图床及自建图床方法汇总</a></p>
+                            <p class="item-date"><time datetime="2016-11-10T06:28:41.000Z" itemprop="datePublished">2016-11-10</time></p>
+                        </div>
+                    </li>
                 
-                <div class="media">
-                    
-                    <div class="media-left">
-                        <a class="link-unstyled" href="http://blog.jiangnan.pw/2016/10/17/获取WordPress当前分类文章所有标签/">
-                            <img class="media-image" src="https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0" width="90" height="90"/>
-                        </a>
-                    </div>
-                    
-                    <div class="media-body">
-                        <a class="link-unstyled" href="http://blog.jiangnan.pw/2016/10/17/获取WordPress当前分类文章所有标签/">
-                            <h3 class="media-heading">获取WordPress当前分类文章所有标签</h3>
-                        </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    2016年10月17日
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"><p>如果需要在分类列表页面，显示当前分类文章中添加的所有标签，方便读者阅读自己喜欢的内容，下面的代码可以帮你实现这个功能。<br>获取WordPress当前分类文章所有标签<br></div>
-                    </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/11/08/MacOSX10-11开启任意显示器HiDPI方法/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.imore.com/sites/imore.com/files/styles/xlarge/public/field/image/2013/11/mac_desktops_apple_art.jpg?itok=LR2345AE)" alt="MacOSX10.11开启任意显示器HiDPI方法" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Mac/">Mac</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Mac/Mac技巧/">Mac技巧</a></p>
+                            <p class="item-title"><a href="/2016/11/08/MacOSX10-11开启任意显示器HiDPI方法/" class="title">MacOSX10.11开启任意显示器HiDPI方法</a></p>
+                            <p class="item-date"><time datetime="2016-11-08T05:27:16.000Z" itemprop="datePublished">2016-11-08</time></p>
+                        </div>
+                    </li>
                 
-                <div class="media">
-                    
-                    <div class="media-left">
-                        <a class="link-unstyled" href="http://blog.jiangnan.pw/2016/10/17/WordPress-后台文件管理插件：FileBrowser/">
-                            <img class="media-image" src="https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0" width="90" height="90"/>
-                        </a>
-                    </div>
-                    
-                    <div class="media-body">
-                        <a class="link-unstyled" href="http://blog.jiangnan.pw/2016/10/17/WordPress-后台文件管理插件：FileBrowser/">
-                            <h3 class="media-heading">WordPress 后台文件管理插件：FileBrowser</h3>
-                        </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    2016年10月17日
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"><p>WordPress 后台文件管理插件：FileBrowser<br></div>
-                    </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/17/禁止WordPress头部加载s-w-org/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://dl.dropboxusercontent.com/s/hcltw9nbhapevn2/city-750.jpg?dl=0)" alt="禁止WordPress头部加载s.w.org" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/WordPress/">WordPress</a></p>
+                            <p class="item-title"><a href="/2016/10/17/禁止WordPress头部加载s-w-org/" class="title">禁止WordPress头部加载s.w.org</a></p>
+                            <p class="item-date"><time datetime="2016-10-17T05:49:24.000Z" itemprop="datePublished">2016-10-17</time></p>
+                        </div>
+                    </li>
                 
-                <div class="media">
-                    
-                    <div class="media-left">
-                        <a class="link-unstyled" href="http://blog.jiangnan.pw/2016/10/17/禁止WordPress头部加载s-w-org/">
-                            <img class="media-image" src="https://dl.dropboxusercontent.com/s/hcltw9nbhapevn2/city-750.jpg?dl=0" width="90" height="90"/>
-                        </a>
-                    </div>
-                    
-                    <div class="media-body">
-                        <a class="link-unstyled" href="http://blog.jiangnan.pw/2016/10/17/禁止WordPress头部加载s-w-org/">
-                            <h3 class="media-heading">禁止WordPress头部加载s.w.org</h3>
-                        </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    2016年10月17日
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"><p>WordPress在头部添加dns-prefetch，应该是为了从s.w.org预获取表情和头像，目的是提高网页加载速度 ，但s.w.org国内根本无法访问，什么预获取、什么提高速度，都是泡影，不仅没用处，反而可能会影响速度，那就禁止它。<br></div>
-                    </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/10/17/WordPress-后台文件管理插件：FileBrowser/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0)" alt="WordPress 后台文件管理插件：FileBrowser" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/WordPress/">WordPress</a></p>
+                            <p class="item-title"><a href="/2016/10/17/WordPress-后台文件管理插件：FileBrowser/" class="title">WordPress 后台文件管理插件：FileBrowser</a></p>
+                            <p class="item-date"><time datetime="2016-10-17T05:05:54.000Z" itemprop="datePublished">2016-10-17</time></p>
+                        </div>
+                    </li>
                 
-            </div>
-        </div>
-        <div class="modal-footer">
-            <p class="results-count text-medium"
-                data-message-zero="没有找到文章"
-                data-message-one="找到 1 篇文章"
-                data-message-other="找到 {n} 篇文章">
-                找到 9 篇文章
-            </p>
+            </ul>
         </div>
     </div>
-</div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/">Mac</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mac/Mac技巧/">Mac技巧</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WordPress/">WordPress</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开源项目/">开源项目</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/开源项目/Laravel/">Laravel</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开源项目/图床/">图床</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活记事/">生活记事</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Alfred/" style="font-size: 10px;">Alfred</a> <a href="/tags/Mac技巧/" style="font-size: 15px;">Mac技巧</a> <a href="/tags/WordPress/" style="font-size: 20px;">WordPress</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/plugins/" style="font-size: 10px;">plugins</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/开源/" style="font-size: 10px;">开源</a> <a href="/tags/技术分享/" style="font-size: 15px;">技术分享</a> <a href="/tags/生活记事/" style="font-size: 10px;">生活记事</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://www.jiangnan.pw">江南品味</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
         
-<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
-        <!--SCRIPTS-->
-<script src="/assets/js/script-rt08quwts7iav5x0cfd2ym0gb5qkd1lvrsmwrakxtkhefmaaes4ywkmnjnwf.min.js"></script>
-<!--SCRIPTS END-->
-
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 江南品味</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
     
-        <script type="text/javascript">
-            var duoshuoQuery = {short_name:'lovedan'};
-            (function() {
-                var ds = document.createElement('script');
-                ds.type = 'text/javascript';ds.async = true;
-                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-                ds.charset = 'UTF-8';
-                (document.getElementsByTagName('head')[0]
-                || document.getElementsByTagName('body')[0]).appendChild(ds);
-            })();
-        </script>
-    
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js"></script>
-    <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-    <script>
-        var algoliaClient = algoliasearch('7VU1JJ4HH9', 'e6730948bb5dfb177504d26b12210c5f');
-        var algoliaIndex = algoliaClient.initIndex('tranquilpeak');
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'lovedan'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
     </script>
 
-    </body>
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
 </html>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiangnan.pw/"/>
-  <updated>2016-12-01T08:49:16.724Z</updated>
+  <updated>2017-01-06T12:47:06.014Z</updated>
   <id>http://blog.jiangnan.pw/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://blog.jiangnan.pw/2016/12/01/Laravel5%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E5%92%8C%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>http://blog.jiangnan.pw/2016/12/01/Laravel5导入自定义函数和类的方法/</id>
     <published>2016-12-01T07:19:55.000Z</published>
-    <updated>2016-12-01T08:49:16.724Z</updated>
+    <updated>2017-01-06T12:47:06.014Z</updated>
     
-    <content type="html"><![CDATA[<!--excerpt--></p>
+    <content type="html"><![CDATA[<p>我们的应用里经常会有一些全局都可能会用的函数，我们应该怎么放置它会比较好呢？以下有一种推荐的方式：<br><!--excerpt--></p>
 <h2 id="导入自定义函数"><a href="#导入自定义函数" class="headerlink" title="导入自定义函数"></a>导入自定义函数</h2><p>我们的应用里经常会有一些全局都可能会用的函数，我们应该怎么放置它会比较好呢？以下有一种推荐的方式：</p>
 <ol>
 <li>创建文件 <code>app/helpers.php</code></li>
@@ -45,7 +45,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;我们的应用里经常会有一些全局都可能会用的函数，我们应该怎么放置它会比较好呢？以下有一种推荐的方式：&lt;br&gt;
+      &lt;p&gt;我们的应用里经常会有一些全局都可能会用的函数，我们应该怎么放置它会比较好呢？以下有一种推荐的方式：&lt;br&gt;&lt;!--excerpt--&gt;&lt;/p&gt;
+&lt;h2 id=&quot;导入自定义函数&quot;&gt;&lt;a href=&quot;#导入自定义函数&quot; class=&quot;headerlink&quot; title=&quot;导入自
     
     </summary>
     
@@ -63,9 +64,9 @@
     <link href="http://blog.jiangnan.pw/2016/11/10/%E5%B8%B8%E7%94%A8%E5%9B%BE%E5%BA%8A%E5%8F%8A%E8%87%AA%E5%BB%BA%E5%9B%BE%E5%BA%8A%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/"/>
     <id>http://blog.jiangnan.pw/2016/11/10/常用图床及自建图床方法汇总/</id>
     <published>2016-11-10T06:28:41.000Z</published>
-    <updated>2016-11-14T15:34:57.000Z</updated>
+    <updated>2017-01-06T12:47:25.122Z</updated>
     
-    <content type="html"><![CDATA[<!--excerpt--></p>
+    <content type="html"><![CDATA[<p>国内图床的中流砥柱，速度非常快，服务也较为稳定，目前还支持了 HTTPS ，同时有大量的第三方工具……<br><!--excerpt--></p>
 <h2 id="公共图床"><a href="#公共图床" class="headerlink" title="公共图床"></a>公共图床</h2><h3 id="微博图床"><a href="#微博图床" class="headerlink" title="微博图床"></a>微博图床</h3><p>国内图床的中流砥柱，速度非常快，服务也较为稳定，目前还支持了 HTTPS ，同时有大量的第三方工具方便使用，缺点是批量上传比较麻烦。</p>
 <ul>
 <li><a href="http://photo.weibo.com/photos/upload" target="_blank" rel="external">官方上传地址</a></li>
@@ -110,11 +111,13 @@
 <p>官网：<a href="https://yun.aoaoao.me/" target="_blank" rel="external">https://yun.aoaoao.me/</a></p>
 <p>Github：<a href="https://github.com/HFO4/shudong-share" target="_blank" rel="external">https://github.com/HFO4/shudong-share</a></p>
 <h3 id="Lychee"><a href="#Lychee" class="headerlink" title="Lychee"></a>Lychee</h3><p>一款开源的图片管理系统，实际上也可以用作图床，一直在更新，自身功能很强大，还支持二次开发插件及扩展来丰富功能，此外这套系统也支持 Docker 。</p>
-<p>GIthub：<a href="https://github.com/electerious/Lychee" target="_blank" rel="external">https://github.com/electerious/Lychee</a></p>]]></content>
+<p>GIthub：<a href="https://github.com/electerious/Lychee" target="_blank" rel="external">https://github.com/electerious/Lychee</a></p>
+]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;国内图床的中流砥柱，速度非常快，服务也较为稳定，目前还支持了 HTTPS ，同时有大量的第三方工具……&lt;br&gt;
+      &lt;p&gt;国内图床的中流砥柱，速度非常快，服务也较为稳定，目前还支持了 HTTPS ，同时有大量的第三方工具……&lt;br&gt;&lt;!--excerpt--&gt;&lt;/p&gt;
+&lt;h2 id=&quot;公共图床&quot;&gt;&lt;a href=&quot;#公共图床&quot; class=&quot;headerlink&quot; title=&quot;公共图床&quot;&gt;&lt;
     
     </summary>
     
@@ -134,9 +137,9 @@
     <link href="http://blog.jiangnan.pw/2016/11/08/MacOSX10-11%E5%BC%80%E5%90%AF%E4%BB%BB%E6%84%8F%E6%98%BE%E7%A4%BA%E5%99%A8HiDPI%E6%96%B9%E6%B3%95/"/>
     <id>http://blog.jiangnan.pw/2016/11/08/MacOSX10-11开启任意显示器HiDPI方法/</id>
     <published>2016-11-08T05:27:16.000Z</published>
-    <updated>2016-11-08T05:36:26.000Z</updated>
+    <updated>2017-01-06T12:47:13.410Z</updated>
     
-    <content type="html"><![CDATA[<!--excerpt--></p>
+    <content type="html"><![CDATA[<p>MacOSX10.11开启任意显示器HiDPI方法<br><!--excerpt--></p>
 <blockquote>
 <p>研究了下，其实没怎么变化。Overrides文件夹目录位置变了而已。<br>本人开启HiDPI现在更主要是为了截图截出2x的效果，实际调整分辨率的是另一个小显示器~已经很久用不到HiDPI的真实意义啦</p>
 </blockquote>
@@ -157,11 +160,14 @@
 <p>用附件中的PlistPro编辑这个DisplayProductID-YYYY,计算并填写你想要的分辨率.<br>最后,把这个 DisplayVendorID-XXXX 文件夹,</p>
 <p>拷贝到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/System/Library/Displays/Contents/Resources/Overrides/</div></pre></td></tr></table></figure></p>
 <p>(10.10及以下是 /System/Library/Displays/Overrides/ )<br>重启系统就可以看到了.可以安装RDM切换,在任务栏,方便快捷.<br>各位可以根据自己的屏幕规格来添加.</p>
-<p>范例中，设定的分辨率是<br>2560x1600 2x (16:10)<br>2560x1080 2x (21:9)<br>1920x1080 2x (16:9)<br>1680x1050 2x (16:10)<br>1600x900 2x(16:9)<br>1440x900 2x(16:10)<br>2100x900 2x(21:9)</p>]]></content>
+<p>范例中，设定的分辨率是<br>2560x1600 2x (16:10)<br>2560x1080 2x (21:9)<br>1920x1080 2x (16:9)<br>1680x1050 2x (16:10)<br>1600x900 2x(16:9)<br>1440x900 2x(16:10)<br>2100x900 2x(21:9)</p>
+]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;MacOSX10.11开启任意显示器HiDPI方法&lt;br&gt;
+      &lt;p&gt;MacOSX10.11开启任意显示器HiDPI方法&lt;br&gt;&lt;!--excerpt--&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;研究了下，其实没怎么变化。Overrides文件夹目录位置变了而已。&lt;br&gt;本人开启HiDPI现在更主要是为了截图截出2x的效果，实际调整分辨率的
     
     </summary>
     
@@ -179,19 +185,20 @@
     <link href="http://blog.jiangnan.pw/2016/10/17/%E7%A6%81%E6%AD%A2WordPress%E5%A4%B4%E9%83%A8%E5%8A%A0%E8%BD%BDs-w-org/"/>
     <id>http://blog.jiangnan.pw/2016/10/17/禁止WordPress头部加载s-w-org/</id>
     <published>2016-10-17T05:49:24.000Z</published>
-    <updated>2016-10-18T15:27:35.000Z</updated>
+    <updated>2017-01-06T12:47:47.546Z</updated>
     
-    <content type="html"><![CDATA[<!-- excerpt --><br><img src="https://dl.dropbox.com/s/5et1y0kkomei4wx/wordpress1.jpg?dl=0" alt="wordpress"></p>
+    <content type="html"><![CDATA[<p>WordPress在头部添加dns-prefetch，应该是为了从s.w.org预获取表情和头像，目的是提高网页加载速度 ，但s.w.org国内根本无法访问，什么预获取、什么提高速度，都是泡影，不仅没用处，反而可能会影响速度，那就禁止它。<br><!-- excerpt --><br><img src="https://dl.dropbox.com/s/5et1y0kkomei4wx/wordpress1.jpg?dl=0" alt="wordpress"></p>
 <p>升级到WordPress 4.6之后，有童鞋发现头部加载了一个:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&apos;dns-prefetch&apos; href=&apos;//s.w.org&apos;&gt;</div></pre></td></tr></table></figure></p>
 <p>WordPress在头部添加dns-prefetch，应该是为了从s.w.org预获取表情和头像，目的是提高网页加载速度 ，但s.w.org国内根本无法访问，什么预获取、什么提高速度，都是泡影，不仅没用处，反而可能会影响速度，那就禁止它。</p>
 <h2 id="将下面的代码添加到主题functions-php模板中："><a href="#将下面的代码添加到主题functions-php模板中：" class="headerlink" title="将下面的代码添加到主题functions.php模板中："></a>将下面的代码添加到主题functions.php模板中：</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">remove_action( &apos;wp_head&apos;, &apos;wp_resource_hints&apos;, 2 );</div></pre></td></tr></table></figure>
 <h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function remove_dns_prefetch( $hints, $relation_type ) &#123;</div><div class="line">if ( &apos;dns-prefetch&apos; === $relation_type ) &#123;</div><div class="line">return array_diff( wp_dependencies_unique_hosts(), $hints );</div><div class="line">&#125;</div><div class="line">return $hints;</div><div class="line">&#125;</div><div class="line">add_filter( &apos;wp_resource_hints&apos;, &apos;remove_dns_prefetch&apos;, 10, 2 );</div></pre></td></tr></table></figure>
 <p>方法二貌似兼容性更好些。<br>附带一个禁止加载表情代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// Remove emoji script</div><div class="line">remove_action( &apos;wp_head&apos;, &apos;print_emoji_detection_script&apos;, 7 );</div><div class="line">remove_action( &apos;wp_print_styles&apos;, &apos;print_emoji_styles&apos; );</div><div class="line">add_filter( &apos;emoji_svg_url&apos;, &apos;__return_false&apos; );</div></pre></td></tr></table></figure></p>
-<p>参考：<a href="https://wordpress.org/support/topic/remove-the-new-dns-prefetch-code/" target="_blank" rel="external">https://wordpress.org/support/topic/remove-the-new-dns-prefetch-code/</a></p>]]></content>
+<p>参考：<a href="https://wordpress.org/support/topic/remove-the-new-dns-prefetch-code/" target="_blank" rel="external">https://wordpress.org/support/topic/remove-the-new-dns-prefetch-code/</a></p>
+]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;WordPress在头部添加dns-prefetch，应该是为了从s.w.org预获取表情和头像，目的是提高网页加载速度 ，但s.w.org国内根本无法访问，什么预获取、什么提高速度，都是泡影，不仅没用处，反而可能会影响速度，那就禁止它。&lt;br&gt;
+      &lt;p&gt;WordPress在头部添加dns-prefetch，应该是为了从s.w.org预获取表情和头像，目的是提高网页加载速度 ，但s.w.org国内根本无法访问，什么预获取、什么提高速度，都是泡影，不仅没用处，反而可能会影响速度，那就禁止它。&lt;br&gt;&lt;!-- excerpt -
     
     </summary>
     
@@ -209,16 +216,17 @@
     <link href="http://blog.jiangnan.pw/2016/10/17/WordPress-%E5%90%8E%E5%8F%B0%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E6%8F%92%E4%BB%B6%EF%BC%9AFileBrowser/"/>
     <id>http://blog.jiangnan.pw/2016/10/17/WordPress-后台文件管理插件：FileBrowser/</id>
     <published>2016-10-17T05:05:54.000Z</published>
-    <updated>2016-10-18T15:30:39.000Z</updated>
+    <updated>2017-01-06T12:47:27.470Z</updated>
     
-    <content type="html"><![CDATA[<!-- excerpt --><br><img src="https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0" alt="wordpress"></p>
+    <content type="html"><![CDATA[<p>WordPress 后台文件管理插件：FileBrowser<br><!-- excerpt --><br><img src="https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0" alt="wordpress"></p>
 <p>WordPress 后台文件管理插件：FileBrowser</p>
 <p>wordpress本身没有像dedecms那样的在线文件管理功能，一般的文件管理都得通过FTP来实现，把文件下载下来，然后再编辑上传，很麻烦，而且有的空间根本不支持FTP，所以我们可以使用wordpress后台文件管理插件：FileBrowser。</p>
-<p><a href="https://wordpress.org/plugins/filebrowser/" target="_blank" rel="external">原版下载地址</a><br><a href="http://pan.baidu.com/share/link?shareid=374434&amp;uk=757737247" target="_blank" rel="external">汉化版下载地址</a></p>]]></content>
+<p><a href="https://wordpress.org/plugins/filebrowser/" target="_blank" rel="external">原版下载地址</a><br><a href="http://pan.baidu.com/share/link?shareid=374434&amp;uk=757737247" target="_blank" rel="external">汉化版下载地址</a></p>
+]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;WordPress 后台文件管理插件：FileBrowser&lt;br&gt;
+      &lt;p&gt;WordPress 后台文件管理插件：FileBrowser&lt;br&gt;&lt;!-- excerpt --&gt;&lt;br&gt;&lt;img src=&quot;https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0&quot; alt=&quot;wordpre
     
     </summary>
     
@@ -236,7 +244,7 @@
     <link href="http://blog.jiangnan.pw/2016/10/17/%E8%8E%B7%E5%8F%96WordPress%E5%BD%93%E5%89%8D%E5%88%86%E7%B1%BB%E6%96%87%E7%AB%A0%E6%89%80%E6%9C%89%E6%A0%87%E7%AD%BE/"/>
     <id>http://blog.jiangnan.pw/2016/10/17/获取WordPress当前分类文章所有标签/</id>
     <published>2016-10-17T04:25:16.000Z</published>
-    <updated>2016-10-18T15:39:09.000Z</updated>
+    <updated>2017-01-06T12:49:38.009Z</updated>
     
     <content type="html"><![CDATA[<p>如果需要在分类列表页面，显示当前分类文章中添加的所有标签，方便读者阅读自己喜欢的内容，下面的代码可以帮你实现这个功能。<br>获取WordPress当前分类文章所有标签<br><a id="more"></a></p>
 <p>首先，在主题functions.php模板文件中添加以下函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">function get_category_tags($args) &#123;</div><div class="line">    global $wpdb;</div><div class="line">    $tags = $wpdb-&gt;get_results</div><div class="line">    (&quot;</div><div class="line">        SELECT DISTINCT terms2.term_id as tag_id, terms2.name as tag_name</div><div class="line">        FROM</div><div class="line">            $wpdb-&gt;posts as p1</div><div class="line">            LEFT JOIN $wpdb-&gt;term_relationships as r1 ON p1.ID = r1.object_ID</div><div class="line">            LEFT JOIN $wpdb-&gt;term_taxonomy as t1 ON r1.term_taxonomy_id = t1.term_taxonomy_id</div><div class="line">            LEFT JOIN $wpdb-&gt;terms as terms1 ON t1.term_id = terms1.term_id,</div><div class="line">            $wpdb-&gt;posts as p2</div><div class="line">            LEFT JOIN $wpdb-&gt;term_relationships as r2 ON p2.ID = r2.object_ID</div><div class="line">            LEFT JOIN $wpdb-&gt;term_taxonomy as t2 ON r2.term_taxonomy_id = t2.term_taxonomy_id</div><div class="line">            LEFT JOIN $wpdb-&gt;terms as terms2 ON t2.term_id = terms2.term_id</div><div class="line">        WHERE</div><div class="line">            t1.taxonomy = &apos;category&apos; AND p1.post_status = &apos;publish&apos; AND terms1.term_id IN (&quot;.$args[&apos;categories&apos;].&quot;) AND</div><div class="line">            t2.taxonomy = &apos;post_tag&apos; AND p2.post_status = &apos;publish&apos;</div><div class="line">            AND p1.ID = p2.ID</div><div class="line">        ORDER by tag_name</div><div class="line">    &quot;);</div><div class="line">    $count = 0;</div><div class="line">    if($tags) &#123;</div><div class="line">        foreach ($tags as $tag) &#123;</div><div class="line">            $mytag[$count] = get_term_by(&apos;id&apos;, $tag-&gt;tag_id, &apos;post_tag&apos;);</div><div class="line">            $count++;</div><div class="line">        &#125;</div><div class="line">    &#125; else &#123;</div><div class="line">      $mytag = NULL;</div><div class="line">    &#125;</div><div class="line">    return $mytag;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -268,9 +276,9 @@
     <link href="http://blog.jiangnan.pw/2016/10/16/Alfred%E5%AE%9E%E7%8E%B0%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/"/>
     <id>http://blog.jiangnan.pw/2016/10/16/Alfred实现七牛上传文件/</id>
     <published>2016-10-16T00:48:27.000Z</published>
-    <updated>2016-10-18T15:39:08.000Z</updated>
+    <updated>2017-01-06T07:58:17.589Z</updated>
     
-    <content type="html"><![CDATA[<!--excerpt--></p>
+    <content type="html"><![CDATA[<p>alfred-workflow-qshell<br>qshell 是基于七牛API参考手册实现的一个方便开发者测试和使用七牛API服务的命令行工具。<br><!--excerpt--></p>
 <h2 id="alfred-workflow-qshell"><a href="#alfred-workflow-qshell" class="headerlink" title="alfred-workflow-qshell"></a>alfred-workflow-qshell</h2><blockquote>
 <p>qshell 是基于七牛API参考手册实现的一个方便开发者测试和使用七牛API服务的命令行工具。</p>
 </blockquote>
@@ -318,11 +326,13 @@
 <li>[x] 预览功能</li>
 <li>[x] 下载功能</li>
 </ul>
-<h2 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h2><h3 id="LICENSE"><a href="#LICENSE" class="headerlink" title="LICENSE"></a>LICENSE</h3><p><a href="./LICENSE">MIT License</a></p>]]></content>
+<h2 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h2><h3 id="LICENSE"><a href="#LICENSE" class="headerlink" title="LICENSE"></a>LICENSE</h3><p><a href="./LICENSE">MIT License</a></p>
+]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;alfred-workflow-qshell&lt;br&gt;qshell 是基于七牛API参考手册实现的一个方便开发者测试和使用七牛API服务的命令行工具。&lt;br&gt;
+      &lt;p&gt;alfred-workflow-qshell&lt;br&gt;qshell 是基于七牛API参考手册实现的一个方便开发者测试和使用七牛API服务的命令行工具。&lt;br&gt;&lt;!--excerpt--&gt;&lt;/p&gt;
+&lt;h2 id=&quot;alfred-workflow-qshell&quot;&gt;&lt;a href=
     
     </summary>
     
@@ -342,7 +352,7 @@
     <link href="http://blog.jiangnan.pw/2016/10/13/%E8%87%AA%E5%8A%A8%E4%BB%8E%E5%85%B6%E5%AE%83%E7%AB%99%E7%82%B9RSS%E6%8A%93%E5%8F%96%E6%96%87%E7%AB%A0/"/>
     <id>http://blog.jiangnan.pw/2016/10/13/自动从其它站点RSS抓取文章/</id>
     <published>2016-10-13T08:17:14.000Z</published>
-    <updated>2016-10-19T04:07:19.000Z</updated>
+    <updated>2017-01-06T12:47:57.054Z</updated>
     
     <content type="html"><![CDATA[<p>代码基本原理，新建一个自定义分类法“shot”，自动从另一个站点的RSS抓取文章，放在一个数组中，再用这个数组创建“shot”文章，并为文章添加自定义栏目image和link_url，方便调用缩略图和原文链接。<br><a id="more"></a></p>
 <p>将下面代码添加到当前主题functions.php中即可。</p>
@@ -368,19 +378,20 @@
     <link href="http://blog.jiangnan.pw/2016/10/13/%E7%83%AD%E7%83%88%E5%BA%86%E7%A5%9D%E6%B1%9F%E5%8D%97%E5%93%81%E5%91%B3%E6%AD%A3%E5%BC%8F%E4%B8%8A%E7%BA%BF%EF%BC%81/"/>
     <id>http://blog.jiangnan.pw/2016/10/13/热烈庆祝江南品味正式上线！/</id>
     <published>2016-10-13T07:39:35.000Z</published>
-    <updated>2016-10-19T15:14:45.000Z</updated>
+    <updated>2017-01-06T12:47:42.350Z</updated>
     
-    <content type="html"><![CDATA[<!--excerpt--><br><img src="https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0" alt="wordpress"></p>
+    <content type="html"><![CDATA[<p>最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。<br><!--excerpt--><br><img src="https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0" alt="wordpress"></p>
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>
 <p>最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。经过了两天的努力奋战挽救回来了所有的代码。但是保加利亚的黑客不断的扫描我的IP，致使我的电脑CPU一度达到80℃~90℃，无奈之下展示关闭服务器。</p>
 </blockquote>
 <h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote>
 <p>目前转投HEXO，Github门下开始技术博客的更新，今天发布的只是一个测试文章，因为MarkDown的语法还不熟悉只能边学边写希望大家谅解。最后热烈庆祝<strong>江南品味</strong>正式上线！</p>
-</blockquote>]]></content>
+</blockquote>
+]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。&lt;br&gt;
+      &lt;p&gt;最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。&lt;br&gt;&lt;!--excerpt--&gt;&lt;br&gt;&lt;img src=&quot;https://dl.dropbox.com/s/ju6fp7yj13acoms/wordpress.jpg?dl=0&quot; alt=
     
     </summary>
     

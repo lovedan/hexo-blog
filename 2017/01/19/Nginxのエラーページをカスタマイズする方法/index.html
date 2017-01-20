@@ -21,7 +21,7 @@ Nginxではエラーページのカスタマイズにはerror_pageディレク�
 基本
 Nginxではエラーページのカスタマイズにはerror_pageディレクティブを使います。カスタマイズの基本的な方法は、custom_404.htmlを作って、nginxの設定ファイルを以下の様な感じにします。これで、Nginxを再起動して、">
 <meta property="og:image" content="https://lh3.googleusercontent.com/ODp_GgXqKjB5zQ9df7HPQjX91AS2wWXFgw3QL9E4pz95M2spdKIPQLhpvL3EG8oZSoXp_C_cI3Y6dYRun129wIiHKwSe3tdICsWaPpFJBpAnmpltKIUxO33amPV53CMQnhpynMwm4n7h2W8COf2VIBTCVXnw1bDrndJBcGFzu2QZSldkdrnrRDBgScejvpMbtl4WqBoWclHWRy__Ea5pxSz_NQN5wtB1gmLetlaGL81czVIQhxEsZpQaLICzLZEg8JE94ZhFg3AL1PQDw3CU30qpQ7P9izFdMNN2Kg0XfuYINFuZB9jPy9xhAPVWB2I5qcoivR3OgWETDCuS8IswzZky6104lU2WMQTQgGrw5dsUeKo8xZz3t4vyenX1DvkJCk5h-gMJl5OiBRmIIqjC1Heyz5qoffad2tY-y7fW7SN3iMdkhAlT4fZmzjPaJiai5qKptrWI4xFYrDADQZM-F6td2Yv9SWz61_zowPPf775xfUesMpnY7gMzK-CH5f3fga-b_IGVHGPtQPVu1ZokBJdC_JQUUTWcuHOqVq5xJdn8CYyPafRi0SfUwKGUfhVx7GNUOMMss1lHsT-isKdgONvXAimKe8nN-IRBrm8p8stVVBkdjhZP5EnIBZzfWoJLbDRL-VkjdCxpIjpBLGUpfz5OciA1r0Doe6dc8Fvg2Q=w742-h340-no">
-<meta property="og:updated_time" content="2017-01-19T08:29:58.669Z">
+<meta property="og:updated_time" content="2017-01-20T06:24:06.350Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginxのエラーページをカスタマイズする方法">
 <meta name="twitter:description" content="Nginxのデフォルトのエラーページは格好良くないし、Nginxを使ってることがバレバレです。それが嫌だったので以下の方法でカスタマイズしました。
@@ -178,14 +178,14 @@ Nginxではエラーページのカスタマイズにはerror_pageディレク�
 <h2 id="応用"><a href="#応用" class="headerlink" title="応用"></a>応用</h2><blockquote>
 <p>以下では、よりより実践的な例を紹介します。</p>
 <p>IP直打ちでのアクセスは全てエラーページを表示</p>
-<p>IPアドレスを直接入力してアクセスしてきた場合や想定外のホスト名でアクセスしてきた場合に常にcustom_404.htmlを表示したければ以下の様にします。</p>
+<p>IPアドレスを直接入力してアクセスしてきた場合や想定外のホスト名でアクセスしてきた場合に常に<code>custom_404.html</code>を表示したければ以下の様にします。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    listen 80 default_server;</div><div class="line">    error_page 404 /custom_404.html;</div><div class="line">    location / &#123;</div><div class="line">        return 404;</div><div class="line">    &#125;</div><div class="line">    location = /custom_404.html &#123;</div><div class="line">        root /opt/nginx/html;</div><div class="line">        internal;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>どんなエラーが発生しても404ページを返す</p>
 <p>実際に発生しているエラーが403だろうが503だろうが、ユーザーには404エラーが発生しているように見せかけます。<br>下の例では400, 401, 403, 500, 502, 503のいずれが発生してもクライアントに返すHTTPステータスコードを404に書き換え、custom_404.htmlを返します。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    listen 80;</div><div class="line">    server_name example.com;</div><div class="line">    error_page 400 401 403 404 500 502 503 =404 /custom_404.html;</div><div class="line">    location = /custom_404.html &#123;</div><div class="line">        root /opt/nginx/html;</div><div class="line">        internal;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>管理画面を隠す</p>
-<p>特定のIP以外から管理画面へアクセスされた時は404画面を出します。<br>この例では192.168.0.1からの管理画面へのリクエストは許可し、それ以外の場合は404ステータスとcustom_404.htmlを返します。</p>
+<p>特定のIP以外から管理画面へアクセスされた時は404画面を出します。<br>この例では<code>192.168.0.1</code>からの管理画面へのリクエストは許可し、それ以外の場合は404ステータスとcustom_404.htmlを返します。</p>
 
         </div>
         <footer class="article-footer">

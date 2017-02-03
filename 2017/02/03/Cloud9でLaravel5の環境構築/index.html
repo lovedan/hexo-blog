@@ -17,7 +17,7 @@ Laravel5のプロジェクト作成新しいタブでターミナルを開いて
 <meta property="og:description" content="プロジェクト作成Workspace名とテンプレートにPHPを選択します。Hosted workspaceはPrivateでもPublicでもどちらも構いませんがPublicの場合はすべての人に公開されてしまいます。またフリー版ではPrivateのWorkspaceは１つだけとなっています。
 Laravel5のプロジェクト作成新しいタブでターミナルを開いてください。以下のコマンドを実行してプロジェ">
 <meta property="og:image" content="https://lh3.googleusercontent.com/-SmYaIiM-R1w/WJQOzBxyyrI/AAAAAAAAAzU/-kZytHD_DqY/s0/2017-02-03_14-02-02.png">
-<meta property="og:updated_time" content="2017-02-03T05:09:54.292Z">
+<meta property="og:updated_time" content="2017-02-03T05:13:14.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cloud9でLaravel5の環境構築">
 <meta name="twitter:description" content="プロジェクト作成Workspace名とテンプレートにPHPを選択します。Hosted workspaceはPrivateでもPublicでもどちらも構いませんがPublicの場合はすべての人に公開されてしまいます。またフリー版ではPrivateのWorkspaceは１つだけとなっています。
@@ -163,20 +163,20 @@ Laravel5のプロジェクト作成新しいタブでターミナルを開いて
         
         <div class="article-entry" itemprop="articleBody">
             <!--excerpt-->
-<h2 id="プロジェクト作成"><a href="#プロジェクト作成" class="headerlink" title="プロジェクト作成"></a>プロジェクト作成</h2><p><img src="https://lh3.googleusercontent.com/-SXJRijcQ4F4/WJQPLCrNGrI/AAAAAAAAAzY/liQI8sZCmkU/s0/2017-02-03_14-03-41.png" alt=""><br>Workspace名とテンプレートにPHPを選択します。Hosted workspaceはPrivateでもPublicでもどちらも構いませんがPublicの場合はすべての人に公開されてしまいます。またフリー版ではPrivateのWorkspaceは１つだけとなっています。</p>
-<h2 id="Laravel5のプロジェクト作成"><a href="#Laravel5のプロジェクト作成" class="headerlink" title="Laravel5のプロジェクト作成"></a>Laravel5のプロジェクト作成</h2><p>新しいタブでターミナルを開いてください。<br>以下のコマンドを実行してプロジェクトを作成してください。</p>
+<h2 id="プロジェクト作成"><a href="#プロジェクト作成" class="headerlink" title="プロジェクト作成"></a>プロジェクト作成</h2><p><img src="https://lh3.googleusercontent.com/-SXJRijcQ4F4/WJQPLCrNGrI/AAAAAAAAAzY/liQI8sZCmkU/s0/2017-02-03_14-03-41.png" alt=""><br><code>Workspace</code>名とテンプレートに<code>PHP</code>を選択します。<code>Hosted workspace</code>は<code>Private</code>でも<code>Public</code>でもどちらも構いませんが<code>Public</code>の場合はすべての人に公開されてしまいます。またフリー版では<code>Private</code>の<code>Workspace</code>は１つだけとなっています。</p>
+<h2 id="Laravel5のプロジェクト作成"><a href="#Laravel5のプロジェクト作成" class="headerlink" title="Laravel5のプロジェクト作成"></a><code>Laravel5</code>のプロジェクト作成</h2><p>新しいタブでターミナルを開いてください。<br>以下のコマンドを実行してプロジェクトを作成してください。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">rm README.md php.ini hello-world.php</div><div class="line">sudo composer self-update</div><div class="line">composer create-project laravel/laravel ./laravel --prefer-dist</div><div class="line">shopt -s dotglob</div><div class="line">mv laravel/* ./</div><div class="line">rm -rf laravel</div></pre></td></tr></table></figure>
 <p>完了まで数分かかかります。</p>
-<h2 id="Apacheのconf設定"><a href="#Apacheのconf設定" class="headerlink" title="Apacheのconf設定"></a>Apacheのconf設定</h2><p>以下のファイルをviで開いて、DocumentRootを以下に変更してください。</p>
+<h2 id="Apacheのconf設定"><a href="#Apacheのconf設定" class="headerlink" title="Apacheのconf設定"></a>Apacheのconf設定</h2><p>以下のファイルを<code>vi</code>で開いて、<code>DocumentRoot</code>を以下に変更してください。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/apache2/sites-enabled/001-cloud9.conf</div></pre></td></tr></table></figure>
 <p>編集箇所</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DocumentRoot /home/ubuntu/workspace/public</div></pre></td></tr></table></figure>
 <h2 id="アップデート"><a href="#アップデート" class="headerlink" title="アップデート"></a>アップデート</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer update</div></pre></td></tr></table></figure>
-<h2 id="DB設定"><a href="#DB設定" class="headerlink" title="DB設定"></a>DB設定</h2><p>プロジェクトを作成した際にMySQLのDBが同時に作成されています。<br>まずは下記コマンドを実行して接続先のホスト名を確認しましょう。</p>
+<h2 id="DB設定"><a href="#DB設定" class="headerlink" title="DB設定"></a>DB設定</h2><p>プロジェクトを作成した際に<code>MySQL</code>の<code>DB</code>が同時に作成されています。<br>まずは下記コマンドを実行して接続先のホスト名を確認しましょう。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mysql-ctl cli</div><div class="line">use c9;</div><div class="line">select @@hostname;　　←ホスト名が表示される</div><div class="line">exit</div></pre></td></tr></table></figure>
-<h2 id="LaravelのDB接続設定"><a href="#LaravelのDB接続設定" class="headerlink" title="LaravelのDB接続設定"></a>LaravelのDB接続設定</h2><p> ワークスペースの直下に<code>「.env」</code>ファイルがありますが、エディタのエクスプローラーからは見えないです。（設定で表示可能かもしれませんが分かりませんでした。）ターミナルからファイルをvimで開いて編集してください。</p>
+<h2 id="LaravelのDB接続設定"><a href="#LaravelのDB接続設定" class="headerlink" title="LaravelのDB接続設定"></a><code>Laravel</code>の<code>DB</code>接続設定</h2><p> ワークスペースの直下に<code>「.env」</code>ファイルがありますが、エディタのエクスプローラーからは見えないです。（設定で表示可能かもしれませんが分かりませんでした。）ターミナルからファイルをvimで開いて編集してください。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">DB_HOST=HOSTNAME　　←上で確認したホスト名をセット</div><div class="line">DB_DATABASE=c9　　　  ←初期値</div><div class="line">DB_USERNAME=USERNAME　←cloud9のユーザー名</div><div class="line">DB_PASSWORD=　　　　　　←初期値は空でOK</div></pre></td></tr></table></figure>
-<h2 id="起動確認"><a href="#起動確認" class="headerlink" title="起動確認"></a>起動確認</h2><p>ひと通り設定は完了したので、Apacheを起動して確認してみましょう。<br>Runボタンをクリックして画面下部に表示されたurlをクリックすると初期画面が表示されます。下記のように表示されていれば完了です。（Laravel5の場合）</p>
+<h2 id="起動確認"><a href="#起動確認" class="headerlink" title="起動確認"></a>起動確認</h2><p>ひと通り設定は完了したので、<code>Apache</code>を起動して確認してみましょう。<br><code>Run</code>ボタンをクリックして画面下部に表示されたurlをクリックすると初期画面が表示されます。下記のように表示されていれば完了です。（<code>Laravel5</code>の場合）</p>
 <p><img src="https://lh3.googleusercontent.com/-iYRTE3BEO3o/WJQQf8428QI/AAAAAAAAAzo/FSuSCDBxU50/s0/2017-02-03_14-09-19.png" alt=""></p>
 <p>手軽に環境を作成したいと思いましたが、テンプレートが用意されていないとまだまだ手間がかかります。ここはもう少し改善を期待したいです。</p>
 <p>また、<code>Laravel</code>のプロジェクトとしてアプリを利用するためには、権限の変更などまだいくつか設定が 必要になりますが、そこは下記リンクや他で色々と紹介されていますので参照してみてください。</p>

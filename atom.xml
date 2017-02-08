@@ -92,6 +92,92 @@
   </entry>
   
   <entry>
+    <title>开启Fusion Drive功能教程 双硬盘 SSD+HDD</title>
+    <link href="http://blog.jiangnan.pw/2017/02/03/%E5%BC%80%E5%90%AFFusion%20Drive%E5%8A%9F%E8%83%BD%E6%95%99%E7%A8%8B%20%E5%8F%8C%E7%A1%AC%E7%9B%98%20SSD+HDD/"/>
+    <id>http://blog.jiangnan.pw/2017/02/03/开启Fusion Drive功能教程 双硬盘 SSD+HDD/</id>
+    <published>2017-02-03T05:44:35.000Z</published>
+    <updated>2017-02-08T04:52:50.878Z</updated>
+    
+    <content type="html"><![CDATA[<!--excerpt-->
+<p>废话不多说进入主题</p>
+<p>！<a href="https://lh3.googleusercontent.com/-E0utAkBrw68/WJp0KJxr95I/AAAAAAAABYg/fg4_1VUTdq0/s0/2017-02-08_10-28-03.png" target="_blank" rel="external"></a></p>
+<blockquote>
+<p>disk0 是用的 120g 三星ssd 固态硬盘<br>disk1 是用的 250g 机器自带的普通硬盘</p>
+</blockquote>
+<p><img src="https://lh3.googleusercontent.com/-R8GL5Cm9cMc/WJp0abZJ9MI/AAAAAAAABYk/oRlTT6-3-yQ/s0/2017-02-08_10-29-08.png" alt=""></p>
+<ol>
+<li>开启Fusion Drive功能之前，先要把数据全部备份。</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/-22yQinjGFrQ/WJp0snqYIqI/AAAAAAAABYs/8LvjpzO5bgQ/s0/2017-02-08_10-30-22.png" alt=""></p>
+<ol>
+<li>用系统启动光盘或者u盘启动电脑。</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/-7RdUviFxN98/WJp04GLOjZI/AAAAAAAABYw/6KVCkKBO5FI/s0/2017-02-08_10-31-07.png" alt=""></p>
+<ol>
+<li>进入磁盘工具把2块硬盘都进行格式化</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/-TEUn4kf4Z50/WJp1ZegbCuI/AAAAAAAABY4/menESopf7v0/s0/2017-02-08_10-33-20.png" alt=""></p>
+<ol>
+<li>退出磁盘工具，进入终端。</li>
+</ol>
+<p>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil list</div></pre></td></tr></table></figure></p>
+<p>查看当前磁盘的详细信息</p>
+<p><img src="https://lh3.googleusercontent.com/-TM1DhU3tVjc/WJp2R9Uy2ZI/AAAAAAAABZE/5r0reM3fbEQ/s0/2017-02-08_10-37-06.png" alt=""></p>
+<ol>
+<li>合并磁盘</li>
+</ol>
+<p>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil cs create bla disk0 disk1</div></pre></td></tr></table></figure></p>
+<p><img src="https://lh3.googleusercontent.com/-em2gG4BcWQA/WJp2lN41i5I/AAAAAAAABZI/DDjUR0LyBHQ/s0/2017-02-08_10-38-23.png" alt=""></p>
+<p>这里可以看见最后一行 百分百的进度条。。。</p>
+<p><img src="https://lh3.googleusercontent.com/-maQp1HMUN9A/WJqhrcq7ZFI/AAAAAAAABZk/Eqk6lvsq83Q/s0/2017-02-08_13-42-15.png" alt=""></p>
+<p>画横线的地方显示正在创建逻辑盘。。。</p>
+<p><img src="https://lh3.googleusercontent.com/-Flp1ZQVqu6Q/WJqhzS5hOcI/AAAAAAAABZo/aKnVGV3ZxnE/s0/2017-02-08_13-42-48.png" alt=""></p>
+<p>这里显示逻辑盘已经创建成功</p>
+<p>最后一行显示</p>
+<p>Core Storage LVG UUID: <strong>【BBC6AD77-ADF2-40EE-A1D0-68BFE4913966】</strong></p>
+<p>Finished CoreStorage operation</p>
+<p><strong>【】</strong>中的字串之后还会用到，可以直接复制使用</p>
+<ol>
+<li>再次输入:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil cs list</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>查看逻辑磁盘状态</p>
+<p><img src="https://lh3.googleusercontent.com/-55OmC1i9yOM/WJqiNghRqXI/AAAAAAAABZs/mxIFLTqrwSQ/s0/2017-02-08_13-44-32.png" alt=""></p>
+<p>显示新的逻辑卷的容量和<strong>id</strong>，下面有组成逻辑卷的硬盘<strong>id</strong><br>秘书用的是<strong>120+250</strong>的硬盘，容量是<strong>377.4G</strong>，实际可用<strong>375.2G</strong></p>
+<ol>
+<li>建立Fusion Drive</li>
+</ol>
+<p>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil coreStorage createVolume BBC6AD77-ADF2-40EE-A1D0-68BFE4913966 jhfs+ blub 375g</div><div class="line">diskutil coreStorage createVolume 【BBC6AD77-ADF2-40EE-A1D0-68BFE4913966】 jhfs+ blub 375g</div></pre></td></tr></table></figure></p>
+<p>其中<strong>【】</strong>里面的id换成之前查到的自己的逻辑卷id，<strong>【】</strong>不要需要输入进去的。</p>
+<p>建立的容量不能大于实际可用容量</p>
+<ol>
+<li>退出终端 进入磁盘工具，看下是否已经成功开启Fusion Drive。</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/-V4J2mg_cGaY/WJqjk4iTFvI/AAAAAAAABZ8/Fj_iYgqMVvY/s0/2017-02-08_13-50-22.png" alt=""></p>
+<ol>
+<li>接下来点 重新安装系统，后面就和普通安装没有任何区别了。</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/-Wbn3v2OHp_g/WJqjsnZ754I/AAAAAAAABaA/CQdziT0dQSo/s0/2017-02-08_13-50-54.png" alt=""><br><img src="https://lh3.googleusercontent.com/--cDPwpcrjdU/WJqj9ZiIjbI/AAAAAAAABaE/p3zyHD91k6k/s0/2017-02-08_13-52-01.png" alt=""><br><img src="https://lh3.googleusercontent.com/-m8qhXLJ-RoU/WJqkHAkXXmI/AAAAAAAABaM/Lp6Q0_zhXqk/s0/2017-02-08_13-52-39.png" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;!--excerpt--&gt;
+&lt;p&gt;废话不多说进入主题&lt;/p&gt;
+&lt;p&gt;！&lt;a href=&quot;https://lh3.googleusercontent.com/-E0utAkBrw68/WJp0KJxr95I/AAAAAAAABYg/fg4_1VUTdq0/s0/2017-02-0
+    
+    </summary>
+    
+      <category term="Mac" scheme="http://blog.jiangnan.pw/categories/Mac/"/>
+    
+      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/Mac/Mac%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Cloud9でLaravel5の環境構築</title>
     <link href="http://blog.jiangnan.pw/2017/02/03/Cloud9%E3%81%A7Laravel5%E3%81%AE%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/"/>
     <id>http://blog.jiangnan.pw/2017/02/03/Cloud9でLaravel5の環境構築/</id>

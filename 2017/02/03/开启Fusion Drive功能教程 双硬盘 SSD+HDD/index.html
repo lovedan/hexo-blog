@@ -49,7 +49,7 @@ disk0 是用的 120g 三星ssd 固态硬盘disk1 是用的 250g 机器自带的�
 5.合并磁盘
 输入:1disk">
 <meta property="og:image" content="https://dl.dropboxusercontent.com/u/24907579/ShareX/2017/02/2017-02-08_10-23-21.png">
-<meta property="og:updated_time" content="2017-02-08T05:00:07.878Z">
+<meta property="og:updated_time" content="2017-02-08T05:26:19.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开启Fusion Drive功能教程 双硬盘 SSD+HDD">
 <meta name="twitter:description" content="废话不多说进入主题
@@ -236,16 +236,16 @@ disk0 是用的 120g 三星ssd 固态硬盘disk1 是用的 250g 机器自带的�
 <p><img src="https://lh3.googleusercontent.com/-Flp1ZQVqu6Q/WJqhzS5hOcI/AAAAAAAABZo/aKnVGV3ZxnE/s0/2017-02-08_13-42-48.png" alt=""></p>
 <p>这里显示逻辑盘已经创建成功</p>
 <p>最后一行显示</p>
-<p>Core Storage LVG UUID: <strong>【BBC6AD77-ADF2-40EE-A1D0-68BFE4913966】</strong></p>
+<p>Core Storage LVG UUID: <code>【BBC6AD77-ADF2-40EE-A1D0-68BFE4913966】</code></p>
 <p>Finished CoreStorage operation</p>
-<p><strong>【】</strong>中的字串之后还会用到，可以直接复制使用</p>
+<p><code>【】</code>中的字串之后还会用到，可以直接复制使用</p>
 <p>6.再次输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil cs list</div></pre></td></tr></table></figure></p>
 <p>查看逻辑磁盘状态</p>
 <p><img src="https://lh3.googleusercontent.com/-55OmC1i9yOM/WJqiNghRqXI/AAAAAAAABZs/mxIFLTqrwSQ/s0/2017-02-08_13-44-32.png" alt=""></p>
-<p>显示新的逻辑卷的容量和<strong>id</strong>，下面有组成逻辑卷的硬盘<strong>id</strong><br>秘书用的是<strong>120+250</strong>的硬盘，容量是<strong>377.4G</strong>，实际可用<strong>375.2G</strong></p>
+<p>显示新的逻辑卷的容量和<code>id</code>，下面有组成逻辑卷的硬盘<code>id</code><br>秘书用的是<code>120+250</code>的硬盘，容量是<code>377.4G</code>，实际可用<code>375.2G</code></p>
 <p>7.建立Fusion Drive</p>
 <p>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil coreStorage createVolume BBC6AD77-ADF2-40EE-A1D0-68BFE4913966 jhfs+ blub 375g</div><div class="line">diskutil coreStorage createVolume 【BBC6AD77-ADF2-40EE-A1D0-68BFE4913966】 jhfs+ blub 375g</div></pre></td></tr></table></figure></p>
-<p>其中<strong>【】</strong>里面的id换成之前查到的自己的逻辑卷id，<strong>【】</strong>不要需要输入进去的。</p>
+<p>其中<code>【】</code>里面的id换成之前查到的自己的逻辑卷id，<code>【】</code>不要需要输入进去的。</p>
 <p>建立的容量不能大于实际可用容量</p>
 <p>8.退出终端 进入磁盘工具，看下是否已经成功开启Fusion Drive。</p>
 <p><img src="https://lh3.googleusercontent.com/-V4J2mg_cGaY/WJqjk4iTFvI/AAAAAAAABZ8/Fj_iYgqMVvY/s0/2017-02-08_13-50-22.png" alt=""></p>

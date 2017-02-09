@@ -3,38 +3,35 @@
 <head>
     <meta charset="utf-8">
     
-    <title>热烈庆祝江南品味正式上线！ | 江南品味|记录编程道路上的点点滴滴!!!</title>
+    <title>GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。 | 江南品味|记录编程道路上的点点滴滴!!!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="江南品味" />
+        <meta name="keywords" content="Git,GitHub" />
     
-    <meta name="description" content="最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。
-背景
-最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。经过了两天的努力奋战挽救回来了所有的代码。但是保加利亚的黑客不断的扫描我的IP，致使我的电脑CPU一度达到80℃~90℃，无奈之下展示关闭服务器。
-
-结果
-目前转投HEXO，Github门下开始技术博客的更新，今天发布的只是一个测试">
+    <meta name="description" content="はじめに
+GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。
+Gitバージョン12% git --versiongit version 2.9.2
+作業の流れGitHubからリポジトリを作成
+「Initialize this repository with a README」にチェ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="热烈庆祝江南品味正式上线！">
-<meta property="og:url" content="http://blog.jiangnan.pw/热烈庆祝江南品味正式上线！">
+<meta property="og:title" content="GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。">
+<meta property="og:url" content="http://blog.jiangnan.pw/ciyy0suaf000hf07kxc80g4nf">
 <meta property="og:site_name" content="江南品味|记录编程道路上的点点滴滴!!!">
-<meta property="og:description" content="最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。
-背景
-最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。经过了两天的努力奋战挽救回来了所有的代码。但是保加利亚的黑客不断的扫描我的IP，致使我的电脑CPU一度达到80℃~90℃，无奈之下展示关闭服务器。
-
-结果
-目前转投HEXO，Github门下开始技术博客的更新，今天发布的只是一个测试">
-<meta property="og:image" content="https://dl.dropboxusercontent.com/s/17qw97zp0v3loo9/city.jpg?dl=0">
-<meta property="og:updated_time" content="2017-01-19T08:13:36.217Z">
+<meta property="og:description" content="はじめに
+GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。
+Gitバージョン12% git --versiongit version 2.9.2
+作業の流れGitHubからリポジトリを作成
+「Initialize this repository with a README」にチェ">
+<meta property="og:image" content="https://lh3.googleusercontent.com/-nnwlkrohkHo/WJvpWp8lRGI/AAAAAAAABcw/bl95WI6WWwI/s0/2017-02-09_13-00-25.png">
+<meta property="og:updated_time" content="2017-02-09T04:05:02.779Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="热烈庆祝江南品味正式上线！">
-<meta name="twitter:description" content="最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。
-背景
-最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。经过了两天的努力奋战挽救回来了所有的代码。但是保加利亚的黑客不断的扫描我的IP，致使我的电脑CPU一度达到80℃~90℃，无奈之下展示关闭服务器。
-
-结果
-目前转投HEXO，Github门下开始技术博客的更新，今天发布的只是一个测试">
-<meta name="twitter:image" content="https://dl.dropboxusercontent.com/s/17qw97zp0v3loo9/city.jpg?dl=0">
+<meta name="twitter:title" content="GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。">
+<meta name="twitter:description" content="はじめに
+GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。
+Gitバージョン12% git --versiongit version 2.9.2
+作業の流れGitHubからリポジトリを作成
+「Initialize this repository with a README」にチェ">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/-nnwlkrohkHo/WJvpWp8lRGI/AAAAAAAABcw/bl95WI6WWwI/s0/2017-02-09_13-00-25.png">
 <meta name="twitter:creator" content="@kyounan719">
 <link rel="publisher" href="103371492334107230000">
     
@@ -149,18 +146,18 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/作品展示/">作品展示</a>
+    <a class="page-title-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/技术分享/Git/">Git</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-热烈庆祝江南品味正式上线！" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-gitでpush後rejectedエラーの対応メモ" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        热烈庆祝江南品味正式上线！
+        GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。
         </h1>
     
 
@@ -168,23 +165,36 @@
         
         
             <div class="article-subtitle">
-                <a href="/热烈庆祝江南品味正式上线！" class="article-date">
-    <time datetime="2016-10-13T07:39:35.000Z" itemprop="datePublished">2016-10-13</time>
+                <a href="/ciyy0suaf000hf07kxc80g4nf" class="article-date">
+    <time datetime="2017-02-09T01:35:00.000Z" itemprop="datePublished">2017-02-09</time>
 </a>
                 
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/江南品味/">江南品味</a></li></ul>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li></ul>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。<br><!--excerpt--></p>
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>
-<p>最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。经过了两天的努力奋战挽救回来了所有的代码。但是保加利亚的黑客不断的扫描我的IP，致使我的电脑CPU一度达到80℃~90℃，无奈之下展示关闭服务器。</p>
-</blockquote>
-<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote>
-<p>目前转投HEXO，Github门下开始技术博客的更新，今天发布的只是一个测试文章，因为MarkDown的语法还不熟悉只能边学边写希望大家谅解。最后热烈庆祝<strong>江南品味</strong>正式上线！</p>
-</blockquote>
+            <!--excerpt-->
+<h2 id="はじめに"><a href="#はじめに" class="headerlink" title="はじめに"></a>はじめに</h2><hr>
+<p>GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</p>
+<h2 id="Gitバージョン"><a href="#Gitバージョン" class="headerlink" title="Gitバージョン"></a>Gitバージョン</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">% git --version</div><div class="line">git version 2.9.2</div></pre></td></tr></table></figure>
+<h2 id="作業の流れ"><a href="#作業の流れ" class="headerlink" title="作業の流れ"></a>作業の流れ</h2><p>GitHubからリポジトリを作成</p>
+<p>「Initialize this repository with a README」にチェック</p>
+<p>ローカルリポジトリに追加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">% git add -A</div></pre></td></tr></table></figure></p>
+<p>ロカールリポジトリにコミット<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">% git commit -m &quot;xxxxx&quot;</div></pre></td></tr></table></figure></p>
+<p>リモートリポジトリ（GitHub）の情報を追加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">% git remote add origin https://github.com/xxxx/xxxxx.git</div></pre></td></tr></table></figure></p>
+<p>ローカルリポジトリをリモートリポジトリへ反映させる → <code>rejectedエラー</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">% git push origin master</div><div class="line">To https://github.com/xxxx/xxxxx.git</div><div class="line"> ! [rejected]        master -&gt; master (fetch first)</div><div class="line">error: failed to push some refs to &apos;https://github.com/xxxx/xxxxx.git&apos;</div><div class="line">hint: Updates were rejected because the remote contains work that you do</div><div class="line">hint: not have locally. This is usually caused by another repository pushing</div><div class="line">hint: to the same ref. You may want to first integrate the remote changes</div><div class="line">hint: (e.g., &apos;git pull ...&apos;) before pushing again.</div><div class="line">hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</div></pre></td></tr></table></figure>
+<p>ググってみたら「git fetch &amp;&amp; git merge origin/master」してからpushすればOKと書いてあったので試してみる → <code>mergeエラー</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">% git fetch &amp;&amp; git merge origin/master</div><div class="line">fatal: refusing to merge unrelated histories</div></pre></td></tr></table></figure></p>
+<p>さらにググってみたらmergeのオプションに「–allow-unrelated-histories」をつければOKと書いてあったので試してみる → <code>merge OK!</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">% git merge --allow-unrelated-histories origin/master</div><div class="line">Merge made by the &apos;recursive&apos; strategy.</div><div class="line"> README.md | 2 ++</div><div class="line"> 1 file changed, 2 insertions(+)</div><div class="line"> create mode 100644 README.md</div></pre></td></tr></table></figure>
+<p>再度、ローカルリポジトリをリモートリポジトリへ反映させる → <code>push OK!</code></p>
+<p>一件落着</p>
+<h2 id="「–allow-unrelated-histories」について"><a href="#「–allow-unrelated-histories」について" class="headerlink" title="「–allow-unrelated-histories」について"></a>「–allow-unrelated-histories」について</h2><hr>
+<p>ちゃんと調べてみたところ<br>Git 2.9から mergeコマンドとpullコマンドでは，–allow-unrelated-historiesを指定しない限り，無関係なヒストリを持つ２つのブランチをマージすることはできなくなった。<br>とありました。</p>
+<h2 id="考察"><a href="#考察" class="headerlink" title="考察"></a>考察</h2><hr>
+<p>まだ、GitHub、Gitの理解が浅いので見当違いなことを言っているかもしれませんが、GitHub上でリポジトリを作成したタイミングで、README.mdがコミットされているのに、それをローカルリポジトリに取り込まずに、ローカルのソースをコミットしてしまったのが原因と思われる。<br>結果、それぞれが別ヒストリとなり、mergeエラーになったのかなと。</p>
 
         </div>
         <footer class="article-footer">
@@ -234,7 +244,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="热烈庆祝江南品味正式上线！" data-title="热烈庆祝江南品味正式上线！" data-url="http://blog.jiangnan.pw/热烈庆祝江南品味正式上线！"></div>
+    <div class="ds-thread" data-thread-key="ciyy0suaf000hf07kxc80g4nf" data-title="GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。" data-url="http://blog.jiangnan.pw/ciyy0suaf000hf07kxc80g4nf"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
@@ -339,16 +349,22 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         
 <nav id="article-nav">
     
-        <a href="/自动从其它站点RSS抓取文章" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/ciyy0sucw0014f07khxe6u037" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            自动从其它站点RSS抓取文章
+            让git push命令不再需要密码
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
+    
+        <a href="/ciyy0su920006f07kexptx1i6" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Laravel5自定义环境变量</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
     
 </nav>
 
@@ -365,7 +381,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/让git-push命令不再需要密码" class="thumbnail">
+                            <a href="/ciyy0sucw0014f07khxe6u037" class="thumbnail">
     
     
         <span style="background-image:url(https://lh3.googleusercontent.com/-nnwlkrohkHo/WJvpWp8lRGI/AAAAAAAABcw/bl95WI6WWwI/s0/2017-02-09_13-00-25.png)" alt="让git push命令不再需要密码" class="thumbnail-image"></span>
@@ -377,7 +393,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Git/">Git</a></p>
-                            <p class="item-title"><a href="/让git-push命令不再需要密码" class="title">让git push命令不再需要密码</a></p>
+                            <p class="item-title"><a href="/ciyy0sucw0014f07khxe6u037" class="title">让git push命令不再需要密码</a></p>
                             <p class="item-date"><time datetime="2017-02-09T04:13:11.000Z" itemprop="datePublished">2017-02-09</time></p>
                         </div>
                     </li>
@@ -385,7 +401,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/gitでpush後rejectedエラーの対応メモ" class="thumbnail">
+                            <a href="/ciyy0suaf000hf07kxc80g4nf" class="thumbnail">
     
     
         <span style="background-image:url(https://lh3.googleusercontent.com/-nnwlkrohkHo/WJvpWp8lRGI/AAAAAAAABcw/bl95WI6WWwI/s0/2017-02-09_13-00-25.png)" alt="GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。" class="thumbnail-image"></span>
@@ -397,7 +413,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Git/">Git</a></p>
-                            <p class="item-title"><a href="/gitでpush後rejectedエラーの対応メモ" class="title">GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</a></p>
+                            <p class="item-title"><a href="/ciyy0suaf000hf07kxc80g4nf" class="title">GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</a></p>
                             <p class="item-date"><time datetime="2017-02-09T01:35:00.000Z" itemprop="datePublished">2017-02-09</time></p>
                         </div>
                     </li>
@@ -405,7 +421,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/Laravel 5 自定义环境变量" class="thumbnail">
+                            <a href="/ciyy0su920006f07kexptx1i6" class="thumbnail">
     
     
         <span style="background-image:url(https://dl.dropboxusercontent.com/s/onmlew6rmnd33ct/SuRyW14362693901Laravel-5%5B1%5D.png?dl=0)" alt="Laravel5自定义环境变量" class="thumbnail-image"></span>
@@ -417,7 +433,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Laravel/">Laravel</a></p>
-                            <p class="item-title"><a href="/Laravel 5 自定义环境变量" class="title">Laravel5自定义环境变量</a></p>
+                            <p class="item-title"><a href="/ciyy0su920006f07kexptx1i6" class="title">Laravel5自定义环境变量</a></p>
                             <p class="item-date"><time datetime="2017-02-03T07:19:55.000Z" itemprop="datePublished">2017-02-03</time></p>
                         </div>
                     </li>
@@ -425,7 +441,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="thumbnail">
+                            <a href="/ciyy0sual000jf07k7zw5bu5l" class="thumbnail">
     
     
         <span style="background-image:url(https://dl.dropboxusercontent.com/u/24907579/ShareX/2017/02/2017-02-08_10-23-21.png)" alt="开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="thumbnail-image"></span>
@@ -437,7 +453,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/苹果相关/">苹果相关</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a></p>
-                            <p class="item-title"><a href="/开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="title">开启Fusion Drive功能教程 双硬盘 SSD+HDD</a></p>
+                            <p class="item-title"><a href="/ciyy0sual000jf07k7zw5bu5l" class="title">开启Fusion Drive功能教程 双硬盘 SSD+HDD</a></p>
                             <p class="item-date"><time datetime="2017-02-03T05:44:35.000Z" itemprop="datePublished">2017-02-03</time></p>
                         </div>
                     </li>
@@ -445,7 +461,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/Cloud9でLaravel5の環境構築" class="thumbnail">
+                            <a href="/ciyy0su7z0002f07k9gfu9djr" class="thumbnail">
     
     
         <span style="background-image:url(https://lh3.googleusercontent.com/-SmYaIiM-R1w/WJQOzBxyyrI/AAAAAAAAAzU/-kZytHD_DqY/s0/2017-02-03_14-02-02.png)" alt="Cloud9でLaravel5の環境構築" class="thumbnail-image"></span>
@@ -457,7 +473,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a></p>
-                            <p class="item-title"><a href="/Cloud9でLaravel5の環境構築" class="title">Cloud9でLaravel5の環境構築</a></p>
+                            <p class="item-title"><a href="/ciyy0su7z0002f07k9gfu9djr" class="title">Cloud9でLaravel5の環境構築</a></p>
                             <p class="item-date"><time datetime="2017-02-03T04:58:48.000Z" itemprop="datePublished">2017-02-03</time></p>
                         </div>
                     </li>

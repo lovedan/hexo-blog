@@ -3,26 +3,32 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Cloud9でLaravel5の環境構築 | 江南品味|记录编程道路上的点点滴滴!!!</title>
+    <title>Nginxのエラーページをカスタマイズする方法 | 江南品味|记录编程道路上的点点滴滴!!!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Cloud9" />
+        <meta name="keywords" content="nginx" />
     
-    <meta name="description" content="プロジェクト作成Workspace名とテンプレートにPHPを選択します。Hosted workspaceはPrivateでもPublicでもどちらも構いませんがPublicの場合はすべての人に公開されてしまいます。またフリー版ではPrivateのWorkspaceは１つだけとなっています。
-Laravel5のプロジェクト作成新しいタブでターミナルを開いてください。以下のコマンドを実行してプロジェ">
+    <meta name="description" content="Nginxのデフォルトのエラーページは格好良くないし、Nginxを使ってることがバレバレです。それが嫌だったので以下の方法でカスタマイズしました。
+
+基本
+Nginxではエラーページのカスタマイズにはerror_pageディレクティブを使います。カスタマイズの基本的な方法は、custom_404.htmlを作って、nginxの設定ファイルを以下の様な感じにします。これで、Nginxを再起動して、">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Cloud9でLaravel5の環境構築">
-<meta property="og:url" content="http://blog.jiangnan.pw/Cloud9でLaravel5の環境構築">
+<meta property="og:title" content="Nginxのエラーページをカスタマイズする方法">
+<meta property="og:url" content="http://blog.jiangnan.pw/ciyy0sua2000df07k721ea5yd">
 <meta property="og:site_name" content="江南品味|记录编程道路上的点点滴滴!!!">
-<meta property="og:description" content="プロジェクト作成Workspace名とテンプレートにPHPを選択します。Hosted workspaceはPrivateでもPublicでもどちらも構いませんがPublicの場合はすべての人に公開されてしまいます。またフリー版ではPrivateのWorkspaceは１つだけとなっています。
-Laravel5のプロジェクト作成新しいタブでターミナルを開いてください。以下のコマンドを実行してプロジェ">
-<meta property="og:image" content="https://lh3.googleusercontent.com/-SmYaIiM-R1w/WJQOzBxyyrI/AAAAAAAAAzU/-kZytHD_DqY/s0/2017-02-03_14-02-02.png">
-<meta property="og:updated_time" content="2017-02-03T05:13:14.384Z">
+<meta property="og:description" content="Nginxのデフォルトのエラーページは格好良くないし、Nginxを使ってることがバレバレです。それが嫌だったので以下の方法でカスタマイズしました。
+
+基本
+Nginxではエラーページのカスタマイズにはerror_pageディレクティブを使います。カスタマイズの基本的な方法は、custom_404.htmlを作って、nginxの設定ファイルを以下の様な感じにします。これで、Nginxを再起動して、">
+<meta property="og:image" content="https://lh3.googleusercontent.com/ODp_GgXqKjB5zQ9df7HPQjX91AS2wWXFgw3QL9E4pz95M2spdKIPQLhpvL3EG8oZSoXp_C_cI3Y6dYRun129wIiHKwSe3tdICsWaPpFJBpAnmpltKIUxO33amPV53CMQnhpynMwm4n7h2W8COf2VIBTCVXnw1bDrndJBcGFzu2QZSldkdrnrRDBgScejvpMbtl4WqBoWclHWRy__Ea5pxSz_NQN5wtB1gmLetlaGL81czVIQhxEsZpQaLICzLZEg8JE94ZhFg3AL1PQDw3CU30qpQ7P9izFdMNN2Kg0XfuYINFuZB9jPy9xhAPVWB2I5qcoivR3OgWETDCuS8IswzZky6104lU2WMQTQgGrw5dsUeKo8xZz3t4vyenX1DvkJCk5h-gMJl5OiBRmIIqjC1Heyz5qoffad2tY-y7fW7SN3iMdkhAlT4fZmzjPaJiai5qKptrWI4xFYrDADQZM-F6td2Yv9SWz61_zowPPf775xfUesMpnY7gMzK-CH5f3fga-b_IGVHGPtQPVu1ZokBJdC_JQUUTWcuHOqVq5xJdn8CYyPafRi0SfUwKGUfhVx7GNUOMMss1lHsT-isKdgONvXAimKe8nN-IRBrm8p8stVVBkdjhZP5EnIBZzfWoJLbDRL-VkjdCxpIjpBLGUpfz5OciA1r0Doe6dc8Fvg2Q=w742-h340-no">
+<meta property="og:updated_time" content="2017-01-20T06:24:06.350Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cloud9でLaravel5の環境構築">
-<meta name="twitter:description" content="プロジェクト作成Workspace名とテンプレートにPHPを選択します。Hosted workspaceはPrivateでもPublicでもどちらも構いませんがPublicの場合はすべての人に公開されてしまいます。またフリー版ではPrivateのWorkspaceは１つだけとなっています。
-Laravel5のプロジェクト作成新しいタブでターミナルを開いてください。以下のコマンドを実行してプロジェ">
-<meta name="twitter:image" content="https://lh3.googleusercontent.com/-SmYaIiM-R1w/WJQOzBxyyrI/AAAAAAAAAzU/-kZytHD_DqY/s0/2017-02-03_14-02-02.png">
+<meta name="twitter:title" content="Nginxのエラーページをカスタマイズする方法">
+<meta name="twitter:description" content="Nginxのデフォルトのエラーページは格好良くないし、Nginxを使ってることがバレバレです。それが嫌だったので以下の方法でカスタマイズしました。
+
+基本
+Nginxではエラーページのカスタマイズにはerror_pageディレクティブを使います。カスタマイズの基本的な方法は、custom_404.htmlを作って、nginxの設定ファイルを以下の様な感じにします。これで、Nginxを再起動して、">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/ODp_GgXqKjB5zQ9df7HPQjX91AS2wWXFgw3QL9E4pz95M2spdKIPQLhpvL3EG8oZSoXp_C_cI3Y6dYRun129wIiHKwSe3tdICsWaPpFJBpAnmpltKIUxO33amPV53CMQnhpynMwm4n7h2W8COf2VIBTCVXnw1bDrndJBcGFzu2QZSldkdrnrRDBgScejvpMbtl4WqBoWclHWRy__Ea5pxSz_NQN5wtB1gmLetlaGL81czVIQhxEsZpQaLICzLZEg8JE94ZhFg3AL1PQDw3CU30qpQ7P9izFdMNN2Kg0XfuYINFuZB9jPy9xhAPVWB2I5qcoivR3OgWETDCuS8IswzZky6104lU2WMQTQgGrw5dsUeKo8xZz3t4vyenX1DvkJCk5h-gMJl5OiBRmIIqjC1Heyz5qoffad2tY-y7fW7SN3iMdkhAlT4fZmzjPaJiai5qKptrWI4xFYrDADQZM-F6td2Yv9SWz61_zowPPf775xfUesMpnY7gMzK-CH5f3fga-b_IGVHGPtQPVu1ZokBJdC_JQUUTWcuHOqVq5xJdn8CYyPafRi0SfUwKGUfhVx7GNUOMMss1lHsT-isKdgONvXAimKe8nN-IRBrm8p8stVVBkdjhZP5EnIBZzfWoJLbDRL-VkjdCxpIjpBLGUpfz5OciA1r0Doe6dc8Fvg2Q=w742-h340-no">
 <meta name="twitter:creator" content="@kyounan719">
 <link rel="publisher" href="103371492334107230000">
     
@@ -137,18 +143,18 @@ Laravel5のプロジェクト作成新しいタブでターミナルを開いて
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/技术分享/">技术分享</a>
+    <a class="page-title-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/技术分享/Nginx/">Nginx</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-Cloud9でLaravel5の環境構築" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-Nginxのエラーページをカスタマイズする方法" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Cloud9でLaravel5の環境構築
+        Nginxのエラーページをカスタマイズする方法
         </h1>
     
 
@@ -156,34 +162,34 @@ Laravel5のプロジェクト作成新しいタブでターミナルを開いて
         
         
             <div class="article-subtitle">
-                <a href="/Cloud9でLaravel5の環境構築" class="article-date">
-    <time datetime="2017-02-03T04:58:48.000Z" itemprop="datePublished">2017-02-03</time>
+                <a href="/ciyy0sua2000df07k721ea5yd" class="article-date">
+    <time datetime="2017-01-19T08:06:00.000Z" itemprop="datePublished">2017-01-19</time>
 </a>
                 
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cloud9/">Cloud9</a></li></ul>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li></ul>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <!--excerpt-->
-<h2 id="プロジェクト作成"><a href="#プロジェクト作成" class="headerlink" title="プロジェクト作成"></a>プロジェクト作成</h2><p><img src="https://lh3.googleusercontent.com/-SXJRijcQ4F4/WJQPLCrNGrI/AAAAAAAAAzY/liQI8sZCmkU/s0/2017-02-03_14-03-41.png" alt=""><br><code>Workspace</code>名とテンプレートに<code>PHP</code>を選択します。<code>Hosted workspace</code>は<code>Private</code>でも<code>Public</code>でもどちらも構いませんが<code>Public</code>の場合はすべての人に公開されてしまいます。またフリー版では<code>Private</code>の<code>Workspace</code>は１つだけとなっています。</p>
-<h2 id="Laravel5のプロジェクト作成"><a href="#Laravel5のプロジェクト作成" class="headerlink" title="Laravel5のプロジェクト作成"></a><code>Laravel5</code>のプロジェクト作成</h2><p>新しいタブでターミナルを開いてください。<br>以下のコマンドを実行してプロジェクトを作成してください。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">rm README.md php.ini hello-world.php</div><div class="line">sudo composer self-update</div><div class="line">composer create-project laravel/laravel ./laravel --prefer-dist</div><div class="line">shopt -s dotglob</div><div class="line">mv laravel/* ./</div><div class="line">rm -rf laravel</div></pre></td></tr></table></figure>
-<p>完了まで数分かかかります。</p>
-<h2 id="Apacheのconf設定"><a href="#Apacheのconf設定" class="headerlink" title="Apacheのconf設定"></a>Apacheのconf設定</h2><p>以下のファイルを<code>vi</code>で開いて、<code>DocumentRoot</code>を以下に変更してください。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/apache2/sites-enabled/001-cloud9.conf</div></pre></td></tr></table></figure>
-<p>編集箇所</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DocumentRoot /home/ubuntu/workspace/public</div></pre></td></tr></table></figure>
-<h2 id="アップデート"><a href="#アップデート" class="headerlink" title="アップデート"></a>アップデート</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer update</div></pre></td></tr></table></figure>
-<h2 id="DB設定"><a href="#DB設定" class="headerlink" title="DB設定"></a>DB設定</h2><p>プロジェクトを作成した際に<code>MySQL</code>の<code>DB</code>が同時に作成されています。<br>まずは下記コマンドを実行して接続先のホスト名を確認しましょう。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mysql-ctl cli</div><div class="line">use c9;</div><div class="line">select @@hostname;　　←ホスト名が表示される</div><div class="line">exit</div></pre></td></tr></table></figure>
-<h2 id="LaravelのDB接続設定"><a href="#LaravelのDB接続設定" class="headerlink" title="LaravelのDB接続設定"></a><code>Laravel</code>の<code>DB</code>接続設定</h2><p> ワークスペースの直下に<code>「.env」</code>ファイルがありますが、エディタのエクスプローラーからは見えないです。（設定で表示可能かもしれませんが分かりませんでした。）ターミナルからファイルをvimで開いて編集してください。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">DB_HOST=HOSTNAME　　←上で確認したホスト名をセット</div><div class="line">DB_DATABASE=c9　　　  ←初期値</div><div class="line">DB_USERNAME=USERNAME　←cloud9のユーザー名</div><div class="line">DB_PASSWORD=　　　　　　←初期値は空でOK</div></pre></td></tr></table></figure>
-<h2 id="起動確認"><a href="#起動確認" class="headerlink" title="起動確認"></a>起動確認</h2><p>ひと通り設定は完了したので、<code>Apache</code>を起動して確認してみましょう。<br><code>Run</code>ボタンをクリックして画面下部に表示されたurlをクリックすると初期画面が表示されます。下記のように表示されていれば完了です。（<code>Laravel5</code>の場合）</p>
-<p><img src="https://lh3.googleusercontent.com/-iYRTE3BEO3o/WJQQf8428QI/AAAAAAAAAzo/FSuSCDBxU50/s0/2017-02-03_14-09-19.png" alt=""></p>
-<p>手軽に環境を作成したいと思いましたが、テンプレートが用意されていないとまだまだ手間がかかります。ここはもう少し改善を期待したいです。</p>
-<p>また、<code>Laravel</code>のプロジェクトとしてアプリを利用するためには、権限の変更などまだいくつか設定が 必要になりますが、そこは下記リンクや他で色々と紹介されていますので参照してみてください。</p>
+            <blockquote>
+<p>Nginxのデフォルトのエラーページは格好良くないし、Nginxを使ってることがバレバレです。それが嫌だったので以下の方法でカスタマイズしました。</p>
+</blockquote>
+<h2 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h2><blockquote>
+<p>Nginxではエラーページのカスタマイズにはerror_pageディレクティブを使います。<br>カスタマイズの基本的な方法は、custom_404.htmlを作って、nginxの設定ファイルを以下の様な感じにします。<br>これで、Nginxを再起動して、存在しないファイルへリクエストするとcustom_404.htmlが帰ってくるようになります。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line"></div><div class="line">    # 中略</div><div class="line"></div><div class="line">    error_page 404 /custom_404.html;</div><div class="line">    location = /custom_404.html &#123;</div><div class="line">        root /opt/nginx/html;</div><div class="line">        internal;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    # 中略</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="応用"><a href="#応用" class="headerlink" title="応用"></a>応用</h2><blockquote>
+<p>以下では、よりより実践的な例を紹介します。</p>
+<p>IP直打ちでのアクセスは全てエラーページを表示</p>
+<p>IPアドレスを直接入力してアクセスしてきた場合や想定外のホスト名でアクセスしてきた場合に常に<code>custom_404.html</code>を表示したければ以下の様にします。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    listen 80 default_server;</div><div class="line">    error_page 404 /custom_404.html;</div><div class="line">    location / &#123;</div><div class="line">        return 404;</div><div class="line">    &#125;</div><div class="line">    location = /custom_404.html &#123;</div><div class="line">        root /opt/nginx/html;</div><div class="line">        internal;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>どんなエラーが発生しても404ページを返す</p>
+<p>実際に発生しているエラーが403だろうが503だろうが、ユーザーには404エラーが発生しているように見せかけます。<br>下の例では400, 401, 403, 500, 502, 503のいずれが発生してもクライアントに返すHTTPステータスコードを404に書き換え、custom_404.htmlを返します。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    listen 80;</div><div class="line">    server_name example.com;</div><div class="line">    error_page 400 401 403 404 500 502 503 =404 /custom_404.html;</div><div class="line">    location = /custom_404.html &#123;</div><div class="line">        root /opt/nginx/html;</div><div class="line">        internal;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>管理画面を隠す</p>
+<p>特定のIP以外から管理画面へアクセスされた時は404画面を出します。<br>この例では<code>192.168.0.1</code>からの管理画面へのリクエストは許可し、それ以外の場合は404ステータスとcustom_404.htmlを返します。</p>
 
         </div>
         <footer class="article-footer">
@@ -233,7 +239,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="Cloud9でLaravel5の環境構築" data-title="Cloud9でLaravel5の環境構築" data-url="http://blog.jiangnan.pw/Cloud9でLaravel5の環境構築"></div>
+    <div class="ds-thread" data-thread-key="ciyy0sua2000df07k721ea5yd" data-title="Nginxのエラーページをカスタマイズする方法" data-url="http://blog.jiangnan.pw/ciyy0sua2000df07k721ea5yd"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
@@ -338,20 +344,20 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         
 <nav id="article-nav">
     
-        <a href="/开启Fusion Drive功能教程 双硬盘 SSD+HDD" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/ciyy0sucr0011f07k3hf9tzqx" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            开启Fusion Drive功能教程 双硬盘 SSD+HDD
+            解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/解决升级-OS-X-EI-Capitan-后-Wineskin-打包的游戏无法运行的问题" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/ciyy0sub5000qf07kfgqd39dl" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题</p>
+        <p class="article-nav-title">江南云服务正式上线</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -370,7 +376,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/让git-push命令不再需要密码" class="thumbnail">
+                            <a href="/ciyy0sucw0014f07khxe6u037" class="thumbnail">
     
     
         <span style="background-image:url(https://lh3.googleusercontent.com/-nnwlkrohkHo/WJvpWp8lRGI/AAAAAAAABcw/bl95WI6WWwI/s0/2017-02-09_13-00-25.png)" alt="让git push命令不再需要密码" class="thumbnail-image"></span>
@@ -382,7 +388,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Git/">Git</a></p>
-                            <p class="item-title"><a href="/让git-push命令不再需要密码" class="title">让git push命令不再需要密码</a></p>
+                            <p class="item-title"><a href="/ciyy0sucw0014f07khxe6u037" class="title">让git push命令不再需要密码</a></p>
                             <p class="item-date"><time datetime="2017-02-09T04:13:11.000Z" itemprop="datePublished">2017-02-09</time></p>
                         </div>
                     </li>
@@ -390,7 +396,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/gitでpush後rejectedエラーの対応メモ" class="thumbnail">
+                            <a href="/ciyy0suaf000hf07kxc80g4nf" class="thumbnail">
     
     
         <span style="background-image:url(https://lh3.googleusercontent.com/-nnwlkrohkHo/WJvpWp8lRGI/AAAAAAAABcw/bl95WI6WWwI/s0/2017-02-09_13-00-25.png)" alt="GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。" class="thumbnail-image"></span>
@@ -402,7 +408,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Git/">Git</a></p>
-                            <p class="item-title"><a href="/gitでpush後rejectedエラーの対応メモ" class="title">GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</a></p>
+                            <p class="item-title"><a href="/ciyy0suaf000hf07kxc80g4nf" class="title">GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</a></p>
                             <p class="item-date"><time datetime="2017-02-09T01:35:00.000Z" itemprop="datePublished">2017-02-09</time></p>
                         </div>
                     </li>
@@ -410,7 +416,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/Laravel 5 自定义环境变量" class="thumbnail">
+                            <a href="/ciyy0su920006f07kexptx1i6" class="thumbnail">
     
     
         <span style="background-image:url(https://dl.dropboxusercontent.com/s/onmlew6rmnd33ct/SuRyW14362693901Laravel-5%5B1%5D.png?dl=0)" alt="Laravel5自定义环境变量" class="thumbnail-image"></span>
@@ -422,7 +428,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Laravel/">Laravel</a></p>
-                            <p class="item-title"><a href="/Laravel 5 自定义环境变量" class="title">Laravel5自定义环境变量</a></p>
+                            <p class="item-title"><a href="/ciyy0su920006f07kexptx1i6" class="title">Laravel5自定义环境变量</a></p>
                             <p class="item-date"><time datetime="2017-02-03T07:19:55.000Z" itemprop="datePublished">2017-02-03</time></p>
                         </div>
                     </li>
@@ -430,7 +436,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="thumbnail">
+                            <a href="/ciyy0sual000jf07k7zw5bu5l" class="thumbnail">
     
     
         <span style="background-image:url(https://dl.dropboxusercontent.com/u/24907579/ShareX/2017/02/2017-02-08_10-23-21.png)" alt="开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="thumbnail-image"></span>
@@ -442,7 +448,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/苹果相关/">苹果相关</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a></p>
-                            <p class="item-title"><a href="/开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="title">开启Fusion Drive功能教程 双硬盘 SSD+HDD</a></p>
+                            <p class="item-title"><a href="/ciyy0sual000jf07k7zw5bu5l" class="title">开启Fusion Drive功能教程 双硬盘 SSD+HDD</a></p>
                             <p class="item-date"><time datetime="2017-02-03T05:44:35.000Z" itemprop="datePublished">2017-02-03</time></p>
                         </div>
                     </li>
@@ -450,7 +456,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/Cloud9でLaravel5の環境構築" class="thumbnail">
+                            <a href="/ciyy0su7z0002f07k9gfu9djr" class="thumbnail">
     
     
         <span style="background-image:url(https://lh3.googleusercontent.com/-SmYaIiM-R1w/WJQOzBxyyrI/AAAAAAAAAzU/-kZytHD_DqY/s0/2017-02-03_14-02-02.png)" alt="Cloud9でLaravel5の環境構築" class="thumbnail-image"></span>
@@ -462,7 +468,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a></p>
-                            <p class="item-title"><a href="/Cloud9でLaravel5の環境構築" class="title">Cloud9でLaravel5の環境構築</a></p>
+                            <p class="item-title"><a href="/ciyy0su7z0002f07k9gfu9djr" class="title">Cloud9でLaravel5の環境構築</a></p>
                             <p class="item-date"><time datetime="2017-02-03T04:58:48.000Z" itemprop="datePublished">2017-02-03</time></p>
                         </div>
                     </li>

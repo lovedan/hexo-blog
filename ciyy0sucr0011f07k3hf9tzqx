@@ -3,74 +3,32 @@
 <head>
     <meta charset="utf-8">
     
-    <title>开启Fusion Drive功能教程 双硬盘 SSD+HDD | 江南品味|记录编程道路上的点点滴滴!!!</title>
+    <title>解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题 | 江南品味|记录编程道路上的点点滴滴!!!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Mac技巧" />
     
-    <meta name="description" content="废话不多说进入主题
+    <meta name="description" content="此前苹果发布了 OS X 的新版本 EI Capitan，系统有更新当然是立马进行升级享受新鲜事物带来的快感了，但前几天想玩耍一局 Pro Evolution Soccer(实况足球)的时候，发现我深爱的游戏再也启动不起来了，和同样爱玩儿实况的同事交流之后发现情况大致有如下两种：
 
-
-disk0 是用的 120g 三星ssd 固态硬盘disk1 是用的 250g 机器自带的普通硬盘
-
-
-1.开启Fusion Drive功能之前，先要把数据全部备份。
-
-2.用系统启动光盘或者u盘启动电脑。
-
-3.进入磁盘工具把2块硬盘都进行格式化
-
-4.退出磁盘工具，进入终端。
-输入:1diskutil list
-查看当前磁盘的详细信息
-
-5.合并磁盘
-输入:1disk">
+双击 .app 文件，程序是可以打开的，但是窗口始终无法显示（我的电脑）；
+双击 .app 文件，程序无法打开，系">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开启Fusion Drive功能教程 双硬盘 SSD+HDD">
-<meta property="og:url" content="http://blog.jiangnan.pw/开启Fusion Drive功能教程 双硬盘 SSD+HDD">
+<meta property="og:title" content="解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题">
+<meta property="og:url" content="http://blog.jiangnan.pw/ciyy0sucr0011f07k3hf9tzqx">
 <meta property="og:site_name" content="江南品味|记录编程道路上的点点滴滴!!!">
-<meta property="og:description" content="废话不多说进入主题
+<meta property="og:description" content="此前苹果发布了 OS X 的新版本 EI Capitan，系统有更新当然是立马进行升级享受新鲜事物带来的快感了，但前几天想玩耍一局 Pro Evolution Soccer(实况足球)的时候，发现我深爱的游戏再也启动不起来了，和同样爱玩儿实况的同事交流之后发现情况大致有如下两种：
 
-
-disk0 是用的 120g 三星ssd 固态硬盘disk1 是用的 250g 机器自带的普通硬盘
-
-
-1.开启Fusion Drive功能之前，先要把数据全部备份。
-
-2.用系统启动光盘或者u盘启动电脑。
-
-3.进入磁盘工具把2块硬盘都进行格式化
-
-4.退出磁盘工具，进入终端。
-输入:1diskutil list
-查看当前磁盘的详细信息
-
-5.合并磁盘
-输入:1disk">
-<meta property="og:image" content="https://dl.dropboxusercontent.com/u/24907579/ShareX/2017/02/2017-02-08_10-23-21.png">
-<meta property="og:updated_time" content="2017-02-09T03:53:44.896Z">
+双击 .app 文件，程序是可以打开的，但是窗口始终无法显示（我的电脑）；
+双击 .app 文件，程序无法打开，系">
+<meta property="og:image" content="https://lh3.googleusercontent.com/-QBgvDnnM1I8/WIF8A7QmcZI/AAAAAAAAAx4/9lYwjuvkybE/2017-01-20_11-54-59.png">
+<meta property="og:updated_time" content="2017-02-09T03:53:56.176Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开启Fusion Drive功能教程 双硬盘 SSD+HDD">
-<meta name="twitter:description" content="废话不多说进入主题
+<meta name="twitter:title" content="解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题">
+<meta name="twitter:description" content="此前苹果发布了 OS X 的新版本 EI Capitan，系统有更新当然是立马进行升级享受新鲜事物带来的快感了，但前几天想玩耍一局 Pro Evolution Soccer(实况足球)的时候，发现我深爱的游戏再也启动不起来了，和同样爱玩儿实况的同事交流之后发现情况大致有如下两种：
 
-
-disk0 是用的 120g 三星ssd 固态硬盘disk1 是用的 250g 机器自带的普通硬盘
-
-
-1.开启Fusion Drive功能之前，先要把数据全部备份。
-
-2.用系统启动光盘或者u盘启动电脑。
-
-3.进入磁盘工具把2块硬盘都进行格式化
-
-4.退出磁盘工具，进入终端。
-输入:1diskutil list
-查看当前磁盘的详细信息
-
-5.合并磁盘
-输入:1disk">
-<meta name="twitter:image" content="https://dl.dropboxusercontent.com/u/24907579/ShareX/2017/02/2017-02-08_10-23-21.png">
+双击 .app 文件，程序是可以打开的，但是窗口始终无法显示（我的电脑）；
+双击 .app 文件，程序无法打开，系">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/-QBgvDnnM1I8/WIF8A7QmcZI/AAAAAAAAAx4/9lYwjuvkybE/2017-01-20_11-54-59.png">
 <meta name="twitter:creator" content="@kyounan719">
 <link rel="publisher" href="103371492334107230000">
     
@@ -189,14 +147,14 @@ disk0 是用的 120g 三星ssd 固态硬盘disk1 是用的 250g 机器自带的�
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-解决升级-OS-X-EI-Capitan-后-Wineskin-打包的游戏无法运行的问题" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        开启Fusion Drive功能教程 双硬盘 SSD+HDD
+        解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题
         </h1>
     
 
@@ -204,8 +162,8 @@ disk0 是用的 120g 三星ssd 固态硬盘disk1 是用的 250g 机器自带的�
         
         
             <div class="article-subtitle">
-                <a href="/开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="article-date">
-    <time datetime="2017-02-03T05:44:35.000Z" itemprop="datePublished">2017-02-03</time>
+                <a href="/ciyy0sucr0011f07k3hf9tzqx" class="article-date">
+    <time datetime="2017-01-20T04:05:05.000Z" itemprop="datePublished">2017-01-20</time>
 </a>
                 
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac技巧/">Mac技巧</a></li></ul>
@@ -215,46 +173,53 @@ disk0 是用的 120g 三星ssd 固态硬盘disk1 是用的 250g 机器自带的�
         
         <div class="article-entry" itemprop="articleBody">
             <!--excerpt-->
-<p>废话不多说进入主题</p>
-<p><img src="https://lh3.googleusercontent.com/-E0utAkBrw68/WJp0KJxr95I/AAAAAAAABYg/fg4_1VUTdq0/s0/2017-02-08_10-28-03.png" alt=""></p>
+<p>此前苹果发布了 OS X 的新版本 EI Capitan，系统有更新当然是立马进行升级享受新鲜事物带来的快感了，但前几天想玩耍一局 Pro Evolution Soccer(实况足球)的时候，发现我深爱的游戏再也启动不起来了，和同样爱玩儿实况的同事交流之后发现情况大致有如下两种：</p>
+<ol>
+<li>双击 <code>.app</code> 文件，程序是可以打开的，但是窗口始终无法显示（我的电脑）；</li>
+<li>双击 <code>.app</code> 文件，程序无法打开，系统提示 X11 无法打开，截图如下（同事的）：</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/-QBgvDnnM1I8/WIF8A7QmcZI/AAAAAAAAAx4/9lYwjuvkybE/2017-01-20_11-54-59.png" alt=""></p>
+<p>无法在绿茵场上尽情驰骋，这种事显然不能忍，立马去 <a href="http://wineskin.urgesoftware.com/" target="_blank" rel="external">Wineskin 官网</a>看了看，发现有一条关于 OS X EI Capitan 的新闻：</p>
 <blockquote>
-<p>disk0 是用的 120g 三星ssd 固态硬盘<br>disk1 是用的 250g 机器自带的普通硬盘</p>
+<p>Wineskin does not currently work correctly on El Capitan. The issue is being looked into, but I have no ETA for a fix. I’ll get a fix out as soon as I can.<br>Some people have been able to upgrade to the latest version of XQuartz, and change their wrappers to use XQuartz and not WineskinX11 and have gotten wrappers to work, but this method has not worked for everyone.<br>Please add to the discussion here if you are helping find a solution.</p>
 </blockquote>
-<p><img src="https://lh3.googleusercontent.com/-R8GL5Cm9cMc/WJp0abZJ9MI/AAAAAAAABYk/oRlTT6-3-yQ/s0/2017-02-08_10-29-08.png" alt=""></p>
-<p>1.开启Fusion Drive功能之前，先要把数据全部备份。</p>
-<p><img src="https://lh3.googleusercontent.com/-22yQinjGFrQ/WJp0snqYIqI/AAAAAAAABYs/8LvjpzO5bgQ/s0/2017-02-08_10-30-22.png" alt=""></p>
-<p>2.用系统启动光盘或者u盘启动电脑。</p>
-<p><img src="https://lh3.googleusercontent.com/-7RdUviFxN98/WJp04GLOjZI/AAAAAAAABYw/6KVCkKBO5FI/s0/2017-02-08_10-31-07.png" alt=""></p>
-<p>3.进入磁盘工具把2块硬盘都进行格式化</p>
-<p><img src="https://lh3.googleusercontent.com/-TEUn4kf4Z50/WJp1ZegbCuI/AAAAAAAABY4/menESopf7v0/s0/2017-02-08_10-33-20.png" alt=""></p>
-<p>4.退出磁盘工具，进入终端。</p>
-<p>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil list</div></pre></td></tr></table></figure></p>
-<p>查看当前磁盘的详细信息</p>
-<p><img src="https://lh3.googleusercontent.com/-TM1DhU3tVjc/WJp2R9Uy2ZI/AAAAAAAABZE/5r0reM3fbEQ/s0/2017-02-08_10-37-06.png" alt=""></p>
-<p>5.合并磁盘</p>
-<p>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil cs create bla disk0 disk1</div></pre></td></tr></table></figure></p>
-<p><img src="https://lh3.googleusercontent.com/-em2gG4BcWQA/WJp2lN41i5I/AAAAAAAABZI/DDjUR0LyBHQ/s0/2017-02-08_10-38-23.png" alt=""></p>
-<p>这里可以看见最后一行 百分百的进度条。。。</p>
-<p><img src="https://lh3.googleusercontent.com/-maQp1HMUN9A/WJqhrcq7ZFI/AAAAAAAABZk/Eqk6lvsq83Q/s0/2017-02-08_13-42-15.png" alt=""></p>
-<p>画横线的地方显示正在创建逻辑盘。。。</p>
-<p><img src="https://lh3.googleusercontent.com/-Flp1ZQVqu6Q/WJqhzS5hOcI/AAAAAAAABZo/aKnVGV3ZxnE/s0/2017-02-08_13-42-48.png" alt=""></p>
-<p>这里显示逻辑盘已经创建成功</p>
-<p>最后一行显示</p>
-<p>Core Storage LVG UUID: <code>【BBC6AD77-ADF2-40EE-A1D0-68BFE4913966】</code></p>
-<p>Finished CoreStorage operation</p>
-<p><code>【】</code>中的字串之后还会用到，可以直接复制使用</p>
-<p>6.再次输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil cs list</div></pre></td></tr></table></figure></p>
-<p>查看逻辑磁盘状态</p>
-<p><img src="https://lh3.googleusercontent.com/-55OmC1i9yOM/WJqiNghRqXI/AAAAAAAABZs/mxIFLTqrwSQ/s0/2017-02-08_13-44-32.png" alt=""></p>
-<p>显示新的逻辑卷的容量和<code>id</code>，下面有组成逻辑卷的硬盘<code>id</code><br>秘书用的是<code>120+250</code>的硬盘，容量是<code>377.4G</code>，实际可用<code>375.2G</code></p>
-<p>7.建立Fusion Drive</p>
-<p>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil coreStorage createVolume BBC6AD77-ADF2-40EE-A1D0-68BFE4913966 jhfs+ blub 375g</div><div class="line">diskutil coreStorage createVolume 【BBC6AD77-ADF2-40EE-A1D0-68BFE4913966】 jhfs+ blub 375g</div></pre></td></tr></table></figure></p>
-<p>其中<code>【】</code>里面的id换成之前查到的自己的逻辑卷id，<code>【】</code>不要需要输入进去的。</p>
-<p>建立的容量不能大于实际可用容量</p>
-<p>8.退出终端 进入磁盘工具，看下是否已经成功开启Fusion Drive。</p>
-<p><img src="https://lh3.googleusercontent.com/-V4J2mg_cGaY/WJqjk4iTFvI/AAAAAAAABZ8/Fj_iYgqMVvY/s0/2017-02-08_13-50-22.png" alt=""></p>
-<p>9.接下来点 重新安装系统，后面就和普通安装没有任何区别了。</p>
-<p><img src="https://lh3.googleusercontent.com/-Wbn3v2OHp_g/WJqjsnZ754I/AAAAAAAABaA/CQdziT0dQSo/s0/2017-02-08_13-50-54.png" alt=""><br><img src="https://lh3.googleusercontent.com/--cDPwpcrjdU/WJqj9ZiIjbI/AAAAAAAABaE/p3zyHD91k6k/s0/2017-02-08_13-52-01.png" alt=""><br><img src="https://lh3.googleusercontent.com/-m8qhXLJ-RoU/WJqkHAkXXmI/AAAAAAAABaM/Lp6Q0_zhXqk/s0/2017-02-08_13-52-39.png" alt=""></p>
+<p>又看到有一条新版本发布的新闻：</p>
+<blockquote>
+<p>I’ve released an update for Wineskin… version 2.6.1.<br>I think I’ve fixed all the El Capitan bugs and it should work fine on 10.6 - 10.11 now.<br>important point. This has to change how an engine is installed in a wrapper slightly. If you update a wrapper to 2.6.1 and it does not work right, please reinstall the engine in the wrapper. You can just use Change Engine and install the same one back in, but it will install it correctly for 2.6.1 and then things should work right. Newly made wrappers should have no issues.</p>
+</blockquote>
+<p>这说明官方发布的最新的 2.6.1 版本已经解决了该问题，那么剩下的问题就简单多了，我们只需要将 <code>Wineskin Wrapper</code> 给替换成官方发布的最新版本即可。</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><ol>
+<li>在应用程序中找到需要修复的游戏，右键选择 <code>显示包内容</code>；</li>
+<li>打开 <code>Wineskin.app</code>，选择 <code>advance</code>，记录下引擎版本号：</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/-6iUQqxE4ehs/WIGN2RoMBgI/AAAAAAAAAyY/PZ-MapzWiSU/s0/2017-01-20_13-11-04.png" alt=""></p>
+<ol>
+<li>下载最新版本的 <a href="http://wineskin.urgesoftware.com/tiki-index.php?page=Downloads" target="_blank" rel="external">Wineskin Winery</a>；</li>
+<li>打开 <code>Wineskin Winery</code>，添加一个新的 <code>engine</code>，版本号最好与之前记录的版本号一致：</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/-6GZhT7VGSoE/WIGOD7jQBmI/AAAAAAAAAyc/8Vsd_dVjhUA/s0/2017-01-20_13-11-58.png" alt=""></p>
+<ol>
+<li>更新 <code>Wrapper Version</code> 至最新版，只要在 2.6.1 以上即代表已经使用了官方修复 OS X EI Capitan 问题的 <code>Wrapper</code>：</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/-YqFjJh_LWPA/WIGOQFuz0TI/AAAAAAAAAyg/N5YYm23sKAc/s0/2017-01-20_13-12-47.png" alt=""></p>
+<ol>
+<li>选择 <code>Create New Blank Wrapper</code>，填写游戏名称并选择 <code>Create</code>。如果有提示需要安装东西，都可以选择 <code>Cancel</code>；</li>
+<li>创建成功后，将原游戏 <code>.app</code> 文件包内容中的 <code>Content/Resources/driver_c</code> 文件夹以及 <code>Content/Resources/system.reg</code>、<code>Content/Resources/user.reg</code>、<code>Content/Resources/userdef.reg</code> 这三个文件覆盖到我们新创建的 <code>Wrapper</code> 文件包内容中的 <code>Content/Resources/</code> 文件夹中，它们分别相当于 <code>Windows</code> 系统中的 C 盘和注册表；</li>
+<li>再打开我们新创建的 <code>Wrapper</code> 文件包内容中的 <code>&#39;Wineskin.app&#39;</code>，选择 <code>advance</code>，然后选择程序的启动路径，即刚刚覆盖的 <code>driver_c</code> 文件夹中我们想要启动的 <code>exe</code> 程序：</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/-D0qlGz7IKW4/WIGOfMRqr1I/AAAAAAAAAyk/rRYqm5pR1LA/s0/2017-01-20_13-13-48.png" alt=""></p>
+<ol>
+<li>退回到我们在第 6 步中生成新 Wineskin Wrapper 的目录，当然现在它已经是一个完整的游戏程序了，双击运行它，然后 enjoy it!</li>
+</ol>
+<p>鉴于评论区有朋友反映下载 <code>engine</code> 和 <code>wrapper</code> 总是失败，所以现在将最新的 <code>engine</code> 和 <code>wrapper</code> 上传到网盘供大家下载：</p>
+<ol>
+<li>Engine 1.7.52 <a href="http://pan.baidu.com/s/1bnoelND" target="_blank" rel="external">下载地址</a>，提取码：<code>ikhq</code>；</li>
+<li>Wrapper 2.6.1 <a href="http://pan.baidu.com/s/1c0c6Qo4" target="_blank" rel="external">下载地址</a>，提取码：<code>v1dh</code>。</li>
+</ol>
+<p>下载后，将 <code>WS9Wine1.7.52.tar.7z</code> 这个文件放入 <code>~/Library/Application Support/Wineskin/Engines</code> 这个文件夹；将 <code>Wineskin-2.6.1.app.zip</code> 这个文件解压缩，得到 <code>Wineskin-2.6.1.app</code> 这个文件，将其放入 <code>~/Library/Application Support/Wineskin/Wrapper</code> 这个文件夹，然后重新打开上面第 3 步中下载的 <code>Wineskin Winery</code>，如果 <code>engine</code> 和 <code>wrapper</code> 都已经存在了，直接进行第 6 步的操作即可。</p>
+<hr>
+<p>再放上 <code>Wineskin Winery</code> 的网盘地址：</p>
+<p>Wineskin Winery 1.7 <a href="http://pan.baidu.com/s/1hq8TO8G" target="_blank" rel="external">下载地址</a>，提取码：<code>dpdu</code>。</p>
 
         </div>
         <footer class="article-footer">
@@ -304,7 +269,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="开启Fusion Drive功能教程 双硬盘 SSD+HDD" data-title="开启Fusion Drive功能教程 双硬盘 SSD+HDD" data-url="http://blog.jiangnan.pw/开启Fusion Drive功能教程 双硬盘 SSD+HDD"></div>
+    <div class="ds-thread" data-thread-key="ciyy0sucr0011f07k3hf9tzqx" data-title="解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题" data-url="http://blog.jiangnan.pw/ciyy0sucr0011f07k3hf9tzqx"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
@@ -409,20 +374,20 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         
 <nav id="article-nav">
     
-        <a href="/Laravel 5 自定义环境变量" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/ciyy0su7z0002f07k9gfu9djr" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            Laravel5自定义环境变量
+            Cloud9でLaravel5の環境構築
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/Cloud9でLaravel5の環境構築" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/ciyy0sua2000df07k721ea5yd" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">Cloud9でLaravel5の環境構築</p>
+        <p class="article-nav-title">Nginxのエラーページをカスタマイズする方法</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -441,7 +406,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/让git-push命令不再需要密码" class="thumbnail">
+                            <a href="/ciyy0sucw0014f07khxe6u037" class="thumbnail">
     
     
         <span style="background-image:url(https://lh3.googleusercontent.com/-nnwlkrohkHo/WJvpWp8lRGI/AAAAAAAABcw/bl95WI6WWwI/s0/2017-02-09_13-00-25.png)" alt="让git push命令不再需要密码" class="thumbnail-image"></span>
@@ -453,7 +418,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Git/">Git</a></p>
-                            <p class="item-title"><a href="/让git-push命令不再需要密码" class="title">让git push命令不再需要密码</a></p>
+                            <p class="item-title"><a href="/ciyy0sucw0014f07khxe6u037" class="title">让git push命令不再需要密码</a></p>
                             <p class="item-date"><time datetime="2017-02-09T04:13:11.000Z" itemprop="datePublished">2017-02-09</time></p>
                         </div>
                     </li>
@@ -461,7 +426,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/gitでpush後rejectedエラーの対応メモ" class="thumbnail">
+                            <a href="/ciyy0suaf000hf07kxc80g4nf" class="thumbnail">
     
     
         <span style="background-image:url(https://lh3.googleusercontent.com/-nnwlkrohkHo/WJvpWp8lRGI/AAAAAAAABcw/bl95WI6WWwI/s0/2017-02-09_13-00-25.png)" alt="GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。" class="thumbnail-image"></span>
@@ -473,7 +438,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Git/">Git</a></p>
-                            <p class="item-title"><a href="/gitでpush後rejectedエラーの対応メモ" class="title">GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</a></p>
+                            <p class="item-title"><a href="/ciyy0suaf000hf07kxc80g4nf" class="title">GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</a></p>
                             <p class="item-date"><time datetime="2017-02-09T01:35:00.000Z" itemprop="datePublished">2017-02-09</time></p>
                         </div>
                     </li>
@@ -481,7 +446,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/Laravel 5 自定义环境变量" class="thumbnail">
+                            <a href="/ciyy0su920006f07kexptx1i6" class="thumbnail">
     
     
         <span style="background-image:url(https://dl.dropboxusercontent.com/s/onmlew6rmnd33ct/SuRyW14362693901Laravel-5%5B1%5D.png?dl=0)" alt="Laravel5自定义环境变量" class="thumbnail-image"></span>
@@ -493,7 +458,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Laravel/">Laravel</a></p>
-                            <p class="item-title"><a href="/Laravel 5 自定义环境变量" class="title">Laravel5自定义环境变量</a></p>
+                            <p class="item-title"><a href="/ciyy0su920006f07kexptx1i6" class="title">Laravel5自定义环境变量</a></p>
                             <p class="item-date"><time datetime="2017-02-03T07:19:55.000Z" itemprop="datePublished">2017-02-03</time></p>
                         </div>
                     </li>
@@ -501,7 +466,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="thumbnail">
+                            <a href="/ciyy0sual000jf07k7zw5bu5l" class="thumbnail">
     
     
         <span style="background-image:url(https://dl.dropboxusercontent.com/u/24907579/ShareX/2017/02/2017-02-08_10-23-21.png)" alt="开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="thumbnail-image"></span>
@@ -513,7 +478,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/苹果相关/">苹果相关</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a></p>
-                            <p class="item-title"><a href="/开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="title">开启Fusion Drive功能教程 双硬盘 SSD+HDD</a></p>
+                            <p class="item-title"><a href="/ciyy0sual000jf07k7zw5bu5l" class="title">开启Fusion Drive功能教程 双硬盘 SSD+HDD</a></p>
                             <p class="item-date"><time datetime="2017-02-03T05:44:35.000Z" itemprop="datePublished">2017-02-03</time></p>
                         </div>
                     </li>
@@ -521,7 +486,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/Cloud9でLaravel5の環境構築" class="thumbnail">
+                            <a href="/ciyy0su7z0002f07k9gfu9djr" class="thumbnail">
     
     
         <span style="background-image:url(https://lh3.googleusercontent.com/-SmYaIiM-R1w/WJQOzBxyyrI/AAAAAAAAAzU/-kZytHD_DqY/s0/2017-02-03_14-02-02.png)" alt="Cloud9でLaravel5の環境構築" class="thumbnail-image"></span>
@@ -533,7 +498,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a></p>
-                            <p class="item-title"><a href="/Cloud9でLaravel5の環境構築" class="title">Cloud9でLaravel5の環境構築</a></p>
+                            <p class="item-title"><a href="/ciyy0su7z0002f07k9gfu9djr" class="title">Cloud9でLaravel5の環境構築</a></p>
                             <p class="item-date"><time datetime="2017-02-03T04:58:48.000Z" itemprop="datePublished">2017-02-03</time></p>
                         </div>
                     </li>

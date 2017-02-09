@@ -3,35 +3,74 @@
 <head>
     <meta charset="utf-8">
     
-    <title>江南云服务正式上线 | 江南品味|记录编程道路上的点点滴滴!!!</title>
+    <title>开启Fusion Drive功能教程 双硬盘 SSD+HDD | 江南品味|记录编程道路上的点点滴滴!!!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="江南云,作品展示" />
+        <meta name="keywords" content="Mac技巧" />
     
-    <meta name="description" content="江南云-提供基于百度云，天翼云(正在开发中Y(^_^)Y)的云存储服务，包括图片，音乐，视频，文件的云存储下载服务。
+    <meta name="description" content="废话不多说进入主题
 
-提供百度云，天翼云本身不支持的迅雷等工具直接下载的功能。
-采用用户本地存储TOKEN的方式进行授权，充分保证用户的个人隐私
-提供图片，音视频等流媒体的直接外链功能，从此站长再也不用费心找图床。">
+
+disk0 是用的 120g 三星ssd 固态硬盘disk1 是用的 250g 机器自带的普通硬盘
+
+
+1.开启Fusion Drive功能之前，先要把数据全部备份。
+
+2.用系统启动光盘或者u盘启动电脑。
+
+3.进入磁盘工具把2块硬盘都进行格式化
+
+4.退出磁盘工具，进入终端。
+输入:1diskutil list
+查看当前磁盘的详细信息
+
+5.合并磁盘
+输入:1disk">
 <meta property="og:type" content="article">
-<meta property="og:title" content="江南云服务正式上线">
-<meta property="og:url" content="http://blog.jiangnan.pw/作品展示/江南云服务正式上线">
+<meta property="og:title" content="开启Fusion Drive功能教程 双硬盘 SSD+HDD">
+<meta property="og:url" content="http://blog.jiangnan.pw/开启Fusion Drive功能教程 双硬盘 SSD+HDD">
 <meta property="og:site_name" content="江南品味|记录编程道路上的点点滴滴!!!">
-<meta property="og:description" content="江南云-提供基于百度云，天翼云(正在开发中Y(^_^)Y)的云存储服务，包括图片，音乐，视频，文件的云存储下载服务。
+<meta property="og:description" content="废话不多说进入主题
 
-提供百度云，天翼云本身不支持的迅雷等工具直接下载的功能。
-采用用户本地存储TOKEN的方式进行授权，充分保证用户的个人隐私
-提供图片，音视频等流媒体的直接外链功能，从此站长再也不用费心找图床。">
-<meta property="og:image" content="https://lh3.googleusercontent.com/-qqlLrJo8JS4/WHRseojYN2I/AAAAAAAAAuQ/lXV-fkSg97M/2017-01-10_14-09-12.png">
-<meta property="og:updated_time" content="2017-01-20T05:49:50.307Z">
+
+disk0 是用的 120g 三星ssd 固态硬盘disk1 是用的 250g 机器自带的普通硬盘
+
+
+1.开启Fusion Drive功能之前，先要把数据全部备份。
+
+2.用系统启动光盘或者u盘启动电脑。
+
+3.进入磁盘工具把2块硬盘都进行格式化
+
+4.退出磁盘工具，进入终端。
+输入:1diskutil list
+查看当前磁盘的详细信息
+
+5.合并磁盘
+输入:1disk">
+<meta property="og:image" content="https://dl.dropboxusercontent.com/u/24907579/ShareX/2017/02/2017-02-08_10-23-21.png">
+<meta property="og:updated_time" content="2017-02-09T03:53:44.896Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="江南云服务正式上线">
-<meta name="twitter:description" content="江南云-提供基于百度云，天翼云(正在开发中Y(^_^)Y)的云存储服务，包括图片，音乐，视频，文件的云存储下载服务。
+<meta name="twitter:title" content="开启Fusion Drive功能教程 双硬盘 SSD+HDD">
+<meta name="twitter:description" content="废话不多说进入主题
 
-提供百度云，天翼云本身不支持的迅雷等工具直接下载的功能。
-采用用户本地存储TOKEN的方式进行授权，充分保证用户的个人隐私
-提供图片，音视频等流媒体的直接外链功能，从此站长再也不用费心找图床。">
-<meta name="twitter:image" content="https://lh3.googleusercontent.com/-qqlLrJo8JS4/WHRseojYN2I/AAAAAAAAAuQ/lXV-fkSg97M/2017-01-10_14-09-12.png">
+
+disk0 是用的 120g 三星ssd 固态硬盘disk1 是用的 250g 机器自带的普通硬盘
+
+
+1.开启Fusion Drive功能之前，先要把数据全部备份。
+
+2.用系统启动光盘或者u盘启动电脑。
+
+3.进入磁盘工具把2块硬盘都进行格式化
+
+4.退出磁盘工具，进入终端。
+输入:1diskutil list
+查看当前磁盘的详细信息
+
+5.合并磁盘
+输入:1disk">
+<meta name="twitter:image" content="https://dl.dropboxusercontent.com/u/24907579/ShareX/2017/02/2017-02-08_10-23-21.png">
 <meta name="twitter:creator" content="@kyounan719">
 <link rel="publisher" href="103371492334107230000">
     
@@ -146,18 +185,18 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/作品展示/">作品展示</a>
+    <a class="page-title-link" href="/categories/苹果相关/">苹果相关</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-江南云服务正式上线" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        江南云服务正式上线
+        开启Fusion Drive功能教程 双硬盘 SSD+HDD
         </h1>
     
 
@@ -165,23 +204,57 @@
         
         
             <div class="article-subtitle">
-                <a href="/作品展示/江南云服务正式上线" class="article-date">
-    <time datetime="2017-01-10T05:10:27.000Z" itemprop="datePublished">2017-01-10</time>
+                <a href="/开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="article-date">
+    <time datetime="2017-02-03T05:44:35.000Z" itemprop="datePublished">2017-02-03</time>
 </a>
                 
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/作品展示/">作品展示</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/江南云/">江南云</a></li></ul>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac技巧/">Mac技巧</a></li></ul>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>江南云-提供基于百度云，天翼云(正在开发中Y(^_^)Y)的云存储服务，包括图片，音乐，视频，文件的云存储下载服务。</p>
-<ul>
-<li>提供百度云，天翼云本身不支持的迅雷等工具直接下载的功能。</li>
-<li>采用用户本地存储TOKEN的方式进行授权，充分保证用户的个人隐私</li>
-<li>提供图片，音视频等流媒体的直接外链功能，从此站长再也不用费心找图床。</li>
-</ul>
-<p><img src="https://lh3.googleusercontent.com/-qqlLrJo8JS4/WHRseojYN2I/AAAAAAAAAuQ/lXV-fkSg97M/s0/2017-01-10_14-09-12.png" alt="江南云首页"><br><img src="https://lh3.googleusercontent.com/-tQF7SvGlpMk/WHRudf1irvI/AAAAAAAAAuw/YwENVxgYmk0/s0/2017-01-10_14-17-39.png" alt="授权代码获取"><br><img src="https://lh3.googleusercontent.com/-fIOPEh7rQ1E/WHRus4ZSdeI/AAAAAAAAAu0/Ib9kRzuSxHM/s0/2017-01-10_14-18-42.png" alt="江南云文件管理"><br><img src="https://lh3.googleusercontent.com/-dagoHUPxzQQ/WHRvn18eX8I/AAAAAAAAAvA/2h1_xL5NPW8/s0/2017-01-10_14-22-39.png" alt="江南云侧边栏"></p>
+            <!--excerpt-->
+<p>废话不多说进入主题</p>
+<p><img src="https://lh3.googleusercontent.com/-E0utAkBrw68/WJp0KJxr95I/AAAAAAAABYg/fg4_1VUTdq0/s0/2017-02-08_10-28-03.png" alt=""></p>
+<blockquote>
+<p>disk0 是用的 120g 三星ssd 固态硬盘<br>disk1 是用的 250g 机器自带的普通硬盘</p>
+</blockquote>
+<p><img src="https://lh3.googleusercontent.com/-R8GL5Cm9cMc/WJp0abZJ9MI/AAAAAAAABYk/oRlTT6-3-yQ/s0/2017-02-08_10-29-08.png" alt=""></p>
+<p>1.开启Fusion Drive功能之前，先要把数据全部备份。</p>
+<p><img src="https://lh3.googleusercontent.com/-22yQinjGFrQ/WJp0snqYIqI/AAAAAAAABYs/8LvjpzO5bgQ/s0/2017-02-08_10-30-22.png" alt=""></p>
+<p>2.用系统启动光盘或者u盘启动电脑。</p>
+<p><img src="https://lh3.googleusercontent.com/-7RdUviFxN98/WJp04GLOjZI/AAAAAAAABYw/6KVCkKBO5FI/s0/2017-02-08_10-31-07.png" alt=""></p>
+<p>3.进入磁盘工具把2块硬盘都进行格式化</p>
+<p><img src="https://lh3.googleusercontent.com/-TEUn4kf4Z50/WJp1ZegbCuI/AAAAAAAABY4/menESopf7v0/s0/2017-02-08_10-33-20.png" alt=""></p>
+<p>4.退出磁盘工具，进入终端。</p>
+<p>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil list</div></pre></td></tr></table></figure></p>
+<p>查看当前磁盘的详细信息</p>
+<p><img src="https://lh3.googleusercontent.com/-TM1DhU3tVjc/WJp2R9Uy2ZI/AAAAAAAABZE/5r0reM3fbEQ/s0/2017-02-08_10-37-06.png" alt=""></p>
+<p>5.合并磁盘</p>
+<p>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil cs create bla disk0 disk1</div></pre></td></tr></table></figure></p>
+<p><img src="https://lh3.googleusercontent.com/-em2gG4BcWQA/WJp2lN41i5I/AAAAAAAABZI/DDjUR0LyBHQ/s0/2017-02-08_10-38-23.png" alt=""></p>
+<p>这里可以看见最后一行 百分百的进度条。。。</p>
+<p><img src="https://lh3.googleusercontent.com/-maQp1HMUN9A/WJqhrcq7ZFI/AAAAAAAABZk/Eqk6lvsq83Q/s0/2017-02-08_13-42-15.png" alt=""></p>
+<p>画横线的地方显示正在创建逻辑盘。。。</p>
+<p><img src="https://lh3.googleusercontent.com/-Flp1ZQVqu6Q/WJqhzS5hOcI/AAAAAAAABZo/aKnVGV3ZxnE/s0/2017-02-08_13-42-48.png" alt=""></p>
+<p>这里显示逻辑盘已经创建成功</p>
+<p>最后一行显示</p>
+<p>Core Storage LVG UUID: <code>【BBC6AD77-ADF2-40EE-A1D0-68BFE4913966】</code></p>
+<p>Finished CoreStorage operation</p>
+<p><code>【】</code>中的字串之后还会用到，可以直接复制使用</p>
+<p>6.再次输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil cs list</div></pre></td></tr></table></figure></p>
+<p>查看逻辑磁盘状态</p>
+<p><img src="https://lh3.googleusercontent.com/-55OmC1i9yOM/WJqiNghRqXI/AAAAAAAABZs/mxIFLTqrwSQ/s0/2017-02-08_13-44-32.png" alt=""></p>
+<p>显示新的逻辑卷的容量和<code>id</code>，下面有组成逻辑卷的硬盘<code>id</code><br>秘书用的是<code>120+250</code>的硬盘，容量是<code>377.4G</code>，实际可用<code>375.2G</code></p>
+<p>7.建立Fusion Drive</p>
+<p>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil coreStorage createVolume BBC6AD77-ADF2-40EE-A1D0-68BFE4913966 jhfs+ blub 375g</div><div class="line">diskutil coreStorage createVolume 【BBC6AD77-ADF2-40EE-A1D0-68BFE4913966】 jhfs+ blub 375g</div></pre></td></tr></table></figure></p>
+<p>其中<code>【】</code>里面的id换成之前查到的自己的逻辑卷id，<code>【】</code>不要需要输入进去的。</p>
+<p>建立的容量不能大于实际可用容量</p>
+<p>8.退出终端 进入磁盘工具，看下是否已经成功开启Fusion Drive。</p>
+<p><img src="https://lh3.googleusercontent.com/-V4J2mg_cGaY/WJqjk4iTFvI/AAAAAAAABZ8/Fj_iYgqMVvY/s0/2017-02-08_13-50-22.png" alt=""></p>
+<p>9.接下来点 重新安装系统，后面就和普通安装没有任何区别了。</p>
+<p><img src="https://lh3.googleusercontent.com/-Wbn3v2OHp_g/WJqjsnZ754I/AAAAAAAABaA/CQdziT0dQSo/s0/2017-02-08_13-50-54.png" alt=""><br><img src="https://lh3.googleusercontent.com/--cDPwpcrjdU/WJqj9ZiIjbI/AAAAAAAABaE/p3zyHD91k6k/s0/2017-02-08_13-52-01.png" alt=""><br><img src="https://lh3.googleusercontent.com/-m8qhXLJ-RoU/WJqkHAkXXmI/AAAAAAAABaM/Lp6Q0_zhXqk/s0/2017-02-08_13-52-39.png" alt=""></p>
 
         </div>
         <footer class="article-footer">
@@ -231,7 +304,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="作品展示/江南云服务正式上线" data-title="江南云服务正式上线" data-url="http://blog.jiangnan.pw/作品展示/江南云服务正式上线"></div>
+    <div class="ds-thread" data-thread-key="开启Fusion Drive功能教程 双硬盘 SSD+HDD" data-title="开启Fusion Drive功能教程 双硬盘 SSD+HDD" data-url="http://blog.jiangnan.pw/开启Fusion Drive功能教程 双硬盘 SSD+HDD"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
@@ -336,20 +409,20 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         
 <nav id="article-nav">
     
-        <a href="/技术分享/Nginx/Nginxのエラーページをカスタマイズする方法" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/Laravel 5 自定义环境变量" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            Nginxのエラーページをカスタマイズする方法
+            Laravel5自定义环境变量
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/技术分享/Laravel/Laravel5导入自定义函数和类的方法" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/Cloud9でLaravel5の環境構築" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">Laravel5导入自定义函数和类的方法</p>
+        <p class="article-nav-title">Cloud9でLaravel5の環境構築</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -368,7 +441,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/技术分享/Git/让git-push命令不再需要密码" class="thumbnail">
+                            <a href="/让git-push命令不再需要密码" class="thumbnail">
     
     
         <span style="background-image:url(https://lh3.googleusercontent.com/-nnwlkrohkHo/WJvpWp8lRGI/AAAAAAAABcw/bl95WI6WWwI/s0/2017-02-09_13-00-25.png)" alt="让git push命令不再需要密码" class="thumbnail-image"></span>
@@ -380,7 +453,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Git/">Git</a></p>
-                            <p class="item-title"><a href="/技术分享/Git/让git-push命令不再需要密码" class="title">让git push命令不再需要密码</a></p>
+                            <p class="item-title"><a href="/让git-push命令不再需要密码" class="title">让git push命令不再需要密码</a></p>
                             <p class="item-date"><time datetime="2017-02-09T04:13:11.000Z" itemprop="datePublished">2017-02-09</time></p>
                         </div>
                     </li>
@@ -388,7 +461,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/技术分享/Git/gitでpush後rejectedエラーの対応メモ" class="thumbnail">
+                            <a href="/gitでpush後rejectedエラーの対応メモ" class="thumbnail">
     
     
         <span style="background-image:url(https://lh3.googleusercontent.com/-nnwlkrohkHo/WJvpWp8lRGI/AAAAAAAABcw/bl95WI6WWwI/s0/2017-02-09_13-00-25.png)" alt="GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。" class="thumbnail-image"></span>
@@ -400,7 +473,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Git/">Git</a></p>
-                            <p class="item-title"><a href="/技术分享/Git/gitでpush後rejectedエラーの対応メモ" class="title">GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</a></p>
+                            <p class="item-title"><a href="/gitでpush後rejectedエラーの対応メモ" class="title">GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</a></p>
                             <p class="item-date"><time datetime="2017-02-09T01:35:00.000Z" itemprop="datePublished">2017-02-09</time></p>
                         </div>
                     </li>
@@ -408,7 +481,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/技术分享/Laravel/Laravel 5 自定义环境变量" class="thumbnail">
+                            <a href="/Laravel 5 自定义环境变量" class="thumbnail">
     
     
         <span style="background-image:url(https://dl.dropboxusercontent.com/s/onmlew6rmnd33ct/SuRyW14362693901Laravel-5%5B1%5D.png?dl=0)" alt="Laravel5自定义环境变量" class="thumbnail-image"></span>
@@ -420,7 +493,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Laravel/">Laravel</a></p>
-                            <p class="item-title"><a href="/技术分享/Laravel/Laravel 5 自定义环境变量" class="title">Laravel5自定义环境变量</a></p>
+                            <p class="item-title"><a href="/Laravel 5 自定义环境变量" class="title">Laravel5自定义环境变量</a></p>
                             <p class="item-date"><time datetime="2017-02-03T07:19:55.000Z" itemprop="datePublished">2017-02-03</time></p>
                         </div>
                     </li>
@@ -428,7 +501,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/苹果相关/Mac技巧/开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="thumbnail">
+                            <a href="/开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="thumbnail">
     
     
         <span style="background-image:url(https://dl.dropboxusercontent.com/u/24907579/ShareX/2017/02/2017-02-08_10-23-21.png)" alt="开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="thumbnail-image"></span>
@@ -440,7 +513,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/苹果相关/">苹果相关</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a></p>
-                            <p class="item-title"><a href="/苹果相关/Mac技巧/开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="title">开启Fusion Drive功能教程 双硬盘 SSD+HDD</a></p>
+                            <p class="item-title"><a href="/开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="title">开启Fusion Drive功能教程 双硬盘 SSD+HDD</a></p>
                             <p class="item-date"><time datetime="2017-02-03T05:44:35.000Z" itemprop="datePublished">2017-02-03</time></p>
                         </div>
                     </li>
@@ -448,7 +521,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/技术分享/Cloud9でLaravel5の環境構築" class="thumbnail">
+                            <a href="/Cloud9でLaravel5の環境構築" class="thumbnail">
     
     
         <span style="background-image:url(https://lh3.googleusercontent.com/-SmYaIiM-R1w/WJQOzBxyyrI/AAAAAAAAAzU/-kZytHD_DqY/s0/2017-02-03_14-02-02.png)" alt="Cloud9でLaravel5の環境構築" class="thumbnail-image"></span>
@@ -460,7 +533,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a></p>
-                            <p class="item-title"><a href="/技术分享/Cloud9でLaravel5の環境構築" class="title">Cloud9でLaravel5の環境構築</a></p>
+                            <p class="item-title"><a href="/Cloud9でLaravel5の環境構築" class="title">Cloud9でLaravel5の環境構築</a></p>
                             <p class="item-date"><time datetime="2017-02-03T04:58:48.000Z" itemprop="datePublished">2017-02-03</time></p>
                         </div>
                     </li>

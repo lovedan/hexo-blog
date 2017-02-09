@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiangnan.pw/"/>
-  <updated>2017-02-03T04:48:05.768Z</updated>
+  <updated>2017-02-09T04:05:02.779Z</updated>
   <id>http://blog.jiangnan.pw/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</title>
+    <link href="http://blog.jiangnan.pw/2017/02/09/git%E3%81%A7push%E5%BE%8Crejected%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AE%E5%AF%BE%E5%BF%9C%E3%83%A1%E3%83%A2/"/>
+    <id>http://blog.jiangnan.pw/2017/02/09/gitでpush後rejectedエラーの対応メモ/</id>
+    <published>2017-02-09T01:35:00.000Z</published>
+    <updated>2017-02-09T04:05:02.779Z</updated>
+    
+    <content type="html"><![CDATA[<!--excerpt-->
+<h2 id="はじめに"><a href="#はじめに" class="headerlink" title="はじめに"></a>はじめに</h2><hr>
+<p>GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</p>
+<h2 id="Gitバージョン"><a href="#Gitバージョン" class="headerlink" title="Gitバージョン"></a>Gitバージョン</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">% git --version</div><div class="line">git version 2.9.2</div></pre></td></tr></table></figure>
+<h2 id="作業の流れ"><a href="#作業の流れ" class="headerlink" title="作業の流れ"></a>作業の流れ</h2><p>GitHubからリポジトリを作成</p>
+<p>「Initialize this repository with a README」にチェック</p>
+<p>ローカルリポジトリに追加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">% git add -A</div></pre></td></tr></table></figure></p>
+<p>ロカールリポジトリにコミット<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">% git commit -m &quot;xxxxx&quot;</div></pre></td></tr></table></figure></p>
+<p>リモートリポジトリ（GitHub）の情報を追加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">% git remote add origin https://github.com/xxxx/xxxxx.git</div></pre></td></tr></table></figure></p>
+<p>ローカルリポジトリをリモートリポジトリへ反映させる → <code>rejectedエラー</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">% git push origin master</div><div class="line">To https://github.com/xxxx/xxxxx.git</div><div class="line"> ! [rejected]        master -&gt; master (fetch first)</div><div class="line">error: failed to push some refs to &apos;https://github.com/xxxx/xxxxx.git&apos;</div><div class="line">hint: Updates were rejected because the remote contains work that you do</div><div class="line">hint: not have locally. This is usually caused by another repository pushing</div><div class="line">hint: to the same ref. You may want to first integrate the remote changes</div><div class="line">hint: (e.g., &apos;git pull ...&apos;) before pushing again.</div><div class="line">hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</div></pre></td></tr></table></figure>
+<p>ググってみたら「git fetch &amp;&amp; git merge origin/master」してからpushすればOKと書いてあったので試してみる → <code>mergeエラー</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">% git fetch &amp;&amp; git merge origin/master</div><div class="line">fatal: refusing to merge unrelated histories</div></pre></td></tr></table></figure></p>
+<p>さらにググってみたらmergeのオプションに「–allow-unrelated-histories」をつければOKと書いてあったので試してみる → <code>merge OK!</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">% git merge --allow-unrelated-histories origin/master</div><div class="line">Merge made by the &apos;recursive&apos; strategy.</div><div class="line"> README.md | 2 ++</div><div class="line"> 1 file changed, 2 insertions(+)</div><div class="line"> create mode 100644 README.md</div></pre></td></tr></table></figure>
+<p>再度、ローカルリポジトリをリモートリポジトリへ反映させる → <code>push OK!</code></p>
+<p>一件落着</p>
+<h2 id="「–allow-unrelated-histories」について"><a href="#「–allow-unrelated-histories」について" class="headerlink" title="「–allow-unrelated-histories」について"></a>「–allow-unrelated-histories」について</h2><hr>
+<p>ちゃんと調べてみたところ<br>Git 2.9から mergeコマンドとpullコマンドでは，–allow-unrelated-historiesを指定しない限り，無関係なヒストリを持つ２つのブランチをマージすることはできなくなった。<br>とありました。</p>
+<h2 id="考察"><a href="#考察" class="headerlink" title="考察"></a>考察</h2><hr>
+<p>まだ、GitHub、Gitの理解が浅いので見当違いなことを言っているかもしれませんが、GitHub上でリポジトリを作成したタイミングで、README.mdがコミットされているのに、それをローカルリポジトリに取り込まずに、ローカルのソースをコミットしてしまったのが原因と思われる。<br>結果、それぞれが別ヒストリとなり、mergeエラーになったのかなと。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;!--excerpt--&gt;
+&lt;h2 id=&quot;はじめに&quot;&gt;&lt;a href=&quot;#はじめに&quot; class=&quot;headerlink&quot; title=&quot;はじめに&quot;&gt;&lt;/a&gt;はじめに&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、reject
+    
+    </summary>
+    
+      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+      <category term="Git" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Git/"/>
+    
+    
+      <category term="Git" scheme="http://blog.jiangnan.pw/tags/Git/"/>
+    
+      <category term="GitHub" scheme="http://blog.jiangnan.pw/tags/GitHub/"/>
+    
+  </entry>
   
   <entry>
     <title>Laravel5自定义环境变量</title>
@@ -96,7 +144,7 @@
     <link href="http://blog.jiangnan.pw/2017/02/03/%E5%BC%80%E5%90%AFFusion%20Drive%E5%8A%9F%E8%83%BD%E6%95%99%E7%A8%8B%20%E5%8F%8C%E7%A1%AC%E7%9B%98%20SSD+HDD/"/>
     <id>http://blog.jiangnan.pw/2017/02/03/开启Fusion Drive功能教程 双硬盘 SSD+HDD/</id>
     <published>2017-02-03T05:44:35.000Z</published>
-    <updated>2017-02-08T05:26:19.902Z</updated>
+    <updated>2017-02-09T03:53:44.896Z</updated>
     
     <content type="html"><![CDATA[<!--excerpt-->
 <p>废话不多说进入主题</p>
@@ -149,9 +197,9 @@
     
     </summary>
     
-      <category term="Mac" scheme="http://blog.jiangnan.pw/categories/Mac/"/>
+      <category term="苹果相关" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/Mac/Mac%E6%8A%80%E5%B7%A7/"/>
+      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
     
     
       <category term="Mac技巧" scheme="http://blog.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
@@ -204,7 +252,7 @@
     <link href="http://blog.jiangnan.pw/2017/01/20/%E8%A7%A3%E5%86%B3%E5%8D%87%E7%BA%A7-OS-X-EI-Capitan-%E5%90%8E-Wineskin-%E6%89%93%E5%8C%85%E7%9A%84%E6%B8%B8%E6%88%8F%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://blog.jiangnan.pw/2017/01/20/解决升级-OS-X-EI-Capitan-后-Wineskin-打包的游戏无法运行的问题/</id>
     <published>2017-01-20T04:05:05.000Z</published>
-    <updated>2017-01-20T07:39:39.454Z</updated>
+    <updated>2017-02-09T03:53:56.176Z</updated>
     
     <content type="html"><![CDATA[<!--excerpt-->
 <p>此前苹果发布了 OS X 的新版本 EI Capitan，系统有更新当然是立马进行升级享受新鲜事物带来的快感了，但前几天想玩耍一局 Pro Evolution Soccer(实况足球)的时候，发现我深爱的游戏再也启动不起来了，和同样爱玩儿实况的同事交流之后发现情况大致有如下两种：</p>
@@ -263,9 +311,9 @@
     
     </summary>
     
-      <category term="Mac" scheme="http://blog.jiangnan.pw/categories/Mac/"/>
+      <category term="苹果相关" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/Mac/Mac%E6%8A%80%E5%B7%A7/"/>
+      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
     
     
       <category term="Mac技巧" scheme="http://blog.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
@@ -471,7 +519,7 @@
     <link href="http://blog.jiangnan.pw/2016/11/08/MacOSX10-11%E5%BC%80%E5%90%AF%E4%BB%BB%E6%84%8F%E6%98%BE%E7%A4%BA%E5%99%A8HiDPI%E6%96%B9%E6%B3%95/"/>
     <id>http://blog.jiangnan.pw/2016/11/08/MacOSX10-11开启任意显示器HiDPI方法/</id>
     <published>2016-11-08T05:27:16.000Z</published>
-    <updated>2017-01-06T12:47:13.410Z</updated>
+    <updated>2017-02-09T03:54:12.344Z</updated>
     
     <content type="html"><![CDATA[<p>MacOSX10.11开启任意显示器HiDPI方法<br><!--excerpt--></p>
 <blockquote>
@@ -488,7 +536,7 @@
 <blockquote>
 <p>OK.在桌面上新建一个文件夹,名字格式是:DisplayVendorID-XXXX,其中XXXX是你的DisplayVendorID的16进制值小写.<br>于是,我会新建一个 DisplayVendorID-XXXX的文件夹,然后在这个文件夹里面新建一个空白文件.名字格式是<br>DisplayProductID-YYYY,自然YYYY就是你的DisplayProductID的16进制了.<br>我新建的文件是 DisplayProductID-YYYY.<br>最好下载我提供的模板编辑.<br>相信你不一定能找到个合适的进制转换工具，我从网上找到了一个很好用的flash，并把它放到了自己的服务器里，<br>大家如有需要随时可以去用<br>在线进制转换器<br>建议使用PlistPro工具编辑，方便快捷。.<br><strong>范例:</strong></p>
 </blockquote>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">plist</span> <span class="attr">version</span>=<span class="string">"1.0"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>DisplayProductID<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">integer</span>&gt;</span>10496<span class="tag">&lt;/<span class="name">integer</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>DisplayVendorID<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">integer</span>&gt;</span>8547<span class="tag">&lt;/<span class="name">integer</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>scale-resolutions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">array</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAKAAAABkAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAUAAAADIAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAKAAAABDgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAUAAAACHAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAHgAAABDgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAPAAAACHAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAGkAAABBoAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAANIAAACDQAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAGQAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAMgAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAFoAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAALQAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAINAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAQaAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">array</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">plist</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="meta">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">plist</span> <span class="attr">version</span>=<span class="string">"1.0"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>DisplayProductID<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">integer</span>&gt;</span>10496<span class="tag">&lt;/<span class="name">integer</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>DisplayVendorID<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">integer</span>&gt;</span>8547<span class="tag">&lt;/<span class="name">integer</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>scale-resolutions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">array</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAKAAAABkAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAUAAAADIAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAKAAAABDgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAUAAAACHAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAHgAAABDgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAPAAAACHAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAGkAAABBoAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAANIAAACDQAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAGQAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAMgAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAFoAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAALQAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAINAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAQaAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">array</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">plist</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>建议下载本帖子中的附件。包含本范例。</p>
 <p>最后面那一坨,和以及里面的data如何来的<br>比如我想使用1600900这个HiDPI,那么我就需要生成两个分辨率,其中一个是1600900,一个是其双倍,3200*1800.<br>1600,900两个值的16进制是00000640 00000384 ;<br>3200,1800两个值的16进制是00000C80 00000708;<br>后面加上 00000001 00200000<br>于是会得到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">00000640 00000384 00000001 00200000</div><div class="line">00000C80 00000708 00000001 00200000</div></pre></td></tr></table></figure></p>
 <p>用附件中的PlistPro编辑这个DisplayProductID-YYYY,计算并填写你想要的分辨率.<br>最后,把这个 DisplayVendorID-XXXX 文件夹,</p>
@@ -505,9 +553,9 @@
     
     </summary>
     
-      <category term="Mac" scheme="http://blog.jiangnan.pw/categories/Mac/"/>
+      <category term="苹果相关" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/Mac/Mac%E6%8A%80%E5%B7%A7/"/>
+      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
     
     
       <category term="Mac技巧" scheme="http://blog.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
@@ -616,7 +664,7 @@
     <link href="http://blog.jiangnan.pw/2016/10/16/Alfred%E5%AE%9E%E7%8E%B0%E4%B8%83%E7%89%9B%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/"/>
     <id>http://blog.jiangnan.pw/2016/10/16/Alfred实现七牛上传文件/</id>
     <published>2016-10-16T00:48:27.000Z</published>
-    <updated>2017-01-10T06:58:08.874Z</updated>
+    <updated>2017-02-09T03:55:48.868Z</updated>
     
     <content type="html"><![CDATA[<p>alfred-workflow-qshell<br>qshell 是基于七牛API参考手册实现的一个方便开发者测试和使用七牛API服务的命令行工具。<br><!--excerpt--></p>
 <h2 id="alfred-workflow-qshell"><a href="#alfred-workflow-qshell" class="headerlink" title="alfred-workflow-qshell"></a>alfred-workflow-qshell</h2><blockquote>
@@ -675,9 +723,9 @@
     
     </summary>
     
-      <category term="Mac" scheme="http://blog.jiangnan.pw/categories/Mac/"/>
+      <category term="苹果相关" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/Mac/Mac%E6%8A%80%E5%B7%A7/"/>
+      <category term="Mac软件" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E8%BD%AF%E4%BB%B6/"/>
     
     
       <category term="Alfred" scheme="http://blog.jiangnan.pw/tags/Alfred/"/>

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题 | 江南品味|记录编程道路上的点点滴滴!!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Mac技巧" />
+    
+    <meta name="description" content="此前苹果发布了 OS X 的新版本 EI Capitan，系统有更新当然是立马进行升级享受新鲜事物带来的快感了，但前几天想玩耍一局 Pro Evolution Soccer(实况足球)的时候，发现我深爱的游戏再也启动不起来了，和同样爱玩儿实况的同事交流之后发现情况大致有如下两种：
+
+双击 .app 文件，程序是可以打开的，但是窗口始终无法显示（我的电脑）；
+双击 .app 文件，程序无法打开，系">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题">
+<meta property="og:url" content="http://blog.jiangnan.pw/ciz01jzut00230f7kjd8y358w/index.html">
+<meta property="og:site_name" content="江南品味|记录编程道路上的点点滴滴!!!">
+<meta property="og:description" content="此前苹果发布了 OS X 的新版本 EI Capitan，系统有更新当然是立马进行升级享受新鲜事物带来的快感了，但前几天想玩耍一局 Pro Evolution Soccer(实况足球)的时候，发现我深爱的游戏再也启动不起来了，和同样爱玩儿实况的同事交流之后发现情况大致有如下两种：
+
+双击 .app 文件，程序是可以打开的，但是窗口始终无法显示（我的电脑）；
+双击 .app 文件，程序无法打开，系">
+<meta property="og:image" content="https://lh3.googleusercontent.com/-QBgvDnnM1I8/WIF8A7QmcZI/AAAAAAAAAx4/9lYwjuvkybE/2017-01-20_11-54-59.png">
+<meta property="og:updated_time" content="2017-02-09T03:53:56.176Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题">
+<meta name="twitter:description" content="此前苹果发布了 OS X 的新版本 EI Capitan，系统有更新当然是立马进行升级享受新鲜事物带来的快感了，但前几天想玩耍一局 Pro Evolution Soccer(实况足球)的时候，发现我深爱的游戏再也启动不起来了，和同样爱玩儿实况的同事交流之后发现情况大致有如下两种：
+
+双击 .app 文件，程序是可以打开的，但是窗口始终无法显示（我的电脑）；
+双击 .app 文件，程序无法打开，系">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/-QBgvDnnM1I8/WIF8A7QmcZI/AAAAAAAAAx4/9lYwjuvkybE/2017-01-20_11-54-59.png">
+<meta name="twitter:creator" content="@kyounan719">
+<link rel="publisher" href="103371492334107230000">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="江南品味|记录编程道路上的点点滴滴!!!" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">记录编程道路上的点点滴滴!!!</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/作品展示/">作品展示</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/">技术分享</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/Git/">Git</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/Laravel/">Laravel</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/Nginx/">Nginx</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/WordPress/">WordPress</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/苹果相关/">苹果相关</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/苹果相关/Mac软件/">Mac软件</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" href="http://blog.jiangnan.pw/tools/">在线工具</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" href="https://jiangnan.pw/">江南云</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" href="/about/">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/苹果相关/">苹果相关</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-苹果相关/Mac技巧/解决升级-OS-X-EI-Capitan-后-Wineskin-打包的游戏无法运行的问题" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/ciz01jzut00230f7kjd8y358w/" class="article-date">
+    <time datetime="2017-01-20T04:05:05.000Z" itemprop="datePublished">2017-01-20</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac技巧/">Mac技巧</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <!--excerpt-->
+<p>此前苹果发布了 OS X 的新版本 EI Capitan，系统有更新当然是立马进行升级享受新鲜事物带来的快感了，但前几天想玩耍一局 Pro Evolution Soccer(实况足球)的时候，发现我深爱的游戏再也启动不起来了，和同样爱玩儿实况的同事交流之后发现情况大致有如下两种：</p>
+<ol>
+<li>双击 <code>.app</code> 文件，程序是可以打开的，但是窗口始终无法显示（我的电脑）；</li>
+<li>双击 <code>.app</code> 文件，程序无法打开，系统提示 X11 无法打开，截图如下（同事的）：</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/-QBgvDnnM1I8/WIF8A7QmcZI/AAAAAAAAAx4/9lYwjuvkybE/2017-01-20_11-54-59.png" alt=""></p>
+<p>无法在绿茵场上尽情驰骋，这种事显然不能忍，立马去 <a href="http://wineskin.urgesoftware.com/" target="_blank" rel="external">Wineskin 官网</a>看了看，发现有一条关于 OS X EI Capitan 的新闻：</p>
+<blockquote>
+<p>Wineskin does not currently work correctly on El Capitan. The issue is being looked into, but I have no ETA for a fix. I’ll get a fix out as soon as I can.<br>Some people have been able to upgrade to the latest version of XQuartz, and change their wrappers to use XQuartz and not WineskinX11 and have gotten wrappers to work, but this method has not worked for everyone.<br>Please add to the discussion here if you are helping find a solution.</p>
+</blockquote>
+<p>又看到有一条新版本发布的新闻：</p>
+<blockquote>
+<p>I’ve released an update for Wineskin… version 2.6.1.<br>I think I’ve fixed all the El Capitan bugs and it should work fine on 10.6 - 10.11 now.<br>important point. This has to change how an engine is installed in a wrapper slightly. If you update a wrapper to 2.6.1 and it does not work right, please reinstall the engine in the wrapper. You can just use Change Engine and install the same one back in, but it will install it correctly for 2.6.1 and then things should work right. Newly made wrappers should have no issues.</p>
+</blockquote>
+<p>这说明官方发布的最新的 2.6.1 版本已经解决了该问题，那么剩下的问题就简单多了，我们只需要将 <code>Wineskin Wrapper</code> 给替换成官方发布的最新版本即可。</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><ol>
+<li>在应用程序中找到需要修复的游戏，右键选择 <code>显示包内容</code>；</li>
+<li>打开 <code>Wineskin.app</code>，选择 <code>advance</code>，记录下引擎版本号：</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/-6iUQqxE4ehs/WIGN2RoMBgI/AAAAAAAAAyY/PZ-MapzWiSU/s0/2017-01-20_13-11-04.png" alt=""></p>
+<ol>
+<li>下载最新版本的 <a href="http://wineskin.urgesoftware.com/tiki-index.php?page=Downloads" target="_blank" rel="external">Wineskin Winery</a>；</li>
+<li>打开 <code>Wineskin Winery</code>，添加一个新的 <code>engine</code>，版本号最好与之前记录的版本号一致：</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/-6GZhT7VGSoE/WIGOD7jQBmI/AAAAAAAAAyc/8Vsd_dVjhUA/s0/2017-01-20_13-11-58.png" alt=""></p>
+<ol>
+<li>更新 <code>Wrapper Version</code> 至最新版，只要在 2.6.1 以上即代表已经使用了官方修复 OS X EI Capitan 问题的 <code>Wrapper</code>：</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/-YqFjJh_LWPA/WIGOQFuz0TI/AAAAAAAAAyg/N5YYm23sKAc/s0/2017-01-20_13-12-47.png" alt=""></p>
+<ol>
+<li>选择 <code>Create New Blank Wrapper</code>，填写游戏名称并选择 <code>Create</code>。如果有提示需要安装东西，都可以选择 <code>Cancel</code>；</li>
+<li>创建成功后，将原游戏 <code>.app</code> 文件包内容中的 <code>Content/Resources/driver_c</code> 文件夹以及 <code>Content/Resources/system.reg</code>、<code>Content/Resources/user.reg</code>、<code>Content/Resources/userdef.reg</code> 这三个文件覆盖到我们新创建的 <code>Wrapper</code> 文件包内容中的 <code>Content/Resources/</code> 文件夹中，它们分别相当于 <code>Windows</code> 系统中的 C 盘和注册表；</li>
+<li>再打开我们新创建的 <code>Wrapper</code> 文件包内容中的 <code>&#39;Wineskin.app&#39;</code>，选择 <code>advance</code>，然后选择程序的启动路径，即刚刚覆盖的 <code>driver_c</code> 文件夹中我们想要启动的 <code>exe</code> 程序：</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/-D0qlGz7IKW4/WIGOfMRqr1I/AAAAAAAAAyk/rRYqm5pR1LA/s0/2017-01-20_13-13-48.png" alt=""></p>
+<ol>
+<li>退回到我们在第 6 步中生成新 Wineskin Wrapper 的目录，当然现在它已经是一个完整的游戏程序了，双击运行它，然后 enjoy it!</li>
+</ol>
+<p>鉴于评论区有朋友反映下载 <code>engine</code> 和 <code>wrapper</code> 总是失败，所以现在将最新的 <code>engine</code> 和 <code>wrapper</code> 上传到网盘供大家下载：</p>
+<ol>
+<li>Engine 1.7.52 <a href="http://pan.baidu.com/s/1bnoelND" target="_blank" rel="external">下载地址</a>，提取码：<code>ikhq</code>；</li>
+<li>Wrapper 2.6.1 <a href="http://pan.baidu.com/s/1c0c6Qo4" target="_blank" rel="external">下载地址</a>，提取码：<code>v1dh</code>。</li>
+</ol>
+<p>下载后，将 <code>WS9Wine1.7.52.tar.7z</code> 这个文件放入 <code>~/Library/Application Support/Wineskin/Engines</code> 这个文件夹；将 <code>Wineskin-2.6.1.app.zip</code> 这个文件解压缩，得到 <code>Wineskin-2.6.1.app</code> 这个文件，将其放入 <code>~/Library/Application Support/Wineskin/Wrapper</code> 这个文件夹，然后重新打开上面第 3 步中下载的 <code>Wineskin Winery</code>，如果 <code>engine</code> 和 <code>wrapper</code> 都已经存在了，直接进行第 6 步的操作即可。</p>
+<hr>
+<p>再放上 <code>Wineskin Winery</code> 的网盘地址：</p>
+<p>Wineskin Winery 1.7 <a href="http://pan.baidu.com/s/1hq8TO8G" target="_blank" rel="external">下载地址</a>，提取码：<code>dpdu</code>。</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="ciz01jzut00230f7kjd8y358w/" data-title="解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题" data-url="http://blog.jiangnan.pw/ciz01jzut00230f7kjd8y358w/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/kyounan719" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://facebook.com/kyounan719" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="https://plus.google.com/103371492334107231388" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lovedan" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://www.weibo.com/ddmfnet" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/atom.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/ciz01jzt2000f0f7kv1satmyv/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            Cloud9でLaravel5の環境構築
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/ciz01jzue001r0f7ku87w9fek/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Nginxのエラーページをカスタマイズする方法</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/ciz01jzu9001n0f7kxn5en89l/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lh3.googleusercontent.com/-nnwlkrohkHo/WJvpWp8lRGI/AAAAAAAABcw/bl95WI6WWwI/s0/2017-02-09_13-00-25.png)" alt="让git push命令不再需要密码" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Git/">Git</a></p>
+                            <p class="item-title"><a href="/ciz01jzu9001n0f7kxn5en89l/" class="title">让git push命令不再需要密码</a></p>
+                            <p class="item-date"><time datetime="2017-02-09T04:13:11.000Z" itemprop="datePublished">2017-02-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/ciz01jzug001s0f7krrie9atg/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lh3.googleusercontent.com/-nnwlkrohkHo/WJvpWp8lRGI/AAAAAAAABcw/bl95WI6WWwI/s0/2017-02-09_13-00-25.png)" alt="GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Git/">Git</a></p>
+                            <p class="item-title"><a href="/ciz01jzug001s0f7krrie9atg/" class="title">GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</a></p>
+                            <p class="item-date"><time datetime="2017-02-09T01:35:00.000Z" itemprop="datePublished">2017-02-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/ciz01jzu7001m0f7kt09blyw4/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://dl.dropboxusercontent.com/s/onmlew6rmnd33ct/SuRyW14362693901Laravel-5%5B1%5D.png?dl=0)" alt="Laravel5自定义环境变量" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Laravel/">Laravel</a></p>
+                            <p class="item-title"><a href="/ciz01jzu7001m0f7kt09blyw4/" class="title">Laravel5自定义环境变量</a></p>
+                            <p class="item-date"><time datetime="2017-02-03T07:19:55.000Z" itemprop="datePublished">2017-02-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/ciz01jzum001x0f7kutamk69x/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://dl.dropboxusercontent.com/u/24907579/ShareX/2017/02/2017-02-08_10-23-21.png)" alt="开启Fusion Drive功能教程 双硬盘 SSD+HDD" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/苹果相关/">苹果相关</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a></p>
+                            <p class="item-title"><a href="/ciz01jzum001x0f7kutamk69x/" class="title">开启Fusion Drive功能教程 双硬盘 SSD+HDD</a></p>
+                            <p class="item-date"><time datetime="2017-02-03T05:44:35.000Z" itemprop="datePublished">2017-02-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/ciz01jzt2000f0f7kv1satmyv/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lh3.googleusercontent.com/-SmYaIiM-R1w/WJQOzBxyyrI/AAAAAAAAAzU/-kZytHD_DqY/s0/2017-02-03_14-02-02.png)" alt="Cloud9でLaravel5の環境構築" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a></p>
+                            <p class="item-title"><a href="/ciz01jzt2000f0f7kv1satmyv/" class="title">Cloud9でLaravel5の環境構築</a></p>
+                            <p class="item-date"><time datetime="2017-02-03T04:58:48.000Z" itemprop="datePublished">2017-02-03</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/作品展示/">作品展示</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/">技术分享</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/Git/">Git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/Laravel/">Laravel</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/Nginx/">Nginx</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/WordPress/">WordPress</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/苹果相关/">苹果相关</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/苹果相关/Mac软件/">Mac软件</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Alfred/" style="font-size: 10px;">Alfred</a> <a href="/tags/Cloud9/" style="font-size: 10px;">Cloud9</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/Mac技巧/" style="font-size: 16.67px;">Mac技巧</a> <a href="/tags/Mac软件/" style="font-size: 10px;">Mac软件</a> <a href="/tags/WordPress/" style="font-size: 20px;">WordPress</a> <a href="/tags/laravel/" style="font-size: 13.33px;">laravel</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/plugins/" style="font-size: 10px;">plugins</a> <a href="/tags/作品展示/" style="font-size: 10px;">作品展示</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/开源/" style="font-size: 10px;">开源</a> <a href="/tags/技术分享/" style="font-size: 13.33px;">技术分享</a> <a href="/tags/江南云/" style="font-size: 10px;">江南云</a> <a href="/tags/江南品味/" style="font-size: 10px;">江南品味</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://www.jiangnan.pw" target="_blank">江南云</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://jiangnan.ml" target="_blank">江南品味（国内）</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.jiangnan.pw" target="_blank">江南品味（国外）</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 江南品味</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'lovedan'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -19,7 +19,7 @@
 安装socat，前提是你已经有homebrew，没有的话参考这篇来安装homebrew。1brew install socat
 安装完成后，执行下面命令就可以完成转发。1sudo socat">
 <meta property="og:image" content="https://lh3.googleusercontent.com/-ArCd3HrqaPI/WJ9aHU8B0vI/AAAAAAAABiE/6mVQaN5q50Q/s0/2017-02-12_03-38-19.png">
-<meta property="og:updated_time" content="2017-02-11T18:39:56.573Z">
+<meta property="og:updated_time" content="2017-02-11T18:43:28.757Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OS X 10.10.5 下做端口转发">
 <meta name="twitter:description" content="网上搜索了一下相关的资料，都是介绍用pf来做转发，而且都是转发到127.0.0.1。由于我是需要转发到虚拟机上，按网上的教程测试了一下pf，结果是没能转发成功。最后找到了socat这个程序，终于解决问题。
@@ -178,6 +178,8 @@
 <p>安装socat，前提是你已经有homebrew，没有的话参考这篇来安装homebrew。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install socat</div></pre></td></tr></table></figure></p>
 <p>安装完成后，执行下面命令就可以完成转发。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo socat TCP4-LISTEN:80,fork TCP4:192.168.173.129:80</div></pre></td></tr></table></figure></p>
 <p>这条命令是将本机的80端口转发至虚拟机的80端口，虚拟机IP为192.168.173.129。</p>
+<p>高级例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">lsof -c socat | grep LISTEN</div><div class="line">socat -d -d -lf /var/log/socat.log TCP4-LISTEN:13389,reuseaddr,fork,su=nobody TCP4:192.168.1.209:3389 &amp;</div><div class="line">socat -d -d -lf /var/log/socat.log TCP4-LISTEN:5902,reuseaddr,fork,su=nobody TCP4:192.168.1.13:5900 &amp;</div><div class="line">lsof -c socat | egrep &apos;LISTEN|UDP&apos;</div><div class="line">socat UDP4-RECVFROM:500,fork UDP4-SENDTO:192.168.1.209:500</div><div class="line">socat UDP4-RECVFROM:4500,fork UDP4-SENDTO:192.168.1.209:4500</div><div class="line">lsof -i udp | egrep &apos;isakmp|ipsec-msft&apos; #500，4500端口占用</div></pre></td></tr></table></figure>
 <p>操作完成。</p>
 
         </div>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiangnan.pw/"/>
-  <updated>2017-02-16T01:45:00.974Z</updated>
+  <updated>2017-02-16T16:19:28.891Z</updated>
   <id>http://blog.jiangnan.pw/</id>
   
   <author>
@@ -16,9 +16,45 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>找回Sierra允许“任何来源”的应用</title>
+    <link href="http://blog.jiangnan.pw/ciz8lfb7q001iwj7k4rl9z1gw/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb7q001iwj7k4rl9z1gw/</id>
+    <published>2017-02-16T16:13:07.000Z</published>
+    <updated>2017-02-16T16:19:28.891Z</updated>
+    
+    <content type="html"><![CDATA[<!--excerpt-->
+<p>苹果秋季发布会之后，同时进行了两大平台系统的升级（Mac OS 和 iOS），这两天安装第三方Mac应用的时候，突然发现应用权限选项“任何来源”不翼而飞了</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/355579-85be4234e1b9bf47.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>这就直接导致安装第三方app失败了，google了一下找到了找回“任何来源”方法。</p>
+<p>打开终端，键入命令，输入密码，然后回车<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo spctl --master-disable</div></pre></td></tr></table></figure></p>
+<p>然后打开“安全性与隐私”，发现久违的“任何来源”回来了</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/355579-7ae01f6b94f2df4c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>注：如果在系统偏好设置的“安全与隐私”中重新选中允许App Store 和被认可的开发者App，允许“任何来源”App的选项会再次消失，可运行上述命令再次打开“任何来源”。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;!--excerpt--&gt;
+&lt;p&gt;苹果秋季发布会之后，同时进行了两大平台系统的升级（Mac OS 和 iOS），这两天安装第三方Mac应用的时候，突然发现应用权限选项“任何来源”不翼而飞了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jiansh
+    
+    </summary>
+    
+      <category term="苹果相关" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
+    
+      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>移除Mac的.DS_Store、._ 檔</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58so000sd17kcw0gg08m/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58so000sd17kcw0gg08m/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb7v001qwj7kit8un1rf/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb7v001qwj7kit8un1rf/</id>
     <published>2017-02-16T01:28:40.000Z</published>
     <updated>2017-02-16T01:45:00.974Z</updated>
     
@@ -64,8 +100,8 @@
   
   <entry>
     <title>OS X 10.10.5 下做端口转发</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58sw000wd17kiaa9b4z5/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58sw000wd17kiaa9b4z5/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb81001xwj7ku3wbd6ao/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb81001xwj7ku3wbd6ao/</id>
     <published>2017-02-11T18:30:08.000Z</published>
     <updated>2017-02-11T18:43:28.757Z</updated>
     
@@ -98,8 +134,8 @@
   
   <entry>
     <title>让git push命令不再需要密码</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58vh001rd17k632pr37a/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58vh001rd17k632pr37a/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb7e0011wj7k0why95ze/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb7e0011wj7k0why95ze/</id>
     <published>2017-02-09T04:13:11.000Z</published>
     <updated>2017-02-09T04:17:33.995Z</updated>
     
@@ -131,8 +167,8 @@
   
   <entry>
     <title>GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58vd001od17k48jk77c0/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58vd001od17k48jk77c0/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb70000swj7ko8w5q3nq/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb70000swj7ko8w5q3nq/</id>
     <published>2017-02-09T01:35:00.000Z</published>
     <updated>2017-02-09T04:05:02.779Z</updated>
     
@@ -179,8 +215,8 @@
   
   <entry>
     <title>Laravel5自定义环境变量</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58tc0012d17kjnotg5w6/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58tc0012d17kjnotg5w6/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb76000xwj7kz0kt01m6/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb76000xwj7kz0kt01m6/</id>
     <published>2017-02-03T07:19:55.000Z</published>
     <updated>2017-02-03T04:48:05.768Z</updated>
     
@@ -255,8 +291,8 @@
   
   <entry>
     <title>开启Fusion Drive功能教程 双硬盘 SSD+HDD</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58t0000xd17ke2ufb2bt/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58t0000xd17ke2ufb2bt/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb7t001nwj7kueji6pjc/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb7t001nwj7kueji6pjc/</id>
     <published>2017-02-03T05:44:35.000Z</published>
     <updated>2017-02-09T03:53:44.896Z</updated>
     
@@ -322,8 +358,8 @@
   
   <entry>
     <title>Cloud9でLaravel5の環境構築</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58qr0008d17kwizbs42h/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58qr0008d17kwizbs42h/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb580009wj7kqyty6dqp/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb580009wj7kqyty6dqp/</id>
     <published>2017-02-03T04:58:48.000Z</published>
     <updated>2017-02-03T05:13:14.384Z</updated>
     
@@ -363,8 +399,8 @@
   
   <entry>
     <title>解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58t3000yd17khrggyjb7/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58t3000yd17khrggyjb7/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb7z001twj7kbjqptkrj/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb7z001twj7kbjqptkrj/</id>
     <published>2017-01-20T04:05:05.000Z</published>
     <updated>2017-02-09T03:53:56.176Z</updated>
     
@@ -436,8 +472,8 @@
   
   <entry>
     <title>Nginxのエラーページをカスタマイズする方法</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58up001id17kxy0bqz4h/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58up001id17kxy0bqz4h/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb74000vwj7ku0ap4bbz/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb74000vwj7ku0ap4bbz/</id>
     <published>2017-01-19T08:06:00.000Z</published>
     <updated>2017-01-20T06:24:06.350Z</updated>
     
@@ -481,8 +517,8 @@
   
   <entry>
     <title>江南云服务正式上线</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58q80005d17kwb52kr5w/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58q80005d17kwb52kr5w/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb4i0004wj7kql5h3sth/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb4i0004wj7kql5h3sth/</id>
     <published>2017-01-10T05:10:27.000Z</published>
     <updated>2017-01-20T05:49:50.307Z</updated>
     
@@ -515,8 +551,8 @@
   
   <entry>
     <title>Laravel5导入自定义函数和类的方法</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58ts0018d17kbrimxibh/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58ts0018d17kbrimxibh/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb72000twj7klfv990zv/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb72000twj7klfv990zv/</id>
     <published>2016-12-01T07:19:55.000Z</published>
     <updated>2017-01-19T08:20:11.285Z</updated>
     
@@ -559,8 +595,8 @@
   
   <entry>
     <title>常用图床及自建图床方法汇总</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58py0004d17k8wyoak5y/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58py0004d17k8wyoak5y/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb560008wj7k1a1mo3v8/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb560008wj7k1a1mo3v8/</id>
     <published>2016-11-10T06:28:41.000Z</published>
     <updated>2017-02-16T01:38:27.862Z</updated>
     
@@ -630,8 +666,8 @@
   
   <entry>
     <title>MacOSX10.11开启任意显示器HiDPI方法</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58sr000td17kpanbxqyr/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58sr000td17kpanbxqyr/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb7n001fwj7koq2flt0x/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb7n001fwj7koq2flt0x/</id>
     <published>2016-11-08T05:27:16.000Z</published>
     <updated>2017-02-16T01:38:24.066Z</updated>
     
@@ -650,7 +686,7 @@
 <blockquote>
 <p>OK.在桌面上新建一个文件夹,名字格式是:DisplayVendorID-XXXX,其中XXXX是你的DisplayVendorID的16进制值小写.<br>于是,我会新建一个 DisplayVendorID-XXXX的文件夹,然后在这个文件夹里面新建一个空白文件.名字格式是<br>DisplayProductID-YYYY,自然YYYY就是你的DisplayProductID的16进制了.<br>我新建的文件是 DisplayProductID-YYYY.<br>最好下载我提供的模板编辑.<br>相信你不一定能找到个合适的进制转换工具，我从网上找到了一个很好用的flash，并把它放到了自己的服务器里，<br>大家如有需要随时可以去用<br>在线进制转换器<br>建议使用PlistPro工具编辑，方便快捷。.<br><strong>范例:</strong></p>
 </blockquote>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">plist</span> <span class="attr">version</span>=<span class="string">"1.0"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>DisplayProductID<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">integer</span>&gt;</span>10496<span class="tag">&lt;/<span class="name">integer</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>DisplayVendorID<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">integer</span>&gt;</span>8547<span class="tag">&lt;/<span class="name">integer</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>scale-resolutions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">array</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAKAAAABkAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAUAAAADIAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAKAAAABDgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAUAAAACHAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAHgAAABDgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAPAAAACHAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAGkAAABBoAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAANIAAACDQAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAGQAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAMgAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAFoAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAALQAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAINAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAQaAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">array</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">plist</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="meta">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">plist</span> <span class="attr">version</span>=<span class="string">"1.0"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>DisplayProductID<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">integer</span>&gt;</span>10496<span class="tag">&lt;/<span class="name">integer</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>DisplayVendorID<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">integer</span>&gt;</span>8547<span class="tag">&lt;/<span class="name">integer</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>scale-resolutions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">array</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAKAAAABkAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAUAAAADIAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAKAAAABDgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAUAAAACHAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAHgAAABDgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAPAAAACHAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAGkAAABBoAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAANIAAACDQAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAGQAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAMgAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAFoAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAALQAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAINAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAQaAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">array</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">plist</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>建议下载本帖子中的附件。包含本范例。</p>
 <p>最后面那一坨,和以及里面的data如何来的<br>比如我想使用1600900这个HiDPI,那么我就需要生成两个分辨率,其中一个是1600900,一个是其双倍,3200*1800.<br>1600,900两个值的16进制是00000640 00000384 ;<br>3200,1800两个值的16进制是00000C80 00000708;<br>后面加上 00000001 00200000<br>于是会得到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">00000640 00000384 00000001 00200000</div><div class="line">00000C80 00000708 00000001 00200000</div></pre></td></tr></table></figure></p>
 <p>用附件中的PlistPro编辑这个DisplayProductID-YYYY,计算并填写你想要的分辨率.<br>最后,把这个 DisplayVendorID-XXXX 文件夹,</p>
@@ -678,8 +714,8 @@
   
   <entry>
     <title>禁止WordPress头部加载s.w.org</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58tk0014d17kyfzlm7cl/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58tk0014d17kyfzlm7cl/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb7g0012wj7klb58d9qi/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb7g0012wj7klb58d9qi/</id>
     <published>2016-10-17T05:49:24.000Z</published>
     <updated>2017-02-16T01:39:23.274Z</updated>
     
@@ -711,8 +747,8 @@
   
   <entry>
     <title>WordPress 后台文件管理插件：FileBrowser</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58ty001ad17kxkfcj2r9/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58ty001ad17kxkfcj2r9/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb78000ywj7kjvdnbja7/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb78000ywj7kjvdnbja7/</id>
     <published>2016-10-17T05:05:54.000Z</published>
     <updated>2017-01-19T08:14:57.061Z</updated>
     
@@ -741,8 +777,8 @@
   
   <entry>
     <title>获取WordPress当前分类文章所有标签</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58u2001ed17kaydekerh/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58u2001ed17kaydekerh/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb7k001awj7kr2q1dvj2/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb7k001awj7kr2q1dvj2/</id>
     <published>2016-10-17T04:25:16.000Z</published>
     <updated>2017-01-19T08:14:30.073Z</updated>
     
@@ -775,8 +811,8 @@
   
   <entry>
     <title>Alfred实现七牛上传文件</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58u9001fd17k0mmivzoi/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58u9001fd17k0mmivzoi/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb84001zwj7ku8g2ghbg/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb84001zwj7ku8g2ghbg/</id>
     <published>2016-10-16T00:48:27.000Z</published>
     <updated>2017-02-09T04:14:02.655Z</updated>
     
@@ -850,8 +886,8 @@
   
   <entry>
     <title>自动从其它站点RSS抓取文章</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58v2001kd17ktlzn2xqs/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58v2001kd17ktlzn2xqs/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb7i0017wj7k6umzd9gz/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb7i0017wj7k6umzd9gz/</id>
     <published>2016-10-13T08:17:14.000Z</published>
     <updated>2017-01-19T08:14:38.621Z</updated>
     
@@ -878,8 +914,8 @@
   
   <entry>
     <title>热烈庆祝江南品味正式上线！</title>
-    <link href="http://blog.jiangnan.pw/ciz7q58qx0009d17k4t1lh9if/"/>
-    <id>http://blog.jiangnan.pw/ciz7q58qx0009d17k4t1lh9if/</id>
+    <link href="http://blog.jiangnan.pw/ciz8lfb4n0005wj7kge9rous9/"/>
+    <id>http://blog.jiangnan.pw/ciz8lfb4n0005wj7kge9rous9/</id>
     <published>2016-10-13T07:39:35.000Z</published>
     <updated>2017-01-19T08:13:36.217Z</updated>
     

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiangnan.pw/"/>
-  <updated>2017-02-16T16:19:28.891Z</updated>
+  <updated>2017-02-16T16:24:50.235Z</updated>
   <id>http://blog.jiangnan.pw/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>找回Sierra允许“任何来源”的应用</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb7q001iwj7k4rl9z1gw/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb7q001iwj7k4rl9z1gw/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9km001ns77k5gsosjwk/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9km001ns77k5gsosjwk/</id>
     <published>2017-02-16T16:13:07.000Z</published>
-    <updated>2017-02-16T16:19:28.891Z</updated>
+    <updated>2017-02-16T16:24:50.235Z</updated>
     
     <content type="html"><![CDATA[<!--excerpt-->
 <p>苹果秋季发布会之后，同时进行了两大平台系统的升级（Mac OS 和 iOS），这两天安装第三方Mac应用的时候，突然发现应用权限选项“任何来源”不翼而飞了</p>
@@ -53,8 +53,8 @@
   
   <entry>
     <title>移除Mac的.DS_Store、._ 檔</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb7v001qwj7kit8un1rf/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb7v001qwj7kit8un1rf/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9kp001rs77k5rq7zfqv/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9kp001rs77k5rq7zfqv/</id>
     <published>2017-02-16T01:28:40.000Z</published>
     <updated>2017-02-16T01:45:00.974Z</updated>
     
@@ -100,8 +100,8 @@
   
   <entry>
     <title>OS X 10.10.5 下做端口转发</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb81001xwj7ku3wbd6ao/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb81001xwj7ku3wbd6ao/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9kf001gs77k1teq0b7m/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9kf001gs77k1teq0b7m/</id>
     <published>2017-02-11T18:30:08.000Z</published>
     <updated>2017-02-11T18:43:28.757Z</updated>
     
@@ -134,8 +134,8 @@
   
   <entry>
     <title>让git push命令不再需要密码</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb7e0011wj7k0why95ze/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb7e0011wj7k0why95ze/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9jp000ts77k26q335ye/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9jp000ts77k26q335ye/</id>
     <published>2017-02-09T04:13:11.000Z</published>
     <updated>2017-02-09T04:17:33.995Z</updated>
     
@@ -167,8 +167,8 @@
   
   <entry>
     <title>GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb70000swj7ko8w5q3nq/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb70000swj7ko8w5q3nq/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9jn000ss77kw152gjb1/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9jn000ss77kw152gjb1/</id>
     <published>2017-02-09T01:35:00.000Z</published>
     <updated>2017-02-09T04:05:02.779Z</updated>
     
@@ -215,8 +215,8 @@
   
   <entry>
     <title>Laravel5自定义环境变量</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb76000xwj7kz0kt01m6/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb76000xwj7kz0kt01m6/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9kc001es77kme1yqs3p/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9kc001es77kme1yqs3p/</id>
     <published>2017-02-03T07:19:55.000Z</published>
     <updated>2017-02-03T04:48:05.768Z</updated>
     
@@ -291,8 +291,8 @@
   
   <entry>
     <title>开启Fusion Drive功能教程 双硬盘 SSD+HDD</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb7t001nwj7kueji6pjc/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb7t001nwj7kueji6pjc/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9ki001ks77ku7sldhp9/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9ki001ks77ku7sldhp9/</id>
     <published>2017-02-03T05:44:35.000Z</published>
     <updated>2017-02-09T03:53:44.896Z</updated>
     
@@ -358,8 +358,8 @@
   
   <entry>
     <title>Cloud9でLaravel5の環境構築</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb580009wj7kqyty6dqp/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb580009wj7kqyty6dqp/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9hx0005s77kg3qc2qh1/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9hx0005s77kg3qc2qh1/</id>
     <published>2017-02-03T04:58:48.000Z</published>
     <updated>2017-02-03T05:13:14.384Z</updated>
     
@@ -399,8 +399,8 @@
   
   <entry>
     <title>解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb7z001twj7kbjqptkrj/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb7z001twj7kbjqptkrj/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9kr001vs77krppyak3z/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9kr001vs77krppyak3z/</id>
     <published>2017-01-20T04:05:05.000Z</published>
     <updated>2017-02-09T03:53:56.176Z</updated>
     
@@ -472,8 +472,8 @@
   
   <entry>
     <title>Nginxのエラーページをカスタマイズする方法</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb74000vwj7ku0ap4bbz/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb74000vwj7ku0ap4bbz/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9jv000ys77k72lg00w5/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9jv000ys77k72lg00w5/</id>
     <published>2017-01-19T08:06:00.000Z</published>
     <updated>2017-01-20T06:24:06.350Z</updated>
     
@@ -517,8 +517,8 @@
   
   <entry>
     <title>江南云服务正式上线</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb4i0004wj7kql5h3sth/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb4i0004wj7kql5h3sth/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9hs0004s77kdcu66q6v/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9hs0004s77kdcu66q6v/</id>
     <published>2017-01-10T05:10:27.000Z</published>
     <updated>2017-01-20T05:49:50.307Z</updated>
     
@@ -551,8 +551,8 @@
   
   <entry>
     <title>Laravel5导入自定义函数和类的方法</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb72000twj7klfv990zv/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb72000twj7klfv990zv/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9jr000vs77kzpcutyat/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9jr000vs77kzpcutyat/</id>
     <published>2016-12-01T07:19:55.000Z</published>
     <updated>2017-01-19T08:20:11.285Z</updated>
     
@@ -595,8 +595,8 @@
   
   <entry>
     <title>常用图床及自建图床方法汇总</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb560008wj7k1a1mo3v8/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb560008wj7k1a1mo3v8/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9i70009s77kxq76xb76/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9i70009s77kxq76xb76/</id>
     <published>2016-11-10T06:28:41.000Z</published>
     <updated>2017-02-16T01:38:27.862Z</updated>
     
@@ -666,8 +666,8 @@
   
   <entry>
     <title>MacOSX10.11开启任意显示器HiDPI方法</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb7n001fwj7koq2flt0x/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb7n001fwj7koq2flt0x/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9k90019s77k02l3vhy9/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9k90019s77k02l3vhy9/</id>
     <published>2016-11-08T05:27:16.000Z</published>
     <updated>2017-02-16T01:38:24.066Z</updated>
     
@@ -714,8 +714,8 @@
   
   <entry>
     <title>禁止WordPress头部加载s.w.org</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb7g0012wj7klb58d9qi/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb7g0012wj7klb58d9qi/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9k00011s77ksd9ixwth/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9k00011s77ksd9ixwth/</id>
     <published>2016-10-17T05:49:24.000Z</published>
     <updated>2017-02-16T01:39:23.274Z</updated>
     
@@ -747,8 +747,8 @@
   
   <entry>
     <title>WordPress 后台文件管理插件：FileBrowser</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb78000ywj7kjvdnbja7/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb78000ywj7kjvdnbja7/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9jt000xs77kykpekn13/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9jt000xs77kykpekn13/</id>
     <published>2016-10-17T05:05:54.000Z</published>
     <updated>2017-01-19T08:14:57.061Z</updated>
     
@@ -777,8 +777,8 @@
   
   <entry>
     <title>获取WordPress当前分类文章所有标签</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb7k001awj7kr2q1dvj2/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb7k001awj7kr2q1dvj2/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9k70016s77k4bzkzxhh/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9k70016s77k4bzkzxhh/</id>
     <published>2016-10-17T04:25:16.000Z</published>
     <updated>2017-01-19T08:14:30.073Z</updated>
     
@@ -811,8 +811,8 @@
   
   <entry>
     <title>Alfred实现七牛上传文件</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb84001zwj7ku8g2ghbg/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb84001zwj7ku8g2ghbg/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9kt001ys77kx5y0az2a/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9kt001ys77kx5y0az2a/</id>
     <published>2016-10-16T00:48:27.000Z</published>
     <updated>2017-02-09T04:14:02.655Z</updated>
     
@@ -886,8 +886,8 @@
   
   <entry>
     <title>自动从其它站点RSS抓取文章</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb7i0017wj7k6umzd9gz/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb7i0017wj7k6umzd9gz/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9k30012s77k84qistv5/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9k30012s77k84qistv5/</id>
     <published>2016-10-13T08:17:14.000Z</published>
     <updated>2017-01-19T08:14:38.621Z</updated>
     
@@ -914,8 +914,8 @@
   
   <entry>
     <title>热烈庆祝江南品味正式上线！</title>
-    <link href="http://blog.jiangnan.pw/ciz8lfb4n0005wj7kge9rous9/"/>
-    <id>http://blog.jiangnan.pw/ciz8lfb4n0005wj7kge9rous9/</id>
+    <link href="http://blog.jiangnan.pw/ciz8ln9i50008s77kq7gcah5g/"/>
+    <id>http://blog.jiangnan.pw/ciz8ln9i50008s77kq7gcah5g/</id>
     <published>2016-10-13T07:39:35.000Z</published>
     <updated>2017-01-19T08:13:36.217Z</updated>
     

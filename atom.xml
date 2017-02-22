@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiangnan.pw/"/>
-  <updated>2017-02-16T16:24:50.235Z</updated>
+  <updated>2017-02-22T04:18:44.207Z</updated>
   <id>http://blog.jiangnan.pw/</id>
   
   <author>
@@ -16,9 +16,68 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Sublime配置文件同步</title>
+    <link href="http://blog.jiangnan.pw/cizgg9y1f001rbj7k1ewfxs94/"/>
+    <id>http://blog.jiangnan.pw/cizgg9y1f001rbj7k1ewfxs94/</id>
+    <published>2017-02-22T04:14:37.000Z</published>
+    <updated>2017-02-22T04:18:44.207Z</updated>
+    
+    <content type="html"><![CDATA[<!--excerpt-->
+<h1 id="Sublime-Config"><a href="#Sublime-Config" class="headerlink" title="Sublime Config"></a>Sublime Config</h1><p>The simplest method of installation is through the Sublime Text console. The console is accessed via the ctrl+` shortcut or the View &gt; Show Console menu. Once open, paste the appropriate Python code for your version of Sublime Text into the console.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import urllib.request,os,hashlib; h = &apos;df21e130d211cfc94d9b0905775a7c0f&apos; + &apos;1e3d39e33b79698005270310898eea76&apos;; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &apos;http://packagecontrol.io/&apos; + pf.replace(&apos; &apos;, &apos;%20&apos;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&apos;Error validating download (got %s instead of %s), please try manual install&apos; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &apos;wb&apos; ).write(by)</div></pre></td></tr></table></figure>
+<h2 id="账户-SSH-公钥"><a href="#账户-SSH-公钥" class="headerlink" title="账户 SSH 公钥"></a>账户 SSH 公钥</h2><blockquote>
+<p>账户 SSH 公钥是跟用户账户关联的公钥，一旦设置，SSH 就拥有账户下所有项目仓库的读写权限。 设置“账户 SSH 公钥”是开发者使用 SSH 方式访问/修改代码仓库的“前置工作”，分为“获取 SSH 协议地址”、“生成公钥”、“在 Coding.net 添加公钥”三个步骤。</p>
+</blockquote>
+<h2 id="获取-SSH-协议地址"><a href="#获取-SSH-协议地址" class="headerlink" title="获取 SSH 协议地址"></a>获取 SSH 协议地址</h2><blockquote>
+<p>在项目的代码页面点击 SSH 切换到 SSH 协议， 获得 clone 地址，形如git@git.coding.net:wzw/leave-a-message.git。 请使用这个地址来访问您的代码仓库。</p>
+</blockquote>
+<h2 id="生成公钥"><a href="#生成公钥" class="headerlink" title="生成公钥"></a>生成公钥</h2><blockquote>
+<p>Mac/Linux 打开命令行终端, Windows 打开 Git Bash 。 输入ssh-keygen -t rsa -C “username@example.com”,( 注册的邮箱)，接下来点击enter键即可（也可以输入密码）。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</div><div class="line"># Creates a new ssh key, using the provided email as a label</div><div class="line"># Generating public/private rsa key pair.</div><div class="line">Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  // 推荐使用默认地址,如果使用非默认地址可能需要配置 .ssh/config</div></pre></td></tr></table></figure>
+<p>成功之后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Your identification has been saved in /Users/you/.ssh/id_rsa.</div><div class="line"># Your public key has been saved in /Users/you/.ssh/id_rsa.pub.</div><div class="line"># The key fingerprint is:</div><div class="line"># 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com</div></pre></td></tr></table></figure>
+<h2 id="在-Coding-net-添加公钥"><a href="#在-Coding-net-添加公钥" class="headerlink" title="在 Coding.net 添加公钥"></a>在 Coding.net 添加公钥</h2><blockquote>
+<p>本地打开 id_rsa.pub 文件（或执行 $cat id_rsa.pub ），复制其中全部内容，添加到账户“SSH 公钥”页面 中，公钥名称可以随意起名字。<br>完成后点击“添加”，然后输入密码或动态码即可添加完成。 图片<br>完成后在命令行测试，首次建立链接会要求信任主机。</p>
+</blockquote>
+<h2 id="Git-初始化"><a href="#Git-初始化" class="headerlink" title="Git 初始化"></a>Git 初始化</h2><p>…or create a new repository on the command line<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">echo &quot;# test&quot; &gt;&gt; README.md</div><div class="line">git init</div><div class="line">git add README.md</div><div class="line">git commit -m &quot;first commit&quot;</div><div class="line">git remote add origin git@github.com:lovedan/test.git</div><div class="line">git push -u origin master</div></pre></td></tr></table></figure></p>
+<p>…or push an existing repository from the command line<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git remote add origin git@github.com:lovedan/test.git</div><div class="line">git push -u origin master</div></pre></td></tr></table></figure></p>
+<ol>
+<li><p>git pull push在没有指定branch报错的解决方法</p>
+<blockquote>
+<p>解决方案：指定当前工作目录工作分支，跟远程的仓库，分支之间的链接关系。比如我们设置master对应远程仓库的master分支git branch –set-upstream master origin/master这样在我们每次想push或者pull的时候，只需要 输入git push 或者git pull即可。</p>
+</blockquote>
+</li>
+<li><p>git pull 遇到fatal: refusing to merge unrelated histories</p>
+<blockquote>
+<p>git pull origin branchname –allow-unrelated-histories</p>
+</blockquote>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;!--excerpt--&gt;
+&lt;h1 id=&quot;Sublime-Config&quot;&gt;&lt;a href=&quot;#Sublime-Config&quot; class=&quot;headerlink&quot; title=&quot;Sublime Config&quot;&gt;&lt;/a&gt;Sublime Config&lt;/h1&gt;&lt;p&gt;The sim
+    
+    </summary>
+    
+      <category term="软件相关" scheme="http://blog.jiangnan.pw/categories/%E8%BD%AF%E4%BB%B6%E7%9B%B8%E5%85%B3/"/>
+    
+      <category term="Windows" scheme="http://blog.jiangnan.pw/categories/%E8%BD%AF%E4%BB%B6%E7%9B%B8%E5%85%B3/Windows/"/>
+    
+    
+      <category term="Sublime" scheme="http://blog.jiangnan.pw/tags/Sublime/"/>
+    
+      <category term="编程软件" scheme="http://blog.jiangnan.pw/tags/%E7%BC%96%E7%A8%8B%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>找回Sierra允许“任何来源”的应用</title>
-    <link href="http://blog.jiangnan.pw/ciza2dhqs001xi07kaumgn1oy/"/>
-    <id>http://blog.jiangnan.pw/ciza2dhqs001xi07kaumgn1oy/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9y0w001dbj7krnjz9zy1/"/>
+    <id>http://blog.jiangnan.pw/cizgg9y0w001dbj7krnjz9zy1/</id>
     <published>2017-02-16T16:13:07.000Z</published>
     <updated>2017-02-16T16:24:50.235Z</updated>
     
@@ -53,8 +112,8 @@
   
   <entry>
     <title>移除Mac的.DS_Store、._ 檔</title>
-    <link href="http://blog.jiangnan.pw/ciza2dhql001pi07klaruhuc4/"/>
-    <id>http://blog.jiangnan.pw/ciza2dhql001pi07klaruhuc4/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9y12001jbj7kop0xarl2/"/>
+    <id>http://blog.jiangnan.pw/cizgg9y12001jbj7kop0xarl2/</id>
     <published>2017-02-16T01:28:40.000Z</published>
     <updated>2017-02-16T01:45:00.974Z</updated>
     
@@ -100,8 +159,8 @@
   
   <entry>
     <title>OS X 10.10.5 下做端口转发</title>
-    <link href="http://blog.jiangnan.pw/ciza2dhqb001ei07kqhx2v4jc/"/>
-    <id>http://blog.jiangnan.pw/ciza2dhqb001ei07kqhx2v4jc/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9y0t0018bj7k91d0gzzt/"/>
+    <id>http://blog.jiangnan.pw/cizgg9y0t0018bj7k91d0gzzt/</id>
     <published>2017-02-11T18:30:08.000Z</published>
     <updated>2017-02-11T18:43:28.757Z</updated>
     
@@ -134,8 +193,8 @@
   
   <entry>
     <title>让git push命令不再需要密码</title>
-    <link href="http://blog.jiangnan.pw/ciza2dhpn000si07k975dthpz/"/>
-    <id>http://blog.jiangnan.pw/ciza2dhpn000si07k975dthpz/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9y08000rbj7ko70uqa4f/"/>
+    <id>http://blog.jiangnan.pw/cizgg9y08000rbj7ko70uqa4f/</id>
     <published>2017-02-09T04:13:11.000Z</published>
     <updated>2017-02-09T04:17:33.995Z</updated>
     
@@ -167,8 +226,8 @@
   
   <entry>
     <title>GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</title>
-    <link href="http://blog.jiangnan.pw/ciza2dhq30012i07k396f9kdf/"/>
-    <id>http://blog.jiangnan.pw/ciza2dhq30012i07k396f9kdf/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9y09000sbj7kk3avkf9a/"/>
+    <id>http://blog.jiangnan.pw/cizgg9y09000sbj7kk3avkf9a/</id>
     <published>2017-02-09T01:35:00.000Z</published>
     <updated>2017-02-09T04:05:02.779Z</updated>
     
@@ -215,8 +274,8 @@
   
   <entry>
     <title>Laravel5自定义环境变量</title>
-    <link href="http://blog.jiangnan.pw/ciza2dhpo000ti07krrrlzkp0/"/>
-    <id>http://blog.jiangnan.pw/ciza2dhpo000ti07krrrlzkp0/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9y0f000wbj7kdc9nhb5w/"/>
+    <id>http://blog.jiangnan.pw/cizgg9y0f000wbj7kdc9nhb5w/</id>
     <published>2017-02-03T07:19:55.000Z</published>
     <updated>2017-02-03T04:48:05.768Z</updated>
     
@@ -291,8 +350,8 @@
   
   <entry>
     <title>开启Fusion Drive功能教程 双硬盘 SSD+HDD</title>
-    <link href="http://blog.jiangnan.pw/ciza2dhqo001ti07k0f28mxlr/"/>
-    <id>http://blog.jiangnan.pw/ciza2dhqo001ti07k0f28mxlr/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9y1i001ubj7kksz9r3jt/"/>
+    <id>http://blog.jiangnan.pw/cizgg9y1i001ubj7kksz9r3jt/</id>
     <published>2017-02-03T05:44:35.000Z</published>
     <updated>2017-02-09T03:53:44.896Z</updated>
     
@@ -358,8 +417,8 @@
   
   <entry>
     <title>Cloud9でLaravel5の環境構築</title>
-    <link href="http://blog.jiangnan.pw/ciza2dho70008i07k73r1yhcs/"/>
-    <id>http://blog.jiangnan.pw/ciza2dho70008i07k73r1yhcs/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9xze0008bj7k7cu1dwgx/"/>
+    <id>http://blog.jiangnan.pw/cizgg9xze0008bj7k7cu1dwgx/</id>
     <published>2017-02-03T04:58:48.000Z</published>
     <updated>2017-02-03T05:13:14.384Z</updated>
     
@@ -399,8 +458,8 @@
   
   <entry>
     <title>解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题</title>
-    <link href="http://blog.jiangnan.pw/ciza2dhqi001mi07k9n1s6fpo/"/>
-    <id>http://blog.jiangnan.pw/ciza2dhqi001mi07k9n1s6fpo/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9y1l001xbj7kmqhsz9gr/"/>
+    <id>http://blog.jiangnan.pw/cizgg9y1l001xbj7kmqhsz9gr/</id>
     <published>2017-01-20T04:05:05.000Z</published>
     <updated>2017-02-09T03:53:56.176Z</updated>
     
@@ -472,8 +531,8 @@
   
   <entry>
     <title>Nginxのエラーページをカスタマイズする方法</title>
-    <link href="http://blog.jiangnan.pw/ciza2dhpt000xi07k4kd3jwm7/"/>
-    <id>http://blog.jiangnan.pw/ciza2dhpt000xi07k4kd3jwm7/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9y0m0010bj7ks524wkej/"/>
+    <id>http://blog.jiangnan.pw/cizgg9y0m0010bj7ks524wkej/</id>
     <published>2017-01-19T08:06:00.000Z</published>
     <updated>2017-01-20T06:24:06.350Z</updated>
     
@@ -517,8 +576,8 @@
   
   <entry>
     <title>江南云服务正式上线</title>
-    <link href="http://blog.jiangnan.pw/ciza2dhnt0004i07klgke4b5u/"/>
-    <id>http://blog.jiangnan.pw/ciza2dhnt0004i07klgke4b5u/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9xz10004bj7kjsw9rwts/"/>
+    <id>http://blog.jiangnan.pw/cizgg9xz10004bj7kjsw9rwts/</id>
     <published>2017-01-10T05:10:27.000Z</published>
     <updated>2017-01-20T05:49:50.307Z</updated>
     
@@ -551,8 +610,8 @@
   
   <entry>
     <title>Laravel5导入自定义函数和类的方法</title>
-    <link href="http://blog.jiangnan.pw/ciza2dhpq000vi07kld5dkbuu/"/>
-    <id>http://blog.jiangnan.pw/ciza2dhpq000vi07kld5dkbuu/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9y0c000ubj7k9dhr811r/"/>
+    <id>http://blog.jiangnan.pw/cizgg9y0c000ubj7k9dhr811r/</id>
     <published>2016-12-01T07:19:55.000Z</published>
     <updated>2017-01-19T08:20:11.285Z</updated>
     
@@ -595,8 +654,8 @@
   
   <entry>
     <title>常用图床及自建图床方法汇总</title>
-    <link href="http://blog.jiangnan.pw/ciza2dho90009i07kmtcinktj/"/>
-    <id>http://blog.jiangnan.pw/ciza2dho90009i07kmtcinktj/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9xz60005bj7kcdlseg7f/"/>
+    <id>http://blog.jiangnan.pw/cizgg9xz60005bj7kcdlseg7f/</id>
     <published>2016-11-10T06:28:41.000Z</published>
     <updated>2017-02-16T01:38:27.862Z</updated>
     
@@ -666,8 +725,8 @@
   
   <entry>
     <title>MacOSX10.11开启任意显示器HiDPI方法</title>
-    <link href="http://blog.jiangnan.pw/ciza2dhq60016i07kd92sxezj/"/>
-    <id>http://blog.jiangnan.pw/ciza2dhq60016i07kd92sxezj/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9y10001fbj7kob5j7evw/"/>
+    <id>http://blog.jiangnan.pw/cizgg9y10001fbj7kob5j7evw/</id>
     <published>2016-11-08T05:27:16.000Z</published>
     <updated>2017-02-16T01:38:24.066Z</updated>
     
@@ -714,8 +773,8 @@
   
   <entry>
     <title>禁止WordPress头部加载s.w.org</title>
-    <link href="http://blog.jiangnan.pw/ciza2dhq10011i07kiepsqn60/"/>
-    <id>http://blog.jiangnan.pw/ciza2dhq10011i07kiepsqn60/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9y13001mbj7k5g91c12n/"/>
+    <id>http://blog.jiangnan.pw/cizgg9y13001mbj7k5g91c12n/</id>
     <published>2016-10-17T05:49:24.000Z</published>
     <updated>2017-02-16T01:39:23.274Z</updated>
     
@@ -747,8 +806,8 @@
   
   <entry>
     <title>WordPress 后台文件管理插件：FileBrowser</title>
-    <link href="http://blog.jiangnan.pw/ciza2dhpv000yi07keu6ll1nk/"/>
-    <id>http://blog.jiangnan.pw/ciza2dhpv000yi07keu6ll1nk/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9y0h000xbj7kk0ys19gu/"/>
+    <id>http://blog.jiangnan.pw/cizgg9y0h000xbj7kk0ys19gu/</id>
     <published>2016-10-17T05:05:54.000Z</published>
     <updated>2017-01-19T08:14:57.061Z</updated>
     
@@ -777,8 +836,8 @@
   
   <entry>
     <title>获取WordPress当前分类文章所有标签</title>
-    <link href="http://blog.jiangnan.pw/ciza2dhqe001hi07khu87qju0/"/>
-    <id>http://blog.jiangnan.pw/ciza2dhqe001hi07khu87qju0/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9y0r0015bj7k7an40o77/"/>
+    <id>http://blog.jiangnan.pw/cizgg9y0r0015bj7k7an40o77/</id>
     <published>2016-10-17T04:25:16.000Z</published>
     <updated>2017-01-19T08:14:30.073Z</updated>
     
@@ -811,8 +870,8 @@
   
   <entry>
     <title>Alfred实现七牛上传文件</title>
-    <link href="http://blog.jiangnan.pw/ciza2dhrq003ni07k6k1wuk8k/"/>
-    <id>http://blog.jiangnan.pw/ciza2dhrq003ni07k6k1wuk8k/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9y1o0021bj7kgrejjix0/"/>
+    <id>http://blog.jiangnan.pw/cizgg9y1o0021bj7kgrejjix0/</id>
     <published>2016-10-16T00:48:27.000Z</published>
     <updated>2017-02-09T04:14:02.655Z</updated>
     
@@ -886,8 +945,8 @@
   
   <entry>
     <title>自动从其它站点RSS抓取文章</title>
-    <link href="http://blog.jiangnan.pw/ciza2dhq90019i07kmki1k96m/"/>
-    <id>http://blog.jiangnan.pw/ciza2dhq90019i07kmki1k96m/</id>
+    <link href="http://blog.jiangnan.pw/cizgg9y0p0011bj7kqnd5y6x2/"/>
+    <id>http://blog.jiangnan.pw/cizgg9y0p0011bj7kqnd5y6x2/</id>
     <published>2016-10-13T08:17:14.000Z</published>
     <updated>2017-01-19T08:14:38.621Z</updated>
     
@@ -909,36 +968,6 @@
     
     
       <category term="WordPress" scheme="http://blog.jiangnan.pw/tags/WordPress/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>热烈庆祝江南品味正式上线！</title>
-    <link href="http://blog.jiangnan.pw/ciza2dhnz0005i07kq25cj8ld/"/>
-    <id>http://blog.jiangnan.pw/ciza2dhnz0005i07kq25cj8ld/</id>
-    <published>2016-10-13T07:39:35.000Z</published>
-    <updated>2017-01-19T08:13:36.217Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。<br><!--excerpt--></p>
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>
-<p>最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。经过了两天的努力奋战挽救回来了所有的代码。但是保加利亚的黑客不断的扫描我的IP，致使我的电脑CPU一度达到80℃~90℃，无奈之下展示关闭服务器。</p>
-</blockquote>
-<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote>
-<p>目前转投HEXO，Github门下开始技术博客的更新，今天发布的只是一个测试文章，因为MarkDown的语法还不熟悉只能边学边写希望大家谅解。最后热烈庆祝<strong>江南品味</strong>正式上线！</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近，本地搭建的Web系统遭遇黑客攻击，积累了三年的代码资源都被植入了恶意代码。&lt;br&gt;&lt;!--excerpt--&gt;&lt;/p&gt;
-&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;blockq
-    
-    </summary>
-    
-      <category term="作品展示" scheme="http://blog.jiangnan.pw/categories/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/"/>
-    
-    
-      <category term="江南品味" scheme="http://blog.jiangnan.pw/tags/%E6%B1%9F%E5%8D%97%E5%93%81%E5%91%B3/"/>
     
   </entry>
   

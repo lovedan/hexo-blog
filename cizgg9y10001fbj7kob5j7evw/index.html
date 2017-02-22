@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>MacOSX10.11开启任意显示器HiDPI方法 | 江南品味|记录编程道路上的点点滴滴!!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Mac技巧" />
+    
+    <meta name="description" content="MacOSX10.11开启任意显示器HiDPI方法
+
+研究了下，其实没怎么变化。Overrides文件夹目录位置变了而已。本人开启HiDPI现在更主要是为了截图截出2x的效果，实际调整分辨率的是另一个小显示器~已经很久用不到HiDPI的真实意义啦
+
+对于权限问题的补充10.11系统权限设置又改动，一些系统文件只有“系统”有权限读写，首先要关闭这个权限：开机按住 command ＋ R，进入恢复模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MacOSX10.11开启任意显示器HiDPI方法">
+<meta property="og:url" content="http://blog.jiangnan.pw/cizgg9y10001fbj7kob5j7evw/index.html">
+<meta property="og:site_name" content="江南品味|记录编程道路上的点点滴滴!!!">
+<meta property="og:description" content="MacOSX10.11开启任意显示器HiDPI方法
+
+研究了下，其实没怎么变化。Overrides文件夹目录位置变了而已。本人开启HiDPI现在更主要是为了截图截出2x的效果，实际调整分辨率的是另一个小显示器~已经很久用不到HiDPI的真实意义啦
+
+对于权限问题的补充10.11系统权限设置又改动，一些系统文件只有“系统”有权限读写，首先要关闭这个权限：开机按住 command ＋ R，进入恢复模式">
+<meta property="og:image" content="https://lh3.googleusercontent.com/-WeKKYXOBCRE/WKUCgnwOJhI/AAAAAAAABoM/9DVKBjbXeR4/s0/2017-02-16_10-38-03.png">
+<meta property="og:updated_time" content="2017-02-16T01:38:24.066Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MacOSX10.11开启任意显示器HiDPI方法">
+<meta name="twitter:description" content="MacOSX10.11开启任意显示器HiDPI方法
+
+研究了下，其实没怎么变化。Overrides文件夹目录位置变了而已。本人开启HiDPI现在更主要是为了截图截出2x的效果，实际调整分辨率的是另一个小显示器~已经很久用不到HiDPI的真实意义啦
+
+对于权限问题的补充10.11系统权限设置又改动，一些系统文件只有“系统”有权限读写，首先要关闭这个权限：开机按住 command ＋ R，进入恢复模式">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/-WeKKYXOBCRE/WKUCgnwOJhI/AAAAAAAABoM/9DVKBjbXeR4/s0/2017-02-16_10-38-03.png">
+<meta name="twitter:creator" content="@kyounan719">
+<link rel="publisher" href="103371492334107230000">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="江南品味|记录编程道路上的点点滴滴!!!" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">记录编程道路上的点点滴滴!!!</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/作品展示/">作品展示</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/">技术分享</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/Git/">Git</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/Laravel/">Laravel</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/Nginx/">Nginx</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/WordPress/">WordPress</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/苹果相关/">苹果相关</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/苹果相关/Mac软件/">Mac软件</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/软件相关/">软件相关</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/软件相关/Windows/">Windows</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" href="http://blog.jiangnan.pw/tools/">在线工具</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" href="https://www.jiangnan.pw/">江南云</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" href="/about/">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/苹果相关/">苹果相关</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-苹果相关/Mac技巧/MacOSX10-11开启任意显示器HiDPI方法" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        MacOSX10.11开启任意显示器HiDPI方法
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/cizgg9y10001fbj7kob5j7evw/" class="article-date">
+    <time datetime="2016-11-08T05:27:16.000Z" itemprop="datePublished">2016-11-08</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac技巧/">Mac技巧</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>MacOSX10.11开启任意显示器HiDPI方法<br><!--excerpt--></p>
+<blockquote>
+<p>研究了下，其实没怎么变化。Overrides文件夹目录位置变了而已。<br>本人开启HiDPI现在更主要是为了截图截出2x的效果，实际调整分辨率的是另一个小显示器~已经很久用不到HiDPI的真实意义啦</p>
+</blockquote>
+<h2 id="对于权限问题的补充"><a href="#对于权限问题的补充" class="headerlink" title="对于权限问题的补充"></a>对于权限问题的补充</h2><p>10.11系统权限设置又改动，一些系统文件只有“系统”有权限读写，首先要关闭这个权限：<br>开机按住 <strong>command ＋ R</strong>，进入恢复模式，然后在“终端”中输入“csrutil disable”关闭权限。如果需要打开，则csrutil enable。<br>这是在知乎上看到相同的问题，别人提到的。LZ好像没遇到过这种情况，如果有人遇到同样的权限问题，这样解决就好了。</p>
+<h3 id="对于权限问题的补充-1"><a href="#对于权限问题的补充-1" class="headerlink" title="对于权限问题的补充"></a>对于权限问题的补充</h3><ol>
+<li><p>开启HiDPI<br>打开终端 键入<br>sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool YES<br>回车后，输入当前系统管理员的密码，继续回车确认。</p>
+</li>
+<li><p>获取你的显示器的两个 ID:<br>DisplayVendorID和DisplayProductID<br>打开终端, 命令分别是:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ioreg -l | grep &quot;DisplayVendorID&quot;</div><div class="line">ioreg -l | grep &quot;DisplayProductID&quot;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>OK.在桌面上新建一个文件夹,名字格式是:DisplayVendorID-XXXX,其中XXXX是你的DisplayVendorID的16进制值小写.<br>于是,我会新建一个 DisplayVendorID-XXXX的文件夹,然后在这个文件夹里面新建一个空白文件.名字格式是<br>DisplayProductID-YYYY,自然YYYY就是你的DisplayProductID的16进制了.<br>我新建的文件是 DisplayProductID-YYYY.<br>最好下载我提供的模板编辑.<br>相信你不一定能找到个合适的进制转换工具，我从网上找到了一个很好用的flash，并把它放到了自己的服务器里，<br>大家如有需要随时可以去用<br>在线进制转换器<br>建议使用PlistPro工具编辑，方便快捷。.<br><strong>范例:</strong></p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="meta">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">plist</span> <span class="attr">version</span>=<span class="string">"1.0"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>DisplayProductID<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">integer</span>&gt;</span>10496<span class="tag">&lt;/<span class="name">integer</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>DisplayVendorID<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">integer</span>&gt;</span>8547<span class="tag">&lt;/<span class="name">integer</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>scale-resolutions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">array</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAKAAAABkAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAUAAAADIAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAKAAAABDgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAUAAAACHAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAHgAAABDgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAPAAAACHAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAGkAAABBoAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAANIAAACDQAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAGQAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAMgAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAFoAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAALQAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAINAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAQaAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">array</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">plist</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>建议下载本帖子中的附件。包含本范例。</p>
+<p>最后面那一坨,和以及里面的data如何来的<br>比如我想使用1600900这个HiDPI,那么我就需要生成两个分辨率,其中一个是1600900,一个是其双倍,3200*1800.<br>1600,900两个值的16进制是00000640 00000384 ;<br>3200,1800两个值的16进制是00000C80 00000708;<br>后面加上 00000001 00200000<br>于是会得到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">00000640 00000384 00000001 00200000</div><div class="line">00000C80 00000708 00000001 00200000</div></pre></td></tr></table></figure></p>
+<p>用附件中的PlistPro编辑这个DisplayProductID-YYYY,计算并填写你想要的分辨率.<br>最后,把这个 DisplayVendorID-XXXX 文件夹,</p>
+<p>拷贝到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/System/Library/Displays/Contents/Resources/Overrides/</div></pre></td></tr></table></figure></p>
+<p>(10.10及以下是 /System/Library/Displays/Overrides/ )<br>重启系统就可以看到了.可以安装RDM切换,在任务栏,方便快捷.<br>各位可以根据自己的屏幕规格来添加.</p>
+<p>范例中，设定的分辨率是<br>2560x1600 2x (16:10)<br>2560x1080 2x (21:9)<br>1920x1080 2x (16:9)<br>1680x1050 2x (16:10)<br>1600x900 2x(16:9)<br>1440x900 2x(16:10)<br>2100x900 2x(21:9)</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="cizgg9y10001fbj7kob5j7evw/" data-title="MacOSX10.11开启任意显示器HiDPI方法" data-url="http://blog.jiangnan.pw/cizgg9y10001fbj7kob5j7evw/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/kyounan719" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://facebook.com/kyounan719" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="https://plus.google.com/103371492334107231388" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lovedan" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://www.weibo.com/ddmfnet" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/atom.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/cizgg9xz60005bj7kcdlseg7f/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            常用图床及自建图床方法汇总
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/cizgg9y13001mbj7k5g91c12n/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">禁止WordPress头部加载s.w.org</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/cizgg9y1f001rbj7k1ewfxs94/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lh3.googleusercontent.com/-Xc2Gu93qCgQ/WK0RD3uALXI/AAAAAAAABrc/gjwwbrMYRlE/s0/2017-02-22_13-18-23.png)" alt="Sublime配置文件同步" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件相关/">软件相关</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/软件相关/Windows/">Windows</a></p>
+                            <p class="item-title"><a href="/cizgg9y1f001rbj7k1ewfxs94/" class="title">Sublime配置文件同步</a></p>
+                            <p class="item-date"><time datetime="2017-02-22T04:14:37.000Z" itemprop="datePublished">2017-02-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/cizgg9y0w001dbj7krnjz9zy1/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lh3.googleusercontent.com/-L_GN75b_Z1g/WKXR1WbJc-I/AAAAAAAABpc/AbhsDUtKmzo/s0/2017-02-17_01-22-44.png)" alt="找回Sierra允许“任何来源”的应用" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/苹果相关/">苹果相关</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a></p>
+                            <p class="item-title"><a href="/cizgg9y0w001dbj7krnjz9zy1/" class="title">找回Sierra允许“任何来源”的应用</a></p>
+                            <p class="item-date"><time datetime="2017-02-16T16:13:07.000Z" itemprop="datePublished">2017-02-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/cizgg9y12001jbj7kop0xarl2/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lh3.googleusercontent.com/-zE-dLaGRh9s/WKUC65Rm6pI/AAAAAAAABoQ/AYijQp5xALk/s0/2017-02-16_10-39-56.png)" alt="移除Mac的.DS_Store、._ 檔" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/苹果相关/">苹果相关</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a></p>
+                            <p class="item-title"><a href="/cizgg9y12001jbj7kop0xarl2/" class="title">移除Mac的.DS_Store、._ 檔</a></p>
+                            <p class="item-date"><time datetime="2017-02-16T01:28:40.000Z" itemprop="datePublished">2017-02-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/cizgg9y0t0018bj7k91d0gzzt/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lh3.googleusercontent.com/-ArCd3HrqaPI/WJ9aHU8B0vI/AAAAAAAABiE/6mVQaN5q50Q/s0/2017-02-12_03-38-19.png)" alt="OS X 10.10.5 下做端口转发" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/苹果相关/">苹果相关</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a></p>
+                            <p class="item-title"><a href="/cizgg9y0t0018bj7k91d0gzzt/" class="title">OS X 10.10.5 下做端口转发</a></p>
+                            <p class="item-date"><time datetime="2017-02-11T18:30:08.000Z" itemprop="datePublished">2017-02-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/cizgg9y08000rbj7ko70uqa4f/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lh3.googleusercontent.com/-nnwlkrohkHo/WJvpWp8lRGI/AAAAAAAABcw/bl95WI6WWwI/s0/2017-02-09_13-00-25.png)" alt="让git push命令不再需要密码" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Git/">Git</a></p>
+                            <p class="item-title"><a href="/cizgg9y08000rbj7ko70uqa4f/" class="title">让git push命令不再需要密码</a></p>
+                            <p class="item-date"><time datetime="2017-02-09T04:13:11.000Z" itemprop="datePublished">2017-02-09</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/作品展示/">作品展示</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/">技术分享</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/Git/">Git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/Laravel/">Laravel</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/Nginx/">Nginx</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/WordPress/">WordPress</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/苹果相关/">苹果相关</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/苹果相关/Mac软件/">Mac软件</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件相关/">软件相关</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/软件相关/Windows/">Windows</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Alfred/" style="font-size: 10px;">Alfred</a> <a href="/tags/Cloud9/" style="font-size: 10px;">Cloud9</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/GitHub/" style="font-size: 13.33px;">GitHub</a> <a href="/tags/Mac技巧/" style="font-size: 20px;">Mac技巧</a> <a href="/tags/Mac软件/" style="font-size: 10px;">Mac软件</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/WordPress/" style="font-size: 16.67px;">WordPress</a> <a href="/tags/laravel/" style="font-size: 13.33px;">laravel</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/plugins/" style="font-size: 10px;">plugins</a> <a href="/tags/作品展示/" style="font-size: 10px;">作品展示</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/开源/" style="font-size: 10px;">开源</a> <a href="/tags/技术分享/" style="font-size: 13.33px;">技术分享</a> <a href="/tags/江南云/" style="font-size: 10px;">江南云</a> <a href="/tags/江南品味/" style="font-size: 10px;">江南品味</a> <a href="/tags/编程软件/" style="font-size: 10px;">编程软件</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://www.jiangnan.pw" target="_blank">江南云</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://jiangnan.ml" target="_blank">江南品味（国内）</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.jiangnan.pw" target="_blank">江南品味（国外）</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 江南品味</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'lovedan'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

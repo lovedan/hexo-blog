@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiangnan.pw/"/>
-  <updated>2017-02-22T04:18:44.207Z</updated>
+  <updated>2017-02-24T18:30:50.142Z</updated>
   <id>http://blog.jiangnan.pw/</id>
   
   <author>
@@ -16,9 +16,49 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>0x80004005 未指定的错误</title>
+    <link href="http://blog.jiangnan.pw/cizk5mcig000ucp7kep6szz4h/"/>
+    <id>http://blog.jiangnan.pw/cizk5mcig000ucp7kep6szz4h/</id>
+    <published>2017-02-24T18:21:51.000Z</published>
+    <updated>2017-02-24T18:30:50.142Z</updated>
+    
+    <content type="html"><![CDATA[<!--excerpt-->
+<blockquote>
+<p>0x80004005 未指定的错误 (Provider 错误’80004005’ 未指定的错误) 你是否也在烦恼中，<br>今天下午这个问题烦恼了我一个下午。首先说下我的经历。下午帮来要写程序，拿移动硬盘<br>出来 打开提示 I/O设备错误。一看完蛋了移动硬盘坏了，然后找了个修改软件 安装了下。<br>修复好了。然后用BAT 清理下垃圾文件。然后问题就出现了。</p>
+</blockquote>
+<p>后来终于发现问题是 出在 BAT 清理垃圾文件 哪里。就是把权限改了。大家不用去看太多<br>的解释了。如果自己没搞什么东西。有70%就是 权限问题。下面说下怎么解决这个问题：</p>
+<h2 id="设置temp（临时文件夹）权限"><a href="#设置temp（临时文件夹）权限" class="headerlink" title="设置temp（临时文件夹）权限"></a>设置temp（临时文件夹）权限</h2><h3 id="打开办法："><a href="#打开办法：" class="headerlink" title="打开办法："></a>打开办法：</h3><p><code>windows---&gt;temp</code>，单击右键选择-属性，你就会看到一个叫做“<code>安全</code>”的选项，</p>
+<p>添加一个<code>everyone</code>,权限设置为完全控制，再将你正在使用<code>windows</code>的用户也设置为完全控制</p>
+<p>一般设置好这个就没问题了。如果你还有问题。那么你可能是 组件有问题了。或者是本身</p>
+<p>代码没写好。或者是 程序目录权限问题。</p>
+<p>下面在说常见的解决办法：</p>
+<h2 id="重新注册组件："><a href="#重新注册组件：" class="headerlink" title="重新注册组件："></a>重新注册组件：</h2><p>开始—–运行—–<code>regsvr32 jscript.dll</code><br>开始—–运行—–<code>regsvr32 vbscript.dll</code><br>开始—–运行—–<code>iisreset</code></p>
+<p>开始—&gt;运行， 输入 <code>regsvr32 msjetoledb40.dll</code></p>
+<p>如果还是不能解决。那么问题肯定出现到 代码上。或者你程序的目录权限上！</p>
+<p>程序一般错误在 链接数据库代码。不规范。大家按照下面这个写就可以</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dbpath=server.mappath(&quot;vip/jiajie.mdb&quot;) </div><div class="line">set conn=server.createobject(&quot;adodb.connection&quot;) </div><div class="line">conn.open &quot;provider=microsoft.jet.oledb.4.0;data source=&quot;&amp;dbpath</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;!--excerpt--&gt;
+&lt;blockquote&gt;
+&lt;p&gt;0x80004005 未指定的错误 (Provider 错误’80004005’ 未指定的错误) 你是否也在烦恼中，&lt;br&gt;今天下午这个问题烦恼了我一个下午。首先说下我的经历。下午帮来要写程序，拿移动硬盘&lt;br&gt;出来 
+    
+    </summary>
+    
+      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+      <category term="IIS" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/IIS/"/>
+    
+    
+      <category term="IIS" scheme="http://blog.jiangnan.pw/tags/IIS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Sublime配置文件同步</title>
-    <link href="http://blog.jiangnan.pw/cizgg9y1f001rbj7k1ewfxs94/"/>
-    <id>http://blog.jiangnan.pw/cizgg9y1f001rbj7k1ewfxs94/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mckk0044cp7k8hb8mfxx/"/>
+    <id>http://blog.jiangnan.pw/cizk5mckk0044cp7k8hb8mfxx/</id>
     <published>2017-02-22T04:14:37.000Z</published>
     <updated>2017-02-22T04:18:44.207Z</updated>
     
@@ -76,8 +116,8 @@
   
   <entry>
     <title>找回Sierra允许“任何来源”的应用</title>
-    <link href="http://blog.jiangnan.pw/cizgg9y0w001dbj7krnjz9zy1/"/>
-    <id>http://blog.jiangnan.pw/cizgg9y0w001dbj7krnjz9zy1/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mcjd001mcp7ki0wkj3n5/"/>
+    <id>http://blog.jiangnan.pw/cizk5mcjd001mcp7ki0wkj3n5/</id>
     <published>2017-02-16T16:13:07.000Z</published>
     <updated>2017-02-16T16:24:50.235Z</updated>
     
@@ -112,8 +152,8 @@
   
   <entry>
     <title>移除Mac的.DS_Store、._ 檔</title>
-    <link href="http://blog.jiangnan.pw/cizgg9y12001jbj7kop0xarl2/"/>
-    <id>http://blog.jiangnan.pw/cizgg9y12001jbj7kop0xarl2/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mcjh001rcp7kfjroh8ew/"/>
+    <id>http://blog.jiangnan.pw/cizk5mcjh001rcp7kfjroh8ew/</id>
     <published>2017-02-16T01:28:40.000Z</published>
     <updated>2017-02-16T01:45:00.974Z</updated>
     
@@ -159,8 +199,8 @@
   
   <entry>
     <title>OS X 10.10.5 下做端口转发</title>
-    <link href="http://blog.jiangnan.pw/cizgg9y0t0018bj7k91d0gzzt/"/>
-    <id>http://blog.jiangnan.pw/cizgg9y0t0018bj7k91d0gzzt/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mcj5001dcp7k5qajvoma/"/>
+    <id>http://blog.jiangnan.pw/cizk5mcj5001dcp7k5qajvoma/</id>
     <published>2017-02-11T18:30:08.000Z</published>
     <updated>2017-02-11T18:43:28.757Z</updated>
     
@@ -193,8 +233,8 @@
   
   <entry>
     <title>让git push命令不再需要密码</title>
-    <link href="http://blog.jiangnan.pw/cizgg9y08000rbj7ko70uqa4f/"/>
-    <id>http://blog.jiangnan.pw/cizgg9y08000rbj7ko70uqa4f/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mcid000scp7k4mkwj60h/"/>
+    <id>http://blog.jiangnan.pw/cizk5mcid000scp7k4mkwj60h/</id>
     <published>2017-02-09T04:13:11.000Z</published>
     <updated>2017-02-09T04:17:33.995Z</updated>
     
@@ -226,8 +266,8 @@
   
   <entry>
     <title>GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</title>
-    <link href="http://blog.jiangnan.pw/cizgg9y09000sbj7kk3avkf9a/"/>
-    <id>http://blog.jiangnan.pw/cizgg9y09000sbj7kk3avkf9a/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mcic000rcp7katf8u6eg/"/>
+    <id>http://blog.jiangnan.pw/cizk5mcic000rcp7katf8u6eg/</id>
     <published>2017-02-09T01:35:00.000Z</published>
     <updated>2017-02-09T04:05:02.779Z</updated>
     
@@ -274,8 +314,8 @@
   
   <entry>
     <title>Laravel5自定义环境变量</title>
-    <link href="http://blog.jiangnan.pw/cizgg9y0f000wbj7kdc9nhb5w/"/>
-    <id>http://blog.jiangnan.pw/cizgg9y0f000wbj7kdc9nhb5w/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mcii000wcp7k414btgu0/"/>
+    <id>http://blog.jiangnan.pw/cizk5mcii000wcp7k414btgu0/</id>
     <published>2017-02-03T07:19:55.000Z</published>
     <updated>2017-02-03T04:48:05.768Z</updated>
     
@@ -350,8 +390,8 @@
   
   <entry>
     <title>开启Fusion Drive功能教程 双硬盘 SSD+HDD</title>
-    <link href="http://blog.jiangnan.pw/cizgg9y1i001ubj7kksz9r3jt/"/>
-    <id>http://blog.jiangnan.pw/cizgg9y1i001ubj7kksz9r3jt/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mcj8001fcp7kvebobs1a/"/>
+    <id>http://blog.jiangnan.pw/cizk5mcj8001fcp7kvebobs1a/</id>
     <published>2017-02-03T05:44:35.000Z</published>
     <updated>2017-02-09T03:53:44.896Z</updated>
     
@@ -417,8 +457,8 @@
   
   <entry>
     <title>Cloud9でLaravel5の環境構築</title>
-    <link href="http://blog.jiangnan.pw/cizgg9xze0008bj7k7cu1dwgx/"/>
-    <id>http://blog.jiangnan.pw/cizgg9xze0008bj7k7cu1dwgx/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mch30008cp7k8j75v8lx/"/>
+    <id>http://blog.jiangnan.pw/cizk5mch30008cp7k8j75v8lx/</id>
     <published>2017-02-03T04:58:48.000Z</published>
     <updated>2017-02-03T05:13:14.384Z</updated>
     
@@ -458,8 +498,8 @@
   
   <entry>
     <title>解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题</title>
-    <link href="http://blog.jiangnan.pw/cizgg9y1l001xbj7kmqhsz9gr/"/>
-    <id>http://blog.jiangnan.pw/cizgg9y1l001xbj7kmqhsz9gr/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mcjj001ucp7kbr9vu6kv/"/>
+    <id>http://blog.jiangnan.pw/cizk5mcjj001ucp7kbr9vu6kv/</id>
     <published>2017-01-20T04:05:05.000Z</published>
     <updated>2017-02-09T03:53:56.176Z</updated>
     
@@ -531,8 +571,8 @@
   
   <entry>
     <title>Nginxのエラーページをカスタマイズする方法</title>
-    <link href="http://blog.jiangnan.pw/cizgg9y0m0010bj7ks524wkej/"/>
-    <id>http://blog.jiangnan.pw/cizgg9y0m0010bj7ks524wkej/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mcjo0021cp7ky8wvbwyt/"/>
+    <id>http://blog.jiangnan.pw/cizk5mcjo0021cp7ky8wvbwyt/</id>
     <published>2017-01-19T08:06:00.000Z</published>
     <updated>2017-01-20T06:24:06.350Z</updated>
     
@@ -576,8 +616,8 @@
   
   <entry>
     <title>江南云服务正式上线</title>
-    <link href="http://blog.jiangnan.pw/cizgg9xz10004bj7kjsw9rwts/"/>
-    <id>http://blog.jiangnan.pw/cizgg9xz10004bj7kjsw9rwts/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mcgr0004cp7kllj52k4r/"/>
+    <id>http://blog.jiangnan.pw/cizk5mcgr0004cp7kllj52k4r/</id>
     <published>2017-01-10T05:10:27.000Z</published>
     <updated>2017-01-20T05:49:50.307Z</updated>
     
@@ -610,8 +650,8 @@
   
   <entry>
     <title>Laravel5导入自定义函数和类的方法</title>
-    <link href="http://blog.jiangnan.pw/cizgg9y0c000ubj7k9dhr811r/"/>
-    <id>http://blog.jiangnan.pw/cizgg9y0c000ubj7k9dhr811r/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mcij000xcp7kcnu2nc3o/"/>
+    <id>http://blog.jiangnan.pw/cizk5mcij000xcp7kcnu2nc3o/</id>
     <published>2016-12-01T07:19:55.000Z</published>
     <updated>2017-01-19T08:20:11.285Z</updated>
     
@@ -654,8 +694,8 @@
   
   <entry>
     <title>常用图床及自建图床方法汇总</title>
-    <link href="http://blog.jiangnan.pw/cizgg9xz60005bj7kcdlseg7f/"/>
-    <id>http://blog.jiangnan.pw/cizgg9xz60005bj7kcdlseg7f/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mcht000lcp7k4j37zhon/"/>
+    <id>http://blog.jiangnan.pw/cizk5mcht000lcp7k4j37zhon/</id>
     <published>2016-11-10T06:28:41.000Z</published>
     <updated>2017-02-16T01:38:27.862Z</updated>
     
@@ -725,8 +765,8 @@
   
   <entry>
     <title>MacOSX10.11开启任意显示器HiDPI方法</title>
-    <link href="http://blog.jiangnan.pw/cizgg9y10001fbj7kob5j7evw/"/>
-    <id>http://blog.jiangnan.pw/cizgg9y10001fbj7kob5j7evw/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mcjb001jcp7kpvz6qgpv/"/>
+    <id>http://blog.jiangnan.pw/cizk5mcjb001jcp7kpvz6qgpv/</id>
     <published>2016-11-08T05:27:16.000Z</published>
     <updated>2017-02-16T01:38:24.066Z</updated>
     
@@ -773,8 +813,8 @@
   
   <entry>
     <title>禁止WordPress头部加载s.w.org</title>
-    <link href="http://blog.jiangnan.pw/cizgg9y13001mbj7k5g91c12n/"/>
-    <id>http://blog.jiangnan.pw/cizgg9y13001mbj7k5g91c12n/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mciq0011cp7ko3lmxyr5/"/>
+    <id>http://blog.jiangnan.pw/cizk5mciq0011cp7ko3lmxyr5/</id>
     <published>2016-10-17T05:49:24.000Z</published>
     <updated>2017-02-16T01:39:23.274Z</updated>
     
@@ -806,8 +846,8 @@
   
   <entry>
     <title>WordPress 后台文件管理插件：FileBrowser</title>
-    <link href="http://blog.jiangnan.pw/cizgg9y0h000xbj7kk0ys19gu/"/>
-    <id>http://blog.jiangnan.pw/cizgg9y0h000xbj7kk0ys19gu/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mcip0010cp7kdhs37auh/"/>
+    <id>http://blog.jiangnan.pw/cizk5mcip0010cp7kdhs37auh/</id>
     <published>2016-10-17T05:05:54.000Z</published>
     <updated>2017-01-19T08:14:57.061Z</updated>
     
@@ -836,8 +876,8 @@
   
   <entry>
     <title>获取WordPress当前分类文章所有标签</title>
-    <link href="http://blog.jiangnan.pw/cizgg9y0r0015bj7k7an40o77/"/>
-    <id>http://blog.jiangnan.pw/cizgg9y0r0015bj7k7an40o77/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mcit0015cp7kxh852p9f/"/>
+    <id>http://blog.jiangnan.pw/cizk5mcit0015cp7kxh852p9f/</id>
     <published>2016-10-17T04:25:16.000Z</published>
     <updated>2017-01-19T08:14:30.073Z</updated>
     
@@ -870,8 +910,8 @@
   
   <entry>
     <title>Alfred实现七牛上传文件</title>
-    <link href="http://blog.jiangnan.pw/cizgg9y1o0021bj7kgrejjix0/"/>
-    <id>http://blog.jiangnan.pw/cizgg9y1o0021bj7kgrejjix0/</id>
+    <link href="http://blog.jiangnan.pw/cizk5mcjm001xcp7ko33z6fzd/"/>
+    <id>http://blog.jiangnan.pw/cizk5mcjm001xcp7ko33z6fzd/</id>
     <published>2016-10-16T00:48:27.000Z</published>
     <updated>2017-02-09T04:14:02.655Z</updated>
     
@@ -940,34 +980,6 @@
       <category term="Alfred" scheme="http://blog.jiangnan.pw/tags/Alfred/"/>
     
       <category term="Mac软件" scheme="http://blog.jiangnan.pw/tags/Mac%E8%BD%AF%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自动从其它站点RSS抓取文章</title>
-    <link href="http://blog.jiangnan.pw/cizgg9y0p0011bj7kqnd5y6x2/"/>
-    <id>http://blog.jiangnan.pw/cizgg9y0p0011bj7kqnd5y6x2/</id>
-    <published>2016-10-13T08:17:14.000Z</published>
-    <updated>2017-01-19T08:14:38.621Z</updated>
-    
-    <content type="html"><![CDATA[<p>代码基本原理，新建一个自定义分类法“shot”，自动从另一个站点的RSS抓取文章，放在一个数组中，再用这个数组创建“shot”文章，并为文章添加自定义栏目image和link_url，方便调用缩略图和原文链接。<br><a id="more"></a></p>
-<p>将下面代码添加到当前主题functions.php中即可。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?</span></div><div class="line"><span class="comment">/* Post Type</span></div><div class="line">   ------------------------------------------------------------------------------------ */</div><div class="line">add_action( <span class="string">'init'</span>, <span class="string">'register_cpt_shot'</span> );</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">register_cpt_shot</span><span class="params">()</span> </span>&#123;</div><div class="line">    $labels = <span class="keyword">array</span>(</div><div class="line">        <span class="string">'name'</span> =&gt; _x( <span class="string">'Dribble Shots'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'singular_name'</span> =&gt; _x( <span class="string">'Dribbble Shot'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'add_new'</span> =&gt; _x( <span class="string">'Add New'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'add_new_item'</span> =&gt; _x( <span class="string">'Add New Dribbble Shot'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'edit_item'</span> =&gt; _x( <span class="string">'Edit Dribbble Shot'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'new_item'</span> =&gt; _x( <span class="string">'New Dribbble Shot'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'view_item'</span> =&gt; _x( <span class="string">'View Dribbble Shot'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'search_items'</span> =&gt; _x( <span class="string">'Search Dribble Shots'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'not_found'</span> =&gt; _x( <span class="string">'No dribble shots found'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'not_found_in_trash'</span> =&gt; _x( <span class="string">'No dribble shots found in Trash'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'parent_item_colon'</span> =&gt; _x( <span class="string">'Parent Dribbble Shot:'</span>, <span class="string">'shot'</span> ),</div><div class="line">        <span class="string">'menu_name'</span> =&gt; _x( <span class="string">'Dribble Shots'</span>, <span class="string">'shot'</span> ),</div><div class="line">    );</div><div class="line">    $args = <span class="keyword">array</span>(</div><div class="line">        <span class="string">'labels'</span> =&gt; $labels,</div><div class="line">        <span class="string">'hierarchical'</span> =&gt; <span class="keyword">false</span>,</div><div class="line">        <span class="string">'supports'</span> =&gt; <span class="keyword">array</span>( <span class="string">'title'</span>, <span class="string">'custom-fields'</span> ),</div><div class="line">        <span class="string">'public'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'show_ui'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'show_in_menu'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'show_in_nav_menus'</span> =&gt; <span class="keyword">false</span>,</div><div class="line">        <span class="string">'publicly_queryable'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'exclude_from_search'</span> =&gt; <span class="keyword">false</span>,</div><div class="line">        <span class="string">'has_archive'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'query_var'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'can_export'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'rewrite'</span> =&gt; <span class="keyword">true</span>,</div><div class="line">        <span class="string">'capability_type'</span> =&gt; <span class="string">'post'</span></div><div class="line">    );</div><div class="line">    register_post_type( <span class="string">'shot'</span>, $args );</div><div class="line">&#125;</div><div class="line"><span class="comment">/* Import Shots via RSS</span></div><div class="line">   ------------------------------------------------------------------------------------ */</div><div class="line"><span class="comment">// grab the image src from teh description</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_image</span><span class="params">($string)</span> </span>&#123;</div><div class="line">    preg_match_all(<span class="string">'/&lt;img[^&gt;]+&gt;/i'</span>,$string, $result);</div><div class="line">    $img = <span class="keyword">array</span>();</div><div class="line">    <span class="keyword">foreach</span>( $result[<span class="number">0</span>] <span class="keyword">as</span> $img_tag)</div><div class="line">    &#123;</div><div class="line">        preg_match_all(<span class="string">'/(src)=("[^"]*")/i'</span>,$img_tag, $img[$img_tag]);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> trim($img[$img_tag][<span class="number">2</span>][<span class="number">0</span>], <span class="string">'"'</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// create an array of the feed items</span></div><div class="line"><span class="keyword">include_once</span>(ABSPATH . WPINC . <span class="string">'/feed.php'</span>);</div><div class="line">$feed = fetch_feed(<span class="string">'http://dribbble.com/tammyhart/shots.rss'</span>);</div><div class="line">$feed = $feed-&gt;get_items(<span class="number">0</span>);</div><div class="line">$shots = <span class="keyword">array</span>();</div><div class="line"><span class="keyword">foreach</span> ( $feed <span class="keyword">as</span> $item ) :</div><div class="line">$shots[$item-&gt;get_date(<span class="string">'Ymd'</span>)] = <span class="keyword">array</span>(</div><div class="line">    <span class="string">'id'</span>    =&gt; $item-&gt;get_date(<span class="string">'Ymd'</span>),</div><div class="line">    <span class="string">'url'</span>   =&gt; esc_url( $item-&gt;get_permalink() ),</div><div class="line">    <span class="string">'date'</span>  =&gt; $item-&gt;get_date(<span class="string">'Y-m-d H:i:s'</span>),</div><div class="line">    <span class="string">'title'</span> =&gt; esc_html( $item-&gt;get_title() ),</div><div class="line">    <span class="string">'image'</span> =&gt; get_image($item-&gt;get_description())</div><div class="line">    );</div><div class="line"><span class="keyword">endforeach</span>;</div><div class="line"><span class="comment">// create posts from our array</span></div><div class="line"><span class="keyword">foreach</span> ($shots <span class="keyword">as</span> $shot) &#123;</div><div class="line">    $shot_post = <span class="keyword">array</span>(</div><div class="line">        <span class="string">'post_type'</span>     =&gt; <span class="string">'shot'</span>,</div><div class="line">        <span class="string">'post_status'</span>   =&gt; <span class="string">'publish'</span>,</div><div class="line">        <span class="string">'post_author'</span>   =&gt; <span class="number">1</span>,</div><div class="line">        <span class="string">'post_title'</span>    =&gt; $shot[<span class="string">'title'</span>],</div><div class="line">        <span class="string">'post_date'</span>     =&gt; $shot[<span class="string">'date'</span>]</div><div class="line">        );</div><div class="line">    $shot_post_meta = <span class="keyword">array</span>(</div><div class="line">        <span class="string">'link_url'</span>  =&gt; $shot[<span class="string">'url'</span>],</div><div class="line">        <span class="string">'image'</span>     =&gt; $shot[<span class="string">'image'</span>]</div><div class="line">        );</div><div class="line">    $posts = get_posts(</div><div class="line">        <span class="keyword">array</span>(</div><div class="line">            <span class="string">'post_type'</span> =&gt; <span class="string">'shot'</span>,</div><div class="line">            <span class="string">'meta_key'</span>  =&gt; <span class="string">'link_url'</span>,</div><div class="line">            <span class="string">'meta_value'</span>=&gt; $shot_post_meta[<span class="string">'link_url'</span>]</div><div class="line">            )</div><div class="line">        );</div><div class="line">    <span class="keyword">if</span> (count($posts) == <span class="number">0</span>) &#123;</div><div class="line">        $post_id = wp_insert_post($shot_post);</div><div class="line">        add_post_meta($post_id, <span class="string">'link_url'</span>, $shot_post_meta[<span class="string">'link_url'</span>], <span class="keyword">true</span>);</div><div class="line">        add_post_meta($post_id, <span class="string">'image'</span>, $shot_post_meta[<span class="string">'image'</span>], <span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
-<p>修改第66行的”<a href="http://dribbble.com/tammyhart/shots.rss“为准备抓取文章站点的RSS地址，还可以修改第80行后的”shot“为你所用主题自定义分类法名称，抓取的文章会自动添加到该分类法中。" target="_blank" rel="external">http://dribbble.com/tammyhart/shots.rss“为准备抓取文章站点的RSS地址，还可以修改第80行后的”shot“为你所用主题自定义分类法名称，抓取的文章会自动添加到该分类法中。</a><br>上述代码中并没有抓取文章内容的功能，仅供参考学习之用。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;代码基本原理，新建一个自定义分类法“shot”，自动从另一个站点的RSS抓取文章，放在一个数组中，再用这个数组创建“shot”文章，并为文章添加自定义栏目image和link_url，方便调用缩略图和原文链接。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
-    
-      <category term="WordPress" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/WordPress/"/>
-    
-    
-      <category term="WordPress" scheme="http://blog.jiangnan.pw/tags/WordPress/"/>
     
   </entry>
   

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiangnan.pw/"/>
-  <updated>2017-02-24T18:33:19.350Z</updated>
+  <updated>2017-02-24T18:36:28.098Z</updated>
   <id>http://blog.jiangnan.pw/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://blog.jiangnan.pw/cizk5mcig000ucp7kep6szz4h/"/>
     <id>http://blog.jiangnan.pw/cizk5mcig000ucp7kep6szz4h/</id>
     <published>2017-02-24T18:21:51.000Z</published>
-    <updated>2017-02-24T18:33:19.350Z</updated>
+    <updated>2017-02-24T18:36:28.098Z</updated>
     
     <content type="html"><![CDATA[<!--excerpt-->
 <blockquote>
-<p>0x80004005 未指定的错误 (Provider 错误’80004005’ 未指定的错误) 你是否也在烦恼中，<br>今天下午这个问题烦恼了我一个下午。首先说下我的经历。下午帮来要写程序，拿移动硬盘<br>出来 打开提示 I/O设备错误。一看完蛋了移动硬盘坏了，然后找了个修改软件 安装了下。<br>修复好了。然后用BAT 清理下垃圾文件。然后问题就出现了。</p>
+<p>0x80004005 未指定的错误 (Provider 错误’80004005’ 未指定的错误) 你是否也在烦恼中，今天下午这个问题烦恼了我一个下午。首先说下我的经历。下午帮来要写程序，拿移动硬盘出来 打开提示 I/O设备错误。一看完蛋了移动硬盘坏了，然后找了个修改软件 安装了下。修复好了。然后用BAT 清理下垃圾文件。然后问题就出现了。</p>
 </blockquote>
 <p>后来终于发现问题是 出在 BAT 清理垃圾文件 哪里。就是把权限改了。大家不用去看太多<br>的解释了。如果自己没搞什么东西。有70%就是 权限问题。下面说下怎么解决这个问题：</p>
 <h2 id="设置temp（临时文件夹）权限"><a href="#设置temp（临时文件夹）权限" class="headerlink" title="设置temp（临时文件夹）权限"></a>设置temp（临时文件夹）权限</h2><h3 id="打开办法："><a href="#打开办法：" class="headerlink" title="打开办法："></a>打开办法：</h3><p><code>windows---&gt;temp</code>，单击右键选择-属性，你就会看到一个叫做“<code>安全</code>”的选项，</p>
@@ -42,7 +42,7 @@
     
       &lt;!--excerpt--&gt;
 &lt;blockquote&gt;
-&lt;p&gt;0x80004005 未指定的错误 (Provider 错误’80004005’ 未指定的错误) 你是否也在烦恼中，&lt;br&gt;今天下午这个问题烦恼了我一个下午。首先说下我的经历。下午帮来要写程序，拿移动硬盘&lt;br&gt;出来 
+&lt;p&gt;0x80004005 未指定的错误 (Provider 错误’80004005’ 未指定的错误) 你是否也在烦恼中，今天下午这个问题烦恼了我一个下午。首先说下我的经历。下午帮来要写程序，拿移动硬盘出来 打开提示 I/O
     
     </summary>
     

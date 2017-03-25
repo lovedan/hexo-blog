@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Mac OSX开发环境搭建手记 | 江南品味|记录编程道路上的点点滴滴!!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Mac技巧,nginx,php" />
+    
+    <meta name="description" content="Brew
+Brew 是 Mac 下面的包管理工具，通过 Github 托管适合 Mac 的编译配置以及 Patch，可以方便的安装开发工具。 Mac 自带ruby 所以安装起来很方便，同时它也会自动把git也给你装上。官方网站： http://brew.sh 。
+安装完成之后，建议执行一下自检，brew doctor如果看到Your system is ready to brew. 那么你的br">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac OSX开发环境搭建手记">
+<meta property="og:url" content="http://blog.jiangnan.pw/cj0phrcgq000s4q7kewahvvtm/index.html">
+<meta property="og:site_name" content="江南品味|记录编程道路上的点点滴滴!!!">
+<meta property="og:description" content="Brew
+Brew 是 Mac 下面的包管理工具，通过 Github 托管适合 Mac 的编译配置以及 Patch，可以方便的安装开发工具。 Mac 自带ruby 所以安装起来很方便，同时它也会自动把git也给你装上。官方网站： http://brew.sh 。
+安装完成之后，建议执行一下自检，brew doctor如果看到Your system is ready to brew. 那么你的br">
+<meta property="og:image" content="https://lh3.googleusercontent.com/ODp_GgXqKjB5zQ9df7HPQjX91AS2wWXFgw3QL9E4pz95M2spdKIPQLhpvL3EG8oZSoXp_C_cI3Y6dYRun129wIiHKwSe3tdICsWaPpFJBpAnmpltKIUxO33amPV53CMQnhpynMwm4n7h2W8COf2VIBTCVXnw1bDrndJBcGFzu2QZSldkdrnrRDBgScejvpMbtl4WqBoWclHWRy__Ea5pxSz_NQN5wtB1gmLetlaGL81czVIQhxEsZpQaLICzLZEg8JE94ZhFg3AL1PQDw3CU30qpQ7P9izFdMNN2Kg0XfuYINFuZB9jPy9xhAPVWB2I5qcoivR3OgWETDCuS8IswzZky6104lU2WMQTQgGrw5dsUeKo8xZz3t4vyenX1DvkJCk5h-gMJl5OiBRmIIqjC1Heyz5qoffad2tY-y7fW7SN3iMdkhAlT4fZmzjPaJiai5qKptrWI4xFYrDADQZM-F6td2Yv9SWz61_zowPPf775xfUesMpnY7gMzK-CH5f3fga-b_IGVHGPtQPVu1ZokBJdC_JQUUTWcuHOqVq5xJdn8CYyPafRi0SfUwKGUfhVx7GNUOMMss1lHsT-isKdgONvXAimKe8nN-IRBrm8p8stVVBkdjhZP5EnIBZzfWoJLbDRL-VkjdCxpIjpBLGUpfz5OciA1r0Doe6dc8Fvg2Q=w742-h340-no">
+<meta property="og:updated_time" content="2017-03-25T16:49:32.034Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac OSX开发环境搭建手记">
+<meta name="twitter:description" content="Brew
+Brew 是 Mac 下面的包管理工具，通过 Github 托管适合 Mac 的编译配置以及 Patch，可以方便的安装开发工具。 Mac 自带ruby 所以安装起来很方便，同时它也会自动把git也给你装上。官方网站： http://brew.sh 。
+安装完成之后，建议执行一下自检，brew doctor如果看到Your system is ready to brew. 那么你的br">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/ODp_GgXqKjB5zQ9df7HPQjX91AS2wWXFgw3QL9E4pz95M2spdKIPQLhpvL3EG8oZSoXp_C_cI3Y6dYRun129wIiHKwSe3tdICsWaPpFJBpAnmpltKIUxO33amPV53CMQnhpynMwm4n7h2W8COf2VIBTCVXnw1bDrndJBcGFzu2QZSldkdrnrRDBgScejvpMbtl4WqBoWclHWRy__Ea5pxSz_NQN5wtB1gmLetlaGL81czVIQhxEsZpQaLICzLZEg8JE94ZhFg3AL1PQDw3CU30qpQ7P9izFdMNN2Kg0XfuYINFuZB9jPy9xhAPVWB2I5qcoivR3OgWETDCuS8IswzZky6104lU2WMQTQgGrw5dsUeKo8xZz3t4vyenX1DvkJCk5h-gMJl5OiBRmIIqjC1Heyz5qoffad2tY-y7fW7SN3iMdkhAlT4fZmzjPaJiai5qKptrWI4xFYrDADQZM-F6td2Yv9SWz61_zowPPf775xfUesMpnY7gMzK-CH5f3fga-b_IGVHGPtQPVu1ZokBJdC_JQUUTWcuHOqVq5xJdn8CYyPafRi0SfUwKGUfhVx7GNUOMMss1lHsT-isKdgONvXAimKe8nN-IRBrm8p8stVVBkdjhZP5EnIBZzfWoJLbDRL-VkjdCxpIjpBLGUpfz5OciA1r0Doe6dc8Fvg2Q=w742-h340-no">
+<meta name="twitter:creator" content="@kyounan719">
+<link rel="publisher" href="103371492334107230000">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="江南品味|记录编程道路上的点点滴滴!!!" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">记录编程道路上的点点滴滴!!!</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/作品展示/">作品展示</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/">技术分享</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/Git/">Git</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/IIS/">IIS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/Laravel/">Laravel</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/Nginx/">Nginx</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/WordPress/">WordPress</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/苹果相关/">苹果相关</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/苹果相关/Mac软件/">Mac软件</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/软件相关/">软件相关</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/软件相关/Windows/">Windows</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" href="http://blog.jiangnan.pw/tools/">在线工具</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" href="https://www.jiangnan.pw/">江南云</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" href="/about/">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/苹果相关/">苹果相关</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-苹果相关/Mac技巧/Mac-OSX开发环境搭建手记" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Mac OSX开发环境搭建手记
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/cj0phrcgq000s4q7kewahvvtm/" class="article-date">
+    <time datetime="2017-03-23T04:47:40.000Z" itemprop="datePublished">2017-03-23</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac技巧/">Mac技巧</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <!--excerpt-->
+<h2 id="Brew"><a href="#Brew" class="headerlink" title="Brew"></a>Brew</h2><blockquote>
+<p>Brew 是 Mac 下面的包管理工具，通过 Github 托管适合 Mac 的编译配置以及 Patch，可以方便的安装开发工具。 Mac 自带ruby 所以安装起来很方便，同时它也会自动把git也给你装上。官方网站： <a href="http://brew.sh" target="_blank" rel="external">http://brew.sh</a> 。</p>
+<p>安装完成之后，建议执行一下自检，brew doctor如果看到Your system is ready to brew. 那么你的brew已经可以开始使用了。</p>
+</blockquote>
+<h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure>
+<h3 id="自检："><a href="#自检：" class="headerlink" title="自检："></a>自检：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew doctor</div></pre></td></tr></table></figure>
+<h3 id="常用命令：（所有软件以php7-1为例子）"><a href="#常用命令：（所有软件以php7-1为例子）" class="headerlink" title="常用命令：（所有软件以php7.1为例子）"></a>常用命令：（所有软件以php7.1为例子）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">brew update                        #更新brew可安装包，建议每次执行一下</div><div class="line">brew search php71                  #搜索php7.1</div><div class="line">brew tap josegonzalez/php          #安装扩展&lt;gihhub_user/repo&gt;   </div><div class="line">brew tap                           #查看安装的扩展列表</div><div class="line">brew install php71                 #安装php7.1</div><div class="line">brew remove  php71                 #卸载php7.1</div><div class="line">brew upgrade php71                 #升级php7.1</div><div class="line">brew options php71                 #查看php7.1安装选项</div><div class="line">brew info    php71                 #查看php7.1相关信息</div><div class="line">brew home    php71                 #访问php7.1官方网站</div><div class="line">brew services list                 #查看系统通过 brew 安装的服务</div><div class="line">brew services cleanup              #清除已卸载无用的启动配置文件</div><div class="line">brew services restart php71        #重启php-fp</div></pre></td></tr></table></figure>
+<p>注意：brew services 相关命令最好别经常用了，提示会被移除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">➜  ~  brew services restart php71</div><div class="line">Warning: brew services is unsupported and will be removed soon.</div><div class="line">You should use launchctl instead.</div><div class="line">Please feel free volunteer to support it in a tap.</div><div class="line"></div><div class="line">Stopping `php71`... (might take a while)</div><div class="line">==&gt; Successfully stopped `php71` (label: homebrew.mxcl.php71)</div><div class="line">==&gt; Successfully started `php71` (label: homebrew.mxcl.php71)</div></pre></td></tr></table></figure>
+<h2 id="Oh-My-Zsh"><a href="#Oh-My-Zsh" class="headerlink" title="Oh My Zsh"></a>Oh My Zsh</h2><blockquote>
+<p>ohmyzsh &amp; iTerm2两个神器，在Mac os x下是一定要装的. 两组配合起来使用，加上插件。简直是神一样的存在。 秒杀梅西，内马尔啊：） Oh 猛戳到官网</p>
+</blockquote>
+<h3 id="安装-oh-my-zsh"><a href="#安装-oh-my-zsh" class="headerlink" title="安装 oh my zsh"></a>安装 oh my zsh</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -L http://install.ohmyz.sh | sh</div></pre></td></tr></table></figure>
+<h2 id="安装终端的命令自动提示"><a href="#安装终端的命令自动提示" class="headerlink" title="安装终端的命令自动提示"></a>安装终端的命令自动提示</h2><p>在终端下操作会经常需要输入一些常用的命令，要不出错的输入这些命令也不是件容易的事，zsh还有一个很好用的补全命令的插件zsh-autosuggestions, 我们通过下面命令安装下：</p>
+<p><a href="https://github.com/zsh-users/zsh-autosuggestions" target="_blank" rel="external">官方地址</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Oh My Zsh</div><div class="line"></div><div class="line">1. Clone this repository into $ZSH_CUSTOM/plugins (by default ~/.oh-my-zsh/custom/plugins)</div><div class="line"></div><div class="line">2 .git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions</div><div class="line">Add the plugin to the list of plugins for Oh My Zsh to load:</div><div class="line"></div><div class="line">3. plugins=(zsh-autosuggestions)</div><div class="line"></div><div class="line">4. Start a new terminal session.</div></pre></td></tr></table></figure></p>
+<p>好了，然后你可以执行source ~/.zshrc或者重新打开终端，看下效果：</p>
+<p><img src="https://lh3.googleusercontent.com/-kmKtrstTeOI/WNSJJjAa2BI/AAAAAAAAB3E/1fbBeha76NM/s0/2017-03-24_11-49-10.png" alt="自动提示"></p>
+<p>如上图，我输入一个b就会自动提示我之前输入过的命令，然后按一下右方向键就能自动补全了。</p>
+<h3 id="设置默认shell"><a href="#设置默认shell" class="headerlink" title="设置默认shell"></a>设置默认shell</h3><blockquote>
+<p>查看系统支持的shell列表，Mac 10.9.4 自带了 zsh 5.0.2，Linux上得安装。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">cat /etc/shells</div><div class="line"># List of acceptable shells for chpass(1).</div><div class="line"># Ftpd will not allow users to connect who are not using</div><div class="line"># one of these shells.</div><div class="line"></div><div class="line">/bin/bash</div><div class="line">/bin/csh</div><div class="line">/bin/ksh</div><div class="line">/bin/sh</div><div class="line">/bin/tcsh</div><div class="line">/bin/zsh</div><div class="line">zsh --version</div><div class="line">zsh 5.0.2 (x86_64-apple-darwin13.0)</div><div class="line">chsh -s /bin/zsh</div></pre></td></tr></table></figure>
+<blockquote>
+<p>虽然Mac自带了zsh，如果你想要最新版的zsh，那么你用 brew install zsh安装一个最新的吧。/usr/local/bin/zsh –version zsh 5.0.5 (x86_64-apple-darwin13.3.0) 区别也不会很大， 默认的版本已经很新了。</p>
+</blockquote>
+<h1 id="MySQL-PHP-Nginx"><a href="#MySQL-PHP-Nginx" class="headerlink" title="MySQL PHP Nginx"></a>MySQL PHP Nginx</h1><h2 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install mysql</div></pre></td></tr></table></figure>
+<p>MySQL开机启动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir LaunchAgents</div><div class="line">ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents</div><div class="line">launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist</div></pre></td></tr></table></figure>
+<p>安装完成之后开启MySQL安全机制：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/opt/mysql/bin/mysql_secure_installation</div></pre></td></tr></table></figure>
+<p>根据终端提示，输入root密码，然后依次确认一些安全选项。具体信息可以参考<a href="http://blog.frd.mn/install-nginx-php-fpm-mysql-and-phpmyadmin-on-os-x-mavericks-using-homebrew/" target="_blank" rel="external">外国友人的这篇文章</a></p>
+<h2 id="安装PHP"><a href="#安装PHP" class="headerlink" title="安装PHP"></a>安装PHP</h2><p>添加brew的PHP扩展库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">brew update</div><div class="line">brew tap homebrew/dupes</div><div class="line">brew tap josegonzalez/homebrew-php</div></pre></td></tr></table></figure>
+<p>可以使用<code>brew options php71</code>命令来查看安装php7.1的选项，这里我用下面的选项安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install php70 --with-debug --with-gmp --with-homebrew-curl --with-homebrew-libressl --with-homebrew-libxml2 --with-homebrew-libxslt --with-imap --with-libmysql</div></pre></td></tr></table></figure>
+<blockquote>
+<p>PHP编译过程中如果遇到<code>configure: error: Cannot find OpenSSL&#39;s &lt;evp.h&gt;</code>错误，执行<code>xcode-select --install</code>重新安装一下<strong>Xcode Command Line Tools</strong> 在<a href="https://github.com/Homebrew/homebrew-php/issues/1181" target="_blank" rel="external">GitHub HomeBrew</a>上有关于这个讨论:<br><em>For future reference of anybody looking for Command Line Tools with Xcode 5, open up a Terminal window and type xcode-select –install. A window will appear informing you command line tools are required. Click Install and you should be good to go</em></p>
+<p>我安装的时候还遇到了一个奇怪的问题，提示fatal error: ‘my_global.h’ file not found #include <my_global.h> 就是提示各种<code>.h</code>的文件不存在。各种google以后发现了一个论坛的资料给了我一些启发，<a href="https://www.blitzbasic.com/Community/posts.php?topic=102579" target="_blank" rel="external">搓这里</a></my_global.h></p>
+</blockquote>
+<p>里面提到了一下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/mysql/include</div></pre></td></tr></table></figure></p>
+<p>先删除<code>/usr/local/include</code>下的mysql文件夹然后执行下面命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln -sfv /usr/local/Cellar/mysql/5.7.17/include/mysql/* /usr/local/include</div></pre></td></tr></table></figure>
+<p>等待PHP编译完成，开始安装PHP常用扩展，扩展安装过程中brew会自动安装依赖包，例如<code>php71-pdo-pgsql</code> 会自动装上<code>postgresql</code>,这里我安装以下PHP扩展：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">brew install php71-apcu\</div><div class="line"> php71-gearman\</div><div class="line"> php71-geoip\</div><div class="line"> php71-gmagick\</div><div class="line"> php71-imagick\</div><div class="line"> php71-intl\</div><div class="line"> php71-mcrypt\</div><div class="line"> php71-memcache\</div><div class="line"> php71-memcached\</div><div class="line"> php71-mongo\</div><div class="line"> php71-opcache\</div><div class="line"> php71-pdo-pgsql\</div><div class="line"> php71-phalcon\</div><div class="line"> php71-redis\</div><div class="line"> php71-sphinx\</div><div class="line"> php71-swoole\</div><div class="line"> php71-uuid\</div><div class="line"> php71-xdebug;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>扩展里面提一下<a href="http://phalconphp.com/" target="_blank" rel="external">php71-phalcon</a> 和 <a href="http://www.swoole.com/" target="_blank" rel="external">php71-swoole</a>. 一个是C语言写的PHP框架，安装来个人摸索熟悉一下，还没有真正的使用过，大致看了一下文档，感觉非常吊炸天。目前公司的项目是基于Yii2的，也看看这个框架。 另外一个<a href="http://www.swoole.com/" target="_blank" rel="external">swoole是国产的PHP高性能网络通信框架</a>，貌似不错，可能在项目中会考虑用到它。</p>
+</blockquote>
+<p>由于Mac自带了php和php-fpm，因此需要添加系统环境变量PATH来替代自带PHP版本,我们用的是zsh,所以放进.zshrc中,如果你用的shell是bash,那么可以把下面的信息写入到~/.bash_profile文件中，如果这个文件没有，你自己建一个就行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">echo &apos;export PATH=&quot;$(brew --prefix php70)/bin:$PATH&quot;  #for php&apos; &gt;&gt; ~/.zshrc</div><div class="line">echo &apos;export PATH=&quot;$(brew --prefix php70)/sbin:$PATH&quot;  #for php-fpm&apos; &gt;&gt; ~/.zshrc</div><div class="line">echo &apos;export PATH=&quot;/usr/local/bin:/usr/local/sbib:$PATH&quot; #for other brew install soft&apos; &gt;&gt; ~/.zshrc</div><div class="line">source ~/.zshrc</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">echo &apos;export PATH=&quot;$(brew --prefix php71)/bin:$PATH&quot;&apos; &gt;&gt; ~/.bash_profile  #for php</div><div class="line">echo &apos;export PATH=&quot;$(brew --prefix php71)/sbin:$PATH&quot;&apos; &gt;&gt; ~/.bash_profile  #for php-fpm</div><div class="line">echo &apos;export PATH=&quot;/usr/local/bin:/usr/local/sbib:$PATH&quot;&apos; &gt;&gt; ~/.bash_profile #for other brew install soft</div><div class="line">source ~/.bash_profile</div></pre></td></tr></table></figure>
+<p>测试一下效果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#brew安装的php 他在/usr/local/opt/php71/bin/php</div><div class="line">php -v    </div><div class="line">PHP 7.1.3 (cli) (built: Jul 16 2014 15:43:06) (DEBUG)</div><div class="line">Copyright (c) 1997-2014 The PHP Group</div><div class="line">Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies</div><div class="line">    with Zend OPcache v7.0.3, Copyright (c) 1999-2014, by Zend Technologies</div><div class="line">    with Xdebug v2.2.5, Copyright (c) 2002-2014, by Derick Rethans </div><div class="line"></div><div class="line">#Mac自带的PHP</div><div class="line">/usr/bin/php -v   </div><div class="line">PHP 5.4.24 (cli) (built: Jan 19 2014 21:32:15) </div><div class="line">Copyright (c) 1997-2013 The PHP Group</div><div class="line">Zend Engine v2.4.0, Copyright (c) 1998-2013 Zend Technologies</div><div class="line"></div><div class="line">#brew安装的php-fpm 他在/usr/local/opt/php71/sbin/php-fpm</div><div class="line">php-fpm -v</div><div class="line">PHP 7.1.3 (fpm-fcgi) (built: Jul 16 2014 15:43:12) (DEBUG)</div><div class="line">Copyright (c) 1997-2014 The PHP Group</div><div class="line">Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies</div><div class="line">    with Zend OPcache v7.0.3, Copyright (c) 1999-2014, by Zend Technologies</div><div class="line">    with Xdebug v2.2.5, Copyright (c) 2002-2014, by Derick Rethans</div><div class="line"></div><div class="line">#Mac自带的php-fpm</div><div class="line">/usr/sbin/php-fpm -v</div><div class="line">PHP 5.4.24 (fpm-fcgi) (built: Jan 19 2014 21:32:57)</div><div class="line">Copyright (c) 1997-2013 The PHP Group</div><div class="line">Zend Engine v2.4.0, Copyright (c) 1998-2013 Zend Technologies</div></pre></td></tr></table></figure>
+<p>修改php-fpm配置文件，<code>vim /usr/local/etc/php/7.0/php-fpm.conf</code>，找到pid相关大概在25行，去掉注释 <code>pid = run/php-fpm.pid</code>, 那么php-fpm的pid文件就会自动产生在<code>/usr/local/var/run/php-fpm.pid</code>，下面要安装的Nginx pid文件也放在这里。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">#测试php-fpm配置</div><div class="line">php-fpm -t</div><div class="line">php-fpm -c /usr/local/etc/php/7.0/php.ini -y /usr/local/etc/php/7.0/php-fpm.conf -t</div><div class="line"></div><div class="line">#启动php-fpm</div><div class="line">php-fpm -D</div><div class="line">php-fpm -c /usr/local/etc/php/7.0/php.ini -y /usr/local/etc/php/7.0/php-fpm.conf -D</div><div class="line"></div><div class="line">#关闭php-fpm</div><div class="line">kill -INT `cat /usr/local/var/run/php-fpm.pid`</div><div class="line"></div><div class="line">#重启php-fpm</div><div class="line">kill -USR2 `cat /usr/local/var/run/php-fpm.pid`</div><div class="line"></div><div class="line">#也可以用上文提到的brew命令来重启php-fpm，不过他官方不推荐用这个命令了</div><div class="line">brew services restart php71</div><div class="line"></div><div class="line">#还可以用这个命令来启动php-fpm</div><div class="line"></div><div class="line">launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist</div></pre></td></tr></table></figure>
+<p>启动php-fpm之后，确保它正常运行监听9000端口：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">lsof -Pni4 | grep LISTEN | grep php</div><div class="line">php-fpm   30907 calvin    9u  IPv4 0xf11f9e8e8033a2a7      0t0  TCP 127.0.0.1:9000 (LISTEN)</div><div class="line">php-fpm   30917 calvin    0u  IPv4 0xf11f9e8e8033a2a7      0t0  TCP 127.0.0.1:9000 (LISTEN)</div><div class="line">php-fpm   30918 calvin    0u  IPv4 0xf11f9e8e8033a2a7      0t0  TCP 127.0.0.1:9000 (LISTEN)</div><div class="line">php-fpm   30919 calvin    0u  IPv4 0xf11f9e8e8033a2a7      0t0  TCP 127.0.0.1:9000 (LISTEN)</div><div class="line">#正常情况，会看到上面这些进程</div></pre></td></tr></table></figure>
+<p>PHP-FPM开机启动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ln -sfv /usr/local/opt/php70/*.plist ~/Library/LaunchAgents</div><div class="line">launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php70.plist</div></pre></td></tr></table></figure>
+<p>补充</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">php-fpm的一些管理:</div><div class="line"></div><div class="line">#测试php-fpm配置</div><div class="line">php-fpm -t</div><div class="line"></div><div class="line">#启动php-fpm</div><div class="line">php-fpm -D</div><div class="line"></div><div class="line">#关闭php-fpm</div><div class="line">kill -INT `cat /usr/local/var/run/php-fpm.pid`</div><div class="line"></div><div class="line">#重启php-fpm</div><div class="line">kill -USR2 `cat /usr/local/var/run/php-fpm.pid`</div><div class="line"></div><div class="line">#也可以用上文提到的brew命令来管理php-fpm</div><div class="line">brew services start|stop|restart php70</div><div class="line"></div><div class="line">#还可以用这个命令来管理php-fpm</div><div class="line">php70-fpm start|stop|restart</div></pre></td></tr></table></figure>
+<p>以上安装出现的问题记录：</p>
+<ol>
+<li>使用Curl出现的502错误#</li>
+</ol>
+<p>做有赞接口的时候发现出现了502错误，用下面的测试代码也可以测试：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$curl = curl_init(); </div><div class="line">     // 抓取支付宝首页测试 </div><div class="line">     curl_setopt($curl, CURLOPT_URL, &apos;https://www.alipay.com&apos;); </div><div class="line">     // 设置header </div><div class="line">     curl_setopt($curl, CURLOPT_HEADER, 1); </div><div class="line">     // 设置cURL 参数，要求结果保存到字符串中还是输出到屏幕上 </div><div class="line">     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); </div><div class="line">     // 运行cURL，请求网页数据 </div><div class="line">     $data = curl_exec($curl); </div><div class="line">     // 关闭cURL请求 </div><div class="line">     curl_close($curl); </div><div class="line">     // 打印出抓取的测试数据 </div><div class="line">     var_dump($data);</div></pre></td></tr></table></figure></p>
+<p>产生问题的原因：brew安装curl时默认没有带上–with-openssl<br>解决方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># 先删除curl</div><div class="line">brew uninstall curl</div><div class="line"></div><div class="line"># 重新安装curl,带上--with-openssl</div><div class="line">brew install curl --with-openssl</div><div class="line"></div><div class="line"># 或者使用brew reinstall</div><div class="line">brew reinstall curl --with-openssl</div></pre></td></tr></table></figure>
+<p>然后重启下php-fpm</p>
+<p><strong>安装php composer</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">brew install composer</div><div class="line">#检查一下情况</div><div class="line">composer --version</div><div class="line">Composer version 1.0.0-alpha8 2014-01-06 18:39:59</div></pre></td></tr></table></figure>
+<blockquote>
+<p>redis memcached这些软件brew 已经自动依赖安装上，如果想开机自动启动，或者查看使用说明 <code>brew info redis</code>即可。另外，composer的中文文档：<a href="http://composer.golaravel.com/" target="_blank" rel="external">猛戳这里</a></p>
+</blockquote>
+<h2 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h2><p>首先查看一下可选的编译参数</p>
+<p>brew options nginx<br>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">--with-debug</div><div class="line">        Compile with support for debug log</div><div class="line">--with-gunzip</div><div class="line">        Compile with support for gunzip module</div><div class="line">--with-passenger</div><div class="line">        Compile with support for Phusion Passenger module</div><div class="line">--with-spdy</div><div class="line">        Compile with support for SPDY module</div><div class="line">--with-webdav</div><div class="line">        Compile with support for WebDAV module</div><div class="line">--devel</div><div class="line">        install development version 1.7.7</div><div class="line">--HEAD</div><div class="line">        install HEAD version</div></pre></td></tr></table></figure>
+<p>可以看到可选的编译参数里没有 GeoIP 模块，那么如果还想用 Homebrew 来安装 nginx，就只有自己修改默认的 Formula 来添加参数，或者使用其他人修改好后共享的 Formula 了。</p>
+<p>考虑到之后可能还会用到其他模块，我就没有自己创建 Formula，而是找到了 homebrew/nginx 这个 tap。</p>
+<p>首先给 Homebrew 添加这个 tap：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew tap homebrew/nginx</div></pre></td></tr></table></figure>
+<p>再查看一下可选参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew options nginx-full</div></pre></td></tr></table></figure>
+<p>可以在结果中看到有 WebDav 模块：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">--with-dav-ext-module</div><div class="line">	Build with HTTP WebDav Extended support</div></pre></td></tr></table></figure>
+<p>这样就可以安装有 WebDav 模块的 nginx 了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install nginx-full --with-webdav --with-dav-ext-module</div></pre></td></tr></table></figure>
+<p>不只是 WebDav 模块，其他可选模块也可以用同样方法添加.</p>
+<p>nginx启动关闭命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#测试配置是否有语法错误</div><div class="line">nginx -t</div></pre></td></tr></table></figure></p>
+<p>#打开 nginx<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nginx</div></pre></td></tr></table></figure></p>
+<p>#重新加载配置|重启|停止|退出 nginx<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx -s reload|reopen|stop|quit</div></pre></td></tr></table></figure></p>
+<p>#也可以使用Mac的launchctl来启动|停止<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist</div><div class="line">launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist</div></pre></td></tr></table></figure></p>
+<p>Nginx开机启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ln -sfv /usr/local/opt/nginx-full/*.plist ~/Library/LaunchAgents</div><div class="line">launchctl load ~/Library/LaunchAgents/homebrew.mxcl.nginx-full.plist</div></pre></td></tr></table></figure>
+<p>Nginx监听80端口需要root权限执行，因此：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo chown root:wheel /usr/local/opt/nginx-full/bin/nginx</div><div class="line">sudo chmod u+s /usr/local/opt/nginx-full/bin/nginx</div></pre></td></tr></table></figure>
+<p>配置nginx.conf<br>创建需要用到的目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mkdir -p /usr/local/var/log/nginx</div><div class="line">mkdir -p /usr/local/etc/nginx/sites-available</div><div class="line">mkdir -p /usr/local/etc/nginx/sites-enabled</div><div class="line">mkdir -p /usr/local/etc/nginx/conf.d</div><div class="line">mkdir -p /usr/local/etc/nginx/ssl</div></pre></td></tr></table></figure></p>
+<p>vim /usr/local/etc/nginx/nginx.conf 输入以下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">worker_processes  1;</div><div class="line"></div><div class="line">error_log   /usr/local/var/log/nginx/error.log debug;</div><div class="line"></div><div class="line"></div><div class="line">pid        /usr/local/var/run/nginx.pid;</div><div class="line"></div><div class="line"></div><div class="line">events &#123;</div><div class="line">    worker_connections  256;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">http &#123;</div><div class="line">    include       mime.types;</div><div class="line">    default_type  application/octet-stream;</div><div class="line"></div><div class="line">    log_format  main  &apos;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &apos;</div><div class="line">                      &apos;$status $body_bytes_sent &quot;$http_referer&quot; &apos;</div><div class="line">                      &apos;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&apos;;</div><div class="line"></div><div class="line">    access_log  /usr/local/var/log/access.log  main;</div><div class="line"></div><div class="line">    sendfile        on;</div><div class="line">    keepalive_timeout  65;</div><div class="line">    port_in_redirect off;</div><div class="line"></div><div class="line">    include /usr/local/etc/nginx/sites-enabled/*;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>设置nginx php-fpm配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">vim /usr/local/etc/nginx/conf.d/php-fpm</div><div class="line">#proxy the php scripts to php-fpm</div><div class="line">location ~ \.php$ &#123;</div><div class="line">    try_files                   $uri = 404;</div><div class="line">    fastcgi_pass                127.0.0.1:9000;</div><div class="line">    fastcgi_index               index.php;</div><div class="line">    fastcgi_intercept_errors    on;</div><div class="line">    include /usr/local/etc/nginx/fastcgi.conf;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>创建默认虚拟主机default<br>vim /usr/local/etc/nginx/sites-available/default输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    listen       80;</div><div class="line">    server_name  localhost;</div><div class="line">    root         /var/www/;</div><div class="line"></div><div class="line">    access_log  /usr/local/var/logs/nginx/default.access.log  main;</div><div class="line"></div><div class="line">    location / &#123;</div><div class="line">        index  index.html index.htm index.php;</div><div class="line">        autoindex   on;</div><div class="line">        include     /usr/local/etc/nginx/conf.d/php-fpm;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    location = /info &#123;</div><div class="line">        allow   127.0.0.1;</div><div class="line">        deny    all;</div><div class="line">        rewrite (.*) /.info.php;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    error_page  404     /404.html;</div><div class="line">    error_page  403     /403.html;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>创建ssl默认虚拟主机default-ssl<br>vim /usr/local/etc/nginx/sites-available/default-ssl输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    listen       443;</div><div class="line">    server_name  localhost;</div><div class="line">    root       /var/www/;</div><div class="line"></div><div class="line">    access_log  /usr/local/var/logs/nginx/default-ssl.access.log  main;</div><div class="line"></div><div class="line">    ssl                  on;</div><div class="line">    ssl_certificate      ssl/localhost.crt;</div><div class="line">    ssl_certificate_key  ssl/localhost.key;</div><div class="line"></div><div class="line">    ssl_session_timeout  5m;</div><div class="line"></div><div class="line">    ssl_protocols  SSLv2 SSLv3 TLSv1;</div><div class="line">    ssl_ciphers  HIGH:!aNULL:!MD5;</div><div class="line">    ssl_prefer_server_ciphers   on;</div><div class="line"></div><div class="line">    location / &#123;</div><div class="line">        include   /usr/local/etc/nginx/conf.d/php-fpm;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    location = /info &#123;</div><div class="line">        allow   127.0.0.1;</div><div class="line">        deny    all;</div><div class="line">        rewrite (.*) /.info.php;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    error_page  404     /404.html;</div><div class="line">    error_page  403     /403.html;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>创建phpmyadmin虚拟主机</p>
+<p>vim /usr/local/etc/nginx/sites-available/phpmyadmin #输入以下配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    listen       306;</div><div class="line">    server_name  localhost;</div><div class="line">    root    /usr/local/share/phpmyadmin;</div><div class="line"></div><div class="line">    error_log   /usr/local/var/logs/nginx/phpmyadmin.error.log;</div><div class="line">    access_log  /usr/local/var/logs/nginx/phpmyadmin.access.log main;</div><div class="line"></div><div class="line">    ssl                  on;</div><div class="line">    ssl_certificate      ssl/phpmyadmin.crt;</div><div class="line">    ssl_certificate_key  ssl/phpmyadmin.key;</div><div class="line"></div><div class="line">    ssl_session_timeout  5m;</div><div class="line"></div><div class="line">    ssl_protocols  SSLv2 SSLv3 TLSv1;</div><div class="line">    ssl_ciphers  HIGH:!aNULL:!MD5;</div><div class="line">    ssl_prefer_server_ciphers   on;</div><div class="line"></div><div class="line">    location / &#123;</div><div class="line">        index  index.html index.htm index.php;</div><div class="line">        include   /usr/local/etc/nginx/conf.d/php-fpm;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>设置SSL</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir -p /usr/local/etc/nginx/ssl</div><div class="line">openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj &quot;/C=US/ST=State/L=Town/O=Office/CN=localhost&quot; -keyout /usr/local/etc/nginx/ssl/localhost.key -out /usr/local/etc/nginx/ssl/localhost.crt</div><div class="line">openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj &quot;/C=US/ST=State/L=Town/O=Office/CN=phpmyadmin&quot; -keyout /usr/local/etc/nginx/ssl/phpmyadmin.key -out /usr/local/etc/nginx/ssl/phpmyadmin.crt</div></pre></td></tr></table></figure>
+<p>创建虚拟主机软连接，开启虚拟主机</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ln -sfv /usr/local/etc/nginx/sites-available/default /usr/local/etc/nginx/sites-enabled/default</div><div class="line">ln -sfv /usr/local/etc/nginx/sites-available/default-ssl /usr/local/etc/nginx/sites-enabled/default-ssl</div><div class="line">ln -sfv /usr/local/etc/nginx/sites-available/phpmyadmin /usr/local/etc/nginx/sites-enabled/phpmyadmin</div></pre></td></tr></table></figure>
+<p>启动|停止Nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx-full.plist</div><div class="line">launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.nginx-full.plist</div></pre></td></tr></table></figure>
+<p>设置快捷服务控制命令<br>为了后面管理方便，将命令 alias 下，vim ~/.zsh_aliases 输入一下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">alias nginx.start=&apos;launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx-full.plist&apos;</div><div class="line">alias nginx.stop=&apos;launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.nginx-full.plist&apos;</div><div class="line">alias nginx.restart=&apos;nginx.stop &amp;&amp; nginx.start&apos;</div><div class="line">alias php-fpm.start=&quot;launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist&quot;</div><div class="line">alias php-fpm.stop=&quot;launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist&quot;</div><div class="line">alias php-fpm.restart=&apos;php-fpm.stop &amp;&amp; php-fpm.start&apos;</div><div class="line">alias mysql.start=&quot;launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist&quot;</div><div class="line">alias mysql.stop=&quot;launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist&quot;</div><div class="line">alias mysql.restart=&apos;mysql.stop &amp;&amp; mysql.start&apos;</div><div class="line">alias redis.start=&quot;launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.redis.plist&quot;</div><div class="line">alias redis.stop=&quot;launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.redis.plist&quot;</div><div class="line">alias redis.restart=&apos;redis.stop &amp;&amp; redis.start&apos;</div><div class="line">alias memcached.start=&quot;launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.memcached.plist&quot;</div><div class="line">alias memcached.stop=&quot;launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.memcached.plist&quot;</div><div class="line">alias memcached.restart=&apos;memcached.stop &amp;&amp; memcached.start&apos;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#让快捷命令生效</div><div class="line">echo &quot;[[ -f ~/.zsh_aliases ]] &amp;&amp; . ~/.zsh_aliases&quot; &gt;&gt; ~/.zshrc     </div><div class="line">source ~/.zshrc</div><div class="line">#创建站点目录到主目录，方便快捷访问</div><div class="line">ln -sfv /var/www ~/htdocs</div></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="cj0phrcgq000s4q7kewahvvtm/" data-title="Mac OSX开发环境搭建手记" data-url="http://blog.jiangnan.pw/cj0phrcgq000s4q7kewahvvtm/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/kyounan719" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://facebook.com/kyounan719" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="https://plus.google.com/103371492334107231388" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lovedan" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://www.weibo.com/ddmfnet" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/atom.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/cj0phrch900174q7kq6vrgqax/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            Github之SSH连接配置
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/cj0phrchv001j4q7kxp4q520e/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Why is @font-face throwing a 404 error on woff files?</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/cj0phrch900174q7kq6vrgqax/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lh3.googleusercontent.com/-nnwlkrohkHo/WJvpWp8lRGI/AAAAAAAABcw/bl95WI6WWwI/s0/2017-02-09_13-00-25.png)" alt="Github之SSH连接配置" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Git/">Git</a></p>
+                            <p class="item-title"><a href="/cj0phrch900174q7kq6vrgqax/" class="title">Github之SSH连接配置</a></p>
+                            <p class="item-date"><time datetime="2017-03-25T16:49:32.034Z" itemprop="datePublished">2017-03-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/cj0phrcgq000s4q7kewahvvtm/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lh3.googleusercontent.com/ODp_GgXqKjB5zQ9df7HPQjX91AS2wWXFgw3QL9E4pz95M2spdKIPQLhpvL3EG8oZSoXp_C_cI3Y6dYRun129wIiHKwSe3tdICsWaPpFJBpAnmpltKIUxO33amPV53CMQnhpynMwm4n7h2W8COf2VIBTCVXnw1bDrndJBcGFzu2QZSldkdrnrRDBgScejvpMbtl4WqBoWclHWRy__Ea5pxSz_NQN5wtB1gmLetlaGL81czVIQhxEsZpQaLICzLZEg8JE94ZhFg3AL1PQDw3CU30qpQ7P9izFdMNN2Kg0XfuYINFuZB9jPy9xhAPVWB2I5qcoivR3OgWETDCuS8IswzZky6104lU2WMQTQgGrw5dsUeKo8xZz3t4vyenX1DvkJCk5h-gMJl5OiBRmIIqjC1Heyz5qoffad2tY-y7fW7SN3iMdkhAlT4fZmzjPaJiai5qKptrWI4xFYrDADQZM-F6td2Yv9SWz61_zowPPf775xfUesMpnY7gMzK-CH5f3fga-b_IGVHGPtQPVu1ZokBJdC_JQUUTWcuHOqVq5xJdn8CYyPafRi0SfUwKGUfhVx7GNUOMMss1lHsT-isKdgONvXAimKe8nN-IRBrm8p8stVVBkdjhZP5EnIBZzfWoJLbDRL-VkjdCxpIjpBLGUpfz5OciA1r0Doe6dc8Fvg2Q=w742-h340-no)" alt="Mac OSX开发环境搭建手记" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/苹果相关/">苹果相关</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a></p>
+                            <p class="item-title"><a href="/cj0phrcgq000s4q7kewahvvtm/" class="title">Mac OSX开发环境搭建手记</a></p>
+                            <p class="item-date"><time datetime="2017-03-23T04:47:40.000Z" itemprop="datePublished">2017-03-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/cj0phrchv001j4q7kxp4q520e/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lh3.googleusercontent.com/-fgXtFbtGEjs/WLB6L8nmK2I/AAAAAAAABsw/jthPMpMQWtw/s0/2017-02-25_03-23-42.png)" alt="Why is @font-face throwing a 404 error on woff files?" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/IIS/">IIS</a></p>
+                            <p class="item-title"><a href="/cj0phrchv001j4q7kxp4q520e/" class="title">Why is @font-face throwing a 404 error on woff files?</a></p>
+                            <p class="item-date"><time datetime="2017-02-26T05:54:08.000Z" itemprop="datePublished">2017-02-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/cj0phrcig001o4q7kgqq192pr/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lh3.googleusercontent.com/-fgXtFbtGEjs/WLB6L8nmK2I/AAAAAAAABsw/jthPMpMQWtw/s0/2017-02-25_03-23-42.png)" alt="0x80004005 未指定的错误" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/IIS/">IIS</a></p>
+                            <p class="item-title"><a href="/cj0phrcig001o4q7kgqq192pr/" class="title">0x80004005 未指定的错误</a></p>
+                            <p class="item-date"><time datetime="2017-02-24T18:21:51.000Z" itemprop="datePublished">2017-02-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/cj0phrch600144q7k7oucjsih/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lh3.googleusercontent.com/-Xc2Gu93qCgQ/WK0RD3uALXI/AAAAAAAABrc/gjwwbrMYRlE/s0/2017-02-22_13-18-23.png)" alt="Sublime配置文件同步" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件相关/">软件相关</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/软件相关/Windows/">Windows</a></p>
+                            <p class="item-title"><a href="/cj0phrch600144q7k7oucjsih/" class="title">Sublime配置文件同步</a></p>
+                            <p class="item-date"><time datetime="2017-02-22T04:14:37.000Z" itemprop="datePublished">2017-02-22</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/作品展示/">作品展示</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/">技术分享</a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/Git/">Git</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/IIS/">IIS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/Laravel/">Laravel</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/Nginx/">Nginx</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/WordPress/">WordPress</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/苹果相关/">苹果相关</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/苹果相关/Mac软件/">Mac软件</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件相关/">软件相关</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/软件相关/Windows/">Windows</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Alfred/" style="font-size: 10px;">Alfred</a> <a href="/tags/Cloud9/" style="font-size: 10px;">Cloud9</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/GitHub/" style="font-size: 15px;">GitHub</a> <a href="/tags/IIS/" style="font-size: 12.5px;">IIS</a> <a href="/tags/Mac技巧/" style="font-size: 20px;">Mac技巧</a> <a href="/tags/Mac软件/" style="font-size: 10px;">Mac软件</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/WordPress/" style="font-size: 17.5px;">WordPress</a> <a href="/tags/laravel/" style="font-size: 12.5px;">laravel</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/plugins/" style="font-size: 10px;">plugins</a> <a href="/tags/作品展示/" style="font-size: 10px;">作品展示</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/开源/" style="font-size: 10px;">开源</a> <a href="/tags/技术分享/" style="font-size: 12.5px;">技术分享</a> <a href="/tags/江南云/" style="font-size: 10px;">江南云</a> <a href="/tags/江南品味/" style="font-size: 10px;">江南品味</a> <a href="/tags/编程软件/" style="font-size: 10px;">编程软件</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://www.jiangnan.pw" target="_blank">江南云</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://jiangnan.ml" target="_blank">江南品味（国内）</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.jiangnan.pw" target="_blank">江南品味（国外）</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 江南品味</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'lovedan'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

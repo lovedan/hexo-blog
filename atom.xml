@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiangnan.pw/"/>
-  <updated>2017-04-02T13:11:53.371Z</updated>
+  <updated>2017-04-02T13:24:02.023Z</updated>
   <id>http://blog.jiangnan.pw/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Nginxのエラーページをカスタマイズする方法</title>
+    <title>htpasswd命令</title>
     <link href="http://blog.jiangnan.pw/cj10pnah7001kd17k0poncpl3/"/>
     <id>http://blog.jiangnan.pw/cj10pnah7001kd17k0poncpl3/</id>
     <published>2017-04-02T22:11:14.000Z</published>
-    <updated>2017-04-02T13:11:53.371Z</updated>
+    <updated>2017-04-02T13:24:02.023Z</updated>
     
     <content type="html"><![CDATA[<h1 id="htpasswd命令"><a href="#htpasswd命令" class="headerlink" title="htpasswd命令"></a>htpasswd命令</h1><p><strong>htpasswd命令</strong>是Apache的Web服务器内置工具，用于创建和更新储存用户名、域和用户基本认证的密码文件。</p>
 <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><h3 id="htpasswd-选项-参数"><a href="#htpasswd-选项-参数" class="headerlink" title="htpasswd(选项)(参数)"></a>htpasswd(选项)(参数)</h3><h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><p>-c：创建一个加密文件；<br>-n：不更新加密文件，只将加密后的用户名密码显示在屏幕上；<br>-m：默认采用MD5算法对密码进行加密；<br>-d：采用CRYPT算法对密码进行加密；<br>-p：不对密码进行进行加密，即明文密码；<br>-s：采用SHA算法对密码进行加密；<br>-b：在命令行中一并输入用户名和密码而不是根据提示输入密码；<br>-D：删除指定的用户。</p>

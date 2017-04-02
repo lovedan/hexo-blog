@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Nginxのエラーページをカスタマイズする方法 | 江南品味|记录编程道路上的点点滴滴!!!</title>
+    <title>htpasswd命令 | 江南品味|记录编程道路上的点点滴滴!!!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="nginx,htpasswd" />
@@ -11,18 +11,18 @@
     <meta name="description" content="htpasswd命令htpasswd命令是Apache的Web服务器内置工具，用于创建和更新储存用户名、域和用户基本认证的密码文件。
 语法htpasswd(选项)(参数)选项-c：创建一个加密文件；-n：不更新加密文件，只将加密后的用户名密码显示在屏幕上；-m：默认采用MD5算法对密码进行加密；-d：采用CRYPT算法对密码进行加密；-p：不对密码进行进行加密，即明文密码；-s：采用SHA算法对密">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nginxのエラーページをカスタマイズする方法">
+<meta property="og:title" content="htpasswd命令">
 <meta property="og:url" content="http://blog.jiangnan.pw/cj10pnah7001kd17k0poncpl3/index.html">
 <meta property="og:site_name" content="江南品味|记录编程道路上的点点滴滴!!!">
 <meta property="og:description" content="htpasswd命令htpasswd命令是Apache的Web服务器内置工具，用于创建和更新储存用户名、域和用户基本认证的密码文件。
 语法htpasswd(选项)(参数)选项-c：创建一个加密文件；-n：不更新加密文件，只将加密后的用户名密码显示在屏幕上；-m：默认采用MD5算法对密码进行加密；-d：采用CRYPT算法对密码进行加密；-p：不对密码进行进行加密，即明文密码；-s：采用SHA算法对密">
-<meta property="og:image" content="https://lh3.googleusercontent.com/ODp_GgXqKjB5zQ9df7HPQjX91AS2wWXFgw3QL9E4pz95M2spdKIPQLhpvL3EG8oZSoXp_C_cI3Y6dYRun129wIiHKwSe3tdICsWaPpFJBpAnmpltKIUxO33amPV53CMQnhpynMwm4n7h2W8COf2VIBTCVXnw1bDrndJBcGFzu2QZSldkdrnrRDBgScejvpMbtl4WqBoWclHWRy__Ea5pxSz_NQN5wtB1gmLetlaGL81czVIQhxEsZpQaLICzLZEg8JE94ZhFg3AL1PQDw3CU30qpQ7P9izFdMNN2Kg0XfuYINFuZB9jPy9xhAPVWB2I5qcoivR3OgWETDCuS8IswzZky6104lU2WMQTQgGrw5dsUeKo8xZz3t4vyenX1DvkJCk5h-gMJl5OiBRmIIqjC1Heyz5qoffad2tY-y7fW7SN3iMdkhAlT4fZmzjPaJiai5qKptrWI4xFYrDADQZM-F6td2Yv9SWz61_zowPPf775xfUesMpnY7gMzK-CH5f3fga-b_IGVHGPtQPVu1ZokBJdC_JQUUTWcuHOqVq5xJdn8CYyPafRi0SfUwKGUfhVx7GNUOMMss1lHsT-isKdgONvXAimKe8nN-IRBrm8p8stVVBkdjhZP5EnIBZzfWoJLbDRL-VkjdCxpIjpBLGUpfz5OciA1r0Doe6dc8Fvg2Q=w742-h340-no">
-<meta property="og:updated_time" content="2017-04-02T13:11:53.371Z">
+<meta property="og:image" content="https://lh3.googleusercontent.com/-OMpbTfccKzI/WOD6_zw6G2I/AAAAAAAAB6E/VwOBAQ0IJDA/s0/2017-04-02_22-22-06.png">
+<meta property="og:updated_time" content="2017-04-02T13:24:02.023Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nginxのエラーページをカスタマイズする方法">
+<meta name="twitter:title" content="htpasswd命令">
 <meta name="twitter:description" content="htpasswd命令htpasswd命令是Apache的Web服务器内置工具，用于创建和更新储存用户名、域和用户基本认证的密码文件。
 语法htpasswd(选项)(参数)选项-c：创建一个加密文件；-n：不更新加密文件，只将加密后的用户名密码显示在屏幕上；-m：默认采用MD5算法对密码进行加密；-d：采用CRYPT算法对密码进行加密；-p：不对密码进行进行加密，即明文密码；-s：采用SHA算法对密">
-<meta name="twitter:image" content="https://lh3.googleusercontent.com/ODp_GgXqKjB5zQ9df7HPQjX91AS2wWXFgw3QL9E4pz95M2spdKIPQLhpvL3EG8oZSoXp_C_cI3Y6dYRun129wIiHKwSe3tdICsWaPpFJBpAnmpltKIUxO33amPV53CMQnhpynMwm4n7h2W8COf2VIBTCVXnw1bDrndJBcGFzu2QZSldkdrnrRDBgScejvpMbtl4WqBoWclHWRy__Ea5pxSz_NQN5wtB1gmLetlaGL81czVIQhxEsZpQaLICzLZEg8JE94ZhFg3AL1PQDw3CU30qpQ7P9izFdMNN2Kg0XfuYINFuZB9jPy9xhAPVWB2I5qcoivR3OgWETDCuS8IswzZky6104lU2WMQTQgGrw5dsUeKo8xZz3t4vyenX1DvkJCk5h-gMJl5OiBRmIIqjC1Heyz5qoffad2tY-y7fW7SN3iMdkhAlT4fZmzjPaJiai5qKptrWI4xFYrDADQZM-F6td2Yv9SWz61_zowPPf775xfUesMpnY7gMzK-CH5f3fga-b_IGVHGPtQPVu1ZokBJdC_JQUUTWcuHOqVq5xJdn8CYyPafRi0SfUwKGUfhVx7GNUOMMss1lHsT-isKdgONvXAimKe8nN-IRBrm8p8stVVBkdjhZP5EnIBZzfWoJLbDRL-VkjdCxpIjpBLGUpfz5OciA1r0Doe6dc8Fvg2Q=w742-h340-no">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/-OMpbTfccKzI/WOD6_zw6G2I/AAAAAAAAB6E/VwOBAQ0IJDA/s0/2017-04-02_22-22-06.png">
 <meta name="twitter:creator" content="@kyounan719">
 <link rel="publisher" href="103371492334107230000">
     
@@ -152,7 +152,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        Nginxのエラーページをカスタマイズする方法
+        htpasswd命令
         </h1>
     
 
@@ -239,7 +239,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="cj10pnah7001kd17k0poncpl3/" data-title="Nginxのエラーページをカスタマイズする方法" data-url="http://blog.jiangnan.pw/cj10pnah7001kd17k0poncpl3/"></div>
+    <div class="ds-thread" data-thread-key="cj10pnah7001kd17k0poncpl3/" data-title="htpasswd命令" data-url="http://blog.jiangnan.pw/cj10pnah7001kd17k0poncpl3/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
@@ -369,7 +369,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                             <a href="/cj10pnah7001kd17k0poncpl3/" class="thumbnail">
     
     
-        <span style="background-image:url(https://lh3.googleusercontent.com/ODp_GgXqKjB5zQ9df7HPQjX91AS2wWXFgw3QL9E4pz95M2spdKIPQLhpvL3EG8oZSoXp_C_cI3Y6dYRun129wIiHKwSe3tdICsWaPpFJBpAnmpltKIUxO33amPV53CMQnhpynMwm4n7h2W8COf2VIBTCVXnw1bDrndJBcGFzu2QZSldkdrnrRDBgScejvpMbtl4WqBoWclHWRy__Ea5pxSz_NQN5wtB1gmLetlaGL81czVIQhxEsZpQaLICzLZEg8JE94ZhFg3AL1PQDw3CU30qpQ7P9izFdMNN2Kg0XfuYINFuZB9jPy9xhAPVWB2I5qcoivR3OgWETDCuS8IswzZky6104lU2WMQTQgGrw5dsUeKo8xZz3t4vyenX1DvkJCk5h-gMJl5OiBRmIIqjC1Heyz5qoffad2tY-y7fW7SN3iMdkhAlT4fZmzjPaJiai5qKptrWI4xFYrDADQZM-F6td2Yv9SWz61_zowPPf775xfUesMpnY7gMzK-CH5f3fga-b_IGVHGPtQPVu1ZokBJdC_JQUUTWcuHOqVq5xJdn8CYyPafRi0SfUwKGUfhVx7GNUOMMss1lHsT-isKdgONvXAimKe8nN-IRBrm8p8stVVBkdjhZP5EnIBZzfWoJLbDRL-VkjdCxpIjpBLGUpfz5OciA1r0Doe6dc8Fvg2Q=w742-h340-no)" alt="Nginxのエラーページをカスタマイズする方法" class="thumbnail-image"></span>
+        <span style="background-image:url(https://lh3.googleusercontent.com/-OMpbTfccKzI/WOD6_zw6G2I/AAAAAAAAB6E/VwOBAQ0IJDA/s0/2017-04-02_22-22-06.png)" alt="htpasswd命令" class="thumbnail-image"></span>
     
     
 </a>
@@ -378,7 +378,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Nginx/">Nginx</a></p>
-                            <p class="item-title"><a href="/cj10pnah7001kd17k0poncpl3/" class="title">Nginxのエラーページをカスタマイズする方法</a></p>
+                            <p class="item-title"><a href="/cj10pnah7001kd17k0poncpl3/" class="title">htpasswd命令</a></p>
                             <p class="item-date"><time datetime="2017-04-02T22:11:14.000Z" itemprop="datePublished">2017-04-02</time></p>
                         </div>
                     </li>

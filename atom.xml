@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiangnan.pw/"/>
-  <updated>2017-03-25T16:49:32.034Z</updated>
+  <updated>2017-04-02T13:11:53.371Z</updated>
   <id>http://blog.jiangnan.pw/</id>
   
   <author>
@@ -16,9 +16,55 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Nginxのエラーページをカスタマイズする方法</title>
+    <link href="http://blog.jiangnan.pw/cj10pnah7001kd17k0poncpl3/"/>
+    <id>http://blog.jiangnan.pw/cj10pnah7001kd17k0poncpl3/</id>
+    <published>2017-04-02T22:11:14.000Z</published>
+    <updated>2017-04-02T13:11:53.371Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="htpasswd命令"><a href="#htpasswd命令" class="headerlink" title="htpasswd命令"></a>htpasswd命令</h1><p><strong>htpasswd命令</strong>是Apache的Web服务器内置工具，用于创建和更新储存用户名、域和用户基本认证的密码文件。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><h3 id="htpasswd-选项-参数"><a href="#htpasswd-选项-参数" class="headerlink" title="htpasswd(选项)(参数)"></a>htpasswd(选项)(参数)</h3><h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><p>-c：创建一个加密文件；<br>-n：不更新加密文件，只将加密后的用户名密码显示在屏幕上；<br>-m：默认采用MD5算法对密码进行加密；<br>-d：采用CRYPT算法对密码进行加密；<br>-p：不对密码进行进行加密，即明文密码；<br>-s：采用SHA算法对密码进行加密；<br>-b：在命令行中一并输入用户名和密码而不是根据提示输入密码；<br>-D：删除指定的用户。</p>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li>用户：要创建或者更新密码的用户名；</li>
+<li>密码：用户的新密码。</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p><strong>利用htpasswd命令添加用户</strong></p>
+<p>htpasswd -<a href="http://man.linuxde.net/bc" title="bc命令" target="_blank" rel="external">bc</a> .<a href="http://man.linuxde.net/passwd" title="passwd命令" target="_blank" rel="external">passwd</a> www.linuxde.net <a href="http://man.linuxde.net/php" title="php命令" target="_blank" rel="external">php</a></p>
+<p>在bin目录下生成一个.passwd文件，用户名www.linuxde.net，密码：php，默认采用MD5加密方式。</p>
+<p><strong>在原有密码文件中增加下一个用户</strong></p>
+<p>htpasswd -b .passwd Jack 123456</p>
+<p>去掉<code>-c</code>选项，即可在第一个用户之后添加第二个用户，依此类推。</p>
+<p><strong>不更新密码文件，只显示加密后的用户名和密码</strong></p>
+<p>htpasswd -nb Jack 123456</p>
+<p>不更新.passwd文件，只在屏幕上输出用户名和经过加密后的密码。</p>
+<p><strong>利用htpasswd命令删除用户名和密码</strong></p>
+<p>htpasswd -D .passwd Jack</p>
+<p><strong>利用htpasswd命令修改密码</strong></p>
+<p>htpasswd -D .passwd Jack<br>htpasswd -b .passwd Jack 123456</p>
+<p>即先使用htpasswd删除命令删除指定用户，再利用htpasswd添加用户命令创建用户即可实现修改密码的功能。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;htpasswd命令&quot;&gt;&lt;a href=&quot;#htpasswd命令&quot; class=&quot;headerlink&quot; title=&quot;htpasswd命令&quot;&gt;&lt;/a&gt;htpasswd命令&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;htpasswd命令&lt;/strong&gt;是Apache的Web
+    
+    </summary>
+    
+      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+      <category term="Nginx" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Nginx/"/>
+    
+    
+      <category term="nginx" scheme="http://blog.jiangnan.pw/tags/nginx/"/>
+    
+      <category term="htpasswd" scheme="http://blog.jiangnan.pw/tags/htpasswd/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Github之SSH连接配置</title>
-    <link href="http://blog.jiangnan.pw/cj0phrch900174q7kq6vrgqax/"/>
-    <id>http://blog.jiangnan.pw/cj0phrch900174q7kq6vrgqax/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnafx000sd17krip2nbif/"/>
+    <id>http://blog.jiangnan.pw/cj10pnafx000sd17krip2nbif/</id>
     <published>2017-03-25T16:49:32.034Z</published>
     <updated>2017-03-25T16:49:32.034Z</updated>
     
@@ -66,10 +112,10 @@
   
   <entry>
     <title>Mac OSX开发环境搭建手记</title>
-    <link href="http://blog.jiangnan.pw/cj0phrcgq000s4q7kewahvvtm/"/>
-    <id>http://blog.jiangnan.pw/cj0phrcgq000s4q7kewahvvtm/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnahs001sd17kgplbewv7/"/>
+    <id>http://blog.jiangnan.pw/cj10pnahs001sd17kgplbewv7/</id>
     <published>2017-03-23T04:47:40.000Z</published>
-    <updated>2017-03-25T16:49:32.034Z</updated>
+    <updated>2017-04-02T13:09:45.375Z</updated>
     
     <content type="html"><![CDATA[<!--excerpt-->
 <h2 id="Brew"><a href="#Brew" class="headerlink" title="Brew"></a>Brew</h2><blockquote>
@@ -159,7 +205,8 @@
 <p>这样就可以安装有 WebDav 模块的 nginx 了：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install nginx-full --with-webdav --with-dav-ext-module</div></pre></td></tr></table></figure>
 <p>不只是 WebDav 模块，其他可选模块也可以用同样方法添加.</p>
-<p>nginx启动关闭命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#测试配置是否有语法错误</div><div class="line">nginx -t</div></pre></td></tr></table></figure></p>
+<p>nginx启动关闭命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">测试配置是否有语法错误</div><div class="line">nginx -t</div></pre></td></tr></table></figure>
 <p>#打开 nginx<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nginx</div></pre></td></tr></table></figure></p>
 <p>#重新加载配置|重启|停止|退出 nginx<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx -s reload|reopen|stop|quit</div></pre></td></tr></table></figure></p>
 <p>#也可以使用Mac的launchctl来启动|停止<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist</div><div class="line">launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist</div></pre></td></tr></table></figure></p>
@@ -203,9 +250,9 @@
       <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
     
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
-    
       <category term="nginx" scheme="http://blog.jiangnan.pw/tags/nginx/"/>
+    
+      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
     
       <category term="php" scheme="http://blog.jiangnan.pw/tags/php/"/>
     
@@ -213,8 +260,8 @@
   
   <entry>
     <title>Why is @font-face throwing a 404 error on woff files?</title>
-    <link href="http://blog.jiangnan.pw/cj0phrchv001j4q7kxp4q520e/"/>
-    <id>http://blog.jiangnan.pw/cj0phrchv001j4q7kxp4q520e/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnag6000xd17k5svmyvst/"/>
+    <id>http://blog.jiangnan.pw/cj10pnag6000xd17k5svmyvst/</id>
     <published>2017-02-26T05:54:08.000Z</published>
     <updated>2017-02-26T06:01:20.000Z</updated>
     
@@ -247,8 +294,8 @@
   
   <entry>
     <title>0x80004005 未指定的错误</title>
-    <link href="http://blog.jiangnan.pw/cj0phrcig001o4q7kgqq192pr/"/>
-    <id>http://blog.jiangnan.pw/cj0phrcig001o4q7kgqq192pr/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnag4000vd17km116rt1m/"/>
+    <id>http://blog.jiangnan.pw/cj10pnag4000vd17km116rt1m/</id>
     <published>2017-02-24T18:21:51.000Z</published>
     <updated>2017-02-24T18:37:24.000Z</updated>
     
@@ -287,8 +334,8 @@
   
   <entry>
     <title>Sublime配置文件同步</title>
-    <link href="http://blog.jiangnan.pw/cj0phrch600144q7k7oucjsih/"/>
-    <id>http://blog.jiangnan.pw/cj0phrch600144q7k7oucjsih/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnaid002hd17kqxdaukv0/"/>
+    <id>http://blog.jiangnan.pw/cj10pnaid002hd17kqxdaukv0/</id>
     <published>2017-02-22T04:14:37.000Z</published>
     <updated>2017-02-22T04:18:44.000Z</updated>
     
@@ -346,8 +393,8 @@
   
   <entry>
     <title>找回Sierra允许“任何来源”的应用</title>
-    <link href="http://blog.jiangnan.pw/cj0phrcgv000x4q7kc9cn5avq/"/>
-    <id>http://blog.jiangnan.pw/cj0phrcgv000x4q7kc9cn5avq/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnai00022d17kztb2xq4x/"/>
+    <id>http://blog.jiangnan.pw/cj10pnai00022d17kztb2xq4x/</id>
     <published>2017-02-16T16:13:07.000Z</published>
     <updated>2017-02-16T16:24:50.000Z</updated>
     
@@ -382,8 +429,8 @@
   
   <entry>
     <title>移除Mac的.DS_Store、._ 檔</title>
-    <link href="http://blog.jiangnan.pw/cj0phrcgy000y4q7kigv1ftd8/"/>
-    <id>http://blog.jiangnan.pw/cj0phrcgy000y4q7kigv1ftd8/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnai20025d17kuhro0h1j/"/>
+    <id>http://blog.jiangnan.pw/cj10pnai20025d17kuhro0h1j/</id>
     <published>2017-02-16T01:28:40.000Z</published>
     <updated>2017-02-16T01:45:00.000Z</updated>
     
@@ -429,8 +476,8 @@
   
   <entry>
     <title>OS X 10.10.5 下做端口转发</title>
-    <link href="http://blog.jiangnan.pw/cj0phrcgt000w4q7kjq7hea49/"/>
-    <id>http://blog.jiangnan.pw/cj0phrcgt000w4q7kjq7hea49/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnahv001vd17kg1w1fxuy/"/>
+    <id>http://blog.jiangnan.pw/cj10pnahv001vd17kg1w1fxuy/</id>
     <published>2017-02-11T18:30:08.000Z</published>
     <updated>2017-02-11T18:43:28.000Z</updated>
     
@@ -463,8 +510,8 @@
   
   <entry>
     <title>让git push命令不再需要密码</title>
-    <link href="http://blog.jiangnan.pw/cj0phrcht001h4q7kcr5etq8s/"/>
-    <id>http://blog.jiangnan.pw/cj0phrcht001h4q7kcr5etq8s/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnag1000td17kfllkx66t/"/>
+    <id>http://blog.jiangnan.pw/cj10pnag1000td17kfllkx66t/</id>
     <published>2017-02-09T04:13:11.000Z</published>
     <updated>2017-02-09T04:17:33.000Z</updated>
     
@@ -496,8 +543,8 @@
   
   <entry>
     <title>GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</title>
-    <link href="http://blog.jiangnan.pw/cj0phrche001b4q7knq199vow/"/>
-    <id>http://blog.jiangnan.pw/cj0phrche001b4q7knq199vow/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnag9000yd17kqepagstj/"/>
+    <id>http://blog.jiangnan.pw/cj10pnag9000yd17kqepagstj/</id>
     <published>2017-02-09T01:35:00.000Z</published>
     <updated>2017-02-09T04:05:02.000Z</updated>
     
@@ -544,8 +591,8 @@
   
   <entry>
     <title>Laravel5自定义环境变量</title>
-    <link href="http://blog.jiangnan.pw/cj0phrcio001z4q7k3ue5i13h/"/>
-    <id>http://blog.jiangnan.pw/cj0phrcio001z4q7k3ue5i13h/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnaha001nd17kv8qzjefv/"/>
+    <id>http://blog.jiangnan.pw/cj10pnaha001nd17kv8qzjefv/</id>
     <published>2017-02-03T07:19:55.000Z</published>
     <updated>2017-02-03T04:48:05.000Z</updated>
     
@@ -620,8 +667,8 @@
   
   <entry>
     <title>开启Fusion Drive功能教程 双硬盘 SSD+HDD</title>
-    <link href="http://blog.jiangnan.pw/cj0phrchq001d4q7kp55ek3wr/"/>
-    <id>http://blog.jiangnan.pw/cj0phrchq001d4q7kp55ek3wr/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnahy001yd17kf84rf022/"/>
+    <id>http://blog.jiangnan.pw/cj10pnahy001yd17kf84rf022/</id>
     <published>2017-02-03T05:44:35.000Z</published>
     <updated>2017-02-09T03:53:44.000Z</updated>
     
@@ -687,8 +734,8 @@
   
   <entry>
     <title>Cloud9でLaravel5の環境構築</title>
-    <link href="http://blog.jiangnan.pw/cj0phrcf600084q7kyu5qzva3/"/>
-    <id>http://blog.jiangnan.pw/cj0phrcf600084q7kyu5qzva3/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnaec0008d17kz7e959gu/"/>
+    <id>http://blog.jiangnan.pw/cj10pnaec0008d17kz7e959gu/</id>
     <published>2017-02-03T04:58:48.000Z</published>
     <updated>2017-02-03T05:13:14.000Z</updated>
     
@@ -728,8 +775,8 @@
   
   <entry>
     <title>解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题</title>
-    <link href="http://blog.jiangnan.pw/cj0phrchc00184q7keno51p6g/"/>
-    <id>http://blog.jiangnan.pw/cj0phrchc00184q7keno51p6g/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnai60029d17ko56d31ix/"/>
+    <id>http://blog.jiangnan.pw/cj10pnai60029d17ko56d31ix/</id>
     <published>2017-01-20T04:05:05.000Z</published>
     <updated>2017-02-09T03:53:56.000Z</updated>
     
@@ -801,8 +848,8 @@
   
   <entry>
     <title>Nginxのエラーページをカスタマイズする方法</title>
-    <link href="http://blog.jiangnan.pw/cj0phrcij001r4q7kleafb8kq/"/>
-    <id>http://blog.jiangnan.pw/cj0phrcij001r4q7kleafb8kq/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnah1001ed17kr4jmiwsj/"/>
+    <id>http://blog.jiangnan.pw/cj10pnah1001ed17kr4jmiwsj/</id>
     <published>2017-01-19T08:06:00.000Z</published>
     <updated>2017-01-20T06:24:06.000Z</updated>
     
@@ -846,8 +893,8 @@
   
   <entry>
     <title>江南云服务正式上线</title>
-    <link href="http://blog.jiangnan.pw/cj0phrcet00044q7kc2fm0f36/"/>
-    <id>http://blog.jiangnan.pw/cj0phrcet00044q7kc2fm0f36/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnadz0004d17k6wa433hn/"/>
+    <id>http://blog.jiangnan.pw/cj10pnadz0004d17k6wa433hn/</id>
     <published>2017-01-10T05:10:27.000Z</published>
     <updated>2017-01-20T05:49:50.000Z</updated>
     
@@ -880,8 +927,8 @@
   
   <entry>
     <title>Laravel5导入自定义函数和类的方法</title>
-    <link href="http://blog.jiangnan.pw/cj0phrcim001w4q7kys1if9kh/"/>
-    <id>http://blog.jiangnan.pw/cj0phrcim001w4q7kys1if9kh/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnagf0011d17k4k88sfbk/"/>
+    <id>http://blog.jiangnan.pw/cj10pnagf0011d17k4k88sfbk/</id>
     <published>2016-12-01T07:19:55.000Z</published>
     <updated>2017-01-19T08:20:11.000Z</updated>
     
@@ -924,8 +971,8 @@
   
   <entry>
     <title>常用图床及自建图床方法汇总</title>
-    <link href="http://blog.jiangnan.pw/cj0phrcf800094q7kihigr29q/"/>
-    <id>http://blog.jiangnan.pw/cj0phrcf800094q7kihigr29q/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnaee0009d17kvohwj0lz/"/>
+    <id>http://blog.jiangnan.pw/cj10pnaee0009d17kvohwj0lz/</id>
     <published>2016-11-10T06:28:41.000Z</published>
     <updated>2017-03-24T01:45:10.742Z</updated>
     
@@ -995,8 +1042,8 @@
   
   <entry>
     <title>MacOSX10.11开启任意显示器HiDPI方法</title>
-    <link href="http://blog.jiangnan.pw/cj0phrcgr000t4q7ko46gdur6/"/>
-    <id>http://blog.jiangnan.pw/cj0phrcgr000t4q7ko46gdur6/</id>
+    <link href="http://blog.jiangnan.pw/cj10pnaig002jd17k9wncjepb/"/>
+    <id>http://blog.jiangnan.pw/cj10pnaig002jd17k9wncjepb/</id>
     <published>2016-11-08T05:27:16.000Z</published>
     <updated>2017-02-16T01:38:24.000Z</updated>
     
@@ -1015,7 +1062,7 @@
 <blockquote>
 <p>OK.在桌面上新建一个文件夹,名字格式是:DisplayVendorID-XXXX,其中XXXX是你的DisplayVendorID的16进制值小写.<br>于是,我会新建一个 DisplayVendorID-XXXX的文件夹,然后在这个文件夹里面新建一个空白文件.名字格式是<br>DisplayProductID-YYYY,自然YYYY就是你的DisplayProductID的16进制了.<br>我新建的文件是 DisplayProductID-YYYY.<br>最好下载我提供的模板编辑.<br>相信你不一定能找到个合适的进制转换工具，我从网上找到了一个很好用的flash，并把它放到了自己的服务器里，<br>大家如有需要随时可以去用<br>在线进制转换器<br>建议使用PlistPro工具编辑，方便快捷。.<br><strong>范例:</strong></p>
 </blockquote>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">plist</span> <span class="attr">version</span>=<span class="string">"1.0"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>DisplayProductID<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">integer</span>&gt;</span>10496<span class="tag">&lt;/<span class="name">integer</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>DisplayVendorID<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">integer</span>&gt;</span>8547<span class="tag">&lt;/<span class="name">integer</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>scale-resolutions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">array</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAKAAAABkAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAUAAAADIAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAKAAAABDgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAUAAAACHAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAHgAAABDgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAPAAAACHAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAGkAAABBoAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAANIAAACDQAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAGQAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAMgAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAFoAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAALQAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAINAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAQaAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">array</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">plist</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="meta">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">plist</span> <span class="attr">version</span>=<span class="string">"1.0"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>DisplayProductID<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">integer</span>&gt;</span>10496<span class="tag">&lt;/<span class="name">integer</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>DisplayVendorID<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">integer</span>&gt;</span>8547<span class="tag">&lt;/<span class="name">integer</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">key</span>&gt;</span>scale-resolutions<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">array</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAKAAAABkAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAUAAAADIAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAKAAAABDgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAUAAAACHAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAHgAAABDgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAPAAAACHAAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAGkAAABBoAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAANIAAACDQAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAGQAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAMgAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAFoAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAALQAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAINAAAA4QAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">data</span>&gt;</span></div><div class="line">                AAAQaAAABwgAAAABACAAAA==</div><div class="line">                <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">array</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">plist</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>建议下载本帖子中的附件。包含本范例。</p>
 <p>最后面那一坨,和以及里面的data如何来的<br>比如我想使用1600900这个HiDPI,那么我就需要生成两个分辨率,其中一个是1600900,一个是其双倍,3200*1800.<br>1600,900两个值的16进制是00000640 00000384 ;<br>3200,1800两个值的16进制是00000C80 00000708;<br>后面加上 00000001 00200000<br>于是会得到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">00000640 00000384 00000001 00200000</div><div class="line">00000C80 00000708 00000001 00200000</div></pre></td></tr></table></figure></p>
 <p>用附件中的PlistPro编辑这个DisplayProductID-YYYY,计算并填写你想要的分辨率.<br>最后,把这个 DisplayVendorID-XXXX 文件夹,</p>
@@ -1038,39 +1085,6 @@
     
     
       <category term="Mac技巧" scheme="http://blog.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>禁止WordPress头部加载s.w.org</title>
-    <link href="http://blog.jiangnan.pw/cj0phrciu00274q7kpdp6asoz/"/>
-    <id>http://blog.jiangnan.pw/cj0phrciu00274q7kpdp6asoz/</id>
-    <published>2016-10-17T05:49:24.000Z</published>
-    <updated>2017-02-16T01:39:23.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>WordPress在头部添加dns-prefetch，应该是为了从s.w.org预获取表情和头像，目的是提高网页加载速度 ，但s.w.org国内根本无法访问，什么预获取、什么提高速度，都是泡影，不仅没用处，反而可能会影响速度，那就禁止它。<br><!-- excerpt --><br><img src="https://dl.dropbox.com/s/5et1y0kkomei4wx/wordpress1.jpg?dl=0" alt="wordpress"></p>
-<p>升级到WordPress 4.6之后，有童鞋发现头部加载了一个:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&apos;dns-prefetch&apos; href=&apos;//s.w.org&apos;&gt;</div></pre></td></tr></table></figure></p>
-<p>WordPress在头部添加dns-prefetch，应该是为了从s.w.org预获取表情和头像，目的是提高网页加载速度 ，但s.w.org国内根本无法访问，什么预获取、什么提高速度，都是泡影，不仅没用处，反而可能会影响速度，那就禁止它。</p>
-<h2 id="将下面的代码添加到主题functions-php模板中："><a href="#将下面的代码添加到主题functions-php模板中：" class="headerlink" title="将下面的代码添加到主题functions.php模板中："></a>将下面的代码添加到主题functions.php模板中：</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">remove_action( &apos;wp_head&apos;, &apos;wp_resource_hints&apos;, 2 );</div></pre></td></tr></table></figure>
-<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function remove_dns_prefetch( $hints, $relation_type ) &#123;</div><div class="line">if ( &apos;dns-prefetch&apos; === $relation_type ) &#123;</div><div class="line">return array_diff( wp_dependencies_unique_hosts(), $hints );</div><div class="line">&#125;</div><div class="line">return $hints;</div><div class="line">&#125;</div><div class="line">add_filter( &apos;wp_resource_hints&apos;, &apos;remove_dns_prefetch&apos;, 10, 2 );</div></pre></td></tr></table></figure>
-<p>方法二貌似兼容性更好些。<br>附带一个禁止加载表情代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// Remove emoji script</div><div class="line">remove_action( &apos;wp_head&apos;, &apos;print_emoji_detection_script&apos;, 7 );</div><div class="line">remove_action( &apos;wp_print_styles&apos;, &apos;print_emoji_styles&apos; );</div><div class="line">add_filter( &apos;emoji_svg_url&apos;, &apos;__return_false&apos; );</div></pre></td></tr></table></figure></p>
-<p>参考：<a href="https://wordpress.org/support/topic/remove-the-new-dns-prefetch-code/" target="_blank" rel="external">https://wordpress.org/support/topic/remove-the-new-dns-prefetch-code/</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;WordPress在头部添加dns-prefetch，应该是为了从s.w.org预获取表情和头像，目的是提高网页加载速度 ，但s.w.org国内根本无法访问，什么预获取、什么提高速度，都是泡影，不仅没用处，反而可能会影响速度，那就禁止它。&lt;br&gt;&lt;!-- excerpt -
-    
-    </summary>
-    
-      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
-    
-      <category term="WordPress" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/WordPress/"/>
-    
-    
-      <category term="WordPress" scheme="http://blog.jiangnan.pw/tags/WordPress/"/>
-    
-      <category term="技术分享" scheme="http://blog.jiangnan.pw/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   

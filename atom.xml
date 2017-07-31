@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiangnan.pw/"/>
-  <updated>2017-07-29T10:51:11.276Z</updated>
+  <updated>2017-07-31T02:01:59.057Z</updated>
   <id>http://blog.jiangnan.pw/</id>
   
   <author>
@@ -16,9 +16,50 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>导入数据库时报错1067–Invalid default value for ‘字段名’</title>
+    <link href="http://blog.jiangnan.pw/cj5rigcf30018xk7kp7ww346n/"/>
+    <id>http://blog.jiangnan.pw/cj5rigcf30018xk7kp7ww346n/</id>
+    <published>2017-07-31T19:44:49.000Z</published>
+    <updated>2017-07-31T02:01:59.057Z</updated>
+    
+    <content type="html"><![CDATA[<!--excerpt-->
+<p>最近把mysql升级到5.7了，wordpress导数据报错</p>
+<p>Invalid default value for ‘comment_date’</p>
+<p>原因出在类似这样的语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">DROP TABLE IF EXISTS `wp_comments`; CREATE TABLE `wp_comments`  (</div><div class="line">  `comment_ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,</div><div class="line">  `comment_post_ID` bigint(20) UNSIGNED NOT NULL DEFAULT 0,</div><div class="line">  `comment_author` tinytext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,</div><div class="line">  `comment_author_email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT &apos;&apos;,</div><div class="line">  `comment_author_url` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT &apos;&apos;,</div><div class="line">  `comment_author_IP` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT &apos;&apos;,</div><div class="line">  `comment_date` datetime(0) NOT NULL DEFAULT &apos;0000-00-00 00:00:00&apos;,</div><div class="line">  `comment_date_gmt` datetime(0) NOT NULL DEFAULT &apos;0000-00-00 00:00:00&apos;,</div><div class="line">  `comment_content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,</div><div class="line">  `comment_karma` int(11) NOT NULL DEFAULT 0,</div><div class="line">  `comment_approved` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT &apos;1&apos;,</div><div class="line">  `comment_agent` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT &apos;&apos;,</div><div class="line">  `comment_type` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT &apos;&apos;,</div><div class="line">  `comment_parent` bigint(20) UNSIGNED NOT NULL DEFAULT 0,</div><div class="line">  `user_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0, PRIMARY KEY (`comment_ID`) USING BTREE, INDEX `comment_post_ID`(`comment_post_ID`) USING BTREE, INDEX `comment_approved_date_gmt`(`comment_approved`, `comment_date_gmt`) USING BTREE, INDEX `comment_date_gmt`(`comment_date_gmt`) USING BTREE, INDEX `comment_parent`(`comment_parent`) USING BTREE, INDEX `comment_author_email`(`comment_author_email`(10)) USING BTREE</div><div class="line">) ENGINE = InnoDB AUTO_INCREMENT = 35 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;</div></pre></td></tr></table></figure>
+<p>这种报错多是你mysql升级到5.7而引起的默认值不兼容的问题。看看你的字段名是什么，我的是时间字段，类型是datetime。想到可能是类型的默认值被限制了，查看 sql_mode。果然：NO_ZERO_IN_DATE,NO_ZERO_DATE这两个参数限制时间不能为0</p>
+<h2 id="查看-sql-mode"><a href="#查看-sql-mode" class="headerlink" title="查看 sql_mode"></a>查看 sql_mode</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">mysql&gt; show variables like &apos;sql_mode&apos;; </div><div class="line">+---------------+-------------------------------------------------------------------------------------------------------------------------------------------+</div><div class="line">| Variable_name | Value |</div><div class="line">+---------------+-------------------------------------------------------------------------------------------------------------------------------------------+</div><div class="line">| sql_mode | ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION |</div><div class="line">+---------------+-------------------------------------------------------------------------------------------------------------------------------------------+</div><div class="line">1 row in set (0.00 sec)</div><div class="line"></div><div class="line">mysql&gt;</div></pre></td></tr></table></figure>
+<h2 id="临时修改："><a href="#临时修改：" class="headerlink" title="临时修改："></a>临时修改：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mysql&gt; set session -&gt; sql_mode=&apos;ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;</div><div class="line">Query OK, 0 rows affected, 1 warning (0.00 sec)</div><div class="line"></div><div class="line">mysql&gt;</div></pre></td></tr></table></figure>
+<h2 id="永久修改："><a href="#永久修改：" class="headerlink" title="永久修改："></a>永久修改：</h2><p>可以直接修改my.cnf文件</p>
+<p>例如：     vim /etc/my.cnf</p>
+<p>在[mysqld]下面添加如下列：</p>
+<p>sql_mode=ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</p>
+<p>ok问题解决，现在你导入或者创建表时看看！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;!--excerpt--&gt;
+&lt;p&gt;最近把mysql升级到5.7了，wordpress导数据报错&lt;/p&gt;
+&lt;p&gt;Invalid default value for ‘comment_date’&lt;/p&gt;
+&lt;p&gt;原因出在类似这样的语句&lt;/p&gt;
+&lt;figure class=&quot;highl
+    
+    </summary>
+    
+      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+      <category term="MySql" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/MySql/"/>
+    
+    
+      <category term="MySql" scheme="http://blog.jiangnan.pw/tags/MySql/"/>
+    
+  </entry>
+  
+  <entry>
     <title>mysql错误Error(1133)</title>
-    <link href="http://blog.jiangnan.pw/cj5p6fcz70000do7kh21lfp2n/"/>
-    <id>http://blog.jiangnan.pw/cj5p6fcz70000do7kh21lfp2n/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigcf6001axk7kh0hn0zb1/"/>
+    <id>http://blog.jiangnan.pw/cj5rigcf6001axk7kh0hn0zb1/</id>
     <published>2017-07-29T19:44:49.000Z</published>
     <updated>2017-07-29T10:51:11.276Z</updated>
     
@@ -48,8 +89,8 @@
   
   <entry>
     <title>Github之SSH连接配置</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7tp000sca7kbtbo65kh/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7tp000sca7kbtbo65kh/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigcen000yxk7k7qatv5cc/"/>
+    <id>http://blog.jiangnan.pw/cj5rigcen000yxk7k7qatv5cc/</id>
     <published>2017-07-29T09:47:56.073Z</published>
     <updated>2017-03-25T16:49:32.000Z</updated>
     
@@ -97,8 +138,8 @@
   
   <entry>
     <title>htpasswd命令</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7un0016ca7kxjdd3glq/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7un0016ca7kxjdd3glq/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigcg2001sxk7k37pjw6gv/"/>
+    <id>http://blog.jiangnan.pw/cj5rigcg2001sxk7k37pjw6gv/</id>
     <published>2017-04-02T22:11:14.000Z</published>
     <updated>2017-04-02T13:24:02.000Z</updated>
     
@@ -135,16 +176,16 @@
       <category term="Nginx" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Nginx/"/>
     
     
-      <category term="nginx" scheme="http://blog.jiangnan.pw/tags/nginx/"/>
-    
       <category term="htpasswd" scheme="http://blog.jiangnan.pw/tags/htpasswd/"/>
+    
+      <category term="nginx" scheme="http://blog.jiangnan.pw/tags/nginx/"/>
     
   </entry>
   
   <entry>
     <title>Mac OSX开发环境搭建手记</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7wg0025ca7kvsd6js2j/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7wg0025ca7kvsd6js2j/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigcgc0021xk7k1ail8lfw/"/>
+    <id>http://blog.jiangnan.pw/cj5rigcgc0021xk7k1ail8lfw/</id>
     <published>2017-03-23T04:47:40.000Z</published>
     <updated>2017-07-29T10:31:55.275Z</updated>
     
@@ -291,8 +332,8 @@
   
   <entry>
     <title>Why is @font-face throwing a 404 error on woff files?</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7u2000xca7ktbkye391/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7u2000xca7ktbkye391/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigceb000sxk7kddlkzmbj/"/>
+    <id>http://blog.jiangnan.pw/cj5rigceb000sxk7kddlkzmbj/</id>
     <published>2017-02-26T05:54:08.000Z</published>
     <updated>2017-02-26T06:01:20.000Z</updated>
     
@@ -325,8 +366,8 @@
   
   <entry>
     <title>0x80004005 未指定的错误</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7tx000vca7kdnoc8uwj/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7tx000vca7kdnoc8uwj/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigcee000txk7kpzondtvx/"/>
+    <id>http://blog.jiangnan.pw/cj5rigcee000txk7kpzondtvx/</id>
     <published>2017-02-24T18:21:51.000Z</published>
     <updated>2017-02-24T18:37:24.000Z</updated>
     
@@ -365,8 +406,8 @@
   
   <entry>
     <title>Sublime配置文件同步</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7wy002gca7k64js9wuo/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7wy002gca7k64js9wuo/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigcg9001yxk7kvds5e88i/"/>
+    <id>http://blog.jiangnan.pw/cj5rigcg9001yxk7kvds5e88i/</id>
     <published>2017-02-22T04:14:37.000Z</published>
     <updated>2017-02-22T04:18:44.000Z</updated>
     
@@ -424,8 +465,8 @@
   
   <entry>
     <title>找回Sierra允许“任何来源”的应用</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7w9001zca7kbqt4zg8l/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7w9001zca7kbqt4zg8l/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigcgv002fxk7k60ar7ce8/"/>
+    <id>http://blog.jiangnan.pw/cj5rigcgv002fxk7k60ar7ce8/</id>
     <published>2017-02-16T16:13:07.000Z</published>
     <updated>2017-02-16T16:24:50.000Z</updated>
     
@@ -460,8 +501,8 @@
   
   <entry>
     <title>移除Mac的.DS_Store、._ 檔</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7wc0022ca7kwr93tqxp/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7wc0022ca7kwr93tqxp/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigcgy002jxk7kcs2mbkcu/"/>
+    <id>http://blog.jiangnan.pw/cj5rigcgy002jxk7kcs2mbkcu/</id>
     <published>2017-02-16T01:28:40.000Z</published>
     <updated>2017-02-16T01:45:00.000Z</updated>
     
@@ -507,8 +548,8 @@
   
   <entry>
     <title>OS X 10.10.5 下做端口转发</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7vo001nca7kvhkrbgzn/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7vo001nca7kvhkrbgzn/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigcgs002bxk7k01etjuc9/"/>
+    <id>http://blog.jiangnan.pw/cj5rigcgs002bxk7k01etjuc9/</id>
     <published>2017-02-11T18:30:08.000Z</published>
     <updated>2017-02-11T18:43:28.000Z</updated>
     
@@ -541,8 +582,8 @@
   
   <entry>
     <title>让git push命令不再需要密码</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7tu000tca7khmi15543/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7tu000tca7khmi15543/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigcek000xxk7kcalokpcl/"/>
+    <id>http://blog.jiangnan.pw/cj5rigcek000xxk7kcalokpcl/</id>
     <published>2017-02-09T04:13:11.000Z</published>
     <updated>2017-02-09T04:17:33.000Z</updated>
     
@@ -574,8 +615,8 @@
   
   <entry>
     <title>GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7x0002ica7kah26q81j/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7x0002ica7kah26q81j/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigceh000vxk7kflx6lnv8/"/>
+    <id>http://blog.jiangnan.pw/cj5rigceh000vxk7kflx6lnv8/</id>
     <published>2017-02-09T01:35:00.000Z</published>
     <updated>2017-02-09T04:05:02.000Z</updated>
     
@@ -622,8 +663,8 @@
   
   <entry>
     <title>Laravel5自定义环境变量</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7u5000yca7ky5fbsipi/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7u5000yca7ky5fbsipi/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigcew0012xk7k18vobiol/"/>
+    <id>http://blog.jiangnan.pw/cj5rigcew0012xk7k18vobiol/</id>
     <published>2017-02-03T07:19:55.000Z</published>
     <updated>2017-02-03T04:48:05.000Z</updated>
     
@@ -698,8 +739,8 @@
   
   <entry>
     <title>开启Fusion Drive功能教程 双硬盘 SSD+HDD</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7w5001vca7kl0c99pob/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7w5001vca7kl0c99pob/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigcgl0028xk7kcrntuk7t/"/>
+    <id>http://blog.jiangnan.pw/cj5rigcgl0028xk7kcrntuk7t/</id>
     <published>2017-02-03T05:44:35.000Z</published>
     <updated>2017-07-29T10:39:55.711Z</updated>
     
@@ -765,8 +806,8 @@
   
   <entry>
     <title>Cloud9でLaravel5の環境構築</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7ra0008ca7k6vvyq5kz/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7ra0008ca7k6vvyq5kz/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigccv0008xk7khd39dfhw/"/>
+    <id>http://blog.jiangnan.pw/cj5rigccv0008xk7khd39dfhw/</id>
     <published>2017-02-03T04:58:48.000Z</published>
     <updated>2017-02-03T05:13:14.000Z</updated>
     
@@ -806,8 +847,8 @@
   
   <entry>
     <title>解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7wl0029ca7k74m6zu7f/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7wl0029ca7k74m6zu7f/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigch1002nxk7ke2qesweb/"/>
+    <id>http://blog.jiangnan.pw/cj5rigch1002nxk7ke2qesweb/</id>
     <published>2017-01-20T04:05:05.000Z</published>
     <updated>2017-02-09T03:53:56.000Z</updated>
     
@@ -879,8 +920,8 @@
   
   <entry>
     <title>Nginxのエラーページをカスタマイズする方法</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7ui0012ca7kmb7875qh/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7ui0012ca7kmb7875qh/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigcg6001uxk7klqn90e45/"/>
+    <id>http://blog.jiangnan.pw/cj5rigcg6001uxk7klqn90e45/</id>
     <published>2017-01-19T08:06:00.000Z</published>
     <updated>2017-07-29T10:42:39.203Z</updated>
     
@@ -924,8 +965,8 @@
   
   <entry>
     <title>江南云服务正式上线</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7qo0004ca7kvrpoebnw/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7qo0004ca7kvrpoebnw/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigccb0004xk7kcfdx39q8/"/>
+    <id>http://blog.jiangnan.pw/cj5rigccb0004xk7kcfdx39q8/</id>
     <published>2017-01-10T05:10:27.000Z</published>
     <updated>2017-01-20T05:49:50.000Z</updated>
     
@@ -958,8 +999,8 @@
   
   <entry>
     <title>Laravel5导入自定义函数和类的方法</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7ud0011ca7k2aiwbm69/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7ud0011ca7k2aiwbm69/</id>
+    <link href="http://blog.jiangnan.pw/cj5rigcey0013xk7kwzfop8yy/"/>
+    <id>http://blog.jiangnan.pw/cj5rigcey0013xk7kwzfop8yy/</id>
     <published>2016-12-01T07:19:55.000Z</published>
     <updated>2017-01-19T08:20:11.000Z</updated>
     
@@ -997,77 +1038,6 @@
     
     
       <category term="laravel" scheme="http://blog.jiangnan.pw/tags/laravel/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用图床及自建图床方法汇总</title>
-    <link href="http://blog.jiangnan.pw/cj5p6b7ri0009ca7k5day6llw/"/>
-    <id>http://blog.jiangnan.pw/cj5p6b7ri0009ca7k5day6llw/</id>
-    <published>2016-11-10T06:28:41.000Z</published>
-    <updated>2017-03-24T01:45:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>国内图床的中流砥柱，速度非常快，服务也较为稳定，目前还支持了 HTTPS ，同时有大量的第三方工具……<br><!--excerpt--></p>
-<h2 id="公共图床"><a href="#公共图床" class="headerlink" title="公共图床"></a>公共图床</h2><h3 id="微博图床"><a href="#微博图床" class="headerlink" title="微博图床"></a>微博图床</h3><p>国内图床的中流砥柱，速度非常快，服务也较为稳定，目前还支持了 HTTPS ，同时有大量的第三方工具方便使用，缺点是批量上传比较麻烦。</p>
-<ul>
-<li><a href="http://photo.weibo.com/photos/upload" target="_blank" rel="external">官方上传地址</a></li>
-<li><a href="https://chrome.google.com/webstore/detail/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf/related" target="_blank" rel="external">新浪微博图床 Chrome 插件</a></li>
-<li><a href="https://chrome.google.com/webstore/detail/%E5%9B%B4%E8%84%96%E6%98%AF%E4%B8%AA%E5%A5%BD%E5%9B%BE%E5%BA%8A/pngmcllbdfgmhdgnnpfaciaolgbjplhe/related?hl=zh-CN" target="_blank" rel="external">围脖图床 Chrome 插件（网页版不可用，Firefox 版在附加组件中搜索安装即可）</a></li>
-</ul>
-<h3 id="imgur"><a href="#imgur" class="headerlink" title="imgur"></a>imgur</h3><p>09年就成立了的国外老牌图床，支持https，理论上不限制大小，还有邮件发图、视频转 GIF 、URL 上传等功能，很强大，可惜间歇性被墙，就算没被墙国内访问也很慢，面向国外的站点使用倒很合适。</p>
-<p>地址：<a href="https://imgur.com/" target="_blank" rel="external">https://imgur.com</a></p>
-<h3 id="sm-ms"><a href="#sm-ms" class="headerlink" title="sm.ms"></a>sm.ms</h3><p>支持https，有 API ，图片要求大小在 5MB 以下，一次上传不得超过10张，维护者是 <a href="https://ttt.tt/" target="_blank" rel="external">通天塔</a> 的站长。主站 <a href="https://sm.ms/" target="_blank" rel="external">https://sm.ms</a> 目前用的是阿里云新加坡的机器，而上传的图片则会被存储到使用阿里云香港的 <a href="https://ooo.0o0.ooo/" target="_blank" rel="external">https://ooo.0o0.ooo</a> 中，因此速度还是很不错的。<a id="more"></a></p>
-<p>地址：<a href="https://sm.ms/" target="_blank" rel="external">https://sm.ms</a></p>
-<p>API：<a href="https://sm.ms/doc/" target="_blank" rel="external">https://sm.ms/doc/</a></p>
-<h3 id="otar-im"><a href="#otar-im" class="headerlink" title="otar.im"></a>otar.im</h3><p>这个网站本身并不是一个图床，但却做到了一个更比三个强，整合上文提到的微博图床、imgur、sm.ms 到一个页面中，非常方便实用。然而最近使用时提示未知错误上传失败，不知是否停止维护了。</p>
-<p>地址：<a href="http://upload.otar.im/" target="_blank" rel="external">http://upload.otar.im/</a></p>
-<h3 id="V2EX-图片库"><a href="#V2EX-图片库" class="headerlink" title="V2EX 图片库"></a>V2EX 图片库</h3><p>程序员社区 v2ex 推出的付费图床服务，由于博主没有需求所以未付费使用过，效果不明。</p>
-<p>地址：<a href="https://www.v2ex.com/i/about" target="_blank" rel="external">https://www.v2ex.com/i/about</a></p>
-<h3 id="LightPic"><a href="#LightPic" class="headerlink" title="LightPic"></a>LightPic</h3><p>使用其自己开发的系统，站点规则中写明了不保证图片可以永久存储，似乎使用了 CloudFlare 非中国版的 CDN ，因此支持 https ，但是 CF 在国内部分地区的访问效果很堪忧。</p>
-<p>地址：<a href="https://lightpic.info/" target="_blank" rel="external">https://lightpic.info</a></p>
-<h3 id="picwindow"><a href="#picwindow" class="headerlink" title="picwindow"></a>picwindow</h3><p>国外图床，号称长久而稳定的储存，图片要求大小在 10MB 以下，国内访问速度一般但可以接受，缺点是上传时有些慢，且不支持 HTTPS ，不过他的远程上传（其实也就是通过 URL 直接上床图片）的功能还是很好用的。</p>
-<p>地址：<a href="http://www.picwindow.com/" target="_blank" rel="external">http://www.picwindow.com/</a></p>
-<h3 id="贴图库"><a href="#贴图库" class="headerlink" title="贴图库"></a>贴图库</h3><p>早年的神级图床，可惜后来因为某种原因关停，恢复后暂时使用了 kekaoyun 这个域名，现在已经切换回了原域名，但是也从关停前的永久免费变为了6个月免费，也就是免费存储的图片只保存六个月，并提供了付费的商业选项。速度没得说，但是不适合博客这样的站点使用。</p>
-<p>地址：<a href="http://www.tietuku.com/" target="_blank" rel="external">http://www.tietuku.com/</a></p>
-<p>费用详情：<a href="http://www.tietuku.com/open" target="_blank" rel="external">http://www.tietuku.com/open</a></p>
-<h3 id="萝莉图床"><a href="#萝莉图床" class="headerlink" title="萝莉图床"></a>萝莉图床</h3><p>也是早年一个很好用的图床，但是现在需要邀请注册才能使用。</p>
-<p>地址：<a href="http://loli.io/" target="_blank" rel="external">http://loli.io/</a></p>
-<h2 id="自建图床"><a href="#自建图床" class="headerlink" title="自建图床"></a>自建图床</h2><h3 id="七牛、又拍云等云存储"><a href="#七牛、又拍云等云存储" class="headerlink" title="七牛、又拍云等云存储"></a>七牛、又拍云等云存储</h3><p>这些服务商其实是做 CDN 和云存储的，但是由于有一定的免费存储及流量额度，所以也有很多人拿来做自己博客的图床，速度可以和微博图床媲美，各种以其为基础开发的第三方工具用起来也很顺手，缺点是大部分都不支持 https ，同时注册时要求上传身份证信息挺麻烦的。下面推荐几个具有代表性的服务商及第三方工具：</p>
-<p>服务商：</p>
-<ul>
-<li>七牛：<a href="http://www.qiniu.com/" target="_blank" rel="external">http://www.qiniu.com/</a></li>
-<li>又拍云：<a href="https://www.upyun.com/index.html" target="_blank" rel="external">https://www.upyun.com/index.html</a></li>
-</ul>
-<p>工具：</p>
-<ul>
-<li>iPic (Mac only)：<a href="http://i.toolinbox.net/iPic/iPicUploader.html" target="_blank" rel="external">http://i.toolinbox.net/iPic/iPicUploader.html</a></li>
-<li>yotuku：<a href="http://yotuku.cn/" target="_blank" rel="external">http://yotuku.cn/</a></li>
-<li>PHP版七牛图床：<a href="https://github.com/4679/qiniu-picbed" target="_blank" rel="external">https://github.com/4679/qiniu-picbed</a></li>
-<li>Get Link：<a href="https://github.com/int64ago/getlink" target="_blank" rel="external">https://github.com/int64ago/getlink</a></li>
-</ul>
-<h3 id="树洞外链"><a href="#树洞外链" class="headerlink" title="树洞外链"></a>树洞外链</h3><blockquote>
-<p>树洞外链是一款免费开源的PHP外链网盘系统，界面简洁友好，支持七牛、本地、远程、阿里云OSS、又拍云五种储存方式，支持多用户系统，多上传方案策略。</p>
-</blockquote>
-<p>官方给出了这样的说明，实际使用下来也确实不错，有文档、安装方便也比较稳定，但存在着一些小 Bug ，小站点用来自建图床还是很合适的。</p>
-<p>官网：<a href="https://yun.aoaoao.me/" target="_blank" rel="external">https://yun.aoaoao.me/</a></p>
-<p>Github：<a href="https://github.com/HFO4/shudong-share" target="_blank" rel="external">https://github.com/HFO4/shudong-share</a></p>
-<h3 id="Lychee"><a href="#Lychee" class="headerlink" title="Lychee"></a>Lychee</h3><p>一款开源的图片管理系统，实际上也可以用作图床，一直在更新，自身功能很强大，还支持二次开发插件及扩展来丰富功能，此外这套系统也支持 Docker 。</p>
-<p>GIthub：<a href="https://github.com/electerious/Lychee" target="_blank" rel="external">https://github.com/electerious/Lychee</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;国内图床的中流砥柱，速度非常快，服务也较为稳定，目前还支持了 HTTPS ，同时有大量的第三方工具……&lt;br&gt;&lt;!--excerpt--&gt;&lt;/p&gt;
-&lt;h2 id=&quot;公共图床&quot;&gt;&lt;a href=&quot;#公共图床&quot; class=&quot;headerlink&quot; title=&quot;公共图床&quot;&gt;&lt;
-    
-    </summary>
-    
-      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="开源" scheme="http://blog.jiangnan.pw/tags/%E5%BC%80%E6%BA%90/"/>
-    
-      <category term="图床" scheme="http://blog.jiangnan.pw/tags/%E5%9B%BE%E5%BA%8A/"/>
     
   </entry>
   

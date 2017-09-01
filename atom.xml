@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiangnan.pw/"/>
-  <updated>2017-07-31T02:09:53.774Z</updated>
+  <updated>2017-09-01T01:37:15.977Z</updated>
   <id>http://blog.jiangnan.pw/</id>
   
   <author>
@@ -16,11 +16,127 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>SEND MAIL() USING PHP ON MAC OS X</title>
+    <link href="http://blog.jiangnan.pw/cj717mdri0019c37kysvs6o92/"/>
+    <id>http://blog.jiangnan.pw/cj717mdri0019c37kysvs6o92/</id>
+    <published>2017-09-01T10:47:40.000Z</published>
+    <updated>2017-09-01T01:37:15.977Z</updated>
+    
+    <content type="html"><![CDATA[<!--excerpt-->
+<p>Thanks to Benjamin Rojas, Andy Stratton, and a tip from Jasper, I was able to successfully send email from my home-brewed MAMP environment. Here’s the summary.</p>
+<ol>
+<li>Add the following to your /etc/postfix/sasl_passwd file:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">smtp.gmail.com:587 username@gmail.com:password</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>(Of course, you don’t have to use GMail or port 587, but you get the idea.)</p>
+<ol>
+<li>Configure postfix:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo postmap /etc/postfix/sasl_passwd</div></pre></td></tr></table></figure>
+<ol>
+<li>Backup and edit your postfix configuration:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo cp /etc/postfix/main.cf /etc/postfix/main.cf.orig</div><div class="line">sudo vim /etc/postfix/main.cf</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>If you use TLS, then you will need to add the TLS settings but the other settings should already be there as a result of running the postmap command. You should have these options set in /etc/postfix/main.cf:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mydomain_fallback = localhost</div><div class="line">mail_owner = _postfix</div><div class="line">setgid_group = _postdrop</div><div class="line">relayhost=smtp.gmail.com:587</div><div class="line">smtp_sasl_auth_enable=yes</div><div class="line">smtp_sasl_password_maps=hash:/etc/postfix/sasl_passwd</div><div class="line">smtp_sasl_security_options=</div><div class="line">smtp_use_tls=yes</div><div class="line">smtp_tls_security_level=encrypt</div><div class="line">tls_random_source=dev:/dev/urandom</div></pre></td></tr></table></figure>
+<ol>
+<li>Start postfix:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo postfix start</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>If there are errors, you may need to edit your /etc/postfix/main.cf and restart postfix:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo postfix reload</div></pre></td></tr></table></figure></p>
+<ol>
+<li><p>Send a test message:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">date | mail -s test youremailaddress@yourdomain.com</div></pre></td></tr></table></figure>
+</li>
+<li><p>Make postfix start automatically on boot by opening your /System/Library/LaunchDaemons/org.postfix.master.plist file and adding:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;key&gt;RunAtLoad&lt;/key&gt;</div><div class="line">&lt;true/&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Add this at the bottom just before the closing  tag.</p>
+<ol>
+<li>Edit your /etc/php.ini file and configure the sendmail_path option:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sendmail_path = &quot;sendmail -t -i&quot;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>You should now be able to send email using PHP’s mail() function. If you continue to have issues, watch the contents of your postfix mail log:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tail -f /var/log/mail.log</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;!--excerpt--&gt;
+&lt;p&gt;Thanks to Benjamin Rojas, Andy Stratton, and a tip from Jasper, I was able to successfully send email from my home-brewed 
+    
+    </summary>
+    
+      <category term="苹果相关" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
+    
+      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
+    
+      <category term="php" scheme="http://blog.jiangnan.pw/tags/php/"/>
+    
+      <category term="postfix" scheme="http://blog.jiangnan.pw/tags/postfix/"/>
+    
+      <category term="mail" scheme="http://blog.jiangnan.pw/tags/mail/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Github之SSH连接配置</title>
+    <link href="http://blog.jiangnan.pw/cj717mdqj000vc37k8ahxocgt/"/>
+    <id>http://blog.jiangnan.pw/cj717mdqj000vc37k8ahxocgt/</id>
+    <published>2017-08-23T09:44:45.803Z</published>
+    <updated>2017-03-25T16:49:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<!--excerpt-->
+<p>虽然github推荐使用https方式进行连接，但是ssh方式咱们也得会，官网上也都有详细的<a href="https://help.github.com/articles/testing-your-ssh-connection/" target="_blank" rel="external">文档介绍</a>，步骤比较简单，记录这篇的目的是给初入门的小伙伴多一个学习的门径，同时也方便日后自己查看。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h2><p>在没有配置ssh的情况下使用ssh连接操作github库的时候会出现如下异常：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git clone git@github.com:linmuxi/test-git.git</div><div class="line">Cloning into &apos;test-git&apos;...</div><div class="line">Warning: Permanently added the RSA host key for IP address &apos;192.30.252.129&apos; to the list of known hosts.</div><div class="line">Permission denied (publickey).</div><div class="line">fatal: Could not read from remote repository.</div><div class="line"></div><div class="line">Please make sure you have the correct access rights</div><div class="line">and the repository exists.</div><div class="line">~</div></pre></td></tr></table></figure>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a><strong>步骤</strong></h2><blockquote>
+<p>前提是我们已经新建好了一个库test-git,ssh路径是：git@github.com:linmuxi/test-git.git</p>
+</blockquote>
+<h3 id="1、检查ssh-keys是否存在"><a href="#1、检查ssh-keys是否存在" class="headerlink" title="1、检查ssh keys是否存在"></a><strong>1、检查ssh keys是否存在</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls -al ~/.ssh</div></pre></td></tr></table></figure>
+<p>如果目录下面没有id_rsa、id_rsa.pub则表示key不存在</p>
+<h3 id="2、生成ssh-key"><a href="#2、生成ssh-key" class="headerlink" title="2、生成ssh key"></a><strong>2、生成ssh key</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file in which to save the key (/c/Users/Hunter/.ssh/id_rsa):</div><div class="line">Enter passphrase (empty for no passphrase):</div><div class="line">Enter same passphrase again:</div><div class="line">Your identification has been saved in /c/Users/Hunter/.ssh/id_rsa.</div><div class="line">Your public key has been saved in /c/Users/Hunter/.ssh/id_rsa.pub.</div><div class="line">The key fingerprint is:</div><div class="line">SHA256:7KwlOZ4yljBZE2ZJ7dr8QGIyQeiPk49L+01fnC0hAZY your_email@example.com</div><div class="line">The key&apos;s randomart image is:</div><div class="line">+---[RSA 4096]----+</div><div class="line">| o...=.          |</div><div class="line">|. . *Eo          |</div><div class="line">|.  + o .         |</div><div class="line">| .o = o..        |</div><div class="line">|  +* B .S.       |</div><div class="line">| ++.. ++o +      |</div><div class="line">| .+o o+o+= .     |</div><div class="line">|....B..*o .      |</div><div class="line">| ooo ++.         |</div><div class="line">+----[SHA256]-----+</div></pre></td></tr></table></figure>
+<h3 id="3、将ssh-key添加到ssh-agent"><a href="#3、将ssh-key添加到ssh-agent" class="headerlink" title="3、将ssh key添加到ssh-agent"></a><strong>3、将ssh key添加到ssh-agent</strong></h3><p>先确认ssh-agent是可用的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ eval $(ssh-agent -s)</div><div class="line">Agent pid 20632</div></pre></td></tr></table></figure>
+<p>将ssh key添加到ssh-agent</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ssh-add ~/.ssh/id_rsa</div><div class="line">Identity added: /c/Users/Hunter/.ssh/id_rsa (/c/Users/Hunter/.ssh/id_rsa)</div></pre></td></tr></table></figure>
+<h3 id="4、将ssh-key配置到github"><a href="#4、将ssh-key配置到github" class="headerlink" title="4、将ssh key配置到github"></a><strong>4、将ssh key配置到github</strong></h3><p>复制key内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ clip &lt; ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure>
+<p>配置key到github<br>登录github-&gt;选择Settings-&gt;SSH keys-&gt;New SSH key</p>
+<p>测试ssh key的配置情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ssh -t git@github.com</div><div class="line">Warning: Permanently added the RSA host key for IP address &apos;192.30.252.128&apos; to the list of known hosts.</div><div class="line">PTY allocation request failed on channel 0</div></pre></td></tr></table></figure>
+<p>到这里就配置好了</p>
+<p>再次执行clone操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ git clone git@github.com:linmuxi/test-git.git</div><div class="line">Cloning into &apos;test-git&apos;...</div><div class="line">remote: Counting objects: 56, done.</div><div class="line">remote: Compressing objects: 100% (34/34), done.</div><div class="line">remote: Total 56 (delta 4), reused 0 (delta 0), pack-reused 8</div><div class="line">Receiving objects: 100% (56/56), 5.42 KiB | 0 bytes/s, done.</div><div class="line">Resolving deltas: 100% (4/4), done.</div><div class="line">Checking connectivity... done.</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;!--excerpt--&gt;
+&lt;p&gt;虽然github推荐使用https方式进行连接，但是ssh方式咱们也得会，官网上也都有详细的&lt;a href=&quot;https://help.github.com/articles/testing-your-ssh-connection/&quot; targ
+    
+    </summary>
+    
+      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+      <category term="Git" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Git/"/>
+    
+    
+      <category term="Git" scheme="http://blog.jiangnan.pw/tags/Git/"/>
+    
+      <category term="GitHub" scheme="http://blog.jiangnan.pw/tags/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
     <title>导入数据库时报错1067–Invalid default value for ‘字段名’</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8px1001d7w7kytdsy5i8/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8px1001d7w7kytdsy5i8/</id>
+    <link href="http://blog.jiangnan.pw/cj717mdsq0028c37km8kqs6j2/"/>
+    <id>http://blog.jiangnan.pw/cj717mdsq0028c37km8kqs6j2/</id>
     <published>2017-07-31T19:44:49.000Z</published>
-    <updated>2017-07-31T02:09:53.774Z</updated>
+    <updated>2017-07-31T02:09:53.000Z</updated>
     
     <content type="html"><![CDATA[<!--excerpt-->
 <p>最近把mysql升级到5.7了，wordpress导数据报错</p>
@@ -58,10 +174,10 @@
   
   <entry>
     <title>centos6 yum方式升级内核</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8pvr000u7w7kaj3z5bpd/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8pvr000u7w7kaj3z5bpd/</id>
+    <link href="http://blog.jiangnan.pw/cj717mdqe000sc37kv4pqfidq/"/>
+    <id>http://blog.jiangnan.pw/cj717mdqe000sc37kv4pqfidq/</id>
     <published>2017-07-31T06:28:41.000Z</published>
-    <updated>2017-07-31T02:33:58.266Z</updated>
+    <updated>2017-07-31T02:33:58.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近没有时间好久没有写文章了，今天由于需要安装docker学习虚拟容器的知识，需要升级OS的内核。目前我这边使用的OS是centos6.5，内核是2.6版本的，如下：</p>
 <p>cat /etc/issue</p>
@@ -116,10 +232,10 @@
   
   <entry>
     <title>mysql错误Error(1133)</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8pwx00187w7kssx6kdul/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8pwx00187w7kssx6kdul/</id>
+    <link href="http://blog.jiangnan.pw/cj717mdsi0022c37ksx4o9wqd/"/>
+    <id>http://blog.jiangnan.pw/cj717mdsi0022c37ksx4o9wqd/</id>
     <published>2017-07-29T19:44:49.000Z</published>
-    <updated>2017-07-29T10:51:11.276Z</updated>
+    <updated>2017-07-29T10:51:11.000Z</updated>
     
     <content type="html"><![CDATA[<!--excerpt-->
 <h3 id="mysql错误Error-1133-Can’t-find-any-matching-row-in-the-user-table"><a href="#mysql错误Error-1133-Can’t-find-any-matching-row-in-the-user-table" class="headerlink" title="mysql错误Error(1133): Can’t find any matching row in the user table"></a>mysql错误Error(1133): Can’t find any matching row in the user table</h3><p>刚尝试修改mysql数据库用户名时，提示”Error (1133): Can’t find any matching row in the user table”，遂找了下网上的解决办法：</p>
@@ -146,58 +262,9 @@
   </entry>
   
   <entry>
-    <title>Github之SSH连接配置</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8pvl000r7w7krdha0tnb/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8pvl000r7w7krdha0tnb/</id>
-    <published>2017-07-29T09:47:56.073Z</published>
-    <updated>2017-03-25T16:49:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<!--excerpt-->
-<p>虽然github推荐使用https方式进行连接，但是ssh方式咱们也得会，官网上也都有详细的<a href="https://help.github.com/articles/testing-your-ssh-connection/" target="_blank" rel="external">文档介绍</a>，步骤比较简单，记录这篇的目的是给初入门的小伙伴多一个学习的门径，同时也方便日后自己查看。</p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h2><p>在没有配置ssh的情况下使用ssh连接操作github库的时候会出现如下异常：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git clone git@github.com:linmuxi/test-git.git</div><div class="line">Cloning into &apos;test-git&apos;...</div><div class="line">Warning: Permanently added the RSA host key for IP address &apos;192.30.252.129&apos; to the list of known hosts.</div><div class="line">Permission denied (publickey).</div><div class="line">fatal: Could not read from remote repository.</div><div class="line"></div><div class="line">Please make sure you have the correct access rights</div><div class="line">and the repository exists.</div><div class="line">~</div></pre></td></tr></table></figure>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a><strong>步骤</strong></h2><blockquote>
-<p>前提是我们已经新建好了一个库test-git,ssh路径是：git@github.com:linmuxi/test-git.git</p>
-</blockquote>
-<h3 id="1、检查ssh-keys是否存在"><a href="#1、检查ssh-keys是否存在" class="headerlink" title="1、检查ssh keys是否存在"></a><strong>1、检查ssh keys是否存在</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls -al ~/.ssh</div></pre></td></tr></table></figure>
-<p>如果目录下面没有id_rsa、id_rsa.pub则表示key不存在</p>
-<h3 id="2、生成ssh-key"><a href="#2、生成ssh-key" class="headerlink" title="2、生成ssh key"></a><strong>2、生成ssh key</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file in which to save the key (/c/Users/Hunter/.ssh/id_rsa):</div><div class="line">Enter passphrase (empty for no passphrase):</div><div class="line">Enter same passphrase again:</div><div class="line">Your identification has been saved in /c/Users/Hunter/.ssh/id_rsa.</div><div class="line">Your public key has been saved in /c/Users/Hunter/.ssh/id_rsa.pub.</div><div class="line">The key fingerprint is:</div><div class="line">SHA256:7KwlOZ4yljBZE2ZJ7dr8QGIyQeiPk49L+01fnC0hAZY your_email@example.com</div><div class="line">The key&apos;s randomart image is:</div><div class="line">+---[RSA 4096]----+</div><div class="line">| o...=.          |</div><div class="line">|. . *Eo          |</div><div class="line">|.  + o .         |</div><div class="line">| .o = o..        |</div><div class="line">|  +* B .S.       |</div><div class="line">| ++.. ++o +      |</div><div class="line">| .+o o+o+= .     |</div><div class="line">|....B..*o .      |</div><div class="line">| ooo ++.         |</div><div class="line">+----[SHA256]-----+</div></pre></td></tr></table></figure>
-<h3 id="3、将ssh-key添加到ssh-agent"><a href="#3、将ssh-key添加到ssh-agent" class="headerlink" title="3、将ssh key添加到ssh-agent"></a><strong>3、将ssh key添加到ssh-agent</strong></h3><p>先确认ssh-agent是可用的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ eval $(ssh-agent -s)</div><div class="line">Agent pid 20632</div></pre></td></tr></table></figure>
-<p>将ssh key添加到ssh-agent</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ssh-add ~/.ssh/id_rsa</div><div class="line">Identity added: /c/Users/Hunter/.ssh/id_rsa (/c/Users/Hunter/.ssh/id_rsa)</div></pre></td></tr></table></figure>
-<h3 id="4、将ssh-key配置到github"><a href="#4、将ssh-key配置到github" class="headerlink" title="4、将ssh key配置到github"></a><strong>4、将ssh key配置到github</strong></h3><p>复制key内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ clip &lt; ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure>
-<p>配置key到github<br>登录github-&gt;选择Settings-&gt;SSH keys-&gt;New SSH key</p>
-<p>测试ssh key的配置情况</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ssh -t git@github.com</div><div class="line">Warning: Permanently added the RSA host key for IP address &apos;192.30.252.128&apos; to the list of known hosts.</div><div class="line">PTY allocation request failed on channel 0</div></pre></td></tr></table></figure>
-<p>到这里就配置好了</p>
-<p>再次执行clone操作：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ git clone git@github.com:linmuxi/test-git.git</div><div class="line">Cloning into &apos;test-git&apos;...</div><div class="line">remote: Counting objects: 56, done.</div><div class="line">remote: Compressing objects: 100% (34/34), done.</div><div class="line">remote: Total 56 (delta 4), reused 0 (delta 0), pack-reused 8</div><div class="line">Receiving objects: 100% (56/56), 5.42 KiB | 0 bytes/s, done.</div><div class="line">Resolving deltas: 100% (4/4), done.</div><div class="line">Checking connectivity... done.</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;!--excerpt--&gt;
-&lt;p&gt;虽然github推荐使用https方式进行连接，但是ssh方式咱们也得会，官网上也都有详细的&lt;a href=&quot;https://help.github.com/articles/testing-your-ssh-connection/&quot; targ
-    
-    </summary>
-    
-      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
-    
-      <category term="Git" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Git/"/>
-    
-    
-      <category term="Git" scheme="http://blog.jiangnan.pw/tags/Git/"/>
-    
-      <category term="GitHub" scheme="http://blog.jiangnan.pw/tags/GitHub/"/>
-    
-  </entry>
-  
-  <entry>
     <title>htpasswd命令</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8px5001f7w7kgmajktgg/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8px5001f7w7kgmajktgg/</id>
+    <link href="http://blog.jiangnan.pw/cj717mdti002pc37k2wmamunk/"/>
+    <id>http://blog.jiangnan.pw/cj717mdti002pc37k2wmamunk/</id>
     <published>2017-04-02T22:11:14.000Z</published>
     <updated>2017-04-02T13:24:02.000Z</updated>
     
@@ -234,18 +301,18 @@
       <category term="Nginx" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Nginx/"/>
     
     
-      <category term="htpasswd" scheme="http://blog.jiangnan.pw/tags/htpasswd/"/>
-    
       <category term="nginx" scheme="http://blog.jiangnan.pw/tags/nginx/"/>
+    
+      <category term="htpasswd" scheme="http://blog.jiangnan.pw/tags/htpasswd/"/>
     
   </entry>
   
   <entry>
     <title>Mac OSX开发环境搭建手记</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8py300247w7kaq2q95be/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8py300247w7kaq2q95be/</id>
+    <link href="http://blog.jiangnan.pw/cj717mdrf0016c37kphwaxyik/"/>
+    <id>http://blog.jiangnan.pw/cj717mdrf0016c37kphwaxyik/</id>
     <published>2017-03-23T04:47:40.000Z</published>
-    <updated>2017-07-29T10:31:55.275Z</updated>
+    <updated>2017-07-29T10:31:55.000Z</updated>
     
     <content type="html"><![CDATA[<!--excerpt-->
 <h2 id="Brew"><a href="#Brew" class="headerlink" title="Brew"></a>Brew</h2><blockquote>
@@ -380,9 +447,9 @@
       <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
     
     
-      <category term="nginx" scheme="http://blog.jiangnan.pw/tags/nginx/"/>
-    
       <category term="Mac技巧" scheme="http://blog.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
+    
+      <category term="nginx" scheme="http://blog.jiangnan.pw/tags/nginx/"/>
     
       <category term="php" scheme="http://blog.jiangnan.pw/tags/php/"/>
     
@@ -390,8 +457,8 @@
   
   <entry>
     <title>Why is @font-face throwing a 404 error on woff files?</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8pw800107w7k026gh8gj/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8pw800107w7k026gh8gj/</id>
+    <link href="http://blog.jiangnan.pw/cj717mdqn000xc37ksoh7zlli/"/>
+    <id>http://blog.jiangnan.pw/cj717mdqn000xc37ksoh7zlli/</id>
     <published>2017-02-26T05:54:08.000Z</published>
     <updated>2017-02-26T06:01:20.000Z</updated>
     
@@ -424,8 +491,8 @@
   
   <entry>
     <title>0x80004005 未指定的错误</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8pvy000x7w7kbx5sbvvn/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8pvy000x7w7kbx5sbvvn/</id>
+    <link href="http://blog.jiangnan.pw/cj717mdqg000tc37keuecks70/"/>
+    <id>http://blog.jiangnan.pw/cj717mdqg000tc37keuecks70/</id>
     <published>2017-02-24T18:21:51.000Z</published>
     <updated>2017-02-24T18:37:24.000Z</updated>
     
@@ -464,8 +531,8 @@
   
   <entry>
     <title>Sublime配置文件同步</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8pz3002t7w7k44tzmb7f/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8pz3002t7w7k44tzmb7f/</id>
+    <link href="http://blog.jiangnan.pw/cj717mdtl002rc37kitlashgh/"/>
+    <id>http://blog.jiangnan.pw/cj717mdtl002rc37kitlashgh/</id>
     <published>2017-02-22T04:14:37.000Z</published>
     <updated>2017-02-22T04:18:44.000Z</updated>
     
@@ -523,8 +590,8 @@
   
   <entry>
     <title>找回Sierra允许“任何来源”的应用</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8pym002g7w7k9rvmeqr1/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8pym002g7w7k9rvmeqr1/</id>
+    <link href="http://blog.jiangnan.pw/cj717mds6001qc37ktpr6mgi1/"/>
+    <id>http://blog.jiangnan.pw/cj717mds6001qc37ktpr6mgi1/</id>
     <published>2017-02-16T16:13:07.000Z</published>
     <updated>2017-02-16T16:24:50.000Z</updated>
     
@@ -559,8 +626,8 @@
   
   <entry>
     <title>移除Mac的.DS_Store、._ 檔</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8pyp002i7w7k4ok1x19b/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8pyp002i7w7k4ok1x19b/</id>
+    <link href="http://blog.jiangnan.pw/cj717mdsb001uc37k0r4xigaj/"/>
+    <id>http://blog.jiangnan.pw/cj717mdsb001uc37k0r4xigaj/</id>
     <published>2017-02-16T01:28:40.000Z</published>
     <updated>2017-02-16T01:45:00.000Z</updated>
     
@@ -606,8 +673,8 @@
   
   <entry>
     <title>OS X 10.10.5 下做端口转发</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8py800287w7kq88shesx/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8py800287w7kq88shesx/</id>
+    <link href="http://blog.jiangnan.pw/cj717mdrx001lc37ktu2in7d0/"/>
+    <id>http://blog.jiangnan.pw/cj717mdrx001lc37ktu2in7d0/</id>
     <published>2017-02-11T18:30:08.000Z</published>
     <updated>2017-02-11T18:43:28.000Z</updated>
     
@@ -640,8 +707,8 @@
   
   <entry>
     <title>让git push命令不再需要密码</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8pvv000w7w7ksb1y51lh/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8pvv000w7w7ksb1y51lh/</id>
+    <link href="http://blog.jiangnan.pw/cj717mdqp000yc37knqvn9d7d/"/>
+    <id>http://blog.jiangnan.pw/cj717mdqp000yc37knqvn9d7d/</id>
     <published>2017-02-09T04:13:11.000Z</published>
     <updated>2017-02-09T04:17:33.000Z</updated>
     
@@ -673,8 +740,8 @@
   
   <entry>
     <title>GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8pvn000s7w7klw0wts86/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8pvn000s7w7klw0wts86/</id>
+    <link href="http://blog.jiangnan.pw/cj717mdqx0011c37kzbica9dy/"/>
+    <id>http://blog.jiangnan.pw/cj717mdqx0011c37kzbica9dy/</id>
     <published>2017-02-09T01:35:00.000Z</published>
     <updated>2017-02-09T04:05:02.000Z</updated>
     
@@ -721,8 +788,8 @@
   
   <entry>
     <title>Laravel5自定义环境变量</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8pwo00117w7kri1jjck6/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8pwo00117w7kri1jjck6/</id>
+    <link href="http://blog.jiangnan.pw/cj717mdrp001ec37kimx50er9/"/>
+    <id>http://blog.jiangnan.pw/cj717mdrp001ec37kimx50er9/</id>
     <published>2017-02-03T07:19:55.000Z</published>
     <updated>2017-02-03T04:48:05.000Z</updated>
     
@@ -797,10 +864,10 @@
   
   <entry>
     <title>开启Fusion Drive功能教程 双硬盘 SSD+HDD</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8pyc002b7w7k0qk6lvp8/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8pyc002b7w7k0qk6lvp8/</id>
+    <link href="http://blog.jiangnan.pw/cj717mds0001nc37k16u313ij/"/>
+    <id>http://blog.jiangnan.pw/cj717mds0001nc37k16u313ij/</id>
     <published>2017-02-03T05:44:35.000Z</published>
-    <updated>2017-07-29T10:39:55.711Z</updated>
+    <updated>2017-07-29T10:39:55.000Z</updated>
     
     <content type="html"><![CDATA[<!--excerpt-->
 <p>废话不多说进入主题</p>
@@ -864,8 +931,8 @@
   
   <entry>
     <title>Cloud9でLaravel5の環境構築</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8pt900087w7k297fuivs/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8pt900087w7k297fuivs/</id>
+    <link href="http://blog.jiangnan.pw/cj717mdov0008c37k0h4f5lef/"/>
+    <id>http://blog.jiangnan.pw/cj717mdov0008c37k0h4f5lef/</id>
     <published>2017-02-03T04:58:48.000Z</published>
     <updated>2017-02-03T05:13:14.000Z</updated>
     
@@ -905,8 +972,8 @@
   
   <entry>
     <title>解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8pyt002n7w7kixvuc3v4/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8pyt002n7w7kixvuc3v4/</id>
+    <link href="http://blog.jiangnan.pw/cj717mdse001yc37kwpbx24yb/"/>
+    <id>http://blog.jiangnan.pw/cj717mdse001yc37kwpbx24yb/</id>
     <published>2017-01-20T04:05:05.000Z</published>
     <updated>2017-02-09T03:53:56.000Z</updated>
     
@@ -978,10 +1045,10 @@
   
   <entry>
     <title>Nginxのエラーページをカスタマイズする方法</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8pxf001m7w7k16dpu50f/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8pxf001m7w7k16dpu50f/</id>
+    <link href="http://blog.jiangnan.pw/cj717mdt9002lc37kn2ohhqvo/"/>
+    <id>http://blog.jiangnan.pw/cj717mdt9002lc37kn2ohhqvo/</id>
     <published>2017-01-19T08:06:00.000Z</published>
-    <updated>2017-07-29T10:42:39.203Z</updated>
+    <updated>2017-07-29T10:42:39.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>Nginxのデフォルトのエラーページは格好良くないし、Nginxを使ってることがバレバレです。それが嫌だったので以下の方法でカスタマイズしました。</p>
@@ -1018,40 +1085,6 @@
     
     
       <category term="nginx" scheme="http://blog.jiangnan.pw/tags/nginx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>江南云服务正式上线</title>
-    <link href="http://blog.jiangnan.pw/cj5rw8psh00047w7k78yugxor/"/>
-    <id>http://blog.jiangnan.pw/cj5rw8psh00047w7k78yugxor/</id>
-    <published>2017-01-10T05:10:27.000Z</published>
-    <updated>2017-01-20T05:49:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>江南云-提供基于百度云，天翼云(正在开发中Y(^_^)Y)的云存储服务，包括图片，音乐，视频，文件的云存储下载服务。</p>
-<ul>
-<li>提供百度云，天翼云本身不支持的迅雷等工具直接下载的功能。</li>
-<li>采用用户本地存储TOKEN的方式进行授权，充分保证用户的个人隐私</li>
-<li>提供图片，音视频等流媒体的直接外链功能，从此站长再也不用费心找图床。</li>
-</ul>
-<p><img src="https://lh3.googleusercontent.com/-qqlLrJo8JS4/WHRseojYN2I/AAAAAAAAAuQ/lXV-fkSg97M/s0/2017-01-10_14-09-12.png" alt="江南云首页"><br><img src="https://lh3.googleusercontent.com/-tQF7SvGlpMk/WHRudf1irvI/AAAAAAAAAuw/YwENVxgYmk0/s0/2017-01-10_14-17-39.png" alt="授权代码获取"><br><img src="https://lh3.googleusercontent.com/-fIOPEh7rQ1E/WHRus4ZSdeI/AAAAAAAAAu0/Ib9kRzuSxHM/s0/2017-01-10_14-18-42.png" alt="江南云文件管理"><br><img src="https://lh3.googleusercontent.com/-dagoHUPxzQQ/WHRvn18eX8I/AAAAAAAAAvA/2h1_xL5NPW8/s0/2017-01-10_14-22-39.png" alt="江南云侧边栏"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;江南云-提供基于百度云，天翼云(正在开发中Y(^_^)Y)的云存储服务，包括图片，音乐，视频，文件的云存储下载服务。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;提供百度云，天翼云本身不支持的迅雷等工具直接下载的功能。&lt;/li&gt;
-&lt;li&gt;采用用户本地存储TOKEN的方式进行授权，充分保证用户
-    
-    </summary>
-    
-      <category term="作品展示" scheme="http://blog.jiangnan.pw/categories/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/"/>
-    
-    
-      <category term="江南云" scheme="http://blog.jiangnan.pw/tags/%E6%B1%9F%E5%8D%97%E4%BA%91/"/>
-    
-      <category term="作品展示" scheme="http://blog.jiangnan.pw/tags/%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA/"/>
     
   </entry>
   

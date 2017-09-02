@@ -4,9 +4,9 @@
   <subtitle>记录编程道路上的点点滴滴!!!</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://blog.jiangnan.pw/"/>
+  <link href="https://github.jiangnan.pw/"/>
   <updated>2017-09-01T01:37:15.977Z</updated>
-  <id>http://blog.jiangnan.pw/</id>
+  <id>https://github.jiangnan.pw/</id>
   
   <author>
     <name>江南品味</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>SEND MAIL() USING PHP ON MAC OS X</title>
-    <link href="http://blog.jiangnan.pw/cj73bpiwj002be67kgh0zex0g/"/>
-    <id>http://blog.jiangnan.pw/cj73bpiwj002be67kgh0zex0g/</id>
+    <link href="https://github.jiangnan.pw/cj73bpiwj002be67kgh0zex0g/"/>
+    <id>https://github.jiangnan.pw/cj73bpiwj002be67kgh0zex0g/</id>
     <published>2017-09-01T10:47:40.000Z</published>
     <updated>2017-09-01T01:37:15.977Z</updated>
     
@@ -67,25 +67,25 @@
     
     </summary>
     
-      <category term="苹果相关" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
+      <category term="苹果相关" scheme="https://github.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
+      <category term="Mac技巧" scheme="https://github.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
     
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
+      <category term="Mac技巧" scheme="https://github.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
     
-      <category term="php" scheme="http://blog.jiangnan.pw/tags/php/"/>
+      <category term="php" scheme="https://github.jiangnan.pw/tags/php/"/>
     
-      <category term="postfix" scheme="http://blog.jiangnan.pw/tags/postfix/"/>
+      <category term="postfix" scheme="https://github.jiangnan.pw/tags/postfix/"/>
     
-      <category term="mail" scheme="http://blog.jiangnan.pw/tags/mail/"/>
+      <category term="mail" scheme="https://github.jiangnan.pw/tags/mail/"/>
     
   </entry>
   
   <entry>
     <title>Github之SSH连接配置</title>
-    <link href="http://blog.jiangnan.pw/cj73bpiu4000ve67kginuvvpo/"/>
-    <id>http://blog.jiangnan.pw/cj73bpiu4000ve67kginuvvpo/</id>
+    <link href="https://github.jiangnan.pw/cj73bpiu4000ve67kginuvvpo/"/>
+    <id>https://github.jiangnan.pw/cj73bpiu4000ve67kginuvvpo/</id>
     <published>2017-08-23T09:44:45.803Z</published>
     <updated>2017-03-25T16:49:32.000Z</updated>
     
@@ -120,21 +120,21 @@
     
     </summary>
     
-      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+      <category term="技术分享" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
-      <category term="Git" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Git/"/>
+      <category term="Git" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Git/"/>
     
     
-      <category term="Git" scheme="http://blog.jiangnan.pw/tags/Git/"/>
+      <category term="Git" scheme="https://github.jiangnan.pw/tags/Git/"/>
     
-      <category term="GitHub" scheme="http://blog.jiangnan.pw/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://github.jiangnan.pw/tags/GitHub/"/>
     
   </entry>
   
   <entry>
     <title>导入数据库时报错1067–Invalid default value for ‘字段名’</title>
-    <link href="http://blog.jiangnan.pw/cj73bpive001ee67kqu27tev8/"/>
-    <id>http://blog.jiangnan.pw/cj73bpive001ee67kqu27tev8/</id>
+    <link href="https://github.jiangnan.pw/cj73bpive001ee67kqu27tev8/"/>
+    <id>https://github.jiangnan.pw/cj73bpive001ee67kqu27tev8/</id>
     <published>2017-07-31T19:44:49.000Z</published>
     <updated>2017-07-31T02:09:53.000Z</updated>
     
@@ -163,19 +163,19 @@
     
     </summary>
     
-      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+      <category term="技术分享" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
-      <category term="MySql" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/MySql/"/>
+      <category term="MySql" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/MySql/"/>
     
     
-      <category term="MySql" scheme="http://blog.jiangnan.pw/tags/MySql/"/>
+      <category term="MySql" scheme="https://github.jiangnan.pw/tags/MySql/"/>
     
   </entry>
   
   <entry>
     <title>centos6 yum方式升级内核</title>
-    <link href="http://blog.jiangnan.pw/cj73bpitw000se67kxax7mbd3/"/>
-    <id>http://blog.jiangnan.pw/cj73bpitw000se67kxax7mbd3/</id>
+    <link href="https://github.jiangnan.pw/cj73bpitw000se67kxax7mbd3/"/>
+    <id>https://github.jiangnan.pw/cj73bpitw000se67kxax7mbd3/</id>
     <published>2017-07-31T06:28:41.000Z</published>
     <updated>2017-07-31T02:33:58.000Z</updated>
     
@@ -219,21 +219,21 @@
     
     </summary>
     
-      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+      <category term="技术分享" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
-      <category term="Docker" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Docker/"/>
+      <category term="Docker" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Docker/"/>
     
     
-      <category term="docker" scheme="http://blog.jiangnan.pw/tags/docker/"/>
+      <category term="docker" scheme="https://github.jiangnan.pw/tags/docker/"/>
     
-      <category term="centos" scheme="http://blog.jiangnan.pw/tags/centos/"/>
+      <category term="centos" scheme="https://github.jiangnan.pw/tags/centos/"/>
     
   </entry>
   
   <entry>
     <title>mysql错误Error(1133)</title>
-    <link href="http://blog.jiangnan.pw/cj73bpiuu0016e67knn3elo5n/"/>
-    <id>http://blog.jiangnan.pw/cj73bpiuu0016e67knn3elo5n/</id>
+    <link href="https://github.jiangnan.pw/cj73bpiuu0016e67knn3elo5n/"/>
+    <id>https://github.jiangnan.pw/cj73bpiuu0016e67knn3elo5n/</id>
     <published>2017-07-29T19:44:49.000Z</published>
     <updated>2017-07-29T10:51:11.000Z</updated>
     
@@ -252,19 +252,19 @@
     
     </summary>
     
-      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+      <category term="技术分享" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
-      <category term="MySql" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/MySql/"/>
+      <category term="MySql" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/MySql/"/>
     
     
-      <category term="MySql" scheme="http://blog.jiangnan.pw/tags/MySql/"/>
+      <category term="MySql" scheme="https://github.jiangnan.pw/tags/MySql/"/>
     
   </entry>
   
   <entry>
     <title>htpasswd命令</title>
-    <link href="http://blog.jiangnan.pw/cj73bpivm001ke67kd6569eiq/"/>
-    <id>http://blog.jiangnan.pw/cj73bpivm001ke67kd6569eiq/</id>
+    <link href="https://github.jiangnan.pw/cj73bpivm001ke67kd6569eiq/"/>
+    <id>https://github.jiangnan.pw/cj73bpivm001ke67kd6569eiq/</id>
     <published>2017-04-02T22:11:14.000Z</published>
     <updated>2017-04-02T13:24:02.000Z</updated>
     
@@ -296,21 +296,21 @@
     
     </summary>
     
-      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+      <category term="技术分享" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
-      <category term="Nginx" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Nginx/"/>
+      <category term="Nginx" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Nginx/"/>
     
     
-      <category term="nginx" scheme="http://blog.jiangnan.pw/tags/nginx/"/>
+      <category term="nginx" scheme="https://github.jiangnan.pw/tags/nginx/"/>
     
-      <category term="htpasswd" scheme="http://blog.jiangnan.pw/tags/htpasswd/"/>
+      <category term="htpasswd" scheme="https://github.jiangnan.pw/tags/htpasswd/"/>
     
   </entry>
   
   <entry>
     <title>Mac OSX开发环境搭建手记</title>
-    <link href="http://blog.jiangnan.pw/cj73bpiwc0025e67kuj5rnax7/"/>
-    <id>http://blog.jiangnan.pw/cj73bpiwc0025e67kuj5rnax7/</id>
+    <link href="https://github.jiangnan.pw/cj73bpiwc0025e67kuj5rnax7/"/>
+    <id>https://github.jiangnan.pw/cj73bpiwc0025e67kuj5rnax7/</id>
     <published>2017-03-23T04:47:40.000Z</published>
     <updated>2017-07-29T10:31:55.000Z</updated>
     
@@ -442,23 +442,23 @@
     
     </summary>
     
-      <category term="苹果相关" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
+      <category term="苹果相关" scheme="https://github.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
+      <category term="Mac技巧" scheme="https://github.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
     
     
-      <category term="nginx" scheme="http://blog.jiangnan.pw/tags/nginx/"/>
+      <category term="nginx" scheme="https://github.jiangnan.pw/tags/nginx/"/>
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
+      <category term="Mac技巧" scheme="https://github.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
     
-      <category term="php" scheme="http://blog.jiangnan.pw/tags/php/"/>
+      <category term="php" scheme="https://github.jiangnan.pw/tags/php/"/>
     
   </entry>
   
   <entry>
     <title>Why is @font-face throwing a 404 error on woff files?</title>
-    <link href="http://blog.jiangnan.pw/cj73bpiun0011e67k4vzqgire/"/>
-    <id>http://blog.jiangnan.pw/cj73bpiun0011e67k4vzqgire/</id>
+    <link href="https://github.jiangnan.pw/cj73bpiun0011e67k4vzqgire/"/>
+    <id>https://github.jiangnan.pw/cj73bpiun0011e67k4vzqgire/</id>
     <published>2017-02-26T05:54:08.000Z</published>
     <updated>2017-02-26T06:01:20.000Z</updated>
     
@@ -480,19 +480,19 @@
     
     </summary>
     
-      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+      <category term="技术分享" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
-      <category term="IIS" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/IIS/"/>
+      <category term="IIS" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/IIS/"/>
     
     
-      <category term="IIS" scheme="http://blog.jiangnan.pw/tags/IIS/"/>
+      <category term="IIS" scheme="https://github.jiangnan.pw/tags/IIS/"/>
     
   </entry>
   
   <entry>
     <title>0x80004005 未指定的错误</title>
-    <link href="http://blog.jiangnan.pw/cj73bpiuf000ye67kcnx9w4h9/"/>
-    <id>http://blog.jiangnan.pw/cj73bpiuf000ye67kcnx9w4h9/</id>
+    <link href="https://github.jiangnan.pw/cj73bpiuf000ye67kcnx9w4h9/"/>
+    <id>https://github.jiangnan.pw/cj73bpiuf000ye67kcnx9w4h9/</id>
     <published>2017-02-24T18:21:51.000Z</published>
     <updated>2017-02-24T18:37:24.000Z</updated>
     
@@ -520,19 +520,19 @@
     
     </summary>
     
-      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+      <category term="技术分享" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
-      <category term="IIS" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/IIS/"/>
+      <category term="IIS" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/IIS/"/>
     
     
-      <category term="IIS" scheme="http://blog.jiangnan.pw/tags/IIS/"/>
+      <category term="IIS" scheme="https://github.jiangnan.pw/tags/IIS/"/>
     
   </entry>
   
   <entry>
     <title>Sublime配置文件同步</title>
-    <link href="http://blog.jiangnan.pw/cj73bpix7002ve67k8f4j2nn1/"/>
-    <id>http://blog.jiangnan.pw/cj73bpix7002ve67k8f4j2nn1/</id>
+    <link href="https://github.jiangnan.pw/cj73bpix7002ve67k8f4j2nn1/"/>
+    <id>https://github.jiangnan.pw/cj73bpix7002ve67k8f4j2nn1/</id>
     <published>2017-02-22T04:14:37.000Z</published>
     <updated>2017-02-22T04:18:44.000Z</updated>
     
@@ -577,21 +577,21 @@
     
     </summary>
     
-      <category term="软件相关" scheme="http://blog.jiangnan.pw/categories/%E8%BD%AF%E4%BB%B6%E7%9B%B8%E5%85%B3/"/>
+      <category term="软件相关" scheme="https://github.jiangnan.pw/categories/%E8%BD%AF%E4%BB%B6%E7%9B%B8%E5%85%B3/"/>
     
-      <category term="Windows" scheme="http://blog.jiangnan.pw/categories/%E8%BD%AF%E4%BB%B6%E7%9B%B8%E5%85%B3/Windows/"/>
+      <category term="Windows" scheme="https://github.jiangnan.pw/categories/%E8%BD%AF%E4%BB%B6%E7%9B%B8%E5%85%B3/Windows/"/>
     
     
-      <category term="Sublime" scheme="http://blog.jiangnan.pw/tags/Sublime/"/>
+      <category term="Sublime" scheme="https://github.jiangnan.pw/tags/Sublime/"/>
     
-      <category term="编程软件" scheme="http://blog.jiangnan.pw/tags/%E7%BC%96%E7%A8%8B%E8%BD%AF%E4%BB%B6/"/>
+      <category term="编程软件" scheme="https://github.jiangnan.pw/tags/%E7%BC%96%E7%A8%8B%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   
   <entry>
     <title>找回Sierra允许“任何来源”的应用</title>
-    <link href="http://blog.jiangnan.pw/cj73bpiwv002me67kjs6w1vw1/"/>
-    <id>http://blog.jiangnan.pw/cj73bpiwv002me67kjs6w1vw1/</id>
+    <link href="https://github.jiangnan.pw/cj73bpiwv002me67kjs6w1vw1/"/>
+    <id>https://github.jiangnan.pw/cj73bpiwv002me67kjs6w1vw1/</id>
     <published>2017-02-16T16:13:07.000Z</published>
     <updated>2017-02-16T16:24:50.000Z</updated>
     
@@ -615,19 +615,19 @@
     
     </summary>
     
-      <category term="苹果相关" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
+      <category term="苹果相关" scheme="https://github.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
+      <category term="Mac技巧" scheme="https://github.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
     
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
+      <category term="Mac技巧" scheme="https://github.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   
   <entry>
     <title>移除Mac的.DS_Store、._ 檔</title>
-    <link href="http://blog.jiangnan.pw/cj73bpiwy002oe67kp835csc3/"/>
-    <id>http://blog.jiangnan.pw/cj73bpiwy002oe67kp835csc3/</id>
+    <link href="https://github.jiangnan.pw/cj73bpiwy002oe67kp835csc3/"/>
+    <id>https://github.jiangnan.pw/cj73bpiwy002oe67kp835csc3/</id>
     <published>2017-02-16T01:28:40.000Z</published>
     <updated>2017-02-16T01:45:00.000Z</updated>
     
@@ -662,19 +662,19 @@
     
     </summary>
     
-      <category term="苹果相关" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
+      <category term="苹果相关" scheme="https://github.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
+      <category term="Mac技巧" scheme="https://github.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
     
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
+      <category term="Mac技巧" scheme="https://github.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   
   <entry>
     <title>OS X 10.10.5 下做端口转发</title>
-    <link href="http://blog.jiangnan.pw/cj73bpiwr002he67krgwvrx2j/"/>
-    <id>http://blog.jiangnan.pw/cj73bpiwr002he67krgwvrx2j/</id>
+    <link href="https://github.jiangnan.pw/cj73bpiwr002he67krgwvrx2j/"/>
+    <id>https://github.jiangnan.pw/cj73bpiwr002he67krgwvrx2j/</id>
     <published>2017-02-11T18:30:08.000Z</published>
     <updated>2017-02-11T18:43:28.000Z</updated>
     
@@ -696,19 +696,19 @@
     
     </summary>
     
-      <category term="苹果相关" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
+      <category term="苹果相关" scheme="https://github.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
+      <category term="Mac技巧" scheme="https://github.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
     
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
+      <category term="Mac技巧" scheme="https://github.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   
   <entry>
     <title>让git push命令不再需要密码</title>
-    <link href="http://blog.jiangnan.pw/cj73bpiu0000te67kkcxoskiu/"/>
-    <id>http://blog.jiangnan.pw/cj73bpiu0000te67kkcxoskiu/</id>
+    <link href="https://github.jiangnan.pw/cj73bpiu0000te67kkcxoskiu/"/>
+    <id>https://github.jiangnan.pw/cj73bpiu0000te67kkcxoskiu/</id>
     <published>2017-02-09T04:13:11.000Z</published>
     <updated>2017-02-09T04:17:33.000Z</updated>
     
@@ -727,21 +727,21 @@
     
     </summary>
     
-      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+      <category term="技术分享" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
-      <category term="Git" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Git/"/>
+      <category term="Git" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Git/"/>
     
     
-      <category term="Git" scheme="http://blog.jiangnan.pw/tags/Git/"/>
+      <category term="Git" scheme="https://github.jiangnan.pw/tags/Git/"/>
     
-      <category term="GitHub" scheme="http://blog.jiangnan.pw/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://github.jiangnan.pw/tags/GitHub/"/>
     
   </entry>
   
   <entry>
     <title>GitHub初心者の僕が、初めてGitHubリポジトリにpushしたら、rejectedエラーになったので、ちゃんとpushできるようになるまでの対応をメモしました。</title>
-    <link href="http://blog.jiangnan.pw/cj73bpiua000xe67ker0ac9iv/"/>
-    <id>http://blog.jiangnan.pw/cj73bpiua000xe67ker0ac9iv/</id>
+    <link href="https://github.jiangnan.pw/cj73bpiua000xe67ker0ac9iv/"/>
+    <id>https://github.jiangnan.pw/cj73bpiua000xe67ker0ac9iv/</id>
     <published>2017-02-09T01:35:00.000Z</published>
     <updated>2017-02-09T04:05:02.000Z</updated>
     
@@ -775,21 +775,21 @@
     
     </summary>
     
-      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+      <category term="技术分享" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
-      <category term="Git" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Git/"/>
+      <category term="Git" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Git/"/>
     
     
-      <category term="Git" scheme="http://blog.jiangnan.pw/tags/Git/"/>
+      <category term="Git" scheme="https://github.jiangnan.pw/tags/Git/"/>
     
-      <category term="GitHub" scheme="http://blog.jiangnan.pw/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://github.jiangnan.pw/tags/GitHub/"/>
     
   </entry>
   
   <entry>
     <title>Laravel5自定义环境变量</title>
-    <link href="http://blog.jiangnan.pw/cj73bpiva0019e67kp3wi3nc9/"/>
-    <id>http://blog.jiangnan.pw/cj73bpiva0019e67kp3wi3nc9/</id>
+    <link href="https://github.jiangnan.pw/cj73bpiva0019e67kp3wi3nc9/"/>
+    <id>https://github.jiangnan.pw/cj73bpiva0019e67kp3wi3nc9/</id>
     <published>2017-02-03T07:19:55.000Z</published>
     <updated>2017-02-03T04:48:05.000Z</updated>
     
@@ -853,19 +853,19 @@
     
     </summary>
     
-      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+      <category term="技术分享" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
-      <category term="Laravel" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Laravel/"/>
+      <category term="Laravel" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Laravel/"/>
     
     
-      <category term="laravel" scheme="http://blog.jiangnan.pw/tags/laravel/"/>
+      <category term="laravel" scheme="https://github.jiangnan.pw/tags/laravel/"/>
     
   </entry>
   
   <entry>
     <title>开启Fusion Drive功能教程 双硬盘 SSD+HDD</title>
-    <link href="http://blog.jiangnan.pw/cj73bpiwo002fe67k2fmv5s52/"/>
-    <id>http://blog.jiangnan.pw/cj73bpiwo002fe67k2fmv5s52/</id>
+    <link href="https://github.jiangnan.pw/cj73bpiwo002fe67k2fmv5s52/"/>
+    <id>https://github.jiangnan.pw/cj73bpiwo002fe67k2fmv5s52/</id>
     <published>2017-02-03T05:44:35.000Z</published>
     <updated>2017-07-29T10:39:55.000Z</updated>
     
@@ -920,19 +920,19 @@
     
     </summary>
     
-      <category term="苹果相关" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
+      <category term="苹果相关" scheme="https://github.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
+      <category term="Mac技巧" scheme="https://github.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
     
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
+      <category term="Mac技巧" scheme="https://github.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   
   <entry>
     <title>Cloud9でLaravel5の環境構築</title>
-    <link href="http://blog.jiangnan.pw/cj73bpirj0008e67k33llpoko/"/>
-    <id>http://blog.jiangnan.pw/cj73bpirj0008e67k33llpoko/</id>
+    <link href="https://github.jiangnan.pw/cj73bpirj0008e67k33llpoko/"/>
+    <id>https://github.jiangnan.pw/cj73bpirj0008e67k33llpoko/</id>
     <published>2017-02-03T04:58:48.000Z</published>
     <updated>2017-02-03T05:13:14.000Z</updated>
     
@@ -963,17 +963,17 @@
     
     </summary>
     
-      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+      <category term="技术分享" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
     
-      <category term="Cloud9" scheme="http://blog.jiangnan.pw/tags/Cloud9/"/>
+      <category term="Cloud9" scheme="https://github.jiangnan.pw/tags/Cloud9/"/>
     
   </entry>
   
   <entry>
     <title>解决升级 OS X EI Capitan 后 Wineskin 打包的游戏无法运行的问题</title>
-    <link href="http://blog.jiangnan.pw/cj73bpix4002te67kfejzvh80/"/>
-    <id>http://blog.jiangnan.pw/cj73bpix4002te67kfejzvh80/</id>
+    <link href="https://github.jiangnan.pw/cj73bpix4002te67kfejzvh80/"/>
+    <id>https://github.jiangnan.pw/cj73bpix4002te67kfejzvh80/</id>
     <published>2017-01-20T04:05:05.000Z</published>
     <updated>2017-02-09T03:53:56.000Z</updated>
     
@@ -1034,19 +1034,19 @@
     
     </summary>
     
-      <category term="苹果相关" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
+      <category term="苹果相关" scheme="https://github.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/"/>
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
+      <category term="Mac技巧" scheme="https://github.jiangnan.pw/categories/%E8%8B%B9%E6%9E%9C%E7%9B%B8%E5%85%B3/Mac%E6%8A%80%E5%B7%A7/"/>
     
     
-      <category term="Mac技巧" scheme="http://blog.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
+      <category term="Mac技巧" scheme="https://github.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   
   <entry>
     <title>Nginxのエラーページをカスタマイズする方法</title>
-    <link href="http://blog.jiangnan.pw/cj73bpivj001ge67k6s56hkdn/"/>
-    <id>http://blog.jiangnan.pw/cj73bpivj001ge67k6s56hkdn/</id>
+    <link href="https://github.jiangnan.pw/cj73bpivj001ge67k6s56hkdn/"/>
+    <id>https://github.jiangnan.pw/cj73bpivj001ge67k6s56hkdn/</id>
     <published>2017-01-19T08:06:00.000Z</published>
     <updated>2017-07-29T10:42:39.000Z</updated>
     
@@ -1079,12 +1079,12 @@
     
     </summary>
     
-      <category term="技术分享" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+      <category term="技术分享" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
-      <category term="Nginx" scheme="http://blog.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Nginx/"/>
+      <category term="Nginx" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Nginx/"/>
     
     
-      <category term="nginx" scheme="http://blog.jiangnan.pw/tags/nginx/"/>
+      <category term="nginx" scheme="https://github.jiangnan.pw/tags/nginx/"/>
     
   </entry>
   

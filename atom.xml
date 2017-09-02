@@ -301,9 +301,9 @@
       <category term="Nginx" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Nginx/"/>
     
     
-      <category term="htpasswd" scheme="https://github.jiangnan.pw/tags/htpasswd/"/>
-    
       <category term="nginx" scheme="https://github.jiangnan.pw/tags/nginx/"/>
+    
+      <category term="htpasswd" scheme="https://github.jiangnan.pw/tags/htpasswd/"/>
     
   </entry>
   

@@ -341,7 +341,7 @@
     <link href="https://github.jiangnan.pw/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/MySql/mysql%E9%94%99%E8%AF%AFError(1133)/"/>
     <id>https://github.jiangnan.pw/技术分享/MySql/mysql错误Error(1133)/</id>
     <published>2017-07-29T19:44:49.000Z</published>
-    <updated>2017-07-29T10:51:11.000Z</updated>
+    <updated>2017-09-05T02:33:17.251Z</updated>
     
     <content type="html"><![CDATA[<!--excerpt-->
 <h3 id="mysql错误Error-1133-Can’t-find-any-matching-row-in-the-user-table"><a href="#mysql错误Error-1133-Can’t-find-any-matching-row-in-the-user-table" class="headerlink" title="mysql错误Error(1133): Can’t find any matching row in the user table"></a>mysql错误Error(1133): Can’t find any matching row in the user table</h3><p>刚尝试修改mysql数据库用户名时，提示”Error (1133): Can’t find any matching row in the user table”，遂找了下网上的解决办法：</p>

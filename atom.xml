@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.jiangnan.pw/"/>
-  <updated>2017-09-05T02:26:46.959Z</updated>
+  <updated>2017-09-18T13:07:39.899Z</updated>
   <id>https://github.jiangnan.pw/</id>
   
   <author>
@@ -14,6 +14,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Profile Builder to add support for PolyLang plugin in field titles</title>
+    <link href="https://github.jiangnan.pw/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/WordPress/Profile%20Builder%20support%20PolyLang/"/>
+    <id>https://github.jiangnan.pw/技术分享/WordPress/Profile Builder support PolyLang/</id>
+    <published>2017-09-18T22:04:39.000Z</published>
+    <updated>2017-09-18T13:07:39.899Z</updated>
+    
+    <content type="html"><![CDATA[<p>Shortcode to add support for PolyLang plugin in field titles, descriptions and labels.</p>
+<p><strong>Make sure to:</strong></p>
+<ul>
+<li>Change Label name in Manage Fields (<strong>click image</strong>):</li>
+</ul>
+<p><a href=""><img src="https://lh3.googleusercontent.com/-VHCXjHsliLE/Wb6x_rST8XI/AAAAAAAADec/yogRDcV_MK0EPKralcNt9GXjNywID8QFQCHMYCw/I/1-300x91.png" alt="1"></a></p>
+<p>Label name must be (for English and Francais):</p>
+<p>UsernameNom d’utilizateur</p>
+<p>You can add as many languages as you need.</p>
+<p>You must translate each field like in the e.g. above.</p>
+<ul>
+<li>Add shortcode at the top of your page:</li>
+</ul>
+<p><strong>[wppb_polylang_compat]</strong></p>
+<p>Now when you change language with Language Switcher the fields language will change.</p>
+<p>This is more like a hack to make it work.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> * Shortcode to add support for PolyLang plugin in field titles, descriptions and labels.</div><div class="line"> */</div><div class="line"></div><div class="line">add_shortcode(&apos;wppb_polylang_compat&apos;, &apos;wppb_polylang_compat&apos;);</div><div class="line">function wppb_polylang_compat($atts,$content=null)&#123;</div><div class="line">   return &quot;</div><div class="line">      jQuery(document).ready(function()&#123;</div><div class="line">         curr_lang = jQuery(&apos;html&apos;)[0].lang;</div><div class="line">         jQuery(&apos;.wppb-user-forms li label &gt; span, .wppb-user-forms li .wppb-description-delimiter &gt; span&apos;).each(function(element)&#123;</div><div class="line">            jQuery(this).hide();</div><div class="line">            if ( jQuery(this).attr(&apos;lang&apos;) == curr_lang )&#123;</div><div class="line">               jQuery(this).show();</div><div class="line">            &#125;</div><div class="line">         &#125;)</div><div class="line">      &#125;);</div><div class="line">   &quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Shortcode to add support for PolyLang plugin in field titles, descriptions and labels.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Make sure to:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li
+    
+    </summary>
+    
+      <category term="技术分享" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+      <category term="WordPress" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/WordPress/"/>
+    
+    
+      <category term="WordPress" scheme="https://github.jiangnan.pw/tags/WordPress/"/>
+    
+      <category term="plugins" scheme="https://github.jiangnan.pw/tags/plugins/"/>
+    
+  </entry>
   
   <entry>
     <title>visual studio code（vscode）调试php</title>
@@ -182,9 +227,9 @@
     
       <category term="php" scheme="https://github.jiangnan.pw/tags/php/"/>
     
-      <category term="postfix" scheme="https://github.jiangnan.pw/tags/postfix/"/>
-    
       <category term="mail" scheme="https://github.jiangnan.pw/tags/mail/"/>
+    
+      <category term="postfix" scheme="https://github.jiangnan.pw/tags/postfix/"/>
     
   </entry>
   
@@ -407,9 +452,9 @@
       <category term="Nginx" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Nginx/"/>
     
     
-      <category term="nginx" scheme="https://github.jiangnan.pw/tags/nginx/"/>
-    
       <category term="htpasswd" scheme="https://github.jiangnan.pw/tags/htpasswd/"/>
+    
+      <category term="nginx" scheme="https://github.jiangnan.pw/tags/nginx/"/>
     
   </entry>
   
@@ -1032,47 +1077,6 @@
     
     
       <category term="Mac技巧" scheme="https://github.jiangnan.pw/tags/Mac%E6%8A%80%E5%B7%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Cloud9でLaravel5の環境構築</title>
-    <link href="https://github.jiangnan.pw/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/Cloud9%E3%81%A7Laravel5%E3%81%AE%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/"/>
-    <id>https://github.jiangnan.pw/技术分享/Cloud9でLaravel5の環境構築/</id>
-    <published>2017-02-03T04:58:48.000Z</published>
-    <updated>2017-02-03T05:13:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<!--excerpt-->
-<h2 id="プロジェクト作成"><a href="#プロジェクト作成" class="headerlink" title="プロジェクト作成"></a>プロジェクト作成</h2><p><img src="https://lh3.googleusercontent.com/-SXJRijcQ4F4/WJQPLCrNGrI/AAAAAAAAAzY/liQI8sZCmkU/s0/2017-02-03_14-03-41.png" alt=""><br><code>Workspace</code>名とテンプレートに<code>PHP</code>を選択します。<code>Hosted workspace</code>は<code>Private</code>でも<code>Public</code>でもどちらも構いませんが<code>Public</code>の場合はすべての人に公開されてしまいます。またフリー版では<code>Private</code>の<code>Workspace</code>は１つだけとなっています。</p>
-<h2 id="Laravel5のプロジェクト作成"><a href="#Laravel5のプロジェクト作成" class="headerlink" title="Laravel5のプロジェクト作成"></a><code>Laravel5</code>のプロジェクト作成</h2><p>新しいタブでターミナルを開いてください。<br>以下のコマンドを実行してプロジェクトを作成してください。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">rm README.md php.ini hello-world.php</div><div class="line">sudo composer self-update</div><div class="line">composer create-project laravel/laravel ./laravel --prefer-dist</div><div class="line">shopt -s dotglob</div><div class="line">mv laravel/* ./</div><div class="line">rm -rf laravel</div></pre></td></tr></table></figure>
-<p>完了まで数分かかかります。</p>
-<h2 id="Apacheのconf設定"><a href="#Apacheのconf設定" class="headerlink" title="Apacheのconf設定"></a>Apacheのconf設定</h2><p>以下のファイルを<code>vi</code>で開いて、<code>DocumentRoot</code>を以下に変更してください。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/apache2/sites-enabled/001-cloud9.conf</div></pre></td></tr></table></figure>
-<p>編集箇所</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DocumentRoot /home/ubuntu/workspace/public</div></pre></td></tr></table></figure>
-<h2 id="アップデート"><a href="#アップデート" class="headerlink" title="アップデート"></a>アップデート</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer update</div></pre></td></tr></table></figure>
-<h2 id="DB設定"><a href="#DB設定" class="headerlink" title="DB設定"></a>DB設定</h2><p>プロジェクトを作成した際に<code>MySQL</code>の<code>DB</code>が同時に作成されています。<br>まずは下記コマンドを実行して接続先のホスト名を確認しましょう。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mysql-ctl cli</div><div class="line">use c9;</div><div class="line">select @@hostname;　　←ホスト名が表示される</div><div class="line">exit</div></pre></td></tr></table></figure>
-<h2 id="LaravelのDB接続設定"><a href="#LaravelのDB接続設定" class="headerlink" title="LaravelのDB接続設定"></a><code>Laravel</code>の<code>DB</code>接続設定</h2><p> ワークスペースの直下に<code>「.env」</code>ファイルがありますが、エディタのエクスプローラーからは見えないです。（設定で表示可能かもしれませんが分かりませんでした。）ターミナルからファイルをvimで開いて編集してください。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">DB_HOST=HOSTNAME　　←上で確認したホスト名をセット</div><div class="line">DB_DATABASE=c9　　　  ←初期値</div><div class="line">DB_USERNAME=USERNAME　←cloud9のユーザー名</div><div class="line">DB_PASSWORD=　　　　　　←初期値は空でOK</div></pre></td></tr></table></figure>
-<h2 id="起動確認"><a href="#起動確認" class="headerlink" title="起動確認"></a>起動確認</h2><p>ひと通り設定は完了したので、<code>Apache</code>を起動して確認してみましょう。<br><code>Run</code>ボタンをクリックして画面下部に表示されたurlをクリックすると初期画面が表示されます。下記のように表示されていれば完了です。（<code>Laravel5</code>の場合）</p>
-<p><img src="https://lh3.googleusercontent.com/-iYRTE3BEO3o/WJQQf8428QI/AAAAAAAAAzo/FSuSCDBxU50/s0/2017-02-03_14-09-19.png" alt=""></p>
-<p>手軽に環境を作成したいと思いましたが、テンプレートが用意されていないとまだまだ手間がかかります。ここはもう少し改善を期待したいです。</p>
-<p>また、<code>Laravel</code>のプロジェクトとしてアプリを利用するためには、権限の変更などまだいくつか設定が 必要になりますが、そこは下記リンクや他で色々と紹介されていますので参照してみてください。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;!--excerpt--&gt;
-&lt;h2 id=&quot;プロジェクト作成&quot;&gt;&lt;a href=&quot;#プロジェクト作成&quot; class=&quot;headerlink&quot; title=&quot;プロジェクト作成&quot;&gt;&lt;/a&gt;プロジェクト作成&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://lh3.googleuse
-    
-    </summary>
-    
-      <category term="技术分享" scheme="https://github.jiangnan.pw/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="Cloud9" scheme="https://github.jiangnan.pw/tags/Cloud9/"/>
     
   </entry>
   

@@ -1,0 +1,19 @@
+[{
+    "image": "https://img.alicdn.com/imgextra/i3/91875185/TB2RZxcXSiK.eBjSZFsXXbxZpXa_!!91875185.jpg",
+    "align": "left",
+    "title": "微信扫描二维码",
+    "subtitle": "加微信了解网站最新动态！",
+	"link": "/"
+}, {
+    "image": "https://img.alicdn.com/imgextra/i2/91875185/TB2RKxbXNaK.eBjSZFwXXXjsFXa_!!91875185.png",
+    "align": "center",
+    "title": "个人博客v3正式上线！",
+    "subtitle": "清爽简约，新年再续高B格",
+	"link": null
+}, {
+    "image": "https://img.alicdn.com/imgextra/i4/91875185/TB2hhwjXseJ.eBjy0FiXXXqapXa_!!91875185.png",
+    "align": "right",
+    "title": "新版关于页面",
+    "subtitle": "了解我的技术之路。",
+	"link": "/about"
+}]

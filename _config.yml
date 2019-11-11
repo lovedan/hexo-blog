@@ -1,0 +1,136 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: 江南品味|记录编程道路上的点点滴滴!!!
+subtitle: 记录编程道路上的点点滴滴!!!
+description: 记录编程道路上的点点滴滴!!!
+author: 江南品味
+language: zh-CN
+timezone:
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://github.jiangnan.pw
+enforce_ssl: github.jiangnan.pw
+root: /
+# permalink: :year/:month/:day/:title/
+# :year 文章的发表年份（4 位数） 
+# :month 文章的发表月份（2 位数） 
+# :i_month 文章的发表月份（去掉开头的零） 
+# :day 文章的发表日期 (2 位数) 
+# :i_day 文章的发表日期（去掉开头的零） 
+# :title 文件名称 
+# :id 文章 ID 
+# :category 分类。如果文章没有分类，则是 default_category 配置信息。 
+permalink: :title/
+permalink_defaults:
+  category: nocategory
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false #hexo new post "" 会创建同名文件夹
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 12
+pagination_dir: page
+#archive_generator:
+#  per_page: 0
+#tag_generator:
+#  per_page: 0
+#category_generator:
+#  per_page: 0
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: hueman
+#stylus:
+#  compress: true
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git    
+  #注意替换username为你的github用户名
+  #repo: git@github.com:lovedan/lovedan.github.io.git
+  
+  repo: 
+    #github: git@github.com:lovedan/lovedan.github.io.git,master
+    github: git@github.com:lovedan/hexo-blog.git,master
+    coding: git@git.coding.net:lovedan/hexo.git,master
+    gitlab: git@gitlab.com:lovedan/lovedan.gitlab.io.git,master
+  #部署分支,一般使用master主分支
+#  branch: master
+#  npm install hexo-generator-feed --save
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+# npm install hexo-generator-search --save
+# npm uninstall hexo-generator-search
+#search:
+#  path: search.xml
+#  field: all
+#  field: post
+
+algolia:
+  appId: "7VU1JJ4HH9"
+  apiKey: "e6730948bb5dfb177504d26b12210c5f"
+  adminApiKey: "9af9f044e439e9b97d4f5151ac177561"
+  chunkSize: 5000
+  indexName: "tranquilpeak"
+  fields:
+    - title
+    - date
+    - permalink
+    - thumbnailImageUrl
+    - tags
+    - categories
+    - excerpt
+    - excerpt:strip
+# hexo clean & hexo algolia
+# Admin
+admin:
+    name: lovedan
+    password: jiangnan
+    secret: hey hexo
+    expire: 60*1
+    # cors: http://localhost:3000

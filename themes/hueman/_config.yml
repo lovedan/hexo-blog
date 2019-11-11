@@ -1,0 +1,77 @@
+# Menus
+menu:
+    Home: /
+    # Delete this row if you don't want categories in your header nav bar
+    Categories:
+    Tool: https://github.jiangnan.pw/tools/
+    Cloud: https://cloud.jiangnan.pw/
+    About: /about/
+
+# Customize
+customize:
+    logo:
+        width: 165
+        height: 60
+        url: images/logo-header.png
+    theme_color: '#d35'
+    highlight: androidstudio # options tomorrow , androidstudio
+    sidebar: right # sidebar position, options: left, right
+    thumbnail: true # enable posts thumbnail, options: true, false
+    favicon: # path to favicon
+    social_links: # for more icons, please see http://fontawesome.io/icons/#brand
+        twitter: https://twitter.com/kyounan719
+        facebook: https://facebook.com/kyounan719
+        tumblr: http://tumblr.jiangnan.pw
+        google-plus: https://plus.google.com/103371492334107231388
+        github: https://github.com/lovedan
+        weibo: http://www.weibo.com/ddmfnet
+        rss: /atom.xml
+
+# Widgets
+widgets:
+    - recent_posts
+    - category
+    - archive
+#    - tag
+    - tagcloud
+    - links
+
+# Search
+search:
+    #npm i -S hexo-generator-json-content@1 安装插件
+    insight: true # you need to install `hexo-generator-json-content` before using Insight Search
+    swiftype: # enter swiftype install key here
+    baidu: false # you need to disable other search engines to use Baidu search, options: true, false
+
+# Comment
+comment:
+    disqus: jiangnan # enter disqus shortname here
+    duoshuo: # enter duoshuo shortname here
+    youyan: #1642150 # enter youyan uid here
+    facebook: # enter true to enable
+
+# Share
+share: addtoany # options: jiathis, bdshare, addtoany, default
+
+# Plugins
+plugins:
+    lightgallery: true # options: true, false
+    google_analytics: # enter the tracking ID for your Google Analytics
+    baidu_analytics: # enter Baidu Analytics hash key
+
+# Miscellaneous
+miscellaneous:
+    open_graph: # see http://ogp.me
+        fb_app_id:
+        fb_admins:
+        twitter_id: kyounan719
+        google_plus: 103371492334107231388
+    links:
+        艾旦影视: https://www.lovedan.net
+        蛋蛋魔法网: https://www.ddmf.net
+        Mac软件下载: https://app.ddmf.net
+        江南品味: https://jiangnan.pw
+        江南云: https://cloud.jiangnan.pw
+        江南品味（coding）: https://coding.jiangnan.pw
+        江南品味（github）: https://github.jiangnan.pw
+        江南品味（gitlab）: https://gitlab.jiangnan.pw

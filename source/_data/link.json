@@ -1,0 +1,11 @@
+{
+    "social": {
+        "weibo": "http://www.weibo.com/ddmfnet",
+        "github": "https://github.com/lovedan",
+		"rss": "/atom.xml"
+    },
+    "extern": {
+	    "江南云": "http://jiangnan.pw",
+		"蛋蛋魔法网": "http://ddmf.net"
+    }
+}

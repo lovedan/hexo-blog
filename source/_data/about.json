@@ -1,0 +1,34 @@
+{
+    "avatar": "http://jiangnan.qiniudn.com/images/IMG_0179.jpg",
+    "name": "江南品味",
+	"tag": "Web前端/iOS/技术宅",
+    "desc": "江湖中一个迷途的小码农！",
+    "skills": {
+        "Javascript": 8,
+		"Python": 6,
+		"PHP": 10,
+		"invisible-split-line-1": -1,
+		"Java": 6,
+		"Node.js": 4,
+		"Object-C": 4
+    },
+    "projects": [{
+		"name": "蛋蛋魔法网",
+		"image": "https://img.alicdn.com/imgextra/i1/91875185/TB2CwA6XE5O.eBjSZFxXXaaJFXa_!!91875185.png",
+		"tags": ["2016年", "WordPress"],
+		"description": "蛋蛋魔法网 | iPhone4S_iPad2_iPhone4_越狱_苹果官网_价格,游戏,软件,限时免费",
+		"link_text": "网站链接",
+		"link": "http://ddmf.net/"
+	}, {
+		"name": "在线工具",
+		"image": "https://img.alicdn.com/imgextra/i1/91875185/TB2rHk9XAWM.eBjSZFhXXbdWpXa_!!91875185.png",
+		"description": "江南品味为广大程序员提供的常用在线工具。",
+		"tags": ["Github", "在线工具"],
+		"link_text": "网址链接",
+		"link": "http://tool.jiangnan.pw/"
+	}],
+	"reward": [
+	    "http://ww4.sinaimg.cn/large/006tNc79gw1f5twh3wckcj30g90gagmp.jpg",
+		"http://ww3.sinaimg.cn/large/006tNc79gw1f5twl0chv8j30q40q4ad7.jpg"
+	]
+}

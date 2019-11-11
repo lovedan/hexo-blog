@@ -21,4 +21,4 @@ branches:
     - hexo
 env:
  global:
-   - GH_REF: github.com/lovedan/hexo.blog.git
+   - GH_REF: github.com/lovedan/hexo-blog.git

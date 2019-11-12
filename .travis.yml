@@ -24,4 +24,4 @@ branches:
 env:
  global:
    - GH_REF: github.com/lovedan/hexo-blog.git
-   - CO_REF: git@git.dev.tencent.com:lovedan/hexo.git
+   - CO_REF: git.dev.tencent.com/lovedan/hexo.git

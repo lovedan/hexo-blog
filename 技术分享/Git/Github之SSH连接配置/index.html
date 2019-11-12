@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>Github之SSH连接配置 | 江南品味|记录编程道路上的点点滴滴!!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Git,GitHub">
+    
+    <meta name="description" content="虽然github推荐使用https方式进行连接，但是ssh方式咱们也得会，官网上也都有详细的文档介绍，步骤比较简单，记录这篇的目的是给初入门的小伙伴多一个学习的门径，同时也方便日后自己查看。 前言在没有配置ssh的情况下使用ssh连接操作github库的时候会出现如下异常： 123456789$ git clone git@github.com:linmuxi/test-git.gitCloni">
+<meta name="keywords" content="Git,GitHub">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github之SSH连接配置">
+<meta property="og:url" content="https://github.jiangnan.pw/技术分享/Git/Github之SSH连接配置/index.html">
+<meta property="og:site_name" content="江南品味|记录编程道路上的点点滴滴!!!">
+<meta property="og:description" content="虽然github推荐使用https方式进行连接，但是ssh方式咱们也得会，官网上也都有详细的文档介绍，步骤比较简单，记录这篇的目的是给初入门的小伙伴多一个学习的门径，同时也方便日后自己查看。 前言在没有配置ssh的情况下使用ssh连接操作github库的时候会出现如下异常： 123456789$ git clone git@github.com:linmuxi/test-git.gitCloni">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://lh3.googleusercontent.com/-nnwlkrohkHo/WJvpWp8lRGI/AAAAAAAABcw/bl95WI6WWwI/s0/2017-02-09_13-00-25.png">
+<meta property="og:updated_time" content="2019-11-12T07:16:32.353Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Github之SSH连接配置">
+<meta name="twitter:description" content="虽然github推荐使用https方式进行连接，但是ssh方式咱们也得会，官网上也都有详细的文档介绍，步骤比较简单，记录这篇的目的是给初入门的小伙伴多一个学习的门径，同时也方便日后自己查看。 前言在没有配置ssh的情况下使用ssh连接操作github库的时候会出现如下异常： 123456789$ git clone git@github.com:linmuxi/test-git.gitCloni">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/-nnwlkrohkHo/WJvpWp8lRGI/AAAAAAAABcw/bl95WI6WWwI/s0/2017-02-09_13-00-25.png">
+<meta name="twitter:creator" content="@kyounan719">
+<link rel="publisher" href="103371492334107230000">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="江南品味|记录编程道路上的点点滴滴!!!" type="application/atom+xml">
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+
+    <link rel="canonical" href="https://github.jiangnan.pw/技术分享/Git/Github之SSH连接配置/">
+    <script type="text/javascript">
+           if (window.location.protocol != "https:")
+               window.location.protocol = "https";
+    </script>
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">记录编程道路上的点点滴滴!!!</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/作品展示/">作品展示</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/">技术分享</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/Docker/">Docker</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/Git/">Git</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/IIS/">IIS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/Laravel/">Laravel</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/MySql/">MySql</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/Nginx/">Nginx</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术分享/WordPress/">WordPress</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/苹果相关/">苹果相关</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/苹果相关/Mac软件/">Mac软件</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/软件相关/">软件相关</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/软件相关/Windows/">Windows</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" href="https://github.jiangnan.pw/tools/">在线工具</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" href="https://cloud.jiangnan.pw/">江南云</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" href="/about/">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/技术分享/Git/">Git</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-技术分享/Git/Github之SSH连接配置" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Github之SSH连接配置
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/技术分享/Git/Github之SSH连接配置/" class="article-date">
+    <time datetime="2019-11-12T07:16:32.353Z" itemprop="datePublished">2019-11-12</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <!--excerpt-->
+<p>虽然github推荐使用https方式进行连接，但是ssh方式咱们也得会，官网上也都有详细的<a href="https://help.github.com/articles/testing-your-ssh-connection/" target="_blank" rel="noopener">文档介绍</a>，步骤比较简单，记录这篇的目的是给初入门的小伙伴多一个学习的门径，同时也方便日后自己查看。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h2><p>在没有配置ssh的情况下使用ssh连接操作github库的时候会出现如下异常：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git clone git@github.com:linmuxi/test-git.git</span><br><span class="line">Cloning into &apos;test-git&apos;...</span><br><span class="line">Warning: Permanently added the RSA host key for IP address &apos;192.30.252.129&apos; to the list of known hosts.</span><br><span class="line">Permission denied (publickey).</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">~</span><br></pre></td></tr></table></figure>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a><strong>步骤</strong></h2><blockquote>
+<p>前提是我们已经新建好了一个库test-git,ssh路径是：<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:linmuxi/test-git.git</p>
+</blockquote>
+<h3 id="1、检查ssh-keys是否存在"><a href="#1、检查ssh-keys是否存在" class="headerlink" title="1、检查ssh keys是否存在"></a><strong>1、检查ssh keys是否存在</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls -al ~/.ssh</span><br></pre></td></tr></table></figure>
+<p>如果目录下面没有id_rsa、id_rsa.pub则表示key不存在</p>
+<h3 id="2、生成ssh-key"><a href="#2、生成ssh-key" class="headerlink" title="2、生成ssh key"></a><strong>2、生成ssh key</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/c/Users/Hunter/.ssh/id_rsa):</span><br><span class="line">Enter passphrase (empty for no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved in /c/Users/Hunter/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved in /c/Users/Hunter/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:7KwlOZ4yljBZE2ZJ7dr8QGIyQeiPk49L+01fnC0hAZY your_email@example.com</span><br><span class="line">The key&apos;s randomart image is:</span><br><span class="line">+---[RSA 4096]----+</span><br><span class="line">| o...=.          |</span><br><span class="line">|. . *Eo          |</span><br><span class="line">|.  + o .         |</span><br><span class="line">| .o = o..        |</span><br><span class="line">|  +* B .S.       |</span><br><span class="line">| ++.. ++o +      |</span><br><span class="line">| .+o o+o+= .     |</span><br><span class="line">|....B..*o .      |</span><br><span class="line">| ooo ++.         |</span><br><span class="line">+----[SHA256]-----+</span><br></pre></td></tr></table></figure>
+<h3 id="3、将ssh-key添加到ssh-agent"><a href="#3、将ssh-key添加到ssh-agent" class="headerlink" title="3、将ssh key添加到ssh-agent"></a><strong>3、将ssh key添加到ssh-agent</strong></h3><p>先确认ssh-agent是可用的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ eval $(ssh-agent -s)</span><br><span class="line">Agent pid 20632</span><br></pre></td></tr></table></figure>
+<p>将ssh key添加到ssh-agent</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-add ~/.ssh/id_rsa</span><br><span class="line">Identity added: /c/Users/Hunter/.ssh/id_rsa (/c/Users/Hunter/.ssh/id_rsa)</span><br></pre></td></tr></table></figure>
+<h3 id="4、将ssh-key配置到github"><a href="#4、将ssh-key配置到github" class="headerlink" title="4、将ssh key配置到github"></a><strong>4、将ssh key配置到github</strong></h3><p>复制key内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ clip &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>配置key到github<br>登录github-&gt;选择Settings-&gt;SSH keys-&gt;New SSH key</p>
+<p>测试ssh key的配置情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -t git@github.com</span><br><span class="line">Warning: Permanently added the RSA host key for IP address &apos;192.30.252.128&apos; to the list of known hosts.</span><br><span class="line">PTY allocation request failed on channel 0</span><br></pre></td></tr></table></figure>
+<p>到这里就配置好了</p>
+<p>再次执行clone操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git clone git@github.com:linmuxi/test-git.git</span><br><span class="line">Cloning into &apos;test-git&apos;...</span><br><span class="line">remote: Counting objects: 56, done.</span><br><span class="line">remote: Compressing objects: 100% (34/34), done.</span><br><span class="line">remote: Total 56 (delta 4), reused 0 (delta 0), pack-reused 8</span><br><span class="line">Receiving objects: 100% (56/56), 5.42 KiB | 0 bytes/s, done.</span><br><span class="line">Resolving deltas: 100% (4/4), done.</span><br><span class="line">Checking connectivity... done.</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+    <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+    <!--<span class="a2a_divider"></span>-->
+    <a class="a2a_button_wechat"></a>
+    <a class="a2a_button_sina_weibo"></a>
+    <a class="a2a_button_qzone"></a>
+    <a class="a2a_button_douban"></a>
+    <a class="a2a_button_renren"></a>
+    <a class="a2a_button_line"></a>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_tumblr"></a>
+    <a class="a2a_button_wordpress"></a>
+    <a class="a2a_button_evernote"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<!--
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+-->
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/kyounan719" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://facebook.com/kyounan719" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="tumblr" href="http://tumblr.jiangnan.pw" target="_blank">
+                        <i class="icon fa fa-tumblr"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="https://plus.google.com/103371492334107231388" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/lovedan" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://www.weibo.com/ddmfnet" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/atom.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/作品展示/艾旦影视华人自自己的电影网站/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">艾旦影视华人自自己的电影网站</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/技术分享/Git/Github之SSH连接配置/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lh3.googleusercontent.com/-nnwlkrohkHo/WJvpWp8lRGI/AAAAAAAABcw/bl95WI6WWwI/s0/2017-02-09_13-00-25.png)" alt="Github之SSH连接配置" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/Git/">Git</a></p>
+                            <p class="item-title"><a href="/技术分享/Git/Github之SSH连接配置/" class="title">Github之SSH连接配置</a></p>
+                            <p class="item-date"><time datetime="2019-11-12T07:16:32.353Z" itemprop="datePublished">2019-11-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/作品展示/艾旦影视华人自自己的电影网站/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lh3.googleusercontent.com/sGjSYrce_UupDj8n__CUzRclLxIbixVH67qxQ5IhyOA0s4HcKPRPzn-QtHEp4N_k95TxmwtHI7X-Hu3TEQ=w400-no-tmp.jpg)" alt="艾旦影视华人自自己的电影网站" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/作品展示/">作品展示</a></p>
+                            <p class="item-title"><a href="/作品展示/艾旦影视华人自自己的电影网站/" class="title">艾旦影视华人自自己的电影网站</a></p>
+                            <p class="item-date"><time datetime="2019-02-27T12:01:36.000Z" itemprop="datePublished">2019-02-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/技术分享/WordPress/Profile Builder support PolyLang/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lh3.googleusercontent.com/-tkhVoNvkgUs/Wb_GvTGcKNI/AAAAAAAADe8/lZzfvbxvW9cKNGsf-3bchp9TrsHevdZ0wCHMYCw/I/15057402929163.jpg)" alt="Profile Builder to add support for PolyLang plugin in field titles" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术分享/">技术分享</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术分享/WordPress/">WordPress</a></p>
+                            <p class="item-title"><a href="/技术分享/WordPress/Profile Builder support PolyLang/" class="title">Profile Builder to add support for PolyLang plugin in field titles</a></p>
+                            <p class="item-date"><time datetime="2017-09-18T22:04:39.000Z" itemprop="datePublished">2017-09-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/苹果相关/Mac软件/visual studio code（vscode）调试php/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lh3.googleusercontent.com/-nV1uTHeFNGA/Wa4KdnKpzOI/AAAAAAAADc4/gLSx2GPOV_8DxfrlZdX7ROvrvSB7RjY1gCHMYCw/I/15045781654402.jpg)" alt="visual studio code（vscode）调试php" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/苹果相关/">苹果相关</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/苹果相关/Mac软件/">Mac软件</a></p>
+                            <p class="item-title"><a href="/苹果相关/Mac软件/visual studio code（vscode）调试php/" class="title">visual studio code（vscode）调试php</a></p>
+                            <p class="item-date"><time datetime="2017-09-16T10:48:27.000Z" itemprop="datePublished">2017-09-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/苹果相关/Mac技巧/Postfixでローカルメール以外をSMTP認証サーバ/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lh3.googleusercontent.com/-VaSX6FxYHOQ/Wai3loGBtnI/AAAAAAAADbQ/oyqO2I5bwPkzZpMvCsDU1F7I3AQ86_8uQCHMYCw/s0/2017-09-01_10-27-41.png)" alt="Postfixでローカルメール以外をSMTP認証サーバやGMAILにリレーするための設定を記載します" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/苹果相关/">苹果相关</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a></p>
+                            <p class="item-title"><a href="/苹果相关/Mac技巧/Postfixでローカルメール以外をSMTP認証サーバ/" class="title">Postfixでローカルメール以外をSMTP認証サーバやGMAILにリレーするための設定を記載します</a></p>
+                            <p class="item-date"><time datetime="2017-09-05T09:47:40.000Z" itemprop="datePublished">2017-09-05</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/作品展示/">作品展示</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/">技术分享</a><span class="category-list-count">19</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/Docker/">Docker</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/Git/">Git</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/IIS/">IIS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/Laravel/">Laravel</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/MySql/">MySql</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/Nginx/">Nginx</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术分享/WordPress/">WordPress</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/苹果相关/">苹果相关</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/苹果相关/Mac技巧/">Mac技巧</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/苹果相关/Mac软件/">Mac软件</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件相关/">软件相关</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/软件相关/Windows/">Windows</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Alfred/" style="font-size: 10px;">Alfred</a> <a href="/tags/Cloud9/" style="font-size: 10px;">Cloud9</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/GitHub/" style="font-size: 15px;">GitHub</a> <a href="/tags/IIS/" style="font-size: 12.5px;">IIS</a> <a href="/tags/Mac技巧/" style="font-size: 20px;">Mac技巧</a> <a href="/tags/Mac软件/" style="font-size: 12.5px;">Mac软件</a> <a href="/tags/MySql/" style="font-size: 12.5px;">MySql</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/WordPress/" style="font-size: 17.5px;">WordPress</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/htpasswd/" style="font-size: 10px;">htpasswd</a> <a href="/tags/laravel/" style="font-size: 12.5px;">laravel</a> <a href="/tags/mail/" style="font-size: 12.5px;">mail</a> <a href="/tags/nginx/" style="font-size: 15px;">nginx</a> <a href="/tags/php/" style="font-size: 15px;">php</a> <a href="/tags/plugins/" style="font-size: 12.5px;">plugins</a> <a href="/tags/postfix/" style="font-size: 10px;">postfix</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/作品展示/" style="font-size: 12.5px;">作品展示</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/开源/" style="font-size: 10px;">开源</a> <a href="/tags/技术分享/" style="font-size: 12.5px;">技术分享</a> <a href="/tags/江南云/" style="font-size: 10px;">江南云</a> <a href="/tags/江南品味/" style="font-size: 10px;">江南品味</a> <a href="/tags/编程软件/" style="font-size: 10px;">编程软件</a> <a href="/tags/艾旦影视/" style="font-size: 10px;">艾旦影视</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://www.lovedan.net" target="_blank">艾旦影视</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.ddmf.net" target="_blank">蛋蛋魔法网</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://app.ddmf.net" target="_blank">Mac软件下载</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://jiangnan.pw" target="_blank">江南品味</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://cloud.jiangnan.pw" target="_blank">江南云</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://coding.jiangnan.pw" target="_blank">江南品味（coding）</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.jiangnan.pw" target="_blank">江南品味（github）</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://gitlab.jiangnan.pw" target="_blank">江南品味（gitlab）</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 江南品味</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a>
+                &nbsp;
+                Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'jiangnan';
+    
+    
+    var disqus_url = 'https://github.jiangnan.pw/技术分享/Git/Github之SSH连接配置/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

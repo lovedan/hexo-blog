@@ -8,6 +8,7 @@ script:
   - hexo g
 
 after_script:
+  - cp ./.gitlab-ci.yml ./public/.gitlab-ci.yml
   - cd ./public
   - git init 
   - git config user.name "lovedan"
